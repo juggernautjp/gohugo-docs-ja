@@ -12,4 +12,22 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+/resources/
+/.hugo_build.lock
+/_vendor/
+/public/
+/.cache/
+/node_modules/
+*.lock
+/.idea
+/.vscode
+/public
+/dist
+nohup.out
+.DS_Store
+resources/_gen/images/
+
+# for hugo theme
+themes/
+
+

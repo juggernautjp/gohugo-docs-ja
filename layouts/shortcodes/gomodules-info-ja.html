@@ -1,0 +1,19 @@
+{{ $text := `
+**Hugo Modules** のコマンドのほとんどは、新しいバージョンの Go をインストールし (https://golang.org/dl/ 参照)、関連する VCS クライアント (Git など、 https://git-scm.com/downloads/ 参照) を必要とします。
+Netlify で動作する「古い」サイトを使用している場合は、環境設定で GO_VERSION を 1.12 に設定する必要がある場合があります。
+
+
+Go モジュールの詳細については、以下を参照してください。
+
+* https://github.com/golang/go/wiki/Modules
+* https://blog.golang.org/using-go-modules
+` }}
+
+<aside class="admonition note">
+	<div class="note-icon">
+		{{partial "svg/exclamation.svg" (dict "size" "20px" ) }}
+	</div>
+	<div class="admonition-content">
+        {{- $text | markdownify -}}
+    </div>
+</aside>

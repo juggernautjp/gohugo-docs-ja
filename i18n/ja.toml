@@ -1,0 +1,19 @@
+
+[see_also]
+other = "関連項目"
+
+[read_more]
+other = "続きを読む"
+
+[syntax]
+other = "構文"
+
+[browse]
+other = "ブラウズ"
+
+[translations]
+other = "翻訳"
+
+[wordCount]
+one = "1 文字"
+other = "{{ .Count }} 文字"

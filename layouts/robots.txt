@@ -1,0 +1,12 @@
+# www.robotstxt.org
+# cite from bootstrap 5.3.0-alpha1/site/layouts/robots.txt
+# delete the lines that include $isNetlify and $allowCrawling, which are for Netlify
+
+{{- $isProduction := eq hugo.Environment "production" -}}
+
+{{ if $isProduction }}
+# Allow crawling of all content
+{{- end }}
+User-agent: *
+Disallow:{{ if not $isProduction }} /{{ end }}
+Sitemap: {{ "/sitemap.xml" | absURL }}

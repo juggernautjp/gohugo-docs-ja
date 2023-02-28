@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Path</th>
+    <th>Title</th>
+    <th>Draft flag</th>
+  </tr>
+{{ range .Site.Data.i18n.ja.paths.files }}
+  <tr>
+      <td>{{ .path }}</td>
+      <td>{{ .title }}</td>
+      <td>{{ .draft }}</td>
+  </tr>
+{{- end }}
+</table>

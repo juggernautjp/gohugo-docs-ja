@@ -1,0 +1,2702 @@
+{
+  "count": {
+    "draft": 210,
+    "notdraft": 328,
+    "total": 538,
+    "ratio": 60.966545
+  },
+  "paths": {
+    "files": [
+      {
+        "path": "content\\ja\\_index.md",
+        "title": "世界最速で Web サイトを構築するフレームワーク",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\about\\_index.md",
+        "title": "Hugo について",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\about\\benefits.md",
+        "title": "静的サイトジェネレーターのメリット",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\about\\features.md",
+        "title": "Hugo の機能",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\about\\hugo-and-gdpr.md",
+        "title": "Hugo と 一般データ保護規則 (GDPR)",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\about\\license.md",
+        "title": "Apache License",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\about\\security-model\\index.md",
+        "title": "Hugo のセキュリティモデル",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\about\\what-is-hugo.md",
+        "title": "Hugo とは",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\_index.md",
+        "title": "Hugo コマンドについて",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo.md",
+        "title": "hugo (cli)",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion.md",
+        "title": "hugo completion",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion_bash.md",
+        "title": "hugo completion bash",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion_fish.md",
+        "title": "hugo completion fish",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion_powershell.md",
+        "title": "hugo completion powershell",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion_zsh.md",
+        "title": "hugo completion zsh",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_config.md",
+        "title": "hugo config",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_config_mounts.md",
+        "title": "hugo config mounts",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_convert.md",
+        "title": "hugo convert",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_convert_toJSON.md",
+        "title": "hugo convert toJSON",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_convert_toTOML.md",
+        "title": "hugo convert toTOML",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_convert_toYAML.md",
+        "title": "hugo convert toYAML",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_deploy.md",
+        "title": "hugo deploy",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_env.md",
+        "title": "hugo env",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_gen.md",
+        "title": "hugo gen",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_gen_chromastyles.md",
+        "title": "hugo gen chromastyles",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_gen_doc.md",
+        "title": "hugo gen doc",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_gen_man.md",
+        "title": "hugo gen man",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_import.md",
+        "title": "hugo import",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_import_jekyll.md",
+        "title": "hugo import jekyll",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list.md",
+        "title": "hugo list",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list_all.md",
+        "title": "hugo list all",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list_drafts.md",
+        "title": "hugo list drafts",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list_expired.md",
+        "title": "hugo list expired",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list_future.md",
+        "title": "hugo list future",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod.md",
+        "title": "hugo mod",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_clean.md",
+        "title": "hugo mod clean",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_get.md",
+        "title": "hugo mod get",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_graph.md",
+        "title": "hugo mod graph",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_init.md",
+        "title": "hugo mod init",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_npm.md",
+        "title": "hugo mod npm",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_npm_pack.md",
+        "title": "hugo mod npm pack",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_tidy.md",
+        "title": "hugo mod tidy",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_vendor.md",
+        "title": "hugo mod vendor",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_verify.md",
+        "title": "hugo mod verify",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_new.md",
+        "title": "hugo new",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_new_site.md",
+        "title": "hugo new site",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_new_theme.md",
+        "title": "hugo new theme",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_server.md",
+        "title": "hugo server",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_version.md",
+        "title": "hugo version",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\_index.md",
+        "title": "コンテンツ管理",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\archetypes.md",
+        "title": "アーキタイプ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\build-options.md",
+        "title": "ビルドオプション",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\comments.md",
+        "title": "コメント",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\cross-references.md",
+        "title": "リンクとクロスリファレンス",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\diagrams.md",
+        "title": "ダイアグラム",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\formats.md",
+        "title": "コンテンツフォーマット",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\front-matter.md",
+        "title": "フロントマター",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\image-processing\\index.md",
+        "title": "画像処理",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\menus.md",
+        "title": "メニュー",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\multilingual.md",
+        "title": "多言語対応モード",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\organization\\index.md",
+        "title": "コンテンツ構成",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\page-bundles.md",
+        "title": "ページバンドル",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\page-resources.md",
+        "title": "ページリソース",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\related.md",
+        "title": "関連コンテンツ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\sections.md",
+        "title": "コンテンツセクション",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\shortcodes.md",
+        "title": "ショートコード",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\static-files.md",
+        "title": "静的ファイル",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\summaries.md",
+        "title": "コンテンツサマリー",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\syntax-highlighting.md",
+        "title": "シンタックスハイライト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\taxonomies.md",
+        "title": "タクソノミー",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\toc.md",
+        "title": "目次",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\types.md",
+        "title": "コンテンツタイプ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\content-management\\urls.md",
+        "title": "URL 管理",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\contribute\\_index.md",
+        "title": "Hugo プロジェクトへの貢献",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\contribute\\development.md",
+        "title": "Hugo の開発に貢献する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\contribute\\documentation.md",
+        "title": "Hugo ドキュメントに貢献する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\contribute\\themes.md",
+        "title": "Hugo テーマをショーケースに追加する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\documentation.md",
+        "title": "Hugo ドキュメント (日本語訳)",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\GetPage.md",
+        "title": ".GetPage",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\RenderString.md",
+        "title": ".RenderString",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\_index.md",
+        "title": "関数のクイックリファレンス",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\abslangurl.md",
+        "title": "absLangURL",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\absurl.md",
+        "title": "absURL",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\adddate.md",
+        "title": ".AddDate",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\after.md",
+        "title": "after",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\anchorize.md",
+        "title": "anchorize",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\append.md",
+        "title": "append",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\apply.md",
+        "title": "apply",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\base64.md",
+        "title": "base64",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\chomp.md",
+        "title": "chomp",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\complement.md",
+        "title": "complement",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\cond.md",
+        "title": "cond",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\countrunes.md",
+        "title": "countrunes",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\countwords.md",
+        "title": "countwords",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\crypto.FNV32a.md",
+        "title": "crypto.FNV32a",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\dateformat.md",
+        "title": "time.Format",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\default.md",
+        "title": "default",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\delimit.md",
+        "title": "delimit",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\dict.md",
+        "title": "dict",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\duration.md",
+        "title": "duration",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\echoparam.md",
+        "title": "echoParam",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\emojify.md",
+        "title": "emojify",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\eq.md",
+        "title": "eq",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\errorf.md",
+        "title": "errorf と warnf",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\fileExists.md",
+        "title": "fileExists",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\findRe.md",
+        "title": "findRE",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\first.md",
+        "title": "first",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\float.md",
+        "title": "float",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\format.md",
+        "title": ".Format",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\ge.md",
+        "title": "ge",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\get.md",
+        "title": ".Get",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\getenv.md",
+        "title": "getenv",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\group.md",
+        "title": "group",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\gt.md",
+        "title": "gt",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\hasPrefix.md",
+        "title": "hasprefix",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\hasmenucurrent.md",
+        "title": ".HasMenuCurrent",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\highlight.md",
+        "title": "highlight",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\hmac.md",
+        "title": "hmac",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\htmlEscape.md",
+        "title": "htmlEscape",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\htmlUnescape.md",
+        "title": "htmlUnescape",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\hugo.md",
+        "title": "hugo",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\humanize.md",
+        "title": "humanize",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\i18n.md",
+        "title": "i18n",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\images\\index.md",
+        "title": "画像フィルター",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\in.md",
+        "title": "in",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\index-function.md",
+        "title": "index",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\int.md",
+        "title": "int",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\intersect.md",
+        "title": "intersect",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\ismenucurrent.md",
+        "title": ".IsMenuCurrent",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\isset.md",
+        "title": "isset",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\jsonify.md",
+        "title": "jsonify",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\lang.Merge.md",
+        "title": "lang.Merge",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\lang.md",
+        "title": "lang",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\last.md",
+        "title": "last",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\le.md",
+        "title": "le",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\len.md",
+        "title": "len",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\lower.md",
+        "title": "lower",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\lt.md",
+        "title": "lt",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\markdownify.md",
+        "title": "markdownify",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\math.md",
+        "title": "Math",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\md5.md",
+        "title": "md5",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\merge.md",
+        "title": "merge",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\ne.md",
+        "title": "ne",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\now.md",
+        "title": "now",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\os.Stat.md",
+        "title": "os.Stat",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\param.md",
+        "title": ".Param",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\partialCached.md",
+        "title": "partialCached",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\path.Base.md",
+        "title": "path.Base",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\path.BaseName.md",
+        "title": "path.BaseName",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\path.Clean.md",
+        "title": "path.Clean",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\path.Dir.md",
+        "title": "path.Dir",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\path.Ext.md",
+        "title": "path.Ext",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\path.Join.md",
+        "title": "path.Join",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\path.Split.md",
+        "title": "path.Split",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\plainify.md",
+        "title": "plainify",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\pluralize.md",
+        "title": "pluralize",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\print.md",
+        "title": "print",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\printf.md",
+        "title": "printf",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\println.md",
+        "title": "println",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\querify.md",
+        "title": "querify",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\range.md",
+        "title": "range",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\readdir.md",
+        "title": "readDir",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\readfile.md",
+        "title": "readFile",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\ref.md",
+        "title": "ref",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\reflect.IsMap.md",
+        "title": "reflect.IsMap",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\reflect.IsSlice.md",
+        "title": "reflect.IsSlice",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\relLangURL.md",
+        "title": "relLangURL",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\relref.md",
+        "title": "relref",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\relurl.md",
+        "title": "relURL",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\render.md",
+        "title": ".Render",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\replace.md",
+        "title": "replace",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\replacere.md",
+        "title": "replaceRE",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\safeCSS.md",
+        "title": "safeCSS",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\safeHTML.md",
+        "title": "safeHTML",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\safeHTMLAttr.md",
+        "title": "safeHTMLAttr",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\safeJS.md",
+        "title": "safeJS",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\safeURL.md",
+        "title": "safeURL",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\scratch.md",
+        "title": ".Scratch",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\seq.md",
+        "title": "seq",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\sha.md",
+        "title": "sha",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\shuffle.md",
+        "title": "shuffle",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\singularize.md",
+        "title": "singularize",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\site.md",
+        "title": "site",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\slice.md",
+        "title": "slice",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\slicestr.md",
+        "title": "slicestr",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\sort.md",
+        "title": "sort",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\split.md",
+        "title": "split",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\string.md",
+        "title": "string",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.Contains.md",
+        "title": "strings.Contains",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.ContainsAny.md",
+        "title": "strings.ContainsAny",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.Count.md",
+        "title": "strings.Count",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.FirstUpper.md",
+        "title": "strings.FirstUpper",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.HasSuffix.md",
+        "title": "strings.HasSuffix",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.Repeat.md",
+        "title": "strings.Repeat",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.RuneCount.md",
+        "title": "strings.RuneCount",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.TrimLeft.md",
+        "title": "strings.TrimLeft",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.TrimPrefix.md",
+        "title": "strings.TrimPrefix",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.TrimRight.md",
+        "title": "strings.TrimRight",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\strings.TrimSuffix.md",
+        "title": "strings.TrimSuffix",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\substr.md",
+        "title": "substr",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\symdiff.md",
+        "title": "symdiff",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\templates.Exists.md",
+        "title": "templates.Exists",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\time.ParseDuration.md",
+        "title": "time.ParseDuration",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\time.md",
+        "title": "time",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\title.md",
+        "title": "title",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\transform.Unmarshal.md",
+        "title": "transform.Unmarshal",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\trim.md",
+        "title": "trim",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\truncate.md",
+        "title": "truncate",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\union.md",
+        "title": "union",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\uniq.md",
+        "title": "uniq",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\unix.md",
+        "title": ".Unix",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\upper.md",
+        "title": "upper",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\urlize.md",
+        "title": "urlize",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\urlquery.md",
+        "title": "urlquery",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\urls.Parse.md",
+        "title": "urls.Parse",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\where.md",
+        "title": "where",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\functions\\with.md",
+        "title": "with",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\getting-started\\_index.md",
+        "title": "Hugo 入門",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\getting-started\\configuration-markup.md",
+        "title": "マークアップの設定",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\getting-started\\configuration.md",
+        "title": "Hugo の設定",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\getting-started\\directory-structure.md",
+        "title": "ディレクトリ構造",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\getting-started\\external-learning-resources\\index.md",
+        "title": "外部の学習リソース",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\getting-started\\quick-start.md",
+        "title": "クイックスタート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\getting-started\\usage.md",
+        "title": "基本的な使用方法",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\_index.md",
+        "title": "ホスティングとデプロイ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\deployment-with-rclone.md",
+        "title": "Rclone を使ったデプロイメント",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\deployment-with-rsync.md",
+        "title": "Rsync を使ったデプロイメント",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-21yunbox.md",
+        "title": "21YunBox  でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-aws-amplify.md",
+        "title": "AWS Amplify でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-azure-static-web-apps.md",
+        "title": "Azure Static Web Apps でのホスティング",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-azure.md",
+        "title": "Azure Static Web Apps でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-cloudflare-pages.md",
+        "title": "Cloudflare Pages でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-firebase.md",
+        "title": "Firebase でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-github.md",
+        "title": "GitHub でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-gitlab.md",
+        "title": "GitLab でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-keycdn.md",
+        "title": "KeyCDN でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-netlify.md",
+        "title": "Netlify でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-render.md",
+        "title": "Render でのホスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hugo-deploy.md",
+        "title": "Hugo デプロイ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-ja\\_index.md",
+        "title": "Hugo ドキュメントの日本語翻訳について",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-ja\\abount.md",
+        "title": "Hugo ドキュメントの日本語翻訳プロジェクト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-ja\\changes.md",
+        "title": "ドキュメントの変更履歴",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-ja\\contribute.md",
+        "title": "本プロジェクトへの貢献について",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-ja\\glossary.md",
+        "title": "Hugo ドキュメント 日本語翻訳の用語集",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-ja\\i18n.md",
+        "title": "Hugo ドキュメントの翻訳状況 (詳細)",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-ja\\policy.md",
+        "title": "日本語翻訳プロジェクトの翻訳ポリシーについて",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-ja\\status.md",
+        "title": "翻訳状況",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-modules\\_index.md",
+        "title": "Hugo モジュール",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-modules\\configuration.md",
+        "title": "モジュールを設定する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-modules\\theme-components.md",
+        "title": "テーマ コンポーネント",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-modules\\use-modules.md",
+        "title": "Hugo モジュールを使用する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\_index.md",
+        "title": "Hugo パイプの概要",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\babel.md",
+        "title": "Babel",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\bundling.md",
+        "title": "アセットバンドル",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\fingerprint.md",
+        "title": "フィンガープリントと SRI",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\introduction.md",
+        "title": "Hugo パイプ入門",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\js.md",
+        "title": "JavaScript のビルド",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\minification.md",
+        "title": "アセットのミニファイ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\postcss.md",
+        "title": "PostCSS",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\postprocess.md",
+        "title": "後処理 (PostProcess)",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\resource-from-string.md",
+        "title": "文字列からリソースを作成する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\resource-from-template.md",
+        "title": "テンプレートからリソースを作成する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\scss-sass.md",
+        "title": "Sass / SCSS",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\_index.md",
+        "title": "インストール",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\bsd.md",
+        "title": "BSD",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\common\\01-editions.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\common\\02-prerequisites.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\common\\03-prebuilt-binaries.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\common\\04-docker.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\common\\05-build-from-source.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\common\\homebrew.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\common\\index.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\linux.md",
+        "title": "Linux",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\macos.md",
+        "title": "macOS",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\installation\\windows.md",
+        "title": "Windows",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\maintenance\\_index.md",
+        "title": "メンテナンス",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\myshowcase\\bio.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\myshowcase\\index.md",
+        "title": "Myshowcase",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\news\\0.10-relnotes\\index.md",
+        "title": "Hugo 0.10",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.11-relnotes\\index.md",
+        "title": "Hugo 0.11",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.12-relnotes\\index.md",
+        "title": "Hugo 0.12",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.13-relnotes\\index.md",
+        "title": "Hugo 0.13",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.14-relnotes\\index.md",
+        "title": "Hugo 0.14",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.15-relnotes\\index.md",
+        "title": "Hugo 0.15",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.16-relnotes\\index.md",
+        "title": "Hugo 0.16",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.17-relnotes\\index.md",
+        "title": "0.17: Hugo is going global",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.18-relnotes\\index.md",
+        "title": "Hugo 0.18",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.19-relnotes\\index.md",
+        "title": "Hugo 0.19",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.20-relnotes\\index.md",
+        "title": "Hugo 0.20",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.20.1-relnotes\\index.md",
+        "title": "Hugo 0.20.1",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.20.2-relnotes\\index.md",
+        "title": "Hugo 0.20.2",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.20.3-relnotes\\index.md",
+        "title": "Hugo 0.20.3",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.20.4-relnotes\\index.md",
+        "title": "Hugo 0.20.4",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.20.5-relnotes\\index.md",
+        "title": "Hugo 0.20.5",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.20.6-relnotes\\index.md",
+        "title": "Hugo 0.20.6",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.20.7-relnotes\\index.md",
+        "title": "Hugo 0.20.7",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.21-relnotes\\index.md",
+        "title": "Hugo 0.21",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.22-relnotes\\index.md",
+        "title": "Hugo 0.22",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.22.1-relnotes\\index.md",
+        "title": "Hugo 0.22.1",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.23-relnotes\\index.md",
+        "title": "Hugo 0.23",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.24-relnotes\\index.md",
+        "title": "Hugo 0.24",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.24.1-relnotes\\index.md",
+        "title": "Hugo 0.24.1",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.25-relnotes\\index.md",
+        "title": "Hugo 0.25",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.25.1-relnotes\\index.md",
+        "title": "Hugo 0.25.1",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.26-relnotes\\index.md",
+        "title": "Hugo 0.26: Language Style Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.27-relnotes\\index.md",
+        "title": "Hugo 0.27: Fast and Flexible Related Content!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.27.1-relnotes\\index.md",
+        "title": "Hugo 0.27.1: One bugfix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.28-relnotes\\index.md",
+        "title": "Hugo 0.28: High-speed Syntax Highlighting!",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\news\\0.29-relnotes\\index.md",
+        "title": "Hugo 0.29: Template Metrics",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.30-relnotes\\index.md",
+        "title": "Hugo 0.30: Race Car Edition!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.30.1-relnotes\\index.md",
+        "title": "Hugo 0.30.1: Two Important Bugfixes!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.30.2-relnotes\\index.md",
+        "title": "Hugo 0.30.2: One More Bugfix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.31-relnotes\\index.md",
+        "title": "Hugo 0.31: Language Multihost Edition!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.31.1-relnotes\\index.md",
+        "title": "Hugo 0.31.1: One Bugfix!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.32-relnotes\\index.md",
+        "title": "Hugo 0.32: Page Bundles and Image Processing!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.32.1-relnotes\\index.md",
+        "title": "Hugo 0.32.1: Two bugfixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.32.2-relnotes\\index.md",
+        "title": "Hugo 0.32.2: One bugfix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.32.3-relnotes\\index.md",
+        "title": "Hugo 0.32.3: Some important bug fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.32.4-relnotes\\index.md",
+        "title": "Hugo 0.32.4: Two bugfixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.33-relnotes\\index.md",
+        "title": "Hugo 0.33: The New Kinder Surprise!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.34-relnotes\\index.md",
+        "title": "Hugo 0.34: Pattern matching to filter images and other resources",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.35-relnotes\\index.md",
+        "title": "Hugo 0.35: Headless Bundles!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.36-relnotes\\index.md",
+        "title": "Hugo 0.36: Smart Image Cropping!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.36.1-relnotes\\index.md",
+        "title": "Hugo 0.36.1: One Bugfix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.37-relnotes\\index.md",
+        "title": "Hugo 0.37: Preserve PNG Colour Palette",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.37.1-relnotes\\index.md",
+        "title": "Hugo 0.37.1: One Bugfix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.38-relnotes\\index.md",
+        "title": "Hugo 0.38: The Easter Egg Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.38.1-relnotes\\index.md",
+        "title": "Hugo 0.38.1: Some Live Reload Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.38.2-relnotes\\index.md",
+        "title": "Hugo 0.38.2: Two Bugfixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.39-relnotes\\index.md",
+        "title": "Hugo 0.39: The Nat King Cole Stabilizer Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.40-relnotes\\index.md",
+        "title": "Hugo 0.40: The Revival of the Shortcodes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.40.1-relnotes\\index.md",
+        "title": "Hugo 0.40.1: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.40.2-relnotes\\index.md",
+        "title": "Hugo 0.40.2: Two Bug fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.40.3-relnotes\\index.md",
+        "title": "Hugo 0.40.3: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.41-relnotes\\index.md",
+        "title": "Hugo 0.41: Privacy Configuration for GDPR",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.42-relnotes\\index.md",
+        "title": "Hugo 0.42: Theme Composition and Inheritance!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.42.1-relnotes\\index.md",
+        "title": "Hugo 0.42.1: Two Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.42.2-relnotes\\index.md",
+        "title": "Hugo 0.42.2: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.43-relnotes\\index.md",
+        "title": "And Now: Hugo Pipes!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.44-relnotes\\index.md",
+        "title": "Hugo 0.44: Friday the 13th Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.45-relnotes\\index.md",
+        "title": "Hugo 0.45: Revival of ref, relref and GetPage",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.45.1-relnotes\\index.md",
+        "title": "Hugo 0.45.1: Two Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.46-relnotes\\index.md",
+        "title": "The Summer of Hugo",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.47-relnotes\\index.md",
+        "title": "Output Minification, Live-Reload Fixes and More",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.47.1-relnotes\\index.md",
+        "title": "Two Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.48-relnotes\\index.md",
+        "title": "This One Goes to 11!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.49-relnotes\\index.md",
+        "title": "Hugo 0.49: Directory Based Archetypes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.49.1-relnotes\\index.md",
+        "title": "Hugo 0.49.1: Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.49.2-relnotes\\index.md",
+        "title": "Hugo 0.49.2: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.50-relnotes\\index.md",
+        "title": "Hugo 0.50: Errors so Good, You’ll Want to Fail!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.51-relnotes\\index.md",
+        "title": "Hugo 0.51: The 30K Stars Edition!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.52-relnotes\\index.md",
+        "title": "And Now: Hugo 0.52",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.53-relnotes\\index.md",
+        "title": "Hugo Christmas Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.54.0-relnotes\\index.md",
+        "title": "0.54.0:  Mostly Bugfixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.55.0-relnotes\\index.md",
+        "title": "Hugo 0.55.0: The early Easter Egg Edition!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.55.1-relnotes\\index.md",
+        "title": "0.55.1: 3 Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.55.2-relnotes\\index.md",
+        "title": "Hugo 0.55.2: Some Important Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.55.3-relnotes\\index.md",
+        "title": "Hugo 0.55.3: A Few More Bug Fixes!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.55.4-relnotes\\index.md",
+        "title": "Hugo 0.55.4: Some Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.55.5-relnotes\\index.md",
+        "title": "Hugo 0.55.5: Take Five!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.55.6-relnotes\\index.md",
+        "title": "Hugo 0.55.6: One Bug Fix!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.56.0-relnotes\\index.md",
+        "title": "Hugo 0.56.0: Hugo Modules and Deployment",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.56.1-relnotes\\index.md",
+        "title": "0.56.1: Two Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.56.2-relnotes\\index.md",
+        "title": "Hugo 0.56.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.56.3-relnotes\\index.md",
+        "title": "Hugo 0.56.3: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.57.0-relnotes\\index.md",
+        "title": "Hugo 0.57: The Cascading Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.57.1-relnotes\\index.md",
+        "title": "Hugo 0.57.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.57.2-relnotes\\index.md",
+        "title": "Hugo 0.57.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.58.0-relnotes\\index.md",
+        "title": "Image Processing Galore!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.58.1-relnotes\\index.md",
+        "title": "Hugo 0.58.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.58.2-relnotes\\index.md",
+        "title": "Hugo 0.58.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.58.3-relnotes\\index.md",
+        "title": "Hugo 0.58.3: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.59.0-relnotes\\index.md",
+        "title": "Hugo 0.59.0",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.59.1-relnotes\\index.md",
+        "title": "Hugo 0.59.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.60.0-relnotes\\index.md",
+        "title": "Now CommonMark Compliant!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.60.1-relnotes\\index.md",
+        "title": "Hugo 0.60.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.61.0-relnotes\\index.md",
+        "title": "40K GitHub Stars Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.62.0-relnotes\\index.md",
+        "title": "Hugo Christmas Edition!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.62.1-relnotes\\index.md",
+        "title": "Hugo 0.62.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.62.2-relnotes\\index.md",
+        "title": "Hugo 0.62.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.63.0-relnotes\\index.md",
+        "title": "Improved base templates, and faster!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.63.1-relnotes\\index.md",
+        "title": "Hugo 0.63.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.63.2-relnotes\\index.md",
+        "title": "Hugo 0.63.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.64.0-relnotes\\index.md",
+        "title": "Mostly bugfixes …",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.64.1-relnotes\\index.md",
+        "title": "Hugo 0.64.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.65.0-relnotes\\index.md",
+        "title": "0.65.0: Hugo Reloaded!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.65.1-relnotes\\index.md",
+        "title": "Hugo 0.65.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.65.2-relnotes\\index.md",
+        "title": "Hugo 0.65.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.65.3-relnotes\\index.md",
+        "title": "Hugo 0.65.3: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.66.0-relnotes\\index.md",
+        "title": "Hugo 0.66.0: PostCSS Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.67.0-relnotes\\index.md",
+        "title": "Hugo 0.67.0: Custom HTTP headers",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.67.1-relnotes\\index.md",
+        "title": "Hugo 0.67.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.68.0-relnotes\\index.md",
+        "title": "Minify config and more!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.68.1-relnotes\\index.md",
+        "title": "Hugo 0.68.1: 1 bug fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.68.2-relnotes\\index.md",
+        "title": "Hugo 0.68.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.68.3-relnotes\\index.md",
+        "title": "Hugo 0.68.3: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.69.0-relnotes\\index.md",
+        "title": "Post Build Resource Transformations",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.69.1-relnotes\\index.md",
+        "title": "Hugo 0.69.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.69.2-relnotes\\index.md",
+        "title": "Hugo 0.69.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.7-relnotes\\index.md",
+        "title": "Hugo 0.7",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.70.0-relnotes\\index.md",
+        "title": "JavaScript Transpiler",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.71.0-relnotes\\index.md",
+        "title": "Markdown Render Hooks for Headings",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.71.1-relnotes\\index.md",
+        "title": "Hugo 0.71.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.72.0-relnotes\\index.md",
+        "title": "URL rewrites in dev server",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.73.0-relnotes\\index.md",
+        "title": "Summer Breeze",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.74.0-relnotes\\index.md",
+        "title": "Native JS Bundler, Open API Support, Inline Partials",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.74.1-relnotes\\index.md",
+        "title": "Hugo 0.74.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.74.2-relnotes\\index.md",
+        "title": "Hugo 0.74.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.74.3-relnotes\\index.md",
+        "title": "Hugo 0.74.3: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.75.0-relnotes\\index.md",
+        "title": "NPM Pack",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.75.1-relnotes\\index.md",
+        "title": "Hugo 0.75.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.76.0-relnotes\\index.md",
+        "title": "Multiple Cascades With Page Filters",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.76.1-relnotes\\index.md",
+        "title": "Hugo 0.76.1: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.76.2-relnotes\\index.md",
+        "title": "Hugo 0.76.2: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.76.3-relnotes\\index.md",
+        "title": "Hugo 0.76.3: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.76.4-relnotes\\index.md",
+        "title": "Hugo 0.76.4: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.76.5-relnotes\\index.md",
+        "title": "Hugo 0.76.5: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.77.0-relnotes\\index.md",
+        "title": "Hugo 0.77.0: Hugo Modules Improvements and More ",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.78.0-relnotes\\index.md",
+        "title": "Hugo 0.78.0: Full Hugo Modules Support in js.Build",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.78.1-relnotes\\index.md",
+        "title": "Hugo 0.78.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.78.2-relnotes\\index.md",
+        "title": "Hugo 0.78.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.79.0-relnotes\\index.md",
+        "title": "Hugo 0.79.0: Black Friday Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.79.1-relnotes\\index.md",
+        "title": "Hugo 0.79.1: One Security Patch for Hugo on Windows",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.8-relnotes\\index.md",
+        "title": "Hugo 0.8",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.80.0-relnotes\\index.md",
+        "title": "Hugo 0.80: Last Release of 2020!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.81.0-relnotes\\index.md",
+        "title": "Hugo 0.81.0: The Smorgasbord Edition",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.82.0-relnotes\\index.md",
+        "title": "Hugo 0.82: Mostly bugfixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.82.1-relnotes\\index.md",
+        "title": "Hugo 0.82.1: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.83.0-relnotes\\index.md",
+        "title": "Hugo 0.83: WebP Support!",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.83.1-relnotes\\index.md",
+        "title": "Hugo 0.83.1: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.84.0-relnotes\\index.md",
+        "title": "Config Revamp",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.84.1-relnotes\\index.md",
+        "title": "Hugo 0.84.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.84.2-relnotes\\index.md",
+        "title": "Hugo 0.84.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.84.3-relnotes\\index.md",
+        "title": "Hugo 0.84.3: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.84.4-relnotes\\index.md",
+        "title": "Hugo 0.84.4: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.85.0-relnotes\\index.md",
+        "title": "Poll based watching",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.86.0-relnotes\\index.md",
+        "title": "Hugo 0.86.0: Cascade in Config",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.86.1-relnotes\\index.md",
+        "title": "Hugo 0.86.1: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.87.0-relnotes\\index.md",
+        "title": "Localized Time and Dates and Numbers",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.88.0-relnotes\\index.md",
+        "title": "Go 1.17 Update",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.88.1-relnotes\\index.md",
+        "title": "Hugo 0.88.1: One Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.89.0-relnotes\\index.md",
+        "title": "Fine Grained File Filters",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.89.1-relnotes\\index.md",
+        "title": "Hugo 0.89.1: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.89.2-relnotes\\index.md",
+        "title": "Hugo 0.89.2: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.89.3-relnotes\\index.md",
+        "title": "Hugo 0.89.3: A couple of Bug Fixes",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.89.4-relnotes\\index.md",
+        "title": "Hugo 0.89.4: One Bug Fix",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\0.9-relnotes\\index.md",
+        "title": "Hugo 0.9",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\2021\\0.91.2-relnotes\\index.md",
+        "title": "Fixes the “Stuck on Build” Bug",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\2021-12-17-no-more-releasenotes.md",
+        "title": "Release Notes now on GitHub Only",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\_index.md",
+        "title": "Hugo ニュース",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\news\\hugo-macos-intel-vs-arm\\index.html",
+        "title": "Hugo on Apple M1",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\news\\lets-celebrate-hugos-5th-birthday\\index.md",
+        "title": "Let’s celebrate Hugo’s 5th birthday",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\readfiles\\README.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\readfiles\\dateformatting.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\readfiles\\index.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\readfiles\\pages-vs-site-pages.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\readfiles\\sectionvars.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\showcase\\1password-support\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\1password-support\\index.md",
+        "title": "1Password Support",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\ampio-help\\bio.md",
+        "title": "",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\showcase\\ampio-help\\index.md",
+        "title": "Alora Labs",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\showcase\\bypasscensorship\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\bypasscensorship\\index.md",
+        "title": "Bypass Censorship",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\digitalgov\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\digitalgov\\index.md",
+        "title": "Digital.gov",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\fireship\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\fireship\\index.md",
+        "title": "fireship.io",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\flesland-flis\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\flesland-flis\\index.md",
+        "title": "Flesland Flis AS",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\forestry\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\forestry\\index.md",
+        "title": "Forestry.io",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\godot-tutorials\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\godot-tutorials\\index.md",
+        "title": "Godot Tutorials",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\hapticmedia\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\hapticmedia\\index.md",
+        "title": "Hapticmedia Blog",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\hartwell-insurance\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\hartwell-insurance\\index.md",
+        "title": "Hartwell Insurance",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\keycdn\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\keycdn\\index.md",
+        "title": "KeyCDN",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\letsencrypt\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\letsencrypt\\index.md",
+        "title": "Let’s Encrypt",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\linode\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\linode\\index.md",
+        "title": "Linode Docs",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\over\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\over\\index.md",
+        "title": "Over",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\pharmaseal\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\pharmaseal\\index.md",
+        "title": "PHARMASEAL",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\quiply-employee-communications-app\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\quiply-employee-communications-app\\index.md",
+        "title": "Quiply Employee Communications App",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\small-multiples\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\template\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\template\\index.md",
+        "title": "Hugo Showcase Template",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\tomango\\bio.md",
+        "title": "",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\showcase\\tomango\\index.md",
+        "title": "Tomango",
+        "draft": true
+      },
+      {
+        "path": "content\\ja\\templates\\404.md",
+        "title": "カスタム 404 ページ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\_index.md",
+        "title": "テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\base.md",
+        "title": "ベーステンプレートとブロック",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\data-templates.md",
+        "title": "データテンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\files.md",
+        "title": "ローカルファイル テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\homepage.md",
+        "title": "ホームページ テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\internal.md",
+        "title": "内部テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\introduction.md",
+        "title": "Hugo テンプレート入門",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\lists.md",
+        "title": "Hugo のコンテンツリスト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\lookup-order.md",
+        "title": "Hugo の検索順序",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\menu-templates.md",
+        "title": "メニューテンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\output-formats.md",
+        "title": "カスタム出力形式",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\pagination.md",
+        "title": "ページ付け",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\partials.md",
+        "title": "部分テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\render-hooks.md",
+        "title": "Markdown レンダーフック",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\robots.md",
+        "title": "Robots.txt ファイル",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\rss.md",
+        "title": "RSS テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\section-templates.md",
+        "title": "セクションページ テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\shortcode-templates.md",
+        "title": "独自のショートコードを作成する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\single-page-templates.md",
+        "title": "シングルページ テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\sitemap-template.md",
+        "title": "サイトマップ テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\taxonomy-templates.md",
+        "title": "タクソノミー テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\template-debugging.md",
+        "title": "テンプレートのデバッグ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\templates\\views.md",
+        "title": "コンテンツビュー テンプレート",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\tools\\_index.md",
+        "title": "デベロッパーツール",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\tools\\editors.md",
+        "title": "Hugo 用エディター プラグイン",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\tools\\frontends.md",
+        "title": "Hugo とのフロントエンド インターフェイス",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\tools\\migrations.md",
+        "title": "Hugo への移行",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\tools\\other.md",
+        "title": "その他の Hugo コミュニティ プロジェクト",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\tools\\search.md",
+        "title": "Hugo の Web サイトを検索する",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\tools\\starter-kits.md",
+        "title": "スターターキット",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\troubleshooting\\_index.md",
+        "title": "トラブルシューティング",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\troubleshooting\\build-performance.md",
+        "title": "ビルド性能",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\troubleshooting\\faq.md",
+        "title": "よくある質問",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\_index.md",
+        "title": "変数とパラメータ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\files.md",
+        "title": "ファイル変数",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\git.md",
+        "title": "GIt Info 変数",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\menus.md",
+        "title": "メニューエントリ プロパティ",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\page.md",
+        "title": "ページ変数",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\pages.md",
+        "title": "ページメソッド",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\shortcodes.md",
+        "title": "ショートコード変数",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\site.md",
+        "title": "サイト変数",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\sitemap.md",
+        "title": "サイトマップ変数",
+        "draft": false
+      },
+      {
+        "path": "content\\ja\\variables\\taxonomy.md",
+        "title": "タクソノミー変数",
+        "draft": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{{ $count := .Site.Data.i18n.ja.count }}
+<table>
+  <tr>
+    <th># of not translated</th>
+    <th># of translated</th>
+    <th># of total</th>
+    <th>% of translation</th>
+  </tr>
+  <tr>
+    <td>{{ $count.draft }}</td>
+    <td>{{ $count.notdraft }}</td>
+    <td>{{ $count.total }}</td>
+    <td>{{ $count.ratio }}</td>
+  </tr>
+</table>

@@ -1,0 +1,2425 @@
+{
+  "header": {
+    "date": "2022-10-18 03:27:09 +0900 JST",
+    "srcdir": "content/en",
+    "dstdir": "content/ja"
+  },
+  "paths": {
+    "contentfiles": [
+      {
+        "path": "content\\ja\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\about\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\about\\benefits.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\about\\features.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\about\\hugo-and-gdpr.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\about\\license.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\about\\security-model\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\about\\what-is-hugo.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion_bash.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion_fish.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion_powershell.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_completion_zsh.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_config.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_config_mounts.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_convert.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_convert_toJSON.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_convert_toTOML.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_convert_toYAML.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_deploy.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_env.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_gen.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_gen_chromastyles.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_gen_doc.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_gen_man.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_import.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_import_jekyll.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list_all.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list_drafts.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list_expired.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_list_future.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_clean.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_get.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_graph.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_init.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_npm.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_npm_pack.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_tidy.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_vendor.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_mod_verify.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_new.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_new_site.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_new_theme.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_server.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\commands\\hugo_version.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\archetypes.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\build-options.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\comments.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\cross-references.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\diagrams.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\formats.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\front-matter.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\image-processing\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\menus.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\multilingual.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\organization\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\page-bundles.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\page-resources.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\related.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\sections.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\shortcodes.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\static-files.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\summaries.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\syntax-highlighting.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\taxonomies.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\toc.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\types.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\urls.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\contribute\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\contribute\\development.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\contribute\\documentation.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\contribute\\themes.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\documentation.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\GetPage.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\RenderString.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\abslangurl.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\absurl.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\adddate.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\after.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\anchorize.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\append.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\apply.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\base64.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\chomp.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\complement.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\cond.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\countrunes.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\countwords.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\dateformat.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\default.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\delimit.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\dict.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\echoparam.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\emojify.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\eq.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\errorf.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\fileExists.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\findRe.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\first.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\float.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\format.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\ge.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\get.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\getenv.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\group.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\gt.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\hasPrefix.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\haschildren.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\hasmenucurrent.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\highlight.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\hmac.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\htmlEscape.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\htmlUnescape.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\hugo.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\humanize.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\i18n.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\images\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\in.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\index-function.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\int.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\intersect.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\ismenucurrent.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\isset.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\jsonify.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\lang.Merge.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\lang.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\last.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\le.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\len.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\lower.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\lt.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\markdownify.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\math.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\md5.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\merge.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\ne.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\now.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\os.Stat.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\param.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\partialCached.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\path.Base.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\path.BaseName.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\path.Clean.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\path.Dir.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\path.Ext.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\path.Join.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\path.Split.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\plainify.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\pluralize.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\print.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\printf.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\println.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\querify.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\range.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\readdir.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\readfile.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\ref.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\reflect.IsMap.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\reflect.IsSlice.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\relLangURL.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\relref.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\relurl.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\render.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\replace.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\replacere.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\safeCSS.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\safeHTML.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\safeHTMLAttr.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\safeJS.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\safeURL.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\scratch.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\seq.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\sha.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\shuffle.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\singularize.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\site.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\slice.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\slicestr.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\sort.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\split.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\string.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\strings.Count.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\strings.HasSuffix.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\strings.Repeat.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\strings.RuneCount.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\strings.TrimLeft.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\strings.TrimPrefix.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\strings.TrimRight.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\strings.TrimSuffix.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\substr.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\symdiff.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\templates.Exists.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\time.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\title.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\transform.Unmarshal.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\trim.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\truncate.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\union.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\uniq.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\unix.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\upper.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\urlize.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\urls.Parse.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\where.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\functions\\with.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\configuration-markup.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\configuration.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\directory-structure.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\external-learning-resources\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\installing.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\quick-start.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\usage.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\deployment-with-rclone.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\deployment-with-rsync.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-aws-amplify.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-cloudflare-pages.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-firebase.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-github.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-gitlab.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-keycdn.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-netlify.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hosting-on-render.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hosting-and-deployment\\hugo-deploy.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-modules\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-modules\\configuration.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-modules\\theme-components.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-modules\\use-modules.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\babel.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\bundling.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\fingerprint.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\introduction.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\js.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\minification.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\postcss.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\postprocess.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\resource-from-string.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\resource-from-template.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\hugo-pipes\\scss-sass.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\maintenance\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\myshowcase\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\myshowcase\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.10-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.11-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.12-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.13-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.14-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.15-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.16-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.17-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.18-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.19-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.20-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.20.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.20.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.20.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.20.4-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.20.5-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.20.6-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.20.7-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.21-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.22-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.22.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.23-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.24-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.24.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.25-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.25.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.26-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.27-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.27.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.28-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.29-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.30-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.30.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.30.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.31-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.31.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.32-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.32.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.32.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.32.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.32.4-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.33-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.34-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.35-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.36-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.36.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.37-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.37.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.38-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.38.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.38.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.39-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.40-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.40.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.40.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.40.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.41-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.42-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.42.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.42.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.43-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.44-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.45-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.45.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.46-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.47-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.47.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.48-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.49-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.49.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.49.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.50-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.51-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.52-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.53-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.54.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.55.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.55.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.55.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.55.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.55.4-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.55.5-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.55.6-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.56.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.56.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.56.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.56.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.57.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.57.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.57.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.58.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.58.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.58.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.58.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.59.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.59.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.60.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.60.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.61.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.62.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.62.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.62.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.63.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.63.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.63.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.64.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.64.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.65.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.65.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.65.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.65.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.66.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.67.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.67.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.68.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.68.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.68.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.68.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.69.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.69.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.69.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.7-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.70.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.71.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.71.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.72.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.73.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.74.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.74.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.74.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.74.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.75.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.75.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.76.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.76.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.76.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.76.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.76.4-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.76.5-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.77.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.78.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.78.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.78.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.79.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.79.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.8-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.80.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.81.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.82.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.82.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.83.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.83.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.84.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.84.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.84.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.84.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.84.4-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.85.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.86.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.86.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.87.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.88.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.88.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.89.0-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.89.1-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.89.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.89.3-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.89.4-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.9-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\2021\\0.91.2-relnotes\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\2021-12-17-no-more-releasenotes.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\hugo-macos-intel-vs-arm\\index.html",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\lets-celebrate-hugos-5th-birthday\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\readfiles\\README.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\readfiles\\dateformatting.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\readfiles\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\readfiles\\pages-vs-site-pages.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\readfiles\\sectionvars.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\1password-support\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\1password-support\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\bypasscensorship\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\bypasscensorship\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\digitalgov\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\digitalgov\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\fireship\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\fireship\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\flesland-flis\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\flesland-flis\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\forestry\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\forestry\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\godot-tutorials\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\godot-tutorials\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hapticmedia\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hapticmedia\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hartwell-insurance\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hartwell-insurance\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\keycdn\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\keycdn\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\letsencrypt\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\letsencrypt\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\linode\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\linode\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\over\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\over\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\pharmaseal\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\pharmaseal\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\quiply-employee-communications-app\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\quiply-employee-communications-app\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\small-multiples\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\small-multiples\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\template\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\template\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\tomango\\bio.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\tomango\\index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\404.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\alternatives.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\base.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\data-templates.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\files.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\homepage.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\internal.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\introduction.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\lists.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\lookup-order.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\menu-templates.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\ordering-and-grouping.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\output-formats.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\pagination.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\partials.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\render-hooks.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\robots.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\rss.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\section-templates.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\shortcode-templates.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\single-page-templates.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\sitemap-template.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\taxonomy-templates.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\template-debugging.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\templates\\views.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\tools\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\tools\\editors.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\tools\\frontends.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\tools\\migrations.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\tools\\other.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\tools\\search.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\tools\\starter-kits.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\troubleshooting\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\troubleshooting\\build-performance.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\troubleshooting\\faq.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\_index.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\files.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\git.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\menus.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\page.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\pages.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\shortcodes.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\site.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\sitemap.md",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\variables\\taxonomy.md",
+        "result": 1
+      }
+    ],
+    "notcontentfiles": [
+      {
+        "path": "content\\ja\\about\\security-model\\hugo-security-model-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\image-processing\\sunset.jpg",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\content-management\\organization\\1-featured-content-bundles.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\getting-started\\external-learning-resources\\hia.jpg",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\myshowcase\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.33-relnotes\\featured-hugo-33-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.34-relnotes\\featured-34-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.35-relnotes\\featured-hugo-35-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.36-relnotes\\featured-hugo-36-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.37-relnotes\\featured-hugo-37-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.38-relnotes\\featured-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.39-relnotes\\featured-hugo-39-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.40-relnotes\\featured-hugo-40-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.41-relnotes\\featured-hugo-41-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.42-relnotes\\featured-hugo-42-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.43-relnotes\\featured-hugo-43-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.44-relnotes\\featured-hugo-44-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.45-relnotes\\featured-hugo-45-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.46-relnotes\\featured-hugo-46-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.47-relnotes\\featured-hugo-47-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.48-relnotes\\featured-hugo-48-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.49-relnotes\\featured-hugo-49-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.50-relnotes\\featured-hugo-50-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.51-relnotes\\featured-hugo-51-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.52-relnotes\\featured-hugo-52-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.53-relnotes\\featured-hugo-53-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.54.0-relnotes\\featured-hugo-54.0-poster.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.55.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.56.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.57.0-relnotes\\hugo-57-poster-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.58.0-relnotes\\hugo58-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.59.0-relnotes\\hugo-59-poster-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.60.0-relnotes\\poster-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.60.1-relnotes\\featured-061.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.61.0-relnotes\\hugo-61-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.62.0-relnotes\\hugo-62-poster-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.63.0-relnotes\\featured-063.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.64.0-relnotes\\hugo-64-poster-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.65.0-relnotes\\hugo-65-poster-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.65.0-relnotes\\pg-admin-tos.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.66.0-relnotes\\hugo-66-poster-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.67.0-relnotes\\hugo-67-poster-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.68.0-relnotes\\hugo-68-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.69.0-relnotes\\hugo-69-easter-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.70.0-relnotes\\hugo-70-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.71.0-relnotes\\hugo-71-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.72.0-relnotes\\hugo-72-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.73.0-relnotes\\hugo-73-featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.74.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.75.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.76.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.77.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.78.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.79.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.80.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.81.0-relnotes\\featured.jpg",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.82.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.83.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.84.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.85.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.86.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.87.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.88.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\0.89.0-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\2021\\0.91.2-relnotes\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\hugo-macos-intel-vs-arm\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\lets-celebrate-hugos-5th-birthday\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\lets-celebrate-hugos-5th-birthday\\graph-stars.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\lets-celebrate-hugos-5th-birthday\\graph-themes.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\news\\lets-celebrate-hugos-5th-birthday\\sunset-get.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\readfiles\\testing.txt",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\1password-support\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\bypasscensorship\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\digitalgov\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\fireship\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\flesland-flis\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\forestry\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\godot-tutorials\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hapticmedia\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hartwell-insurance\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hartwell-insurance\\hartwell-columns.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hartwell-insurance\\hartwell-lighthouse.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\hartwell-insurance\\hartwell-webpagetest.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\keycdn\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\letsencrypt\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\linode\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\over\\featured-over.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\pharmaseal\\featured-pharmaseal.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\quiply-employee-communications-app\\featured.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\small-multiples\\featured-small-multiples.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\template\\featured-template.png",
+        "result": 1
+      },
+      {
+        "path": "content\\ja\\showcase\\tomango\\featured.png",
+        "result": 1
+      }
+    ]
+  }
+}

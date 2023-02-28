@@ -1,0 +1,27 @@
+{
+  "name": "gohugo-docs-ja",
+  "version": "1.0.0",
+  "description": "Japanese translation on GoLang and Hugo manual and other articles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juggernautjp/gohugo-docs-ja.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juggernautjp/gohugo-docs-ja/issues"
+  },
+  "homepage": "https://github.com/juggernautjp/gohugo-docs-ja#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.58.0",
+    "sass-true": "^7.0.0"
+  }
+}

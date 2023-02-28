@@ -1,0 +1,17 @@
+
+  [en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 2
+  
+  [ja]
+    contentDir = "content/ja"
+    languageName = "日本語"
+    weight = 1
+    time_format_default = "2006/02/01"
+    time_format_blog = "2006/02/01"
+
+  [zh]
+    contentDir = "content/zh"
+    languageName = "中文"
+    weight = 3

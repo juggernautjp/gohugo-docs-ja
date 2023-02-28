@@ -1,0 +1,170 @@
+[[docs]]
+  name = "Hugo について"
+  weight = 10
+  identifier = "about"
+  url = "/about/"
+
+[[docs]]
+  name = "インストール"
+  weight = 20
+  identifier = "installation"
+  url = "/installation/"
+
+[[docs]]
+  name = "Hugo 入門"
+  weight = 30
+  identifier = "getting-started"
+  url = "/getting-started/"
+
+[[docs]]
+  name = "Hugo モジュール"
+  weight = 40
+  identifier = "modules"
+  post = "break"
+  url = "/hugo-modules/"
+
+# Core Menus
+
+[[docs]]
+  name = "コンテンツ管理"
+  weight = 50
+  identifier = "content-management"
+  post = "expanded"
+  url = "/content-management/"
+
+[[docs]]
+  name = "テンプレート"
+  weight = 60
+  identifier = "templates"
+  url = "/templates/"
+
+[[docs]]
+  name = "関数"
+  weight = 70
+  identifier = "functions"
+  url = "/functions/"
+
+[[docs]]
+  name = "変数"
+  weight = 80
+  identifier = "variables"
+  url = "/variables/"
+[[docs]]
+  name = "Hugo パイプ"
+  weight = 90
+  identifier = "pipes"
+  url = "/hugo-pipes/"
+[[docs]]
+  name = "Hugo コマンド"
+  weight = 100
+  post = "break"
+  identifier = "commands"
+  url = "/commands/"
+
+
+# LOW LEVEL ITEMS
+
+
+[[docs]]
+  name = "トラブルシューティング"
+  weight = 110
+  identifier = "troubleshooting"
+  url = "/troubleshooting/"
+
+[[docs]]
+  name = "ツール"
+  weight = 120
+  identifier = "tools"
+  url = "/tools/"
+
+[[docs]]
+  name = "ホスティングとデプロイ"
+  weight = 130
+  identifier = "hosting-and-deployment"
+  url = "/hosting-and-deployment/"
+
+[[docs]]
+  name = "貢献"
+  weight = 140
+  post = "break"
+  identifier = "contribute"
+  url = "/contribute/"
+
+# for Japanese only
+
+[[docs]]
+  name = "日本語版について"
+  weight = 150
+  identifier = "hugo-ja"
+  url = "/hugo-ja/"
+
+
+#[[docs]]
+#  name = "Tags"
+#  weight = 120
+#  identifier = "tags"
+#  url = "/tags/"
+
+
+# [[docs]]
+#   name = "Categories"
+#   weight = 140
+#   identifier = "categories"
+#   url = "/categories/"
+
+######## QUICKLINKS
+
+  [[quicklinks]]
+    name = "基盤"
+    weight = 1
+    identifier = "fundamentals"
+    url = "/tags/fundamentals/"
+
+
+
+
+######## GLOBAL ITEMS TO BE SHARED WITH THE HUGO SITES
+
+[[global]]
+    name = "ニュース"
+    weight = 1
+    identifier = "news"
+    post = "external"
+    url = "https://gohugo.io/news/"
+
+  [[global]]
+    name = "ドキュメント"
+    weight = 5
+    identifier = "docs"
+    url = "/documentation/"
+
+  [[global]]
+    name = "テーマ"
+    weight = 10
+    identifier = "themes"
+    post = "external"
+    url = "https://themes.gohugo.io/"
+
+    [[global]]
+      name = "ショーケース"
+      weight = 20
+      identifier = "showcase"
+      post = "external"
+      url = "https://gohugo.io/showcase/"
+
+  # Anything with a weight > 100 gets an external icon
+  [[global]]
+    name = "コミュニティ"
+    weight = 150
+    identifier = "community"
+    post = "external"
+    url = "https://discourse.gohugo.io/"
+
+
+  [[global]]
+    name = "GitHub"
+    weight = 200
+    identifier = "github"
+    post = "external"
+    icon = "icons/github.svg"
+    url = "https://github.com/gohugoio/hugo"

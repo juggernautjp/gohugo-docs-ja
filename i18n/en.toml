@@ -1,0 +1,19 @@
+
+[see_also]
+other = "See Also"
+
+[read_more]
+other = "Read More"
+
+[syntax]
+other = "Syntax"
+
+[browse]
+other = "Browse"
+
+[translations]
+other = "translations"
+
+[wordCount]
+one = "One word"
+other = "{{ .Count }} words"

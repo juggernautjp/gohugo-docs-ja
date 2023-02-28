@@ -1,0 +1,8 @@
+github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20001-0.20220721080824-9446184f84a8 h1:MGXkdx5pMePxLV+NyQqnCs+D2jaE+yyq7v3v477VGkk=
+github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20001-0.20220721080824-9446184f84a8/go.mod h1:mFberT6ZtcchrsDtfvJM7aAH2bDKLdOnruUHl0hlapI=
+github.com/juggernautjp/hugo-widebs5-theme v0.1.1 h1:B1Og5rMLjmhlJOOhRPz206hRcqc1zY080r5qsxKI2zk=
+github.com/juggernautjp/hugo-widebs5-theme v0.1.1/go.mod h1:Dt1UVHvk8a/oP54RPKopdTXuDZqS/hLrG7PDzm1RJk8=
+github.com/twbs/bootstrap v5.3.0-alpha1.0.20230219083415-5241b988c015+incompatible h1:95/xNrpTa5SG3GAWGVICghRQEFDcg4uJSaztM8ck+hc=
+github.com/twbs/bootstrap v5.3.0-alpha1.0.20230219083415-5241b988c015+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
+github.com/twbs/bootstrap v5.3.0-alpha1.0.20230225180515-80ba84844399+incompatible h1:SNZFp84pfBt2EbMrtamrEYcLw3aMfbOSrSJw2QaXVBU=
+github.com/twbs/bootstrap v5.3.0-alpha1.0.20230225180515-80ba84844399+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=

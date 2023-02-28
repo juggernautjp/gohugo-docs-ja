@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+    <th>原語</th>
+    <th>訳語</th>
+    <th>補足</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{ $url := "/static/csv/glossary4.csv" }}
+  {{ $sep := "," }}
+  {{ range $i, $r := getCSV $sep $url }}
+    <tr>
+      <td>{{ index $r 0 }}</td>
+      <td>{{ index $r 1 }}</td>
+      <td>{{ index $r 2 }}</td>
+    </tr>
+  {{ end }}
+  </tbody>
+</table>
