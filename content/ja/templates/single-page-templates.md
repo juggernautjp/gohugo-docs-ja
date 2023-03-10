@@ -32,7 +32,7 @@ weight: 60
 
 ### `posts/single.html`
 
-このシングルページ テンプレートは、Hugo の [ベーステンプレート][base templates]、日付のための [`.Format` 関数][`.Format` function]、[`.WordCount` ページ変数][`.WordCount` page variable]、そしてシングルコンテンツ特有の [タクソノミー][pagetaxonomy] を通して範囲を使用します。 また、[`with`][] は、フロントマターにタクソノミーが設定されているかどうかをチェックするために使用されます。
+このシングルページ テンプレートは、Hugo の [ベーステンプレート][base templates]、日付のための [`.Format` 関数][`.Format` function]、[`.WordCount` ページ変数][pagevars]、そしてシングルコンテンツ特有の [タクソノミー][pagetaxonomy] を通して範囲を使用します。 また、[`with`][] は、フロントマターにタクソノミーが設定されているかどうかをチェックするために使用されます。
 
 {{< code file="layouts/posts/single.html" download="single.html" >}}
 {{ define "main" }}

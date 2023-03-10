@@ -1,149 +1,709 @@
 # This file holds all sidebar menu's entries.
 # The logic for the sidebar generation is in "site/layouts/partials/docs-sidebar.html".
 
-- title: Getting started
-  icon: book-half
-  icon_color: indigo
-  pages:
-    - title: Introduction
-    - title: Download
-    - title: Contents
-    - title: Browsers & devices
-    - title: JavaScript
-    - title: Webpack
-    - title: Parcel
-    - title: Vite
-    - title: Accessibility
-    - title: RFS
-    - title: RTL
-    - title: Contribute
-- title: Customize
-  icon: palette2
+- title: About Hugo
+  identifier: about
+  url: /about/
+  icon: hugo
   icon_color: pink
   pages:
     - title: Overview
-    - title: Sass
-    - title: Options
-    - title: Color
-    - title: Color modes
-    - title: Components
-    - title: CSS variables
-    - title: Optimize
-- title: Layout
-  icon: grid-fill
-  icon_color: teal
-  pages:
-    - title: Breakpoints
-    - title: Containers
-    - title: Grid
-    - title: Columns
-    - title: Gutters
-    - title: Utilities
-    - title: Z-index
-    - title: CSS Grid
-- title: Content
-  icon: file-earmark-richtext
-  icon_color: gray
-  pages:
-    - title: Reboot
-    - title: Typography
-    - title: Images
-    - title: Tables
-    - title: Figures
-- title: Forms
-  icon: ui-radios
-  icon_color: blue
+      url: /about/
+    - title: Security Model
+      url: /security-model/
+    - title: Hugo and GDPR
+      url: /hugo-and-gdpr/
+    - title: What is Hugo
+      url: /what-is-hugo/
+    - title: Hugo Features
+      url: /features/
+    - title: The Benefits of Static
+      url: /benefits/
+    - title: License
+      url: /lic/ense/
+- title: Installation
+  identifier: installation
+  url: /installation/
+  icon: building-gear
+  icon_color: yellow
   pages:
     - title: Overview
-    - title: Form control
-    - title: Select
-    - title: Checks & radios
-    - title: Range
-    - title: Input group
-    - title: Floating labels
-    - title: Layout
-    - title: Validation
-- title: Components
-  icon: menu-button-wide-fill
-  icon_color: cyan
-  pages:
-    - title: Accordion
-    - title: Alerts
-    - title: Badge
-    - title: Breadcrumb
-    - title: Buttons
-    - title: Button group
-    - title: Card
-    - title: Carousel
-    - title: Close button
-    - title: Collapse
-    - title: Dropdowns
-    - title: List group
-    - title: Modal
-    - title: Navbar
-    - title: Navs & tabs
-    - title: Offcanvas
-    - title: Pagination
-    - title: Placeholders
-    - title: Popovers
-    - title: Progress
-    - title: Scrollspy
-    - title: Spinners
-    - title: Toasts
-    - title: Tooltips
-- title: Helpers
-  icon: magic
-  icon_color: orange
-  pages:
-    - title: Clearfix
-    - title: Color & background
-    - title: Colored links
-    - title: Focus ring
-    - title: Icon link
-    - title: Position
-    - title: Ratio
-    - title: Stacks
-    - title: Stretched link
-    - title: Text truncation
-    - title: Vertical rule
-    - title: Visually hidden
-- title: Utilities
-  icon: braces-asterisk
-  icon_color: red
-  pages:
-    - title: API
-    - title: Background
-    - title: Borders
-    - title: Colors
-    - title: Display
-    - title: Flex
-    - title: Float
-    - title: Interactions
-    - title: Link
-    - title: Object fit
-    - title: Opacity
-    - title: Overflow
-    - title: Position
-    - title: Shadows
-    - title: Sizing
-    - title: Spacing
-    - title: Text
-    - title: Vertical align
-    - title: Visibility
-    - title: Z-index
-- title: Extend
-  icon: tools
-  icon_color: blue
-  pages:
-    - title: Approach
-    - title: Icons
-- title: About
-  icon: globe2
+      url: /installation/
+    - title: macOS
+      url: /macos/
+    - title: Linux
+      url: /linux/
+    - title: Windows
+      url: /windows/
+    - title: BSD
+      url: /bsd/
+- title: Getting started
+  identifier: getting-started
+  url: /getting-started/
+  icon: book-half
   icon_color: indigo
   pages:
     - title: Overview
-    - title: Team
-    - title: Brand
-    - title: License
-    - title: Translations
-- title: Migration
+      url: /getting-started/
+    - title: Quick Start
+      url: /quick-start/
+    - title: Basic Usage
+      url: /usage/
+    - title: Directory Structure
+      url: /directory-structure/
+    - title: Configuration
+      url: /configuration/
+    - title: Configure Markup
+      url: /configuration-markup/
+    - title: External Learning Resources
+      url: /external-learning-resources/
+- title: Hugo Modules
+  identifier: modules
+  url: /hugo-modules/
+  icon: grid-fill
+  icon_color: pink
+  pages:
+    - title: Overview
+      url: /hugo-modules/
+    - title: Configure Modules
+      url: /configuration/
+    - title: Use Hugo Modules
+      url: /use-modules/
+    - title: Theme Components
+      url: /theme-components/
+- title: Content Management
+  identifier: content-management
+  url: /content-management
+  icon: diagram-3
+  icon_color: teal
+  pages:
+    - title: Overview
+      url: /content-management
+    - title: Organization
+      url: /organization/
+    - title: Page Bundles
+      url: /page-bundles/
+    - title: Content Formats
+      url: /formats/
+    - title: Diagrams
+      url: /diagrams/
+    - title: Front Matter
+      url: /front-matter/
+    - title: Build Options
+      url: /build-options/
+    - title: Page Resources
+      url: /page-resources/
+    - title: Image Processing
+      url: /image-processing/
+    - title: Shortcodes
+      url: /shortcodes/
+    - title: Related Content
+      url: /related/
+    - title: Sections
+      url: /sections/
+    - title: Content Types
+      url: /types/
+    - title: Archetypes
+      url: /archetypes/
+    - title: Taxonomies
+      url: /taxonomies/
+    - title: Summaries
+      url: /summaries/
+    - title: Links and Cross References
+      url: /cross-references/
+    - title: URL Management
+      url: /urls/
+    - title: Menus
+      url: /menus/
+    - title: Static Files
+      url: /static-files/
+    - title: Table of Contents
+      url: /toc/
+    - title: Comments
+      url: /comments/
+    - title: Multilingual
+      url: /multilingual/
+    - title: Syntax Highlighting
+      url: /syntax-highlighting/
+- title: Templates
+  identifier: templates
+  url: /templates/
+  icon: code-slash
+  icon_color: blue
+  pages:
+    - title: Overview
+      url: /templates/
+    - title: Templating
+      url: /introduction/
+    - title: Template Lookup Order
+      url: /lookup-order/
+    - title: Custome Output Formats
+      url: /output-formats/
+    - title: Base Templates and Blocks
+      url: /base/
+    - title: Render Hooks
+      url: /render-hooks/
+    - title: List Templates
+      url: /lists/
+    - title: Homepage Template
+      url: /homepage/
+    - title: Section Templates
+      url: /section-templates/
+    - title: Taxonomy Templates
+      url: /taxonomy-templates/
+    - title: Single Page Templates
+      url: /single-page-templates/
+    - title: Content View Templates
+      url: /views/
+    - title: Data Templates
+      url: /data-templates/
+    - title: Partial Templates
+      url: /partials/
+    - title: Shortcode Templates
+      url: /shortcode-templates/
+    - title: Local File Templates
+      url: /files/
+    - title: 404 Page
+      url: /404/
+    - title: Menu Templates
+      url: /menu-templates/
+    - title: Pagination
+      url: /pagination/
+    - title: RSS Templates
+      url: /rss/
+    - title: Sitemap Templates
+      url: /sitemap-template/
+    - title: Robots.txt
+      url: /robots/
+    - title: Internal Templates
+      url: /internal/
+    - title: Templating Debugging
+      url: /template-debugging/
+- title: Functions
+  identifier: functions
+  url: /functions/
+  icon: menu-button-wide-fill
+  icon_color: cyan
+  pages:
+    - title: Functions Quick Reference
+      url: /functions/
+    - title: .AddDate
+      url: /adddate/
+    - title: .Format
+      url: /format/
+    - title: .Get
+      url: /get/
+    - title: .GetPage
+      url: /GetPage/
+    - title: .HasMenuCurrent
+      url: /hasmenucurrent/
+    - title: .IsMenuCurrent
+      url: /ismenucurrent/
+    - title: .Param
+      url: /param/
+    - title: .Render
+      url: /render/
+    - title: .RenderString
+      url: /RenderString/
+    - title: .Scratch
+      url: /scratch/
+    - title: .Unix
+      url: /unix/
+    - title: absLangURL
+      url: /abslangurl/
+    - title: absURL
+      url: /absurl/
+    - title: after
+      url: /after/
+    - title: anchorize
+      url: /anchorize/
+    - title: append
+      url: /append/
+    - title: apply
+      url: /apply/
+    - title: base64
+      url: /base64/
+    - title: chomp
+      url: /chomp/
+    - title: complement
+      url: /complement/
+    - title: cond
+      url: /cond/
+    - title: countrunes
+      url: /countrunes/
+    - title: countwords
+      url: /countwords/
+    - title: crypto.FNV32a
+      url: /crypto.FNV32a/
+    - title: default
+      url: /default/
+    - title: delimit
+      url: /delimit/
+    - title: dict
+      url: /dict/
+    - title: duration
+      url: /duration/
+    - title: echoParam
+      url: /echoparam/
+    - title: emojify
+      url: /emojify/
+    - title: eq
+      url: /eq/
+    - title: errorf and warnf
+      url: /errorf/
+    - title: fileExists
+      url: /fileExists/
+    - title: findRE
+      url: /findRe/
+    - title: first
+      url: /first/
+    - title: float
+      url: /float/
+    - title: ge
+      url: /ge/
+    - title: getenv
+      url: /getenv/
+    - title: group
+      url: /group/
+    - title: gt
+      url: /gt/
+    - title: hasPrefix
+      url: /hasPrefix/
+    - title: highlight
+      url: /highlight/
+    - title: hmac
+      url: /hmac/
+    - title: htmlEscape
+      url: /htmlEscape/
+    - title: htmlUnescape
+      url: /htmlUnescape/
+    - title: hugo
+      url: /hugo/
+    - title: humanize
+      url: /humanize/
+    - title: i18n
+      url: /i18n/
+    - title: Image Filters
+      url: /images/
+    - title: in
+      url: /in/
+    - title: index
+      url: /index-function/
+    - title: int
+      url: /int/
+    - title: intersect
+      url: /intersect/
+    - title: isset
+      url: /isset/
+    - title: jsonify
+      url: /jsonify/
+    - title: lang
+      url: /lang/
+    - title: lang.Merge
+      url: /lang.Merge/
+    - title: last
+      url: /last/
+    - title: le
+      url: /le/
+    - title: len
+      url: /len/
+    - title: lower
+      url: /lower/
+    - title: lt
+      url: /lt/
+    - title: markdownify
+      url: /markdownify/
+    - title: Math
+      url: /math/
+    - title: md5
+      url: /md5/
+    - title: merge
+      url: /merge/
+    - title: ne
+      url: /ne/
+    - title: now
+      url: /now/
+    - title: os.Stat
+      url: /os.Stat/
+    - title: partialCached
+      url: /partialCached/
+    - title: path.Base
+      url: /path.Base/
+    - title: path.BaseName
+      url: /path.BaseName/
+    - title: path.Clean
+      url: /path.Clean/
+    - title: path.Dir
+      url: /path.Dir/
+    - title: path.Ext
+      url: /path.Ext/
+    - title: path.Join
+      url: /path.Join/
+    - title: path.Split
+      url: /path.Split/
+    - title: plainify
+      url: /plainify/
+    - title: pluralize
+      url: /pluralize/
+    - title: print
+      url: /print/
+    - title: printf
+      url: /printf/
+    - title: println
+      url: /println/
+    - title: querify
+      url: /querify/
+    - title: range
+      url: /range/
+    - title: readDir
+      url: /readdir/
+    - title: readFile
+      url: /readfile/
+    - title: ref
+      url: /ref/
+    - title: reflect.IsMap
+      url: /reflect.IsMap/
+    - title: reflect.IsSlice
+      url: /reflect.IsSlice/
+    - title: refLangURL
+      url: /relLangURL/
+    - title: relref
+      url: /relref/
+    - title: refURL
+      url: /relurl/
+    - title: replace
+      url: /replace/
+    - title: replaceRE
+      url: /replacere/
+    - title: safeCSS
+      url: /safeCSS/
+    - title: safeHTML
+      url: /safeHTML/
+    - title: safeHTMLAttr
+      url: /safeHTMLAttr/
+    - title: safeJS
+      url: /safeJS/
+    - title: safeURL
+      url: /safeURL/
+    - title: seq
+      url: /seq/
+    - title: sha
+      url: /sha/
+    - title: shuffle
+      url: /shuffle/
+    - title: singularize
+      url: /singularize/
+    - title: site
+      url: /site/
+    - title: slice
+      url: /slice/
+    - title: slicestr
+      url: /slicestr/
+    - title: sort
+      url: /sort/
+    - title: split
+      url: /split/
+    - title: string
+      url: /string/
+    - title: strings.Contains
+      url: /strings.Contains/
+    - title: strings.ContainsAny
+      url: /strings.ContainsAny/
+    - title: strings.Count
+      url: /strings.Count/
+    - title: strings.FirstUpper
+      url: /strings.FirstUpper/
+    - title: strings.HasSuffix
+      url: /strings.HasSuffix/
+    - title: strings.Repeat
+      url: /strings.Repeat/
+    - title: strings.RuneCount
+      url: /strings.RuneCount/
+    - title: strings.TrimLeft
+      url: /strings.TrimLeft/
+    - title: strings.TrimRight
+      url: /strings.TrimRight/
+    - title: strings.TrimSuffix
+      url: /strings.TrimSuffix/
+    - title: substr
+      url: /substr/
+    - title: symdiff
+      url: /symdiff/
+    - title: templates.Exists
+      url: /templates.Exists/
+    - title: time
+      url: /time/
+    - title: time.Format
+      url: /dateformat/
+    - title: time.ParseDuration
+      url: /time.ParseDuration/
+    - title: title
+      url: /title/
+    - title: transform.Unmarshal
+      url: /transform.Unmarshal/
+    - title: trim
+      url: /trim/
+    - title: truncate
+      url: /truncate/
+    - title: union
+      url: /union/
+    - title: uniq
+      url: /uniq/
+    - title: upper
+      url: /upper/
+    - title: urlize
+      url: /urlize/
+    - title: urlquery
+      url: /urlquery/
+    - title: urls.Parse
+      url: /urls.Parse/
+    - title: where
+      url: /where/
+    - title: with
+      url: /with/
+- title: Variables
+  identifier: variables
+  url: /variables/
+  icon: braces-asterisk
+  icon_color: red
+  pages:
+    - title: Overview
+      url: /variables/
+    - title: Site Variables
+      url: /site/
+    - title: Page Variables
+      url: /page/
+    - title: Shortcode Variables
+      url: /shortcodes/
+    - title: Page Methods
+      url: /pages/
+    - title: Taxonomy Variables
+      url: /taxonomy/
+    - title: File Variables
+      url: /files/
+    - title: Menu Entry Properties
+      url: /menus/
+    - title: Git Variables
+      url: /git/
+    - title: Sitemap Variables
+      url: /sitemap/
+- title: Hugo Pipes
+  identifier: pipes
+  url: /hugo-pipes/
+  icon: distribute-horizontal
+  icon_color: orange
+  pages:
+    - title: Overview
+      url: /hugo-pipes/
+    - title: Hugo Pipes
+      url: /introduction/
+    - title: Sass / SCSS
+      url: /scss-sass/
+    - title: PostProcess
+      url: /postprocess/
+    - title: PostCSS
+      url: /postcss/
+    - title: JavaScript Building
+      url: /js/
+    - title: Babel
+      url: /babel/
+    - title: Asset minification
+      url: /minification/
+    - title: Asset bundling
+      url: /bundling/
+    - title: Fingerprinting and SRI
+      url: /fingerprint/
+    - title: Resource from Template
+      url: /resource-from-template/
+    - title: Resource from String
+      url: /resource-from-string/
+- title: CLI
+  identifier: commands
+  url: /commands/
+  icon: terminal
+  icon_color: green
+  pages:
+    - title: Overview
+      url: /commands/
+    - title: hugo (cli)
+      url: /hugo/
+    - title: hugo completion
+      url: /hugo_completion/
+    - title: hugo completion bash
+      url: /hugo_completion_bash/
+    - title: hugo completion fish
+      url: /hugo_completion_fish/
+    - title: hugo completion powershell
+      url: /hugo_completion_powershell/
+    - title: hugo completion zsh
+      url: /hugo_completion_zsh/
+    - title: hugo config
+      url: /hugo_config/
+    - title: hugo config mounts
+      url: /hugo_config_mounts/
+    - title: hugo convert
+      url: /hugo_convert/
+    - title: hugo convert toJSON
+      url: /hugo_convert_toJSON/
+    - title: hugo convert toTOML
+      url: /hugo_convert_toTOML/
+    - title: hugo convert toYAML
+      url: /hugo_convert_toYAML/
+    - title: hugo deploy
+      url: /hugo_deploy/
+    - title: hugo env
+      url: /hugo_env/
+    - title: hugo gen
+      url: /hugo_gen/
+    - title: hugo gen chromastyles
+      url: /hugo_gen_chromastyles/
+    - title: hugo gen doc
+      url: /hugo_gen_doc/
+    - title: hugo gen man
+      url: /hugo_gen_man/
+    - title: hugo import
+      url: /hugo_import/
+    - title: hugo import jekyll
+      url: /hugo_import_jekyll/
+    - title: hugo list
+      url: /hugo_list/
+    - title: hugo list all
+      url: /hugo_list_all/
+    - title: hugo list drafts
+      url: /hugo_list_drafts/
+    - title: hugo list expired
+      url: /hugo_list_expired/
+    - title: hugo list future
+      url: /hugo_list_future/
+    - title: hugo mod
+      url: /hugo_mod/
+    - title: hugo mod clean
+      url: /hugo_mod_clean/
+    - title: hugo mod get
+      url: /hugo_mod_get/
+    - title: hugo mod graph
+      url: /hugo_mod_graph/
+    - title: hugo mod init
+      url: /hugo_mod_init/
+    - title: hugo mod npm
+      url: /hugo_mod_npm/
+    - title: hugo mod npm pack
+      url: /hugo_mod_npm_pack/
+    - title: hugo mod tidy
+      url: /hugo_mod_tidy/
+    - title: hugo mod vendor
+      url: /hugo_mod_vendor/
+    - title: hugo mod verify
+      url: /hugo_mod_verify/
+    - title: hugo new
+      url: /hugo_new/
+    - title: hugo new site
+      url: /hugo_new_site/
+    - title: hugo new theme
+      url: /hugo_new_theme/
+    - title: hugo server
+      url: /hugo_server/
+    - title: hugo version
+      url: /hugo_version/
+- title: Troubleshooting
+  identifier: troubleshooting
+  url: /troubleshooting/
+  icon: question-square
+  icon_color: orange
+  pages:
+    - title: Troubleshoot
+      url: /troubleshooting/
+    - title: FAQ
+      url: /faq/
+    - title: Build Performance
+      url: /build-performance/
+- title: Tools
+  identifier: tools
+  url: /tools/
+  icon: tools
+  icon_color: blue
+  pages:
+    - title: Developer Tools Overview
+      url: /tools/
+    - title: Migrations
+      url: /migrations/
+    - title: Starter Kits
+      url: /starter-kits/
+    - title: Frontends
+      url: /frontends/
+    - title: Editor Plug-ins
+      url: /editors/
+    - title: Search
+      url: /search/
+    - title: Other Projects
+      url: /other/
+- title: Hosing & Deployment
+  identifier: hosting-and-deployment
+  url: /hosting-and-deployment/
+  icon: cloud-upload
+  icon_color: cyan
+  pages:
+    - title: Overview
+      url: /hosting-and-deployment/
+    - title: Hugo Deploy
+      url: /hugo-deploy/
+    - title: Hugo on 21YunBox
+      url: /hosting-on-21yunbox/
+    - title: Host on AWS Amplify
+      url: /hosting-on-aws-amplify/
+    - title: Host on Azure Static Web Apps
+      url: /hosting-on-azure-static-web-apps/
+    - title: Host on Netlify
+      url: /hosting-on-netlify/
+    - title: Host on Render
+      url: /hosting-on-render/
+    - title: Host on Firebase
+      url: /hosting-on-firebase/
+    - title: Host on GitHub
+      url: /hosting-on-github/
+    - title: Host on GitLab
+      url: /hosting-on-gitlab/
+    - title: Host on Cloudflare Pages
+      url: /hosting-on-cloudflare-pages/
+    - title: Deployment with Rsync
+      url: /deployment-with-rsync/
+    - title: Deployment with Rclone
+      url: /deployment-with-rclone/
+    - title: Hosting on Azure Static Web Apps
+      url: /hosting-on-azure-static-web-apps/
+- title: Contribute
+  identifier: contribute
+  url: /contribute/
+  icon: people-fill
+  icon_color: indigo
+  pages:
+    - title: Contribute to Hugo
+      url: /contribute/
+    - title: Development
+      url: /development/
+    - title: Documentation
+      url: /documentation/
+    - title: Themes
+      url: /themes/
+- title: Translation
+  identifier: hugo-ja
+  url: /hugo-ja/
+  icon: globe2
+  icon_color: red
+  pages:
+    - title: About this Project
+      url: /hugo-ja/
+    - title: Difference between the other project
+      url: /abount/
+    - title: Translation Policy
+      url: /policy/
+    - title: Translation Progress
+      url: /status/
+    - title: Translation Details
+      url: /i18n/
+    - title: Glossary
+      url: /glossary
+    - title: Contribute to Translation
+      url: /contribute/
+    - title: Change History
+      url: /changes/
