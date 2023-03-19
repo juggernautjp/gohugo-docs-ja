@@ -18,7 +18,7 @@ menu:
   quicklinks: null
 publishdate: "2017-02-01"
 sections_weight: 15
-title: Hugo の検索順序
+title: テンプレートの検索順序
 toc: true
 weight: 15
 ---

@@ -1,3 +1,4 @@
+{{- $docs_version_menu := .Site.Params.menuDocsVersion -}}
 <header class="navbar navbar-expand-lg bd-navbar sticky-top">
   <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
     {{- if eq .Layout "docs" }}
@@ -38,6 +39,12 @@
  
         <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
           <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link py-2 px-0 px-lg-2" href="{{ .Site.Params.search_url }}">
+              {{ partial "icons/search.svg" (dict "class" "navbar-nav-svg" "width" "16" "height" "16") }}
+              <small class="d-lg-none ms-2">Search</small>
+            </a>
+          </li>
+          <li class="nav-item col-6 col-lg-auto">
             <a class="nav-link py-2 px-0 px-lg-2" href="{{ .Site.Params.github_org }}" target="_blank" rel="noopener">
               {{ partial "icons/github.svg" (dict "class" "navbar-nav-svg" "width" "16" "height" "16") }}
               <small class="d-lg-none ms-2">GitHub</small>
@@ -49,22 +56,26 @@
               <small class="d-lg-none ms-2">Twitter</small>
             </a>
           </li>
+          {{- /* disable OpenCollective
           <li class="nav-item col-6 col-lg-auto">
             <a class="nav-link py-2 px-0 px-lg-2" href="{{ .Site.Params.opencollective }}" target="_blank" rel="noopener">
               {{ partial "icons/opencollective.svg" (dict "class" "navbar-nav-svg" "width" "16" "height" "16") }}
               <small class="d-lg-none ms-2">Open Collective</small>
             </a>
           </li>
+          */ -}}
           <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
             <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
             <hr class="d-lg-none my-2 text-white-50">
           </li>
 
+        {{- if $docs_version_menu -}}
           {{ partial "docs-versions" . }}
           <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
             <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
             <hr class="d-lg-none my-2 text-white-50">
           </li>
+        {{- end -}}
 
           <li class="nav-item dropdown">
             <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"

@@ -96,7 +96,7 @@ Hugo は上記の Markdown を受け取り、`## Introduction`、`## My Heading`
 
 ## AsciiDoc での使用方法 {#usage-with-asciidoc}
 
-Hugo は、AsciiDoc コンテンツフォーマットで目次をサポートしています。
+Hugo は、AsciiDoc コンテンツ形式で目次をサポートしています。
 
 コンテンツファイルのヘッダーで、目次を確実に生成するために必要な AsciiDoc TOC ディレクティブを指定します。 Hugo は生成された TOC を使用して、Markdown で説明したのと同じ方法でページ変数 `.TableOfContents` を設定します。 以下の例を参照してください。
 

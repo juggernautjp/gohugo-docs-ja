@@ -6,20 +6,20 @@ aliases:
 categories:
 - content management
 date: "2017-01-10"
-description: HTML と Markdown の両方のコンテンツフォーマットをサポートしています。
+description: HTML と Markdown の両方のコンテンツ形式をサポートしています。
 draft: false
 keywords:
 - markdown
 - asciidoc
 - pandoc
 - content format
-linktitle: コンテンツフォーマット
+linktitle: コンテンツ形式
 menu:
   docs:
     parent: content-management
     weight: 40
 publishdate: "2017-01-10"
-title: コンテンツフォーマット
+title: コンテンツ形式
 toc: true
 weight: 40
 ---
@@ -30,9 +30,9 @@ weight: 40
 * 処理済み [ショートコード](/content-management/shortcodes/)
 * 適用されたレイアウト
 
-## コンテンツフォーマットの一覧 {#list-of-content-formats}
+## コンテンツ形式の一覧 {#list-of-content-formats}
 
-下表は、Hugo の現在のコンテンツフォーマットの一覧です。
+下表は、Hugo の現在のコンテンツ形式の一覧です。
 
 | 名前  | マークアップ識別子 | コメント |
 | ------------- | ------------- |-------------|

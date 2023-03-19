@@ -24,7 +24,7 @@ display ("inline")
 : `inline` または `block` です。 `inline` (デフォルト) の場合、短いスニペットの周囲の `<p></p>` がトリミングされます。
 
 markup (defaults to the Page's markup)
-: [「コンテンツフォーマットの一覧」](/content-management/formats/#list-of-content-formats) の識別子を参照してください。
+: [「コンテンツ形式の一覧」](/content-management/formats/#list-of-content-formats) の識別子を参照してください。
 
 以下に、いくつかの例を挙げます。
 

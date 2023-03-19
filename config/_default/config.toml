@@ -24,9 +24,6 @@ publishDir = "public"
 disableLanguages = ["en", "zh"]
 
 [options]
-# experimental: use Dart SASS (dart-sass-embedded) instead of LibSASS
-dartsass = false
-
 # added for image path of https://domain/subdir. but not support multilingual!
 canonifyURLs = true
 

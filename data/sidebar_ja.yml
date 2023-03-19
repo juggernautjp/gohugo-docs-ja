@@ -1,33 +1,33 @@
 # This file holds all sidebar menu's entries.
 # The logic for the sidebar generation is in "site/layouts/partials/docs-sidebar.html".
 
-- title: About Hugo
+- title: Hugo について
   identifier: about
   url: /about/
   icon: hugo
   icon_color: pink
   pages:
-    - title: Overview
+    - title: 概要
       url: /about/
-    - title: Security Model
+    - title: Hugo のセキュリティモデル
       url: /security-model/
-    - title: Hugo and GDPR
+    - title: Hugo と GDPR
       url: /hugo-and-gdpr/
-    - title: What is Hugo
+    - title: Hugo とは
       url: /what-is-hugo/
-    - title: Hugo Features
+    - title: Hugo の機能
       url: /features/
-    - title: The Benefits of Static
+    - title: SSG のメリット
       url: /benefits/
-    - title: License
+    - title: ライセンス
       url: /license/
-- title: Installation
+- title: インストール
   identifier: installation
   url: /installation/
   icon: building-gear
   icon_color: yellow
   pages:
-    - title: Overview
+    - title: 概要
       url: /installation/
     - title: macOS
       url: /macos/
@@ -37,155 +37,155 @@
       url: /windows/
     - title: BSD
       url: /bsd/
-- title: Getting started
+- title: Hugo 入門
   identifier: getting-started
   url: /getting-started/
   icon: book-half
   icon_color: indigo
   pages:
-    - title: Overview
+    - title: 概要
       url: /getting-started/
-    - title: Quick Start
+    - title: クイックスタート
       url: /quick-start/
-    - title: Basic Usage
+    - title: 基本的な使用方法
       url: /usage/
-    - title: Directory Structure
+    - title: ディレクトリ構造
       url: /directory-structure/
-    - title: Configuration
+    - title: Hugo の設定
       url: /configuration/
-    - title: Configure Markup
+    - title: マークアップの設定
       url: /configuration-markup/
-    - title: External Learning Resources
+    - title: 外部の学習リソース
       url: /external-learning-resources/
-- title: Hugo Modules
+- title: Hugo モジュール
   identifier: modules
   url: /hugo-modules/
   icon: grid-fill
   icon_color: pink
   pages:
-    - title: Overview
+    - title: 概要
       url: /hugo-modules/
-    - title: Configure Modules
+    - title: モジュールを設定する
       url: /configuration/
-    - title: Use Hugo Modules
+    - title: Hugo モジュールを使用する
       url: /use-modules/
-    - title: Theme Components
+    - title: テーマ コンポーネント
       url: /theme-components/
-- title: Content Management
+- title: コンテンツ管理
   identifier: content-management
   url: /content-management
   icon: diagram-3
   icon_color: teal
   pages:
-    - title: Overview
+    - title: 概要
       url: /content-management
-    - title: Organization
+    - title: コンテンツ構成
       url: /organization/
-    - title: Page Bundles
+    - title: ページバンドル
       url: /page-bundles/
-    - title: Content Formats
+    - title: コンテンツフォーマット
       url: /formats/
-    - title: Diagrams
+    - title: ダイアグラム
       url: /diagrams/
-    - title: Front Matter
+    - title: フロントマター
       url: /front-matter/
-    - title: Build Options
+    - title: ビルドオプション
       url: /build-options/
-    - title: Page Resources
+    - title: ページリソース
       url: /page-resources/
-    - title: Image Processing
+    - title: 画像処理
       url: /image-processing/
-    - title: Shortcodes
+    - title: ショートコード
       url: /shortcodes/
-    - title: Related Content
+    - title: 関連コンテンツ
       url: /related/
-    - title: Sections
+    - title: セクション
       url: /sections/
-    - title: Content Types
+    - title: コンテンツタイプ
       url: /types/
-    - title: Archetypes
+    - title: アーキタイプ
       url: /archetypes/
-    - title: Taxonomies
+    - title: タクソノミー
       url: /taxonomies/
-    - title: Summaries
+    - title: サマリー
       url: /summaries/
-    - title: Links and Cross References
+    - title: リンクとクロスリファレンス
       url: /cross-references/
-    - title: URL Management
+    - title: URL 管理
       url: /urls/
-    - title: Menus
+    - title: メニュー
       url: /menus/
-    - title: Static Files
+    - title: 静的ファイル
       url: /static-files/
-    - title: Table of Contents
+    - title: 目次
       url: /toc/
-    - title: Comments
+    - title: コメント
       url: /comments/
-    - title: Multilingual
+    - title: 多言語対応
       url: /multilingual/
-    - title: Syntax Highlighting
+    - title: シンタックスハイライト
       url: /syntax-highlighting/
-- title: Templates
+- title: テンプレート
   identifier: templates
   url: /templates/
   icon: code-slash
   icon_color: blue
   pages:
-    - title: Overview
+    - title: 概要
       url: /templates/
-    - title: Templating
+    - title: テンプレート入門
       url: /introduction/
-    - title: Template Lookup Order
+    - title: テンプレートの検索順序
       url: /lookup-order/
-    - title: Custome Output Formats
+    - title: カスタム出力形式
       url: /output-formats/
-    - title: Base Templates and Blocks
+    - title: ベーステンプレートとブロック
       url: /base/
-    - title: Render Hooks
+    - title: レンダーフック
       url: /render-hooks/
-    - title: List Templates
+    - title: リストテンプレート
       url: /lists/
-    - title: Homepage Template
+    - title: ホームページ テンプレート
       url: /homepage/
-    - title: Section Templates
+    - title: セクションページ テンプレート
       url: /section-templates/
-    - title: Taxonomy Templates
+    - title: タクソノミー テンプレート
       url: /taxonomy-templates/
-    - title: Single Page Templates
+    - title: シングルページ テンプレート
       url: /single-page-templates/
-    - title: Content View Templates
+    - title: コンテンツビュー テンプレート
       url: /views/
-    - title: Data Templates
+    - title: データテンプレート
       url: /data-templates/
-    - title: Partial Templates
+    - title: 部分テンプレート
       url: /partials/
-    - title: Shortcode Templates
+    - title: ショートコード テンプレート
       url: /shortcode-templates/
-    - title: Local File Templates
+    - title: ローカルファイル テンプレート
       url: /files/
-    - title: 404 Page
+    - title: 404 ページ
       url: /404/
-    - title: Menu Templates
+    - title: メニューテンプレート
       url: /menu-templates/
-    - title: Pagination
+    - title: ページ付け
       url: /pagination/
-    - title: RSS Templates
+    - title: RSS テンプレート
       url: /rss/
-    - title: Sitemap Templates
+    - title: サイトマップ テンプレート
       url: /sitemap-template/
     - title: Robots.txt
       url: /robots/
-    - title: Internal Templates
+    - title: 内部テンプレート
       url: /internal/
-    - title: Templating Debugging
+    - title: テンプレートのデバッグ
       url: /template-debugging/
-- title: Functions
+- title: 関数
   identifier: functions
   url: /functions/
   icon: menu-button-wide-fill
   icon_color: cyan
   pages:
-    - title: Functions Quick Reference
+    - title: 関数のクイックリファレンス
       url: /functions/
     - title: .AddDate
       url: /adddate/
@@ -249,7 +249,7 @@
       url: /emojify/
     - title: eq
       url: /eq/
-    - title: errorf and warnf
+    - title: errorf と warnf
       url: /errorf/
     - title: fileExists
       url: /fileExists/
@@ -283,7 +283,7 @@
       url: /humanize/
     - title: i18n
       url: /i18n/
-    - title: Image Filters
+    - title: 画像フィルター
       url: /images/
     - title: in
       url: /in/
@@ -461,69 +461,69 @@
       url: /where/
     - title: with
       url: /with/
-- title: Variables
+- title: 変数
   identifier: variables
   url: /variables/
   icon: braces-asterisk
   icon_color: red
   pages:
-    - title: Overview
+    - title: 概要
       url: /variables/
-    - title: Site Variables
+    - title: サイト変数
       url: /site/
-    - title: Page Variables
+    - title: ページ変数
       url: /page/
-    - title: Shortcode Variables
+    - title: ショートコード変数
       url: /shortcodes/
-    - title: Page Methods
+    - title: ページメソッド
       url: /pages/
-    - title: Taxonomy Variables
+    - title: タクソノミー変数
       url: /taxonomy/
-    - title: File Variables
+    - title: ファイル変数
       url: /files/
-    - title: Menu Entry Properties
+    - title: メニューエントリ プロパティ
       url: /menus/
-    - title: Git Variables
+    - title: GIt 変数
       url: /git/
-    - title: Sitemap Variables
+    - title: サイトマップ変数
       url: /sitemap/
-- title: Hugo Pipes
+- title: Hugo パイプ
   identifier: pipes
   url: /hugo-pipes/
   icon: distribute-horizontal
   icon_color: orange
   pages:
-    - title: Overview
+    - title: 概要
       url: /hugo-pipes/
-    - title: Hugo Pipes
+    - title: Hugo パイプ入門
       url: /introduction/
     - title: Sass / SCSS
       url: /scss-sass/
-    - title: PostProcess
+    - title: 後処理 (PostProcess)
       url: /postprocess/
     - title: PostCSS
       url: /postcss/
-    - title: JavaScript Building
+    - title: JavaScript のビルド
       url: /js/
     - title: Babel
       url: /babel/
-    - title: Asset minification
+    - title: アセットのミニファイ
       url: /minification/
-    - title: Asset bundling
+    - title: アセットバンドル
       url: /bundling/
-    - title: Fingerprinting and SRI
+    - title: フィンガープリントと SRI
       url: /fingerprint/
-    - title: Resource from Template
+    - title: テンプレートからのリソース
       url: /resource-from-template/
-    - title: Resource from String
+    - title: 文字列からのリソース
       url: /resource-from-string/
-- title: CLI
+- title: Hugo コマンド
   identifier: commands
   url: /commands/
   icon: terminal
   icon_color: green
   pages:
-    - title: Overview
+    - title: 概要
       url: /commands/
     - title: hugo (cli)
       url: /hugo/
@@ -605,105 +605,107 @@
       url: /hugo_server/
     - title: hugo version
       url: /hugo_version/
-- title: Troubleshooting
+- title: トラブルシューティング
   identifier: troubleshooting
   url: /troubleshooting/
   icon: question-square
   icon_color: orange
   pages:
-    - title: Troubleshoot
+    - title: トラブルシューティング
       url: /troubleshooting/
     - title: FAQ
       url: /faq/
-    - title: Build Performance
+    - title: ビルド性能
       url: /build-performance/
-- title: Tools
+- title: ツール
   identifier: tools
   url: /tools/
   icon: tools
   icon_color: blue
   pages:
-    - title: Developer Tools Overview
+    - title: デベロッパーツールの概要
       url: /tools/
-    - title: Migrations
+    - title: Hugo への移行
       url: /migrations/
-    - title: Starter Kits
+    - title: スターターキット
       url: /starter-kits/
-    - title: Frontends
+    - title: フロントエンド
       url: /frontends/
-    - title: Editor Plug-ins
+    - title: エディター プラグイン
       url: /editors/
-    - title: Search
+    - title: 検索
       url: /search/
-    - title: Other Projects
+    - title: その他のプロジェクト
       url: /other/
-- title: Hosing & Deployment
+- title: ホスティングとデプロイ
   identifier: hosting-and-deployment
   url: /hosting-and-deployment/
   icon: cloud-upload
   icon_color: cyan
   pages:
-    - title: Overview
+    - title: 概要
       url: /hosting-and-deployment/
-    - title: Hugo Deploy
+    - title: Hugo デプロイ
       url: /hugo-deploy/
-    - title: Hugo on 21YunBox
+    - title: 21YunBox でのホスト
       url: /hosting-on-21yunbox/
-    - title: Host on AWS Amplify
+    - title: AWS Amplify でのホスト
       url: /hosting-on-aws-amplify/
-    - title: Host on Azure Static Web Apps
+    - title: Azure Static Web Apps でのホスト
       url: /hosting-on-azure-static-web-apps/
-    - title: Host on Netlify
+    - title: Netlify でのホスト
       url: /hosting-on-netlify/
-    - title: Host on Render
+    - title: Render でのホスト
       url: /hosting-on-render/
-    - title: Host on Firebase
+    - title: Firebase でのホスト
       url: /hosting-on-firebase/
-    - title: Host on GitHub
+    - title: GitHub でのホスト
       url: /hosting-on-github/
-    - title: Host on GitLab
+    - title: GitLab でのホスト
       url: /hosting-on-gitlab/
-    - title: Host on Cloudflare Pages
+    - title: KeyCDN でのホスト
+      url: /hosting-on-keycdn/
+    - title: Cloudflare Pages でのホスト
       url: /hosting-on-cloudflare-pages/
-    - title: Deployment with Rsync
+    - title: Rsync を使ったデプロイメント
       url: /deployment-with-rsync/
-    - title: Deployment with Rclone
+    - title: Rclone を使ったデプロイメント
       url: /deployment-with-rclone/
-    - title: Hosting on Azure Static Web Apps
+    - title: Azure Static Web Apps でのホスティング
       url: /hosting-on-azure-static-web-apps/
-- title: Contribute
+- title: 貢献
   identifier: contribute
   url: /contribute/
   icon: people-fill
   icon_color: indigo
   pages:
-    - title: Contribute to Hugo
+    - title: Hugo への貢献
       url: /contribute/
-    - title: Development
+    - title: 開発に貢献する
       url: /development/
-    - title: Documentation
+    - title: ドキュメント作成に貢献する
       url: /documentation/
-    - title: Themes
+    - title: テーマ
       url: /themes/
-- title: Translation
+- title: Hugo 日本語訳について
   identifier: hugo-ja
   url: /hugo-ja/
   icon: globe2
   icon_color: red
   pages:
-    - title: About this Project
+    - title: Hugo 日本語訳プロジェクト
       url: /hugo-ja/
-    - title: Difference between the other project
+    - title: 他の日本語訳プロジェクトとの違い
       url: /abount/
-    - title: Translation Policy
+    - title: 日本語翻訳ポリシー
       url: /policy/
-    - title: Translation Progress
+    - title: 翻訳状況
       url: /status/
-    - title: Translation Details
+    - title: 翻訳状況の詳細
       url: /i18n/
-    - title: Glossary
+    - title: 翻訳用語集
       url: /glossary
-    - title: Contribute to Translation
+    - title: 日本語版への貢献
       url: /contribute/
-    - title: Change History
+    - title: 変更履歴
       url: /changes/

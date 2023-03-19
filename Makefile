@@ -13,13 +13,13 @@ demo:
 # -D --port 9001 --bind 0.0.0.0
 
 update:
-	$(GO_BIN) get -u github.com/juggernautjp/hugo-widebs5-theme@v0.1.1
+	$(GO_BIN) get -u github.com/juggernautjp/hugo-widebs5-theme@main
 	$(GO_BIN) get -u github.com/twbs/bootstrap@main
 	$(GO_BIN) get -u github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@main
 
 reget:
 	$(GO_BIN) mod tidy
-	$(HUGO_BIN) mod get github.com/juggernautjp/hugo-widebs5-theme@v0.1.1
+	$(HUGO_BIN) mod get github.com/juggernautjp/hugo-widebs5-theme@main
 
 verify:
 	$(HUGO_BIN) mod verify
@@ -31,8 +31,9 @@ vendor:
 	$(HUGO_BIN) mod vendor
 
 clean:
-	rm -rf ./public
-	$(HUGO_BIN) mod clean
+	rm -rf public
+	rm -rf _vendor
+#	$(HUGO_BIN) mod clean
 #	$(GO_BIN) clean -modcache
 
 copycontent: 
