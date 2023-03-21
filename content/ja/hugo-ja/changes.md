@@ -25,10 +25,22 @@ toc: true
 ## 変更履歴
 
 
-### 2022年12月03日、公開
+### 2023年03月26日の変更
 
-- Hugo ドキュメント v0.105.0 を日本語訳したサイトを GitHub Pages で公開し、下記 Qiita の記事にて告知
-- Qiita、[Hugo ドキュメント (日本語訳) を公開しました](https://qiita.com/juggernautjp/items/07496d0c2fa1f592f548) 
+- テーマを Hugo 公式サイトのテーマから Bootstrap v5.3.0-alpha1 のテーマに変更
+- ホスティングサービスを [GitHub Pages]() から [Cloudflare Pages](https://www.cloudflare.com/ja-jp/products/pages/) に変更
+- サイト URL を [juggernautjp.info](https://juggernautjp.info/) に変更
+- Google で検索可能に
+- サイト内検索を可能に
+- 上記のサイトを Cloudflare Pages で公開し、下記 Qiita の記事にて告知
+- Qiita、[Hugo ドキュメント (日本語訳) を公開し直しました](https://qiita.com/juggernautjp/items/)
+
+
+### 2022年12月26日の変更
+
+- 翻訳し忘れたファイルの翻訳追加
+  - functions/len.md (`len` 関数)
+  - functions/images/index.md (画像フィルター)
 
 
 ### 2022年12月20日の変更
@@ -47,8 +59,9 @@ toc: true
     - hosting-and-deployment/hosting-on-azure.md
 
 
-### 2022年12月26日の変更
+### 2022年12月03日、公開
 
-- 翻訳し忘れたファイルの翻訳追加
-  - functions/len.md (`len` 関数)
-  - functions/images/index.md (画像フィルター)
+- Hugo ドキュメント v0.105.0 を日本語訳したサイトを [GitHub Pages で公開し](https://juggernautjp.github.io/hugo-docs-ja/documentation/)、下記 Qiita の記事にて告知
+- Qiita、[Hugo ドキュメント (日本語訳) を公開しました](https://qiita.com/juggernautjp/items/07496d0c2fa1f592f548)
+
+

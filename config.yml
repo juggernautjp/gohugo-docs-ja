@@ -2,7 +2,7 @@ languageCode:           "en"
 title:                  "Bootstrap"
 # baseURL:                "https://getbootstrap.com"
 baseURL:                "https://gohugo-docs-ja.pages.dev/"
-theme:     "github.com/juggernautjp/hugo-widebs5-theme"
+theme:     "github.ecom/juggernautjp/hugo-widebs5-them"
 # theme:     "hugo-widebs5-theme"
 
 security:
@@ -78,7 +78,7 @@ params:
   docs_version:         "5.3"
   rfs_version:          "v9.0.6"
   github_org:           "github.com/juggernautjp"
-  repo:                 "github.com/juggernautjp/hugo-widebs5-example"
+  repo:                 "github.com/juggernautjp/gohugo-docs-ja"
   twitter:              "getbootstrap"
   opencollective:       "https://opencollective.com/bootstrap"
   blog:                 "https://blog.getbootstrap.com/"

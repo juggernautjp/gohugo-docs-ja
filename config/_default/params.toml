@@ -14,8 +14,16 @@ gitter = "https://gitter.im/spf13/hugo"
 forum = "https://discourse.gohugo.io/"
 ## Google Tag Manager
 gtmid = ""
-## Flexsearch URL
+## Search URL by Flexsearch
 search_url = "/search"
+
+# footer links
+hugo_hp = "https://gohugo.io/"
+bootstrap_hp = "https://getbootstrap.com/"
+cloudflare_pages = "https://www.cloudflare.com/ja-jp/products/pages/"
+
+# [View on GitHub] links
+repo = "https://github.com/juggernautjp/gohugo-docs-ja"
 
 # First one is picked as the Twitter card image if not set on page.
 images = ["images/gohugoio-card.png"]
@@ -25,11 +33,13 @@ flex_box_interior_classes = "flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-
 #sidebar_direction = "sidebar_left"
 
 
+# The followings are .Site.Params for hugo-theme-zen:
+# The Sass transpiler to use, default "libsass".
+sassTranspiler = "dartsass"
+# Max number of search hits, default 20.
+searchLimit = 20
+
 # The followings are .Site.Params for hugo-widebs5-theme:
-
-# experimental: use Dart SASS (dart-sass-embedded) instead of LibSASS
-dartsass = false
-
 # include for "Carbon Ads" (only Bootstrap site)
 enableCarbonAds = false
 

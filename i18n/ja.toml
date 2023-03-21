@@ -17,3 +17,21 @@ other = "翻訳"
 [wordCount]
 one = "1 文字"
 other = "{{ .Count }} 文字"
+
+[search_placeholder]
+other = "検索したい用語を入力します。"
+
+[search_title]
+other = "検索"
+
+[search_loading]
+other = "検索インデックスをロードしています..."
+
+[title_here]
+other = "タイトル"
+
+[date_here]
+other = "日付"
+
+[summary_here]
+other = "要約"

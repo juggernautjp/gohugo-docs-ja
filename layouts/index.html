@@ -1,0 +1,17 @@
+{{ define "title" }}{{ site.Title }}{{ end }}
+
+{{ define "main" -}}
+<main class="main layout__main">
+<div class="content">
+{{ .Content }}
+</div>
+
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $paginator := .Paginate $pages -}}
+{{ range $paginator.Pages -}}
+{{ .Render "summary"}}
+{{ end -}}
+
+{{ partial "pagination.html" . }}
+</main>
+{{ end }}

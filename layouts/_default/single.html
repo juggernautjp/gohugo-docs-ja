@@ -11,7 +11,7 @@
             {{- if .Page.Params.added -}}
               <small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">Added in v{{ .Page.Params.added }}</small>
             {{- end -}}
-            <a class="btn btn-sm btn-bd-light rounded-2" href="{{ .Site.Params.repo }}/blob/v{{ .Site.Params.current_version }}/site/content/{{ .Page.File.Path | replaceRE `\\` "/" }}" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+            <a class="btn btn-sm btn-bd-light rounded-2" href="{{ .Site.Params.repo }}/{{ .Page.File.Path | replaceRE `\\` "/" }}" title="View and edit this file on GitHub" target="_blank" rel="noopener">
               View on GitHub
             </a>
           </div>
@@ -45,15 +45,7 @@
   </div>
 {{ end }}
 {{ define "footer" }}
-  {{ if .HasShortcode "search" -}}
-  {{ $flexsearch := resources.Get "vendor/flexsearch.compact.js" | fingerprint -}}
-  <script defer src="{{ $flexsearch.RelPermalink }}"></script>
-  {{ $search_opts := dict "minify" true "params" (dict "searchLimit" (site.Params.searchLimit | default 20)) -}}
-  {{ $search := resources.Get "js/search.js" | js.Build $search_opts | fingerprint -}}
-  <script defer src="{{ $search.RelPermalink }}"></script>
-  {{ end -}}
-
-  {{ range .Page.Params.extra_js -}}
+ {{ range .Page.Params.extra_js -}}
     <script{{ with .async }} async{{ end }} src="{{ .src }}"></script>
   {{- end -}}
   <div class="position-fixed" aria-hidden="true"><input type="text" tabindex="-1"></div>

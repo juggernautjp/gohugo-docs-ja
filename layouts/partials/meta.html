@@ -1,0 +1,30 @@
+{{ range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" {{ printf "type=%q" .MediaType.Type | safeHTMLAttr }} title="{{ .Name }}" href="{{ .Permalink | safeURL }}">
+{{ end -}}
+<meta name="description" content="{{ with (.Description | default (replaceRE "\n" " " (.Plain | truncate 170))) }}{{ . }}{{ end }}">
+<meta name="created" {{ printf "content=%q" (.Date.Format "2006-01-02T15:04:05-0700") | safeHTMLAttr }}>
+<meta name="modified" {{ printf "content=%q" (.Lastmod.Format "2006-01-02T15:04:05-0700") | safeHTMLAttr }}>
+{{ with $.Param "author" }}<meta name="author" content="{{ . }}">{{ end }}
+{{ with $.Param "contact" }}<meta name="contact" content="{{ . }}">{{ end }}
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+{{ with $.Param "image" }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ hugo.Generator }}
+<meta name="msapplication-TileColor" content="{{ $.Param "themecolor" | default "#ffffff" }}">
+<meta name="theme-color" content="{{ $.Param "themecolor" | default "#ffffff" }}">
+{{ with site.Params.piwikTrackerUrl }}<link rel="dns-prefetch" href="https://{{ . }}">{{ end }}
+{{ with $.Param "microusername" }}<link rel="me" href="https://micro.blog/{{ . }}">{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ if .IsTranslated -}}
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Language.Params.LanguageCode | default .Lang }}" href="{{ .Permalink }}">
+{{ end -}}
+{{ end -}}
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+{{ if $.Param "realfavicongenerator" -}}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+{{ end -}}

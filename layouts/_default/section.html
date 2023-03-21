@@ -11,7 +11,7 @@
               {{- if .Page.Params.added -}}
                 <small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">Added in v{{ .Page.Params.added }}</small>
               {{- end -}}
-              <a class="btn btn-sm btn-bd-light rounded-2" href="{{ .Site.Params.repo }}/blob/v{{ .Site.Params.current_version }}/site/content/{{ .Page.File.Path | replaceRE `\\` "/" }}" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+              <a class="btn btn-sm btn-bd-light rounded-2" href="{{ .Site.Params.repo }}/{{ .Page.File.Path | replaceRE `\\` "/" }}" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a>
             </div>

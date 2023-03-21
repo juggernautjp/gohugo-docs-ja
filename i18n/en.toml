@@ -17,3 +17,21 @@ other = "translations"
 [wordCount]
 one = "One word"
 other = "{{ .Count }} words"
+
+[search_placeholder]
+other = "Enter the terms you wish to search for."
+
+[search_title]
+other = "Search"
+
+[search_loading]
+other = "Loading search index…"
+
+[title_here]
+other = "Title here"
+
+[date_here]
+other = "Date here"
+
+[summary_here]
+other = "Summary here"

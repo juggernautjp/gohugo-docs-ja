@@ -1,19 +1,13 @@
 {{/* cite from docsy-ja */}}
 {{ $scssMain := "scss/main.scss"}}
-{{ $dartsassOption := (dict "transpiler" "dartsass") -}}
+{{ $ptions := (dict "transpiler" (site.Params.sassTranspiler | default "libsass")) -}}
 {{ if not hugo.IsProduction }}
   {{/* Note the missing postCSS. This makes it snappier to develop in Chrome, but makes it look sub-optimal in other browsers. */}}
-  {{ $options := (dict "enableSourceMap" true) -}}
-  {{ if .Site.Params.options.dartsass -}}
-    {{ $options := merge $dartsassOption $options -}}
-  {{ end -}}
+  {{ $options = merge $options (dict "enableSourceMap" true) -}}
 {{ $css := resources.Get $scssMain | toCSS $options -}}
 <link href="{{ $css.RelPermalink }}" rel="stylesheet">
 {{ else }}
-  {{ $options := (dict "enableSourceMap" false) -}}
-  {{ if .Site.Params.options.dartsass -}}
-    {{ $options := merge $dartsassOption $options -}}
-  {{ end -}}
+  {{ $options = merge $options (dict "enableSourceMap" false) -}}
 {{ $css := resources.Get $scssMain | toCSS $options | postCSS | minify | fingerprint -}}
 <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
 <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">

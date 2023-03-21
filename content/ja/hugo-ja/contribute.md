@@ -35,11 +35,13 @@ GitHub Sponsors に参加して寄付を募集する予定でいます。
 
 ## 誤字脱字など翻訳の問題報告について
 
-本プロジェクトは、[gohugoio/hugoDocs](https://github.com/gohugoio/hugoDocs) の Fork です。~~が、Fork したプロジェクトでは、Issue 機能は使えないようです。~~
+本プロジェクトは、[gohugoio/hugoDocs](https://github.com/gohugoio/hugoDocs) の Fork です。
+~~が、Fork したプロジェクトでは、Issue 機能は使えないようです。~~
 
 本サイトで公開した日本語訳において、誤字脱字や誤訳などを見つけた場合は、下記 GitHug リポジトリの Issue を発行して連絡してください。
 
-- [GitHub Issues](https://github.com/juggernautjp/hugo-docs-ja/issues)
+- ~~[GitHub Issues](https://github.com/juggernautjp/hugo-docs-ja/issues)~~ - 旧サイト
+- [GitHub Issues](https://github.com/juggernautjp/gohugo-docs-ja/issues) - 新サイト
 
 > **注意**: 本プロジェクトの問題は、本家、[gohugoio/hugoDocs](https://github.com/gohugoio/hugoDocs) の Issue に投稿しないようにお願いします。
 
@@ -47,7 +49,9 @@ GitHub Sponsors に参加して寄付を募集する予定でいます。
 
 ## 本プロジェクトの GitHub リポジトリ
 
-- [juggernautjp/hugo-docs-ja](https://github.com/juggernautjp/hugo-docs-ja) - 翻訳ドキュメントのリポジトリ
+- [juggernautjp/gohugo-docs-ja](https://github.com/juggernautjp/gohugo-docs-ja) - 翻訳ドキュメントの新リポジトリ
+- [juggernautjp/hugo-widebs5-theme](https://github.com/juggernautjp/hugo-widebs5-theme) - 翻訳ドキュメントの使用する Hugo テーマ
+- [juggernautjp/hugo-docs-ja](https://github.com/juggernautjp/hugo-docs-ja) - 翻訳ドキュメントの旧リポジトリ
 - [juggernautjp/hugo-docs-i18n](https://github.com/juggernautjp/hugo-docs-i18n) - 翻訳ドキュメント管理のための CLI セット (WIP)
 
 

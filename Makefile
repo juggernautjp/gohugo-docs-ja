@@ -5,7 +5,7 @@ NPM_BIN=npm
 
 .PHONY: build demo release
 
-build:
+build: clean
 	$(HUGO_BIN) --cleanDestinationDir
 
 demo:
