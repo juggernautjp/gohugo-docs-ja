@@ -33,9 +33,9 @@ Hugo では、[サイト全体のパラメータ][sitevars] (つまり、 [設�
 $.Param "image"
 ```
 
-{{% note %}}
+{{< note >}}
 `Param` メソッドは、コンテンツのフロントマターの空文字列を "not found" と見なさないことがあります。 Hugo のアーキタイプを使用して、あらかじめ設定されたフロントマター フィールドを空文字列に設定している場合は、 `Param` の代わりに [`default` 関数](/functions/default/) を使用すると良いかもしれません。 これについては、[GitHub の関連する問題](https://github.com/gohugoio/hugo/issues/3366) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 
 [configuration]: /getting-started/configuration/

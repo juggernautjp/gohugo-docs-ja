@@ -20,7 +20,7 @@ toc: false
 
 {{% note "Rendering Local Files" %}}
 For information on creating shortcodes and templates that tap into Hugo's file-related feature set, see [Local File Templates](/templates/files/).
-{{% /note %}}
+{{< /note >}}
 
 The `.File` object contains the following fields:
 

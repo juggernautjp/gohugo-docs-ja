@@ -54,7 +54,7 @@ Disallow: {{ .RelPermalink }}
 
 このテンプレートは、サイトの各ページに `Disallow` ディレクティブを含む robots.txt ファイルを作成します。 ロボット排除プロトコル (Robots Exclusion Protocol) を尊重する検索エンジンは、サイト上のどのページもクロールしないようにします。
 
-{{% note %}}
+{{< note >}}
 テンプレートを使用せずに robots.txt ファイルを作成するには、以下を実行します。
 
 1. [サイト設定][config] で `enableRobotsTXT` を `false` に設定します。
@@ -64,7 +64,7 @@ Hugo は、サイトをビルドするときに、[static ディレクトリ][st
 
 [config]: /getting-started/configuration/
 [static]: /getting-started/directory-structure/
-{{% /note %}}
+{{< /note >}}
 
 [config]: /getting-started/configuration/
 [internal]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/robots.txt

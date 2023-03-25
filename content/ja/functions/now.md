@@ -45,7 +45,7 @@ workson: []
 
 上記の例では、[`.Format`関数](/functions/format) を使用しています。このページには、Go のレイアウト文字列を使用した日付フォーマットの完全なリストが含まれています。
 
-{{% note %}}
+{{< note >}}
 古い Hugo テーマでは、廃止された Page の `.Now` (先頭にドットが付いた大文字) をまだ使用している可能性があり、以下のようなビルドエラーが発生します。
 
     ERROR ... Error while rendering "..." in "...": ...
@@ -53,4 +53,4 @@ workson: []
     can't evaluate field Now in type *hugolib.PageOutput
 
 テンプレートには、必ず `now` (小文字で、先頭のドットが _**ない**_) を使用してください。
-{{% /note %}}
+{{< /note >}}

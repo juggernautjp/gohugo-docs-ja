@@ -48,7 +48,7 @@ Hugo passes reasonable default arguments to these external helpers by default:
 
 {{% warning "Performance of External Helpers" %}}
 Because additional formats are external commands, generation performance will rely heavily on the performance of the external tool you are using. As this feature is still in its infancy, feedback is welcome.
-{{% /warning %}}
+{{< /warning >}}
 
 ### External Helper AsciiDoc
 
@@ -62,9 +62,9 @@ The Asciidoctor community offers a wide set of tools for the AsciiDoc format tha
 [See the Asciidoctor docs for installation instructions](https://asciidoctor.org/docs/install-toolchain/). Make sure that also all
 optional extensions like `asciidoctor-diagram` or `asciidoctor-html5s` are installed if required.
 
-{{% note %}}
+{{< note >}}
 External `asciidoctor` command requires Hugo rendering to _disk_ to a specific destination directory. It is required to run Hugo with the command option `--destination`.
-{{% /note %}}
+{{< /note >}}
 
 Some [Asciidoctor](https://asciidoctor.org/man/asciidoctor/) parameters can be customized in Hugo:
 

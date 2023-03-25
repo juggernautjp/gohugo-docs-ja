@@ -51,9 +51,9 @@ Since v0.18, [everything in Hugo is a `Page`][bepsays]. This means list pages an
 
 This new model allows you to include list-specific front matter via `.Params` and also means that list templates (e.g., `layouts/_default/list.html`) have access to all [page variables][pagevars].
 
-{{% note %}}
+{{< note >}}
 It is important to note that all `_index.md` content files will render according to a *list* template and not according to a [single page template](/templates/single-page-templates/).
-{{% /note %}}
+{{< /note >}}
 
 ### Example Project Directory
 
@@ -154,9 +154,9 @@ Using this same `layouts/_default/list.html` template and applying it to the `qu
 <!--baseof-->
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 The default behavior of Hugo is to pluralize list titles; hence the inflection of the `quote` section to "Quotes" when called with the `.Title` [page variable](/variables/page/). You can change this via the `pluralizeListTitles` directive in your [site configuration](/getting-started/configuration/).
-{{% /note %}}
+{{< /note >}}
 
 ## Example List Templates
 

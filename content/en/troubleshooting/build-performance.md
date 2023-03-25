@@ -69,13 +69,13 @@ Template Metrics:
        72.547µs       6.595µs      63.764µs     11  partials/footer.html
 ```
 
-{{% note %}}
+{{< note >}}
 **A Note About Parallelism**
 
 Hugo builds pages in parallel where multiple pages are generated
 simultaneously. Because of this parallelism, the sum of "cumulative duration"
 values is usually greater than the actual time it takes to build a site.
-{{% /note %}}
+{{< /note >}}
 
 ## Cached Partials
 
@@ -85,10 +85,10 @@ the desired output, the template may benefit from caching to reduce the number
 of executions. The [`partialCached`][partialcached] template function provides
 caching capabilities for `partial` templates.
 
-{{% tip %}}
+{{< tip >}}
 Note that you can create cached variants of each `partial` by passing additional
 parameters to `partialCached` beyond the initial context. See the
 `partialCached` documentation for more details.
-{{% /tip %}}
+{{< /tip >}}
 
 [partialCached]:{{< ref "/functions/partialCached.md" >}}

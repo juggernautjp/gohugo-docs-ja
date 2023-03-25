@@ -96,9 +96,9 @@ respectDoNotTrack
 useSessionStorage
 : これを有効にすると、Cookie の使用が無効になり、セッション ストレージを使用して GA クライアント ID が保存されます。
 
-{{% warning %}}
+{{< warning >}}
 Google アナリティクス v4 (gtag.js) を使用する場合、`useSessionStorage` はサポートされません。
-{{% /warning %}}
+{{< /warning >}}
 
 ### Instagram
 

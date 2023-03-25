@@ -59,9 +59,9 @@ v0.18 以降、[Hugo にある全てのものは `Page` です][bepsays]。 つ�
 
 この新しいモデルでは、`.Params` を介してリスト固有のフロントマターを含めることができ、また、リストテンプレート (たとえば、`layouts/_default/list.html`) がすべての [ページ変数][pagevars] にアクセスできることも意味します。
 
-{{% note %}}
+{{< note >}}
 すべての `_index.md` コンテンツファイルは、[シングルページ テンプレート](/templates/single-page-templates/) ではなく、*リスト* テンプレートに従ってレンダリングされることに注意してください。
-{{% /note %}}
+{{< /note >}}
 
 ### プロジェクト ディレクトリの例 {#example-project-directory}
 
@@ -162,9 +162,9 @@ publishdate: 2017-03-24
 <!--baseof-->
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 Hugo のデフォルトの動作は、リストのタイトルを複数形にすることです。 したがって、`.Title` [ページ変数](/variables/page/) で呼び出されると、`quote` セクションが "Quotes" に変換されます。 これは、[サイト設定](/getting-started/configuration/) の `pluralizeListTitles` ディレクティブで変更できます。
-{{% /note %}}
+{{< /note >}}
 
 ## リストテンプレートの例 {#example-list-templates}
 

@@ -81,7 +81,7 @@ guessSyntax
 : Boolean. デフォルトは、 `false` です。\
 `LANG` パラメータが空白または認識できない言語の場合、可能であれば言語を自動検出し、そうでなければフォールバック言語を使用します。
 
-{{% note %}}
+{{< note >}}
 `lineNos` と `lineNumbersInTable` の両方を指定する代わりに、以下の省略記法を使用することができます。
 
 `lineNos=inline`
@@ -89,7 +89,7 @@ guessSyntax
 
 `lineNos=table`
 : `lineNos=true` および `lineNumbersInTable=true` と同等です。
-{{% /note %}}
+{{< /note >}}
 
 ## 例 {#examples}
 

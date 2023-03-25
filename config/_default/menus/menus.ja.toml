@@ -161,10 +161,10 @@
     url = "https://discourse.gohugo.io/"
 
 
-  [[global]]
-    name = "GitHub"
-    weight = 200
-    identifier = "github"
-    post = "external"
-    icon = "icons/github.svg"
-    url = "https://github.com/gohugoio/hugo"
+#  [[global]]
+#    name = "GitHub"
+#    weight = 200
+#    identifier = "github"
+#    post = "external"
+#    icon = "icons/github.svg"
+#    url = "https://github.com/gohugoio/hugo"

@@ -121,14 +121,14 @@ GetMatch
 
 The page resources' metadata is managed from the corresponding page's front matter with an array/table parameter named `resources`. You can batch assign values using [wildcards](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm).
 
-{{% note %}}
+{{< note >}}
 Resources of type `page` get `Title` etc. from their own front matter.
-{{% /note %}}
+{{< /note >}}
 
 name
 : Sets the value returned in `Name`.
 
-{{% warning %}}
+{{< warning >}}
 The methods `Match`, `Get` and `GetMatch` use `Name` to match the resources.
 {{%/ warning %}}
 
@@ -174,7 +174,7 @@ From the example above:
 - All `PDF` files will get a new `Name`. The `name` parameter contains a special placeholder [`:counter`](#the-counter-placeholder-in-name-and-title), so the `Name` will be `pdf-file-1`, `pdf-file-2`, `pdf-file-3`.
 - Every docx in the bundle will receive the `word` icon.
 
-{{% warning %}}
+{{< warning >}}
 The __order matters__ --- Only the **first set** values of the `title`, `name` and `params`-**keys** will be used. Consecutive parameters will be set only for the ones not already set. In the above example, `.Params.icon` is first set to `"photo"` in `src = "documents/photo_specs.pdf"`. So that would not get overridden to `"pdf"` by the later set `src = "**.pdf"` rule.
 {{%/ warning %}}
 

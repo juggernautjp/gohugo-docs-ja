@@ -35,7 +35,7 @@ weight: 180
 
 {{% note "Default Publish and Content Folders" %}}
 これらの例では、 `publishDir` と `contentDir` にデフォルト値、つまりそれぞれ `public` と `content` を使用しています。デフォルト値は、[サイトの `config` ファイル](/getting-started/configuration/) でオーバーライドすることができます。
-{{% /note %}}
+{{< /note >}}
 
 たとえば、[セクション][section] の1つが `posts` という名前で、年、月、投稿タイトルに基づいて階層化するように正規のパスを調整したい場合、YAML と TOML でそれぞれ以下のように設定することが可能です。
 
@@ -270,7 +270,7 @@ content/posts/post-1.md
 
 {{% note "`canonifyURLs` default change" %}}
 2014年5月にリリースされた Hugo v0.11 では、`canonifyURLs` のデフォルト値が `true` から `false` に変更されましたが、これはより良いデフォルトであり、今後もそうあるべきと考えています。 v0.10 またはそれ以前のバージョンからアップグレードする場合は、適宜確認・調整してください。
-{{% /note %}}
+{{< /note >}}
 
 Web サイトの `canonifyURLs` の現在の値を知るには、v0.13 で追加された便利な `hugo config` コマンドを使用できます。
 

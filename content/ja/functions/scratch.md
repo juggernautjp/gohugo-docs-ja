@@ -25,9 +25,9 @@ workson: []
 
 Scratch は、Go テンプレートの世界でデータを便利に操作するために設計された Hugo の機能です。ページやショートコードのメソッドで、結果のデータが指定されたコンテキストに添付されるか、変数に格納された一意のインスタンスとして存在できます。
 
-{{% note %}}
+{{< note >}}
 Scratch は当初、0.48 より前の Hugo バージョンに影響する [Go テンプレートのスコープ制限](https://github.com/golang/go/issues/10608) の回避策として作成されたことに注意してください。 `.Scratch` の詳細な分析とコンテキストに応じた使用例については、[このブログの記事](https://regisphilibert.com/blog/2017/04/hugo-scratch-explained-variable/) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ### コンテキストを持つ `.Scratch` とローカルの `newScratch` の比較 {#Contexted-scratch-vs-local-newscratch}
 
@@ -57,9 +57,9 @@ Hugo 0.43 以降、Scratch を使用する方法には、以下の 2 つあり�
 
 Scratch には、以下のメソッドがあります。
 
-{{% note %}}
+{{< note >}}
 以下の例では、[ローカルの Scratch インスタンス](#the-local-newscratch) が `$scratch` に保存されていると仮定していることに注意してください。
-{{% /note %}}
+{{< /note >}}
 
 #### .Set
 

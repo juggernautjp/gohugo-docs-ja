@@ -19,9 +19,9 @@ aliases: []
 
 `.GetPage` returns a page of a given `path`. Both `Site` and `Page` implements this method. The `Page` variant will, if given a relative path -- i.e. a path without a leading `/` -- try look for the page relative to the current page.
 
-{{% note %}}
+{{< note >}}
 **Note:** We overhauled and simplified the `.GetPage` API in Hugo 0.45. Before that you needed to provide a `Kind` attribute in addition to the path, e.g. `{{ .Site.GetPage "section" "blog" }}`. This will still work, but is now superfluous.
-{{% /note %}}
+{{< /note >}}
 
 
 ```go-html-template

@@ -21,15 +21,19 @@
 <meta name="robots" content="{{ . }}">
 {{- end }}
 
-{{- $colorModeJS := printf "/docs/%s/assets/js/color-modes.js" $.Site.Params.docs_version -}}
+{{- $colorModeJS :="/js/color-modes.js" -}}
 <script src="{{ $colorModeJS | relURL }}"></script>
 
 {{ partial "meta.html" . }}
-{{ partialCached "stylesheet" . }}
+{{/* bootstrap begin */}}
+{{ partial "stylesheet" . }}
+{{/* bootstrap end */}}
 {{- block "head" . }}{{ end }}
+{{/* bootstrap begin */}}
 {{ partial "favicons" . }}
 {{ partial "social" . }}
 {{ partial "analytics" . }}
+{{/* bootstrap begin */}}
 {{ partial "meta_json_ld.html" . }}
 {{ partial "scripts.html" . }}
 {{ partialCached "tracking.html" . }}

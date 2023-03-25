@@ -29,9 +29,9 @@ You can use the `.Param` method to call these values into your template. The fol
 $.Param "image"
 ```
 
-{{% note %}}
+{{< note >}}
 The `Param` method may not consider empty strings in a content's front matter as "not found." If you are setting preconfigured front matter fields to empty strings using Hugo's archetypes, it may be best to use the [`default` function](/functions/default/) instead of `Param`. See the [related issue on GitHub](https://github.com/gohugoio/hugo/issues/3366).
-{{% /note %}}
+{{< /note >}}
 
 
 [configuration]: /getting-started/configuration/

@@ -219,7 +219,7 @@ Hugo のショートコード機能の顕著な効率性を示すために、こ
 
 {{% note "More on Syntax Highlighting" %}}
 シンタックスハイライトされたコードブロックを Web サイトに追加するためのさらなるオプションについては、[「デベロッパーツールのシンタックスハイライト」](/tools/syntax-highlighting/)  を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ### `instagram`
 
@@ -255,9 +255,9 @@ https://www.instagram.com/p/BWNjjyYFxVx/
 
 {{< instagram BWNjjyYFxVx hidecaption >}}
 
-{{% note %}}
+{{< note >}}
 `instagram` ショートコードは Instagram の API のエンドポイントを参照していますが、これは 2020年10月24日から非推奨となっています。そのため、この API エンドポイントから画像を取得することができず、結果として `instagram` ショートコードが使用されるとエラーになります。詳細については、GitHub issue [#7879](https://github.com/gohugoio/hugo/issues/7879) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ### `param`
 
@@ -285,7 +285,7 @@ https://www.instagram.com/p/BWNjjyYFxVx/
 
 {{% note "More on Cross References" %}}
 [クロスリファレンス](/content-management/cross-references/) のドキュメントで、 `ref` と `relref` のより詳細な説明を読むことができます。
-{{% /note %}}
+{{< /note >}}
 
 `ref` と `relref` は、引用符で囲まれた `0` 位置にある _reference_ のパラメータを正確に 1 つだけ受け取ります。
 
@@ -359,7 +359,7 @@ https://vimeo.com/channels/staffpicks/146022717
 {{< vimeo 146022717 >}}
 {{< /output >}}
 
-{{% tip %}}
+{{< tip >}}
 YouTube や Vimeo 出力のビジュアル スタイルをさらにカスタマイズしたい場合は、ショートコードを呼び出す際に `class` という名前のパラメータを追加します。
 新しい `class` は `<iframe>` をラップする `<div>` に追加され、 **かつ** インラインスタイルが削除されます。
 `id` を名前付きパラメータとして呼び出す必要があることに注意してください。また、`title` を使用すると、vimeo 動画にわかりやすいタイトルを付けることができます。
@@ -367,7 +367,7 @@ YouTube や Vimeo 出力のビジュアル スタイルをさらにカスタマ�
 ```go
 {{</* vimeo id="146022717" class="my-vimeo-wrapper-class" title="My vimeo video" */>}}
 ```
-{{% /tip %}}
+{{< /tip >}}
 
 #### `vimeo` 表示の例 {#example-vimeo-display}
 

@@ -107,9 +107,9 @@ Across many pages on the Hugo docs, the typical triple-back-tick Markdown syntax
 
 The Hugo documentation comes with a very robust shortcode for adding interactive code blocks.
 
-{{% note %}}
+{{< note >}}
 With the `code` shortcodes, *you must include triple back ticks and a language declaration*. This was done by design so that the shortcode wrappers were easily added to legacy documentation and will be that much easier to remove if needed in future versions of the Hugo docs.
-{{% /note %}}
+{{< /note >}}
 
 ### `code`
 
@@ -227,7 +227,7 @@ Which will render as follows in the Hugo docs:
 
 {{% note "Blockquotes `!=` Admonitions" %}}
 Previous versions of Hugo documentation used blockquotes to draw attention to text. This is *not* the [intended semantic use of `<blockquote>`](https://html5doctor.com/cite-and-blockquote-reloaded/). Use blockquotes when quoting. To note or warn your user of specific information, use the admonition shortcodes that follow.
-{{% /note %}}
+{{< /note >}}
 
 ## Admonitions
 
@@ -252,16 +252,16 @@ Here is a piece of information I would like to draw your **attention** to.
 #### Example `note` Output
 
 {{< output file="note-with-heading.html" >}}
-{{% note %}}
+{{< note >}}
 Here is a piece of information I would like to draw your **attention** to.
-{{% /note %}}
+{{< /note >}}
 {{< /output >}}
 
 #### Example `note` Display
 
-{{% note %}}
+{{< note >}}
 Here is a piece of information I would like to draw your **attention** to.
-{{% /note %}}
+{{< /note >}}
 
 ### `tip` Admonition
 
@@ -278,16 +278,16 @@ Here's a bit of advice to improve your productivity with Hugo.
 #### Example `tip` Output
 
 {{< output file="tip-output.html" >}}
-{{% tip %}}
+{{< tip >}}
 Here's a bit of advice to improve your productivity with Hugo.
-{{% /tip %}}
+{{< /tip >}}
 {{< /output >}}
 
 #### Example `tip` Display
 
-{{% tip %}}
+{{< tip >}}
 Here's a bit of advice to improve your productivity with Hugo.
-{{% /tip %}}
+{{< /tip >}}
 
 ### `warning` Admonition
 
@@ -304,20 +304,20 @@ This is a warning, which should be reserved for *important* information like bre
 #### Example `warning` Output
 
 {{< output file="warning-admonition-output.html" >}}
-{{% warning %}}
+{{< warning >}}
 This is a warning, which should be reserved for *important* information like breaking changes.
-{{% /warning %}}
+{{< /warning >}}
 {{< /output >}}
 
 #### Example `warning` Display
 
-{{% warning %}}
+{{< warning >}}
 This is a warning, which should be reserved for *important* information like breaking changes.
-{{% /warning %}}
+{{< /warning >}}
 
 {{% note "Pull Requests and Branches" %}}
 Similar to [contributing to Hugo development](/contribute/development/), the Hugo team expects you to create a separate branch/fork when you make your contributions to the Hugo docs.
-{{% /note %}}
+{{< /note >}}
 
 [abe]: https://en.wikipedia.org/wiki/Kobo_Abe
 [archetypes]: /content-management/archetypes/

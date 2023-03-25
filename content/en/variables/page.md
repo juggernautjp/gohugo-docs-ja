@@ -22,7 +22,7 @@ The following is a list of page-level variables. Many of these will be defined i
 
 {{% note "`.Scratch`" %}}
 See [`.Scratch`](/functions/scratch/) for page-scoped, writable variables.
-{{% /note %}}
+{{< /note >}}
 
 ## Page Variables
 
@@ -215,7 +215,7 @@ With the above front matter, the `tags` and `categories` taxonomies are accessib
 
 {{% note "Casing of Params" %}}
 Page-level `.Params` are *only* accessible in lowercase.
-{{% /note %}}
+{{< /note >}}
 
 The `.Params` variable is particularly useful for the introduction of user-defined front matter fields in content files. For example, a Hugo website on book reviews could have the following front matter in `/content/review/book01.md`:
 
@@ -244,9 +244,9 @@ This template would render as follows, assuming you've set [`uglyURLs`](/content
 <p>It was recommended by my Mother.</p>
 {{< /output >}}
 
-{{% note %}}
+{{< note >}}
 See [Archetypes](/content-management/archetypes/) for consistency of `Params` across pieces of content.
-{{% /note %}}
+{{< /note >}}
 
 ### The `.Param` Method
 

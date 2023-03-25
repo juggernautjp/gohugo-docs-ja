@@ -59,9 +59,9 @@ If true, the page will be treated as part of the project's collections and, when
 If set to true the [Bundle's Resources]({{< relref "content-management/page-bundles" >}}) will be published.
 Setting this to false will still publish Resources on demand (when a resource's `.Permalink` or `.RelPermalink` is invoked from the templates) but will skip the others.
 
-{{% note %}}
+{{< note >}}
 Any page, regardless of their build options, will always be available using the [`.GetPage`]({{< relref "functions/GetPage" >}}) methods.
-{{% /note %}}
+{{< /note >}}
 
 ------
 

@@ -29,7 +29,7 @@ weight: 210
 
 Hugo [v0.60.0](https://github.com/gohugoio/hugo/releases/tag/v0.60.0) は Markdown のデフォルトライブラリを [Goldmark](https://github.com/yuin/goldmark/) に変更しました。これにより、目次の実装が改善され、設定可能になりました。 Goldmark レンダラーについては、 [「目次の設定方法」](/getting-started/configuration-markup/#table-of-contents) を参照してください。
 
-{{% /note %}}
+{{< /note >}}
 
 ## 使用方法 {#usage}
 
@@ -90,9 +90,9 @@ Hugo は上記の Markdown を受け取り、`## Introduction`、`## My Heading`
 {{ end }}
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 上記の例では、400 語以上のページで、*かつ* `toc` が `false` に設定されていない場合でも、 取得するページ内に `{{.TableOfContents}}` 変数の見出しがなければ、目次は表示されません。
-{{% /note %}}
+{{< /note >}}
 
 ## AsciiDoc での使用方法 {#usage-with-asciidoc}
 

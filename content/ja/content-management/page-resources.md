@@ -125,14 +125,14 @@ GetMatch
 
 ページリソースのメタデータは、対応するページのフロントマターから `resources` という名前の配列/テーブル パラメータで管理されます。 [ワイルドカード](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm) を使って、値をバッチで割り当てることができます。
 
-{{% note %}}
+{{< note >}}
 `page` タイプのリソースは、フロントマターから `Title` などを取得します。
-{{% /note %}}
+{{< /note >}}
 
 name
 : `Name` で返される値を設定します。
 
-{{% warning %}}
+{{< warning >}}
 メソッド `Match`、`Get` および `GetMatch` は、リソースのマッチングに `Name` を使用します。
 {{%/ warning %}}
 
@@ -178,7 +178,7 @@ resources :
 - すべての `PDF` ファイルに、新しい `Name` が付けられます。 `name` パラメータは特別なプレースホルダ [`:counter`](#the-counter-placeholder-in-name-and-title) を含んでいるので、 `Name` は `pdf-file-1`、`pdf-file-2`、`pdf-file-3` のようになります。
 - バンドル内のすべての docx は、`word` アイコンが表示されます。
 
-{{% warning %}}
+{{< warning >}}
 __順序が重要です__ --- `title`、`name`、`params`-**keys** の **最初の設定** 値のみが使用されます。連続したパラメータは、まだ設定されていないパラメータに対してのみ設定されます。上記の例では、`src = "documents/photo_specs.pdf"` の `.Params.icon` に、まず `"photo"` が設定されます。そのため、後で設定された `src = "**.pdf"` というルールによって、`"pdf"` にオーバーライドされることはありません。
 {{%/ warning %}}
 

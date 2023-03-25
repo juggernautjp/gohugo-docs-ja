@@ -235,9 +235,9 @@ URL にプレフィックスまたはポストフィックスを使用した場�
 
 上記の [「リモートデータを取得する」](#get-remote-data) と同じ出力ロジックを適用します。
 
-{{% note %}}
+{{< note >}}
 `getCSV` を使用してロードされるローカル CSV ファイルは、`data` ディレクトリの **外** に配置する必要があります。
-{{% /note %}}
+{{< /note >}}
 
 ## データファイルを使用した LiveReload {#livereload-with-data-files}
 
@@ -245,7 +245,7 @@ URL のコンテンツが変更されたときに [LiveReload][] をトリガー
 
 {{% warning "URL Data and LiveReload" %}}
 ローカルファイルを変更して LiveReload がトリガーされると、Hugo はキャッシュからデータ駆動型 (URL) のコンテンツを読み取ります。キャッシュを無効にしている場合 (たとえば `hugo server --ignoreCache` でサーバを起動した場合)、Hugo は LiveReload がトリガーされるたびにコンテンツを再ダウンロードします。これにより、*非常に大きな* トラフィックを発生させる可能性があり、API の制限にすぐに達してしまうかもしれません。
-{{% /warning %}}
+{{< /warning >}}
 
 ## データ駆動型コンテンツの例 {#examples-of-datadriven-content}
 

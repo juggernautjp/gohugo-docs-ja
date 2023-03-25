@@ -69,7 +69,7 @@ Hugo は、レンダリングされた HTML がどのように構造化される
 
 {{% note "`absLangURL` and `relLangURL`" %}}
 テーマが [多言語機能](/content-management/multilingual/) を利用している場合は、 [`absLangURL`](/functions/abslangurl) または [`relLangURL`](/functions/rellangurl) 関数を使用します。 `absURL` と `relURL` とは対照的に、この 2 つの関数は正しい言語プレフィックスを URL に追加します。
-{{% /note %}}
+{{< /note >}}
 
 ## 怠惰なブロガーのためのセクションメニュー {#section-menu-for-lazy-bloggers}
 
@@ -109,9 +109,9 @@ _シャドウ_ は、ページがメニュー項目自体によって表され�
     url = "/blog/"
 {{</ code-toggle >}}
 
-{{% note %}}
+{{< note >}}
 `identifier` は、セクション名と一致 *しなければなりません*。
-{{% /note %}}
+{{< /note >}}
 
 ## ページのフロントマターからのメニューエントリ {#menu-entries-from-the-pages-front-matter}
 
@@ -132,9 +132,9 @@ menu:
 ...
 ```
 
-{{% note %}}
+{{< note >}}
 メニューは複数定義することができます。また、複雑な値である必要はなく、`menu` は文字列、文字列の配列、または上記の例のような複雑な値の配列にすることもできます。
-{{% /note %}}
+{{< /note >}}
 
 ### メニューで .Page を使用する {#using-page-in-menus}
 
@@ -179,6 +179,6 @@ menu:
 </nav>
 ```
 
-{{% note %}}
+{{< note >}}
 メニューレベルの .Params を使用すると、あるメニューには存在するが、別のメニューには存在しないということが簡単に起こり得ます。 [with 関数](/functions/with) を使用して適切にアクセスすることをお勧めします。
-{{% /note %}}
+{{< /note >}}

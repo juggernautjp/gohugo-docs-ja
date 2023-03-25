@@ -221,9 +221,9 @@ To load local files with `getJSON` and `getCSV`, the source files must reside wi
 
 It applies the same output logic as above in [Get Remote Data](#get-remote-data).
 
-{{% note %}}
+{{< note >}}
 The local CSV files to be loaded using `getCSV` must be located **outside** the `data` directory.
-{{% /note %}}
+{{< /note >}}
 
 ## LiveReload with Data Files
 
@@ -231,7 +231,7 @@ There is no chance to trigger a [LiveReload][] when the content of a URL changes
 
 {{% warning "URL Data and LiveReload" %}}
 If you change any local file and the LiveReload is triggered, Hugo will read the data-driven (URL) content from the cache. If you have disabled the cache (i.e., by running the server with `hugo server --ignoreCache`), Hugo will re-download the content every time LiveReload triggers. This can create *huge* traffic. You may reach API limits quickly.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Examples of Data-driven Content
 

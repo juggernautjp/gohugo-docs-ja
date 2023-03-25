@@ -39,14 +39,14 @@ weight: 160
 デフォルトでは、Hugo はコンテンツの最初の 70 語を要約として自動的に取得し、テンプレートで使用するために `.Summary` ページ変数に保存します。
 サマリーの長さは、[サイト設定](/getting-started/configuration/) で `summaryLength` を設定することでカスタマイズできます。
 
-{{% note %}}
+{{< note >}}
 `plainify` や `safeHTML` などの関数を使用すると、サマリー内の HTML タグをどのように読み込むかをカスタマイズすることができます。
-{{% /note %}}
+{{< /note >}}
 
-{{% note %}}
+{{< note >}}
 Hugo で定義されたサマリーは、テキストを 1つ以上の連続した空白文字で分割して計算した語数を使用するように設定されています。
 もし、`CJK` 言語でコンテンツを作成していて、Hugo の自動サマリー分割を使いたい場合は、[サイト設定](/getting-started/configuration/) で `hasCJKLanguage` を `true` に設定します。
-{{% /note %}}
+{{< /note >}}
 
 ### 手動サマリー分割 {#manual-summary-splitting}
 
@@ -58,7 +58,7 @@ Hugo で定義されたサマリーは、テキストを 1つ以上の連続し�
 
 {{% note "Summary Divider"%}}
 *要約区切り文字* という概念は、Hugo 独自のものではありません。他の文献では「more tag (より多くのタグ)」や「excerpt separator (抜粋区切り)」とも呼ばれています。
-{{% /note %}}
+{{< /note >}}
 
 長所
 : 自由で正確、そしてレンダリングの向上。 すべての HTML タグと書式は保持されます。
@@ -68,7 +68,7 @@ Hugo で定義されたサマリーは、テキストを 1つ以上の連続し�
 
 {{% warning "Be Precise with the Summary Divider" %}}
 <code>&#60;&#33;&#45;&#45;more&#45;&#62;</code> は正確に、つまりすべて小文字で空白を入れずに入力するように注意してください。
-{{% /warning %}}
+{{< /warning >}}
 
 ### フロントマター サマリー {#front-matter-summary}
 
@@ -90,7 +90,7 @@ Hugo で定義されたサマリーは、テキストを 1つ以上の連続し�
 
 {{% warning "Competing selections" %}}
 Hugo は、上記のステップのうち、テキストを返す _最初_ のステップを使用します。 ですから、たとえば、記事がフロントマターの `summary` 変数と <code>&#60;&#33;&#45;&#45;more&#45;&#62;</code> 要約区切り文字の両方を持つ場合、Hugo は自動サマリー分割方式を使用することにします。
-{{% /warning %}}
+{{< /warning >}}
 
 ## 例: 要約付きの最初の 10 件の記事 {#example-first-10-articles-with-summaries}
 

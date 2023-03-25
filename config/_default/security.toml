@@ -1,13 +1,13 @@
 
-  enableInlineShortcodes = false
+enableInlineShortcodes = false
 
-  [exec]
-    allow = ['^go$', '^npx$' ]
-    osEnv = ['^PATH$']
+[exec]
+  allow = ['^go$', '^npx$' ]
+  osEnv = ['^PATH$']
 
-  [funcs]
-    getenv = ['^HUGO_', '^REPOSITORY_URL$', '^BRANCH$']
+[funcs]
+  getenv = ['^HUGO_', '^REPOSITORY_URL$', '^BRANCH$']
 
-  [http]
-    methods = ['(?i)GET|POST']
-    urls = ['.*']
+[http]
+  methods = ['(?i)GET|POST']
+  urls = ['.*']

@@ -1,50 +1,75 @@
-{{ $early := resources.Get "js/script-early.js" | minify | fingerprint -}}
-<script src="{{ $early.RelPermalink }}"></script>
+{{/* cite from bootstrap/site */}}
 
-{{ if $.Param "alpine" -}}
-{{ $alpine := resources.Get "vendor/alpine.min.js" | fingerprint -}}
-<script defer src="{{ $alpine.RelPermalink }}"></script>
-{{ end -}}
+{{ if eq hugo.Environment "production" -}}
+  <script src="/bootstrap/js/bootstrap.bundle.min.js" {{ printf "integrity=%q" .Site.Params.cdn.js_bundle_hash | safeHTMLAttr }} crossorigin="anonymous"></script>
+{{ else -}}
+  <script src="/bootstrap/js/bootstrap.bundle.js"></script>
+{{- end }}
 
-{{ if $.Param "jquery" -}}
-{{ $jquery := resources.Get "vendor/jquery.slim.min.js" | fingerprint -}}
-<script defer src="{{ $jquery.RelPermalink }}"></script>
-{{ end -}}
+{{ if eq .Page.Layout "docs" -}}
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
+{{- end }}
 
-{{ if $.Param "umbrella" -}}
-{{ $umbrella := resources.Get "vendor/umbrella.min.js" | fingerprint -}}
-<script defer src="{{ $umbrella.RelPermalink }}"></script>
-{{ end -}}
+{{- $vendor := resources.Match "js/vendor/*.js" -}}
+{{- $js := resources.Match "js/*.js" -}}
+{{- $targetDocsJSPath := path.Join "/docs" .Site.Params.docs_version "assets/js/docs.js" -}}
+{{- /* $targetDocsJSPath := "js/docs.js" */ -}}
+{{- $docsJs := append $js $vendor | resources.Concat $targetDocsJSPath -}}
 
-{{ if $.Param "mobilemenu" -}}
-{{ $mobilemenu := resources.Get "js/mobile.js" | minify | fingerprint -}}
-<script defer src="{{ $mobilemenu.RelPermalink }}"></script>
-{{ end -}}
+{{- if eq hugo.Environment "production" -}}
+  {{- $docsJs = $docsJs | resources.Minify -}}
+{{- end }}
 
-{{ if $.Param "cookieconsent" -}}
-{{ $cookieconsent := resources.Get "js/cookieconsent.js" | minify | fingerprint -}}
-<script defer src="{{ $cookieconsent.RelPermalink }}"></script>
-{{ end -}}
+<script src="{{ $docsJs.Permalink | relURL }}"></script>
 
-{{ if $.Param "listsort" -}}
-{{ $listmin := resources.Get "vendor/list.min.js" | fingerprint -}}
-<script defer src="{{ $listmin.RelPermalink }}"></script>
-{{ $listsort := resources.Get "js/listsort.js" | fingerprint -}}
-<script defer src="{{ $listsort.RelPermalink }}"></script>
-{{ end -}}
+{{ if eq .Page.Layout "docs" -}}
+<script>
+  // Open in StackBlitz logic
+  document.querySelectorAll('.btn-edit').forEach(btn => {
+    btn.addEventListener('click', event => {
+      const htmlSnippet = event.target.closest('.bd-code-snippet').querySelector('.bd-example').innerHTML
 
-{{ if .HasShortcode "contact" -}}
-{{ $contact := resources.Get "js/contact.js" | minify | fingerprint -}}
-<script defer src="{{ $contact.RelPermalink }}"></script>
-{{ end -}}
+      // Get extra classes for this example
+      const classes = Array.from(event.target.closest('.bd-code-snippet').querySelector('.bd-example').classList).join(' ')
 
-{{ if .HasShortcode "search" -}}
-{{ $flexsearch := resources.Get "vendor/flexsearch.compact.js" | fingerprint -}}
-<script defer src="{{ $flexsearch.RelPermalink }}"></script>
-{{ $search_opts := dict "minify" true "params" (dict "searchLimit" (site.Params.searchLimit | default 20)) -}}
-{{ $search := resources.Get "js/search.js" | js.Build $search_opts | fingerprint -}}
-<script defer src="{{ $search.RelPermalink }}"></script>
-{{ end -}}
+      const jsSnippet = event.target.closest('.bd-code-snippet').querySelector('.btn-edit').getAttribute('data-sb-js-snippet')
+      StackBlitzSDK.openBootstrapSnippet(htmlSnippet, jsSnippet, classes)
+    })
+  })
 
-{{ $script := resources.Get "js/script.js" | minify | fingerprint -}}
-<script defer src="{{ $script.RelPermalink }}"></script>
+  StackBlitzSDK.openBootstrapSnippet = (htmlSnippet, jsSnippet, classes) => {
+    const markup = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ .Site.Params.cdn.css }}" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/{{ .Site.Params.docs_version }}/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <${'script'} src="{{ .Site.Params.cdn.js_bundle }}"></${'script'}>
+  </head>
+  <body class="p-3 m-0 border-0 ${classes}">
+
+    <!-- Example Code -->
+${htmlSnippet.replace(/^/gm, '    ')}
+    <!-- End Example Code -->
+  </body>
+</html>`
+
+    const jsSnippetContent = jsSnippet ? '{{ os.ReadFile "assets/js/snippets.js" }}' : null
+    const project = {
+      files: {
+        'index.html': markup,
+        'index.js': jsSnippetContent
+      },
+      title: 'Bootstrap Example',
+      description: `Official example from ${window.location.href}`,
+      template: jsSnippet ? 'javascript' : 'html',
+      tags: ['bootstrap']
+    }
+
+    StackBlitzSDK.openProject(project, { openFile: 'index.html' })
+  }
+</script>
+{{- end }}

@@ -27,13 +27,13 @@ It is natural to accompany the summary with links to the original content, and a
 
 By default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the `.Summary` page variable for use in your templates. You may customize the summary length by setting `summaryLength` in your [site configuration](/getting-started/configuration/).
 
-{{% note %}}
+{{< note >}}
 You can customize how HTML tags in the summary are loaded using functions such as `plainify` and `safeHTML`.
-{{% /note %}}
+{{< /note >}}
 
-{{% note %}}
+{{< note >}}
 The Hugo-defined summaries are set to use word count calculated by splitting the text by one or more consecutive whitespace characters. If you are creating content in a `CJK` language and want to use Hugo's automatic summary splitting, set `hasCJKLanguage` to `true` in your [site configuration](/getting-started/configuration/).
-{{% /note %}}
+{{< /note >}}
 
 ### Manual Summary Splitting
 
@@ -45,7 +45,7 @@ Content that comes before the summary divider will be used as that content's sum
 
 {{% note "Summary Divider"%}}
 The concept of a *summary divider* is not unique to Hugo. It is also called the "more tag" or "excerpt separator" in other literature.
-{{% /note %}}
+{{< /note >}}
 
 Pros
 : Freedom, precision, and improved rendering.  All HTML tags and formatting are preserved.
@@ -55,7 +55,7 @@ Cons
 
 {{% warning "Be Precise with the Summary Divider" %}}
 Be careful to enter <code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> exactly; i.e., all lowercase and with no whitespace.
-{{% /warning %}}
+{{< /warning >}}
 
 ### Front Matter Summary
 
@@ -77,7 +77,7 @@ Because there are multiple ways in which a summary can be specified it is useful
 
 {{% warning "Competing selections" %}}
 Hugo uses the _first_ of the above steps that returns text.  So if, for example, your article has both `summary` variable in its front matter and a <code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> summary divider Hugo will use the manual summary split method.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Example: First 10 Articles with Summaries
 

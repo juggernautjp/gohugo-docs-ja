@@ -35,9 +35,9 @@ Instead, the following example tells `trim` to remove extra new lines from the c
 {{ trim .Inner "\n" }}
 ```
 
-{{% note %}}
+{{< note >}}
 Go templates also provide a simple [method for trimming whitespace](/templates/introduction/#whitespace) from either side of a Go tag by including a hyphen (`-`).
-{{% /note %}}
+{{< /note >}}
 
 
 [shortcodevars]: /variables/shortcodes/

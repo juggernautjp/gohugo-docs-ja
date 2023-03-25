@@ -48,7 +48,7 @@ Type (タイプ)
 Section (セクション)
 : `section`、`taxonomy`、`term` タイプに関連します。
 
-{{% note %}}
+{{< note >}}
 **ヒント:** 以下の例は長くて複雑に見えますが、これは柔軟性のためです。ほとんどの Hugo サイトには、ほんの一握りのテンプレートしかありません。
 
 ```bash
@@ -58,7 +58,7 @@ Section (セクション)
 │   └── single.html
 └── index.html
 ```
-{{% /note %}}
+{{< /note >}}
 
 
 ## Hugo レイアウトのテーマ別検索ルール {#hugo-layouts-lookup-rules-with-theme}

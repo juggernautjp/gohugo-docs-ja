@@ -149,7 +149,7 @@ weight
 
 {{% note "Hugo's Default URL Destinations" %}}
 `slug` と `url` のどちらも存在せず、[サイトの `config` ファイルでパーマリンクが設定されていない場合](/content-management/urls/#permalinks)、Hugo はコンテンツのファイル名を使って出力 URL を作成します。 Hugo のパスについての説明は、[コンテンツ構成](/content-management/organization) を、Hugo のデフォルトの挙動をカスタマイズする方法は、 [「URL 管理」](/content-management/urls/) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ### ユーザー定義 {#user-defined}
 

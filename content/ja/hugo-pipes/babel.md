@@ -18,11 +18,11 @@ weight: 48
 どのような JavaScript リソースファイルでも、 `resources.Babel` を使って別の JavaScript バージョンにトランスパイルできます。この引数はリソースオブジェクトと、オプションとして以下に挙げるオプションのディクテーションを取ります。 Babel は、 [babel cli](https://babeljs.io/docs/en/babel-cli) を使用します。
 
 
-{{% note %}}
+{{< note >}}
 Hugo パイプの Babel は、`@babel/cli` と `@babel/core` JavaScript パッケージを、プロジェクトまたはグローバルにインストールする必要があります (`npm install -g @babel/cli @babel/core`)。同時に、使用する Babel プラグインや preset と一緒にインストールする必要があります (たとえば、`npm install @babel/preset-env --save-dev`)。
 
 Hugo Snap パッケージを使用している場合、Babel とプラグインは Hugo サイトのディレクトリ内にローカルにインストールする必要があります。 たとえば、`g` フラグなしの `npm install @babel/cli @babel/core --save-dev` でインストールします。
-{{% /note %}}
+{{< /note >}}
 
 ### 設定 {#config}
 

@@ -31,4 +31,4 @@ Example: Given `style = "color: red;"` defined in the front matter of your `.md`
 
 {{% note "ZgotmplZ" %}}
 "ZgotmplZ" is a special value that indicates that unsafe content reached a CSS or URL context.
-{{% /note %}}
+{{< /note >}}

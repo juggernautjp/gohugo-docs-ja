@@ -123,9 +123,9 @@ disableKinds = ["taxonomy","term"]
 
 ### 例 "シリーズ" という名前のカスタム タクソノミーを追加する {#example-adding-a-custom-taxonomy-named-series}
 
-{{% note %}}
+{{< note >}}
 カスタムタクソノミーを追加する際に、 _カスタムタクソノミーを残しておきたい場合は_、デフォルト タクソノミーにそれらを入れる必要があります。
-{{% /note %}}
+{{< /note >}}
 
 {{< code-toggle copy="false" >}}
 [taxonomies]
@@ -145,17 +145,17 @@ disableKinds = ["taxonomy","term"]
 
 すべてのタクソノミーを完全に無効にしたい場合は、[Hugo タクソノミーのデフォルト]({{< relref "taxonomies.md#default-taxonomies" >}}) の `disableKinds` の使い方を参照してください。
 
-{{% note %}}
+{{< note >}}
 タクソノミーのリストとタクソノミーの用語のページには、コンテンツとフロントマターを追加できます。この目的のために `_index.md` を追加する方法については、[「コンテンツ構成」](/content-management/organization/) を参照してください。
 
 通常のページと同様に、タクソノミーのリストの [パーマリンク](/content-management/urls/) は設定可能ですが、タクソノミー用語ページのパーマリンクは設定できません。
-{{% /note %}}
+{{< /note >}}
 
-{{% warning %}}
+{{< warning >}}
 設定オプション `preserveTaxonomyNames` は、 Hugo 0.55 で削除されました。
 
 これで、関連するタクソノミー ノードで `.Page.Title` を使用すれば、元の値を取得できるようになりました。
-{{% /warning %}}
+{{< /warning >}}
 
 ## コンテンツにタクソノミーを追加する {#add-taxonomies-to-content}
 
@@ -163,9 +163,9 @@ disableKinds = ["taxonomy","term"]
 
 タクソノミーへのコンテンツの割り当ては、[フロントマター][front matter] で行われます。タクソノミーの *複数形* の名前を持つ変数を作成し、コンテンツタイプのインスタンスに適用したいすべての用語を割り当てるだけです。
 
-{{% note %}}
+{{< note >}}
 あらかじめ設定されたタクソノミーや用語を含むコンテンツファイルをすばやく生成する機能が必要な場合は、[「Hugo アーキタイプ」](/content-management/archetypes/) のドキュメントを参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ### 例: タクソノミーを使ったフロントマター {#example-front-matter-with-taxonomies}
 
@@ -198,7 +198,7 @@ categories_weight = 44
 
 {{% note "Limits to Ordering Taxonomies" %}}
 現在、タクソノミーは、 [リストコンテンツのデフォルトの `weight => date` の順序](/templates/lists/#default-weight--date--linktitle--filepath) のみをサポートしています。より詳しい情報については、[「タクソノミー テンプレート」](/templates/taxonomy-templates/) のドキュメントを参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ## タクソノミーまたは用語にカスタム メタデータを追加する {#add-custom-metadata-to-a-taxonomy-or-term}
 

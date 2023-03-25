@@ -21,7 +21,7 @@ wip: false
 
 {{% note "`.GitInfo` Performance Considerations"  %}}
 Hugo's Git integrations should be fairly performant but *can* increase your build time. This will depend on the size of your Git history.
-{{% /note %}}
+{{< /note >}}
 
 ## `.GitInfo` Prerequisites
 

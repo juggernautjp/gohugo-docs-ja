@@ -50,7 +50,7 @@ Disallow: {{ .RelPermalink }}
 
 This template creates a robots.txt file with a `Disallow` directive for each page on the site. Search engines that honor the Robots Exclusion Protocol will not crawl any page on the site.
 
-{{% note %}}
+{{< note >}}
 To create a robots.txt file without using a template:
 
 1. Set `enableRobotsTXT` to `false` in the [site configuration][config].
@@ -60,7 +60,7 @@ Remember that Hugo copies everything in the [static directory][static] to the ro
 
 [config]: /getting-started/configuration/
 [static]: /getting-started/directory-structure/
-{{% /note %}}
+{{< /note >}}
 
 [config]: /getting-started/configuration/
 [internal]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/robots.txt

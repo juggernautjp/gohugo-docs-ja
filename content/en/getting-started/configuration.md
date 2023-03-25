@@ -31,9 +31,9 @@ hugo --config debugconfig.toml
 hugo --config a.toml,b.toml,c.toml
 ```
 
-{{% note %}}
+{{< note >}}
 Multiple site config files can be specified as a comma-separated string to the `--config` switch.
-{{% /note %}}
+{{< /note >}}
 
 {{< todo >}}TODO: distinct config.toml and others (the root object files){{< /todo >}}
 
@@ -94,7 +94,7 @@ This is how you need to configure your `config.toml` files considering the above
 
     Now you need to tell Hugo that you are using the staging environment. So your build command should be `hugo --environment staging` which will load the `G-SSSSSSSS` analytics code in your staging website
 
-{{% note %}}
+{{< note >}}
 Default environments are __development__ with `hugo server` and __production__ with `hugo`.
 {{%/ note %}}
 
@@ -470,7 +470,7 @@ When enabled, creates URL of the form `/filename.html` instead of `/filename/`.
 
 Watch filesystem for changes and recreate as needed.
 
-{{% note %}}
+{{< note >}}
 If you are developing your site on a \*nix machine, here is a handy shortcut for finding a configuration option from the command line:
 ```txt
 cd ~/sites/yourhugosite
@@ -482,7 +482,7 @@ which shows output like
 ```txt
 enableemoji: true
 ```
-{{% /note %}}
+{{< /note >}}
 
 ## Configure Build
 
@@ -635,7 +635,7 @@ This is really useful if you use a service such as Netlify to deploy your site. 
 Names must be prefixed with `HUGO_` and the configuration key must be set in uppercase when setting operating system environment variables.
 
 To set config params, prefix the name with `HUGO_PARAMS_`
-{{% /note %}}
+{{< /note >}}
 
 If you are using snake_cased variable names, the above will not work. Hugo determines the delimiter to use by the first character after `HUGO`. This allows you to define environment variables on the form `HUGOxPARAMSxAPI_KEY=abcdefgh`, using any [allowed](https://stackoverflow.com/questions/2821043/allowed-characters-in-linux-environment-variable-names#:~:text=So%20names%20may%20contain%20any,not%20begin%20with%20a%20digit.) delimiter.
 

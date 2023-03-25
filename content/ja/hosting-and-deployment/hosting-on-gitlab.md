@@ -58,9 +58,9 @@ pages:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 特定の Hugo バージョンを使用してサイトをビルドする場合は、[このリスト](https://gitlab.com/pages/hugo/container_registry) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ## Hugo の Web サイトを GitLab にプッシュする {#push-your-hugo-website-to-gitlab}
 

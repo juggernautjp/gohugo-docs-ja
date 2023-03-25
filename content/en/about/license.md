@@ -17,10 +17,10 @@ aliases: [/meta/license]
 toc: true
 ---
 
-{{% note %}}
+{{< note >}}
 Hugo v0.15 and later are released under the Apache 2.0 license.
 Earlier versions of Hugo were released under the [Simple Public License](https://opensource.org/licenses/Simple-2.0).
-{{% /note %}}
+{{< /note >}}
 
 _Version 2.0, January 2004_ <br>
 <https://www.apache.org/licenses/LICENSE-2.0>

@@ -61,9 +61,9 @@ In order to build those set and pass them as argument, one must use the `keyVals
 {{ $related := site.RegularPages.RelatedTo ( keyVals "tags" "hugo" "rocks")  ( keyVals "date" .Date ) }}
 ```
 
-{{% note %}}
+{{< note >}}
 Read [this blog article](https://regisphilibert.com/blog/2018/04/hugo-optmized-relashionships-with-related-content/) for a great explanation of more advanced usage of this feature.
-{{% /note %}}
+{{< /note >}}
 
 ## Configure Related Content
 
@@ -89,9 +89,9 @@ Note that if you have configured `tags` as a taxonomy, `tags` will also be added
 
 Custom configuration should be set using the same syntax.
 
-{{% note %}}
+{{< note >}}
 If you add a `related` config section, you need to add a complete configuration. It is not possible to just set, say, `includeNewer` and use the rest  from the Hugo defaults.
-{{% /note %}}
+{{< /note >}}
 
 ### Top Level Config Options
 
@@ -133,6 +133,6 @@ He should now be able to add an improved version of that "Related Content" secti
 * If you don't use any of the `Related` methods, you will not use the Relate Content feature, and performance will be the same as before.
 * Calling `.RegularPages.Related` etc. will create one inverted index, also sometimes named posting list, that will be reused for any lookups in that same page collection. Doing that in addition to, as an example, calling `.Pages.Related` will work as expected, but will create one additional inverted index. This should still be very fast, but worth having in mind, especially for bigger sites.
 
-{{% note %}}
+{{< note >}}
 We currently do not index **Page content**. We thought we would release something that will make most people happy before we start solving [Sherlock's last case](https://github.com/joearms/sherlock).
-{{% /note %}}
+{{< /note >}}

@@ -38,9 +38,9 @@ hugo --config debugconfig.toml
 hugo --config a.toml,b.toml,c.toml
 ```
 
-{{% note %}}
+{{< note >}}
 複数のサイト設定ファイルをカンマ区切りの文字列として `--config` スイッチに指定できます。
-{{% /note %}}
+{{< /note >}}
 
 {{< todo >}}TODO: 個別の config.toml など (ルートオブジェクトファイル){{< /todo >}}
 
@@ -101,7 +101,7 @@ foo = "bar"
 
     ここで、ステージング環境を使用していることを Hugo に伝える必要があります。ビルドコマンドは `hugo --environment staging` で、ステージング Web サイトに `G-SSSSSS` の解析コードをロードします。
 
-{{% note %}}
+{{< note >}}
 デフォルトの環境は、__development (ステージング環境)__ では `hugo server` コマンドを、__production (本番環境)__ では `hugo` コマンドを使用します。
 {{%/ note %}}
 
@@ -476,7 +476,7 @@ Hugo がテーマを読み込むディレクトリ。
 
 ファイルシステムの変更を監視し、必要に応じて再作成します。
 
-{{% note %}}
+{{< note >}}
 \*nix マシン上でサイトを開発しているならば、ここでは、コマンドラインから設定オプションを見つけるための便利なショートカットを紹介します。
 
 ```bash
@@ -489,7 +489,7 @@ hugo config | grep emoji
 ```yaml
 enableemoji: true
 ```
-{{% /note %}}
+{{< /note >}}
 
 ## ビルドを設定する {#configure-build}
 
@@ -629,7 +629,7 @@ $ env HUGO_TITLE="Some Title" hugo
 OS の環境変数を設定する際には、名前の前に `HUGO_` を付け、設定キーを大文字で設定する必要があります。
 
 設定パラメータを設定するには、名前のプレフィックスに `HUGO_PARAMS_` を付けます。
-{{% /note %}}
+{{< /note >}}
 
 スネークケース [^1] の変数名を使っている場合、上記は動作しません。Hugo は `HUGO` の後の最初の文字で、使用する区切り文字を決定します。これにより、任意の [有効な (allowed)](https://stackoverflow.com/questions/2821043/allowed-characters-in-linux-environment-variable-names#:~:text=So%20names%20may%20contain%20any,not%20begin%20with%20a%20digit.) 区切り文字を使用して、`HUGOxPARAMSxAPI_KEY=abcdefgh` という形式の環境変数を定義することができるようになっています。
 

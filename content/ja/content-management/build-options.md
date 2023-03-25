@@ -68,9 +68,9 @@ true の場合、ページはプロジェクトのコレクションの一部と
 true に設定すると、[バンドル内のリソース]({{< relref "content-management/page-bundles" >}}) が公開されます。
 これを false に設定すると、引き続きリソースがオンデマンドで公開されますが (リソースの `.Permalink` または `.RelPermalink` がテンプレートから呼び出された場合)、それ以外のリソースはスキップされます。
 
-{{% note %}}
+{{< note >}}
 どのページも、ビルドオプションに関係なく、常に [`.GetPage`]({{< relref "functions/GetPage" >}}) メソッドを使用して利用することができます。
-{{% /note %}}
+{{< /note >}}
 
 ------
 

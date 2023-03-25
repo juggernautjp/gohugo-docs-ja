@@ -91,9 +91,9 @@ respectDoNotTrack
 useSessionStorage
 : Enabling this will disable the use of Cookies and use Session Storage to Store the GA Client ID.
 
-{{% warning %}}
+{{< warning >}}
 `useSessionStorage` is not supported when using Google Analytics v4 (gtag.js).
-{{% /warning %}}
+{{< /warning >}}
 
 ### Instagram
 

@@ -120,13 +120,13 @@ noVendor
 
 ## モジュールの設定: mounts {#module-config-mounts}
 
-{{% note %}}
+{{< note >}}
 Hugo 0.56.0 で `mounts` 設定が導入されたとき、既存の `contentDir` や `staticDir` などの設定を保存して、既存のすべてのサイトがそのまま動作するように気をつけました。しかし、両方があってはいけません。`mounts` セクションを追加したら、古い `contentDir`、`staticDir` などの設定を削除してください。
-{{% /note %}}
+{{< /note >}}
 
-{{% warning %}}
+{{< warning >}}
 マウントを追加すると、当該ターゲット ルートのデフォルト マウントは無視されます。このため、必ず明示的に追加してください。
-{{% /warning %}}
+{{< /warning >}}
 
 **デフォルト マウント**
 {{< code-toggle file="config">}}

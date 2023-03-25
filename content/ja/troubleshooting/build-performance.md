@@ -70,18 +70,18 @@ Template Metrics:
        72.547µs       6.595µs      63.764µs     11  partials/footer.html
 ```
 
-{{% note %}}
+{{< note >}}
 **並列処理に関する注意点**
 
 Hugo は、複数のページが同時に生成される並列処理でページをビルドします。この並列処理により、「累積期間 (cumulative duration)」値の合計は、通常、サイト構築にかかる実際の時間よりも長くなります。
-{{% /note %}}
+{{< /note >}}
 
 ## キャッシュされた部分テンプレート (パーシャル) {#cached-partials}
 
 サイドバーやメニューのような `partial` テンプレートは、サイト構築時に何度も実行されるものがあります。`partial` テンプレートに含まれるコンテンツや、目的の出力によっては、実行回数を減らすために、テンプレートをキャッシュして実行回数を減らすことができる場合があります。 [`PartialCached`][partialcached] テンプレート関数は、 `partial` テンプレートにキャッシュ機能を提供します。
 
-{{% tip %}}
+{{< tip >}}
 初期コンテキスト以外に `partialCached` に追加のパラメータを渡すことで、各 `partial` のキャッシュされたバリアントを作成することができることに注意してください。 詳細については、 `partialCached` のドキュメントを参照してください。
-{{% /tip %}}
+{{< /tip >}}
 
 [partialCached]:{{< ref "/functions/partialCached.md" >}}

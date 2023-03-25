@@ -75,6 +75,6 @@ workson: []
 {{ $merged.z.a }} --> huey
 ```
 
-{{% note %}}
+{{< note >}}
 深さに関係なく、マージはマップにのみ適用されます。 スライスの場合は、 [append]({{< ref "functions/append" >}}) を使ってください。
-{{% /note %}}
+{{< /note >}}

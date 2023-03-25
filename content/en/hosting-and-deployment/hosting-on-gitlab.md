@@ -51,9 +51,9 @@ pages:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 See [this list](https://gitlab.com/pages/hugo/container_registry) if you wish to use a particular Hugo version to build your site.
-{{% /note %}}
+{{< /note >}}
 
 ## Push your Hugo website to GitLab
 

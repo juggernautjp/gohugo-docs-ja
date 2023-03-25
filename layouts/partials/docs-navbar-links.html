@@ -1,3 +1,6 @@
+{{- /* 
+  docs-navbar-links.html: Navbar を Config ファイルの設定を用いて、Bootstrap 5.3.0 で動作させるためのコード
+  */ -}}
 <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
   {{ range .Site.Menus.global.ByWeight }}
     {{/* $icon := printf "%s" .Icon */}}
@@ -18,14 +21,16 @@
         {{- else -}}
           {{/*
           <a class="nav-link py-2 px-0 px-lg-2{{ if eq .Page.Layout "docs" }} active" aria-current="true{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+           <!-- TODO: the following line for SEO are commented-out;
+             onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');"
+            -->
           */}}
           <a class="nav-link py-2 px-0 px-lg-2 active" aria-current="true" href="{{ .URL }}">{{ .Name }}</a>
           <!-- TODO: the following line for SEO are commented-out;
-             onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');"
+             onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');"
           -->
         {{- end -}}
       </li>
     {{/* end */}}
   {{- end -}}
 </ul>
-

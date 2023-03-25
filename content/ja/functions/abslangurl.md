@@ -72,6 +72,6 @@ workson: []
 {{ absLangURL "/style.css" }} →   https://example.org/en/style.css
 ```
 
-{{% note %}}
+{{< note >}}
 最後の 3 つの例は、ほとんどの場合において望ましいものではありません。ベストプラクティスとして、この関数を使うときは、絶対に先頭のスラッシュを含めないでください。
-{{% /note %}}
+{{< /note >}}

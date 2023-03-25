@@ -66,7 +66,7 @@ The following is an example:
 
 {{% note "`absLangURL` and `relLangURL`" %}}
 Use the [`absLangURL`](/functions/abslangurl) or [`relLangURL`](/functions/rellangurl) functions if your theme makes use of the [multilingual feature](/content-management/multilingual/). In contrast to `absURL` and `relURL`, these two functions add the correct language prefix to the url.
-{{% /note %}}
+{{< /note >}}
 
 ## Section Menu for Lazy Bloggers
 
@@ -106,9 +106,9 @@ The above is all that's needed. But if you want custom menu items, e.g. changing
     url = "/blog/"
 {{</ code-toggle >}}
 
-{{% note %}}
+{{< note >}}
 The `identifier` *must* match the section name.
-{{% /note %}}
+{{< /note >}}
 
 ## Menu Entries from the Page's front matter
 
@@ -129,11 +129,11 @@ menu:
 ...
 ```
 
-{{% note %}}
+{{< note >}}
 You can define more than one menu. It also doesn't have to be a complex value,
 `menu` can also be a string, an array of strings, or an array of complex values
 like in the example above.
-{{% /note %}}
+{{< /note >}}
 
 ### Using .Page in Menus
 
@@ -178,6 +178,6 @@ Here's an example:
 </nav>
 ```
 
-{{% note %}}
+{{< note >}}
 With Menu-level .Params they can easily exist on one menu item but not another. It's recommended to access them gracefully using the [with function](/functions/with).
-{{% /note %}}
+{{< /note >}}

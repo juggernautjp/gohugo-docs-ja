@@ -110,9 +110,9 @@ Custom taxonomies other than the [defaults]({{< relref "taxonomies.md#default-ta
 
 ### Example: Adding a custom taxonomy named "series"
 
-{{% note %}}
+{{< note >}}
 While adding custom taxonomies, you need to put in the default taxonomies too, _if you want to keep them_.
-{{% /note %}}
+{{< /note >}}
 
 {{< code-toggle copy="false" >}}
 [taxonomies]
@@ -132,17 +132,17 @@ If you want to have just the default `tags` taxonomy, and remove the `categories
 
 If you want to disable all taxonomies altogether, see the use of `disableKinds` in [Hugo Taxonomy Defaults]({{< relref "taxonomies.md#default-taxonomies" >}}).
 
-{{% note %}}
+{{< note >}}
 You can add content and front matter to your taxonomy list and taxonomy terms pages. See [Content Organization](/content-management/organization/) for more information on how to add an `_index.md` for this purpose.
 
 Much like regular pages, taxonomy list [permalinks](/content-management/urls/) are configurable, but taxonomy term page permalinks are not.
-{{% /note %}}
+{{< /note >}}
 
-{{% warning %}}
+{{< warning >}}
 The configuration option `preserveTaxonomyNames` was removed in Hugo 0.55.
 
 You can now use `.Page.Title` on the relevant taxonomy node to get the original value.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Add Taxonomies to Content
 
@@ -150,9 +150,9 @@ Once a taxonomy is defined at the site level, any piece of content can be assign
 
 Assigning content to a taxonomy is done in the [front matter][]. Simply create a variable with the *plural* name of the taxonomy and assign all terms you want to apply to the instance of the content type.
 
-{{% note %}}
+{{< note >}}
 If you would like the ability to quickly generate content files with preconfigured taxonomies or terms, read the docs on [Hugo archetypes](/content-management/archetypes/).
-{{% /note %}}
+{{< /note >}}
 
 ### Example: Front Matter with Taxonomies
 
@@ -185,7 +185,7 @@ By using taxonomic weight, the same piece of content can appear in different pos
 
 {{% note "Limits to Ordering Taxonomies" %}}
 Currently taxonomies only support the [default `weight => date` ordering of list content](/templates/lists/#default-weight--date--linktitle--filepath). For more information, see the documentation on [taxonomy templates](/templates/taxonomy-templates/).
-{{% /note %}}
+{{< /note >}}
 
 ## Add custom metadata to a Taxonomy or Term
 

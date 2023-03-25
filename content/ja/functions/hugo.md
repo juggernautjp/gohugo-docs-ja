@@ -49,7 +49,7 @@ hugo.IsProduction
 
 {{% note "Use the Hugo Generator Tag" %}}
 Web サイトの `<head>` で `hugo.Generator` を使用することを強く推奨します。 `hugo.Generator` は、 [themes.gohugo.io](https://themes.gohugo.io) でホストされているすべてのテーマにデフォルトで含まれています。このジェネレーター タグによって、Hugo チームは Hugo の使用状況や人気を追跡できます。
-{{% /note %}}
+{{< /note >}}
 
 hugo.Deps
 : [hugo.Deps](#hugodeps) を参照してください。

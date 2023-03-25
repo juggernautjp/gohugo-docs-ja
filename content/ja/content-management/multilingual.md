@@ -239,7 +239,7 @@ slug: "a-propos"
 * 現在の言語バンドルのファイル (存在する場合)。
 * バンドル間で、言語 `Weight` の順番で最初に見つかったファイル。
 
-{{% note %}}
+{{< note >}}
 ページバンドルのリソースは、ファイル名 (`image.jpg`、`image.fr.jpg`) とディレクトリ (`english/about/header.jpg`、`french/about/header.jpg`) によって、コンテンツファイルと同じ言語割り当てロジックに従います。
 {{%/ note %}}
 
@@ -547,9 +547,9 @@ other="Sobre mim"
 
 Hugo の Web サイトを翻訳しているとき、翻訳の欠落箇所を視覚的に確認できると便利です。設定オプションの [`enableMissingTranslationPlaceholders`][config] は、すべての未翻訳の文字列に `[i18n] identifier` というプレースホルダーを付けてフラグを立てます (ここで `identifier` は未翻訳部分の ID です。
 
-{{% note %}}
+{{< note >}}
 Hugo は、これらの不足している翻訳プレースホルダーを含む Web サイトを生成します。本番環境には適さないかもしれません。
-{{% /note %}}
+{{< /note >}}
 
 他の言語からのコンテンツのマージ (つまり、コンテンツの翻訳がない場合) については、[lang.Merge] を参照してください。
 

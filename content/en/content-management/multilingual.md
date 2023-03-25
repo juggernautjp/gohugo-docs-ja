@@ -231,7 +231,7 @@ If, across the linked bundles, two or more files share the same basename, only o
 * File from current language bundle, if present.
 * First file found across bundles by order of language `Weight`.
 
-{{% note %}}
+{{< note >}}
 Page Bundle resources follow the same language assignment logic as content files, both by filename (`image.jpg`, `image.fr.jpg`) and by directory (`english/about/header.jpg`, `french/about/header.jpg`).
 {{%/ note %}}
 
@@ -539,9 +539,9 @@ If a string does not have a translation for the current language, Hugo will use 
 
 While translating a Hugo website, it can be handy to have a visual indicator of missing translations. The [`enableMissingTranslationPlaceholders` configuration option][config] will flag all untranslated strings with the placeholder `[i18n] identifier`, where `identifier` is the id of the missing translation.
 
-{{% note %}}
+{{< note >}}
 Hugo will generate your website with these missing translation placeholders. It might not be suitable for production environments.
-{{% /note %}}
+{{< /note >}}
 
 For merging of content from other languages (i.e. missing content translations), see [lang.Merge].
 

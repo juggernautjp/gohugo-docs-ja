@@ -49,9 +49,9 @@ workson: []
 {{ replaceRE "^https?://([^/]+).*" "$1" $s }} → gohugo.io
 ```
 
-{{% note %}}
+{{< note >}}
 [regex101.com](https://regex101.com/) を使えば、正規表現を書いてテストすることができます。始める前に、必ず Go フレーバーを選択してください。
-{{% /note %}}
+{{< /note >}}
 
 [RE2]: https://github.com/google/re2/wiki/Syntax
 [string literal]: https://go.dev/ref/spec#String_literals

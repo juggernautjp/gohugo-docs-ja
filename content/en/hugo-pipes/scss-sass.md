@@ -49,6 +49,6 @@ includePaths [string slice]
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
 ```
 
-{{% note %}}
+{{< note >}}
 Setting `outputStyle` to `compressed` will handle Sass/SCSS files minification better than the more generic [`resources.Minify`]({{< ref "minification">}}).
-{{% /note %}}
+{{< /note >}}

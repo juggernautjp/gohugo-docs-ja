@@ -138,7 +138,7 @@ weight
 
 {{% note "Hugo's Default URL Destinations" %}}
 If neither `slug` nor `url` is present and [permalinks are not configured otherwise in your site `config` file](/content-management/urls/#permalinks), Hugo will use the filename of your content to create the output URL. See [Content Organization](/content-management/organization) for an explanation of paths in Hugo and [URL Management](/content-management/urls/) for ways to customize Hugo's default behaviors.
-{{% /note %}}
+{{< /note >}}
 
 ### User-Defined
 

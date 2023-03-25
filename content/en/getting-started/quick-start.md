@@ -33,11 +33,11 @@ You must also be comfortable working from the command line.
 
 ### Commands
 
-{{% note %}}
+{{< note >}}
 If you are a Windows user, you must run these commands with [PowerShell]. You cannot use Windows Powershell, which is a different application, or the Command Prompt. You may also use a Linux shell if available.
 
 [PowerShell]: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows
-{{% /note %}}
+{{< /note >}}
 
 Run these commands to create a Hugo site with the [Ananke] theme. The next section provides an explanation of each command.
 
@@ -138,12 +138,12 @@ hugo server -D
 
 View your site at the URL displayed in your terminal. Keep the development server running as you continue to add and change content.
 
-{{% note %}}
+{{< note >}}
 Hugo's rendering engine conforms to the CommonMark [specification] for markdown. The CommonMark organization provides a useful [live testing tool] powered by the reference implementation.
 
 [live testing tool]: https://spec.commonmark.org/dingus/
 [specification]: https://spec.commonmark.org/
-{{% /note %}}
+{{< /note >}}
 
 ## Configure the site
 
@@ -170,7 +170,7 @@ Start Hugo's development server to see your changes, remembering to include draf
 hugo server -D
 ```
 
-{{% note %}}
+{{< note >}}
 Most theme authors provide configuration guidelines and options. Make sure to visit your theme's repository or documentation site for details.
 
 [The New Dynamic], authors of the Ananke theme, provide [documentation] for configuration and usage. They also provide a [demonstration site].
@@ -178,7 +178,7 @@ Most theme authors provide configuration guidelines and options. Make sure to vi
 [demonstration site]: https://gohugo-ananke-theme-demo.netlify.app/
 [documentation]: https://github.com/theNewDynamic/gohugo-theme-ananke#readme
 [The New Dynamic]: https://www.thenewdynamic.com/
-{{% /note %}}
+{{< /note >}}
 
 ## Publish the site
 

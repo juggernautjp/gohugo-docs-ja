@@ -34,9 +34,9 @@ Setting `paginate` to a positive value will split the list pages for the homepag
 
 ## List Paginator Pages
 
-{{% warning %}}
+{{< warning >}}
 `.Paginator` is provided to help you build a pager menu. This feature is currently only supported on homepage and list pages (i.e., taxonomies and section lists).
-{{% /warning %}}
+{{< /warning >}}
 
 There are two ways to configure and use a `.Paginator`:
 
@@ -74,7 +74,7 @@ The easiest way to add this to your pages is to include the built-in template (w
 
 {{% note "When to Create `.Paginator`" %}}
 If you use any filters or ordering functions to create your `.Paginator` *and* you want the navigation buttons to be shown before the page listing, you must create the `.Paginator` before it's used.
-{{% /note %}}
+{{< /note >}}
 
 The following example shows how to create `.Paginator` before its used:
 

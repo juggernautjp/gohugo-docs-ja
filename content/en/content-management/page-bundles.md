@@ -89,10 +89,10 @@ These content files are page resources of `my-post`
 : This leaf bundle is nested under couple of
     directories. This bundle also has only the `index.md`.
 
-{{% note %}}
+{{< note >}}
 The hierarchy depth at which a leaf bundle is created does not matter,
 as long as it is not inside another **leaf** bundle.
-{{% /note %}}
+{{< /note >}}
 
 
 ### Headless Bundle {#headless-bundle}
@@ -148,10 +148,10 @@ A _Branch Bundle_ is any directory at any hierarchy within the
 
 This `_index.md` can also be directly under the `content/` directory.
 
-{{% note %}}
+{{< note >}}
 Here `md` (markdown) is used just as an example. You can use any file
 type as a content resource as long as it is a content type recognized by Hugo.
-{{% /note %}}
+{{< /note >}}
 
 
 ### Examples of Branch Bundle organization {#examples-of-branch-bundle-organization}
@@ -181,9 +181,9 @@ bundles (and a leaf bundle):
 : This branch bundle has the `_index.md` and a
     nested leaf bundle.
 
-{{% note %}}
+{{< note >}}
 The hierarchy depth at which a branch bundle is created does not
 matter.
-{{% /note %}}
+{{< /note >}}
 
 [^fn:1]: The `.md` extension is just an example. The extension can be `.html`, `.json` or any valid MIME type.

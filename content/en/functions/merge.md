@@ -66,6 +66,6 @@ Example 4
 {{ $merged.z.a }} --> huey
 ```
 
-{{% note %}}
+{{< note >}}
 Regardless of depth, merging only applies to maps. For slices, use [append]({{< ref "functions/append" >}}).
-{{% /note %}}
+{{< /note >}}

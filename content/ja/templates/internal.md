@@ -24,9 +24,9 @@ wip: true
 <!-- reference: https://discourse.gohugo.io/t/lookup-order-for-partials/5705/6
 code: https://github.com/gohugoio/hugo/blob/e445c35d6a0c7f5fc2f90f31226cd1d46e048bbc/tpl/template_embedded.go#L147 -->
 
-{{% warning %}}
+{{< warning >}}
 以下の内部テンプレートはパーシャル (部分テンプレート) と同様に呼ばれますが、部分テンプレートの検索順序を *守りません*。
-{{% /warning %}}
+{{< /warning >}}
 
 ## Google アナリティクス {#google-analytics}
 

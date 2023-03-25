@@ -110,9 +110,9 @@ names: [ "Derek Perkins", "Joe Bergevin", "Tanner Linsley" ]
     {{ end }}
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 パイプラインを介してシーケンスを引数として受け取る場合、`apply` は動作しません。
-{{% /note %}}
+{{< /note >}}
 
 [chomp]: /functions/chomp/ "chomp 関数のドキュメントを参照してください"
 [delimit]: /functions/delimit/ "delimit 関数のドキュメントを参照してください"

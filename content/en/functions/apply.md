@@ -107,9 +107,9 @@ Now in the completed version, you can sort the tags, convert the tags to links w
     {{ end }}
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 `apply` does not work when receiving the sequence as an argument through a pipeline.
-{{% /note %}}
+{{< /note >}}
 
 [chomp]: /functions/chomp/ "See documentation for the chomp function"
 [delimit]: /functions/delimit/ "See documentation for the delimit function"

@@ -2,7 +2,7 @@ languageCode:           "en"
 title:                  "Bootstrap"
 # baseURL:                "https://getbootstrap.com"
 baseURL:                "https://gohugo-docs-ja.pages.dev/"
-theme:     "github.ecom/juggernautjp/hugo-widebs5-them"
+theme:       "github.ecom/juggernautjp/hugo-widebs5-them"
 # theme:     "hugo-widebs5-theme"
 
 security:

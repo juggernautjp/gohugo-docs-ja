@@ -42,12 +42,12 @@ scoop install hugo-extended
 
 {{% readfile file="/content/ja/installation/common/05-build-from-source.md" %}}
 
-{{% note %}}
+{{< note >}}
 Windows で Hugo の拡張版をソースからビルドする場合、[GCC コンパイラ][GCC compiler] もインストールする必要があります。 これらの [詳細な手順][detailed instructions] を参照してください。
 
 [detailed instructions]: https://discourse.gohugo.io/t/41370
 [GCC compiler]: https://gcc.gnu.org/
-{{% /note %}}
+{{< /note >}}
 
 ## 比較 {#comparison}
 

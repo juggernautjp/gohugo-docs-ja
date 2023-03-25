@@ -21,7 +21,7 @@ The `permalinks` option in your [site configuration][config] allows you to adjus
 
 {{% note "Default Publish and Content Folders" %}}
 These examples use the default values for `publishDir` and `contentDir`; i.e., `public` and `content`, respectively. You can override the default values in your [site's `config` file](/getting-started/configuration/).
-{{% /note %}}
+{{< /note >}}
 
 For example, if one of your [sections][] is called `posts` and you want to adjust the canonical path to be hierarchical based on the year, month, and post title, you could set up the following configurations in YAML and TOML, respectively.
 
@@ -259,7 +259,7 @@ Benefits of non-canonicalization include being able to have scheme-relative reso
 
 {{% note "`canonifyURLs` default change" %}}
 In the May 2014 release of Hugo v0.11, the default value of `canonifyURLs` was switched from `true` to `false`, which we think is the better default and should continue to be the case going forward. Please verify and adjust your website accordingly if you are upgrading from v0.10 or older versions.
-{{% /note %}}
+{{< /note >}}
 
 To find out the current value of `canonifyURLs` for your website, you may use the handy `hugo config` command added in v0.13.
 

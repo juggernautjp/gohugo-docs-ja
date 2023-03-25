@@ -77,7 +77,7 @@ weight: 20
 
 これは、(基本的に空の) "main" ブロックの内容を、リストテンプレートに役立つものに置き換えます。この場合、`"title"` ブロックを定義していないので、ベーステンプレートの内容はリスト内で変更されないままです。
 
-{{% warning %}}
+{{< warning >}}
 ブロック定義の外に置くコードは、レイアウトを壊す可能性があります。 これには HTML コメントも含まれます。 たとえば、以下のコードです。
 
 ```go-html-template
@@ -87,7 +87,7 @@ weight: 20
 {{ end }}
 ```
 [Hugo ディスカッション フォーラムのこのスレッド](https://discourse.gohugo.io/t/baseof-html-block-templates-and-list-types-results-in-empty-pages/5612/6) を参照してください。
-{{% /warning %}}
+{{< /warning >}}
 
 以下は、[デフォルトのシングルページ テンプレート][singletemplate] に固有のコードを使用して、ベーステンプレートの `"main"` と `"title"` ブロックエリアの両方をオーバーライドする方法を示しています。
 

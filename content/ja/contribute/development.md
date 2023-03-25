@@ -34,7 +34,7 @@ Hugo はオープンソース プロジェクトであり、その [貢献者][c
 
 {{% note "Additional Questions?" %}}
 この貢献ガイドのどこかで苦労している場合は、[Hugo のディスカッション フォーラム](https://discourse.gohugo.io) で Hugo コミュニティに連絡してください。
-{{% /note %}}
+{{< /note >}}
 
 ## Go をインストールする {#install-go}
 
@@ -321,7 +321,7 @@ git commit --amend
 
 {{% warning "Be Careful Modifying Multiple Commits"%}}
 このセクションで説明するような変更は、意図しない重大な結果を招くことがあります。よくわからない場合は、このセクションをスキップしてください。
-{{% /warning %}}
+{{< /warning >}}
 
 これはもう少し高度です。 Git では、対話的に [リベース](https://git-scm.com/docs/git-rebase) コミットできます。 つまり、コミット履歴を書き換えることができます。
 

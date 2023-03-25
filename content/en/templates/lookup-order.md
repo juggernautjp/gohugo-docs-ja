@@ -44,7 +44,7 @@ Type
 Section
 : Is relevant for `section`, `taxonomy` and `term` types.
 
-{{% note %}}
+{{< note >}}
 **Tip:** The examples below look long and complex. That is the flexibility talking. Most Hugo sites contain just a handful of templates:
 
 ```bash
@@ -54,7 +54,7 @@ Section
 │   └── single.html
 └── index.html
 ```
-{{% /note %}}
+{{< /note >}}
 
 
 ## Hugo Layouts Lookup Rules With Theme

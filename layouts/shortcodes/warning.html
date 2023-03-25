@@ -1,5 +1,5 @@
 {{- /*
-  goHugoTheme's `{{% warning %}}...{{% /warning %}}` implement with Bootstrap's callout shortcodes: `{{< callout danger >}}...{{< /callout >}}`.
+  goHugoTheme's `warning` shortcode implement with Bootstrap's `callout` shortcodes: equivalent to `callout danger`.
   
   Usage of `callout`: `callout "type"`, where `type` is one of info (default), danger, or warning
 */ -}}
@@ -7,5 +7,5 @@
 {{- $css_class := "danger" -}}
 
 <div class="bd-callout bd-callout-{{ $css_class }}">
-{{ .Inner }}
+{{ .Inner | markdownify }}
 </div>

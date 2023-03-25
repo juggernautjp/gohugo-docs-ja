@@ -47,4 +47,4 @@ From its [documentation](https://golang.org/pkg/strconv/#ParseInt):
 
 > the base is implied by the string's prefix: base 16 for "0x", base 8 for "0",
 > and base 10 otherwise.
-{{% /note %}}
+{{< /note >}}

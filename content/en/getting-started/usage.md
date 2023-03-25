@@ -52,11 +52,11 @@ hugo
 
 The [`hugo`] command builds your site, publishing the files to the `public` directory. To publish your site to a different directory, use the [`--destination`] flag or set [`publishDir`] in your site configuration.
 
-{{% note %}}
+{{< note >}}
 Hugo does not clear the `public` directory before building your site. Existing files are overwritten, but not deleted. This behavior is intentional to prevent the inadvertent removal of files that you may have added to the `public` directory after the build.
 
 Depending on your needs, you may wish to manually clear the contents of the public directory before every build.
-{{% /note %}}
+{{< /note >}}
 
 ## Draft, future, and expired content
 
@@ -78,11 +78,11 @@ hugo --buildFuture    # or -F
 
 Although you can also set these values in your site configuration, it can lead to unwanted results unless all content authors are aware of, and understand, the settings.
 
-{{% note %}}
+{{< note >}}
 As noted above, Hugo does not clear the `public` directory before building your site. Depending on the _current_ evaluation of the four conditions above, after the build your `public` directory may contain extraneous files from a previous build.
 
 A common practice is to manually clear the contents of the `public` directory before each build to remove draft, expired, and future content.
-{{% /note %}}
+{{< /note >}}
 
 ## Develop and test your site
 
@@ -116,9 +116,9 @@ hugo server --navigateToChanged
 
 ## Deploy your site
 
-{{% note %}}
+{{< note >}}
 As noted above, Hugo does not clear the public directory before building your site. Manually clear the contents of the public directory before each build to remove draft, expired, and future content.
-{{% /note %}}
+{{< /note >}}
 
 When are ready to deploy your site, run:
 

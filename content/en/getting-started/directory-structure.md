@@ -67,9 +67,9 @@ used by Hugo when generating your website. You can write these files in YAML, JS
 [`static`][]
 : Stores all the static content: images, CSS, JavaScript, etc. When Hugo builds your site, all assets inside your static directory are copied over as-is. A good example of using the `static` folder is for [verifying site ownership on Google Search Console][searchconsole], where you want Hugo to copy over a complete HTML file without modifying its content.
 
-{{% note %}}
+{{< note >}}
 From **Hugo 0.31** you can have multiple static directories.
-{{% /note %}}
+{{< /note >}}
 
 [`resources`][]
 : Caches some files to speed up generation. Can be also used by template authors to distribute built Sass files, so you don't have to have the preprocessor installed. Note: resources directory is not created by default.

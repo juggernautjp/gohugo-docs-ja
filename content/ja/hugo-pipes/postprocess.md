@@ -32,9 +32,9 @@ weight: 39
 
 ## PostCSS による CSS パージ {#css-purging-with-postcss}
 
-{{% note %}}
+{{< note >}}
 Hugo が PostCSS を使用して CSS のパージを設定するには、いくつかの方法があります。シンプルなプロジェクトであれば、よりシンプルな方法で `resources.PostProcess` を使用せず、テンプレートからキーワードを抽出するだけにすることを検討すべきです。 いくつかの例については、[Tailwind のドキュメント](https://tailwindcss.com/docs/controlling-file-size/#app) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 以下の設定は、ビルドの一部としてプロジェクトルートに `hugo_stats.json` ファイルを書き込みます。 これを本番環境でのビルドにのみ使用するのであれば、[config/production](/getting-started/configuration/#configuration-directory) の下に置くことを検討すべきです。
 

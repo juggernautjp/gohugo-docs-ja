@@ -114,9 +114,9 @@ Hugo ドキュメントの多くのページで、典型的なトリプルバッ
 
 Hugo のドキュメントには、インタラクティブなコードブロックを追加するための非常に堅牢なショートコードが付属しています。
 
-{{% note %}}
+{{< note >}}
 `code` ショートコードでは、*トリプル バックティックと言語宣言を含める必要があります*。 これは、ショートコードのラッパーをレガシーなドキュメントに簡単に追加できるようにするための設計で、将来のバージョンの Hugo ドキュメントで必要になった場合に削除しやすくなるようにするためです。
-{{% /note %}}
+{{< /note >}}
 
 ### `code`
 
@@ -234,7 +234,7 @@ The preceding `output` example will render as follows to the Hugo docs:
 
 {{% note "Blockquotes `!=` Admonitions" %}}
 Hugo ドキュメントの以前のバージョンでは、テキストに注意を引くためにブロック引用を使用していました。 これは、 [`<blockquote>` の意図された意味的使用方法](https://html5doctor.com/cite-and-blockquote-reloaded/) *ではありません*。 引用するときは、ブロック引用を使用してください。 ユーザーに特定の情報を通知または警告するには、以下の admonition ショートコードを使用します。
-{{% /note %}}
+{{< /note >}}
 
 ## Admonition {#admonitions}
 
@@ -259,16 +259,16 @@ Here is a piece of information I would like to draw your **attention** to.
 #### `note` の出力例 {#example-note-output}
 
 {{< output file="note-with-heading.html" >}}
-{{% note %}}
+{{< note >}}
 Here is a piece of information I would like to draw your **attention** to.
-{{% /note %}}
+{{< /note >}}
 {{< /output >}}
 
 #### `note` の表示例 {#example-note-display}
 
-{{% note %}}
+{{< note >}}
 Here is a piece of information I would like to draw your **attention** to.
-{{% /note %}}
+{{< /note >}}
 
 ### `tip` admonition
 
@@ -285,16 +285,16 @@ Here's a bit of advice to improve your productivity with Hugo.
 #### `tip` の出力例 {#example-tip-output}
 
 {{< output file="tip-output.html" >}}
-{{% tip %}}
+{{< tip >}}
 Here's a bit of advice to improve your productivity with Hugo.
-{{% /tip %}}
+{{< /tip >}}
 {{< /output >}}
 
 #### `tip` の表示例 {#example-tip-display}
 
-{{% tip %}}
+{{< tip >}}
 Here's a bit of advice to improve your productivity with Hugo.
-{{% /tip %}}
+{{< /tip >}}
 
 ### `warning` admonition
 
@@ -311,20 +311,20 @@ This is a warning, which should be reserved for *important* information like bre
 #### `warning` の出力例 {#example-warning-output}
 
 {{< output file="warning-admonition-output.html" >}}
-{{% warning %}}
+{{< warning >}}
 This is a warning, which should be reserved for *important* information like breaking changes.
-{{% /warning %}}
+{{< /warning >}}
 {{< /output >}}
 
 #### `warning` の表示例 {#example-warning-display}
 
-{{% warning %}}
+{{< warning >}}
 これは警告であり、重大な変更点などの *重要な* 情報にのみ使用されるべきものです。
-{{% /warning %}}
+{{< /warning >}}
 
 {{% note "Pull Requests and Branches" %}}
 [「Hugo の開発に貢献する」](/contribute/development/) と同様に、Hugo チームはあなたが Hugo ドキュメントに貢献する際に、別のブランチ/フォークを作成することを期待しています。
-{{% /note %}}
+{{< /note >}}
 
 
 ## 訳注

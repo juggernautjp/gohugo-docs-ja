@@ -1,0 +1,52 @@
+{{/* cite from hugo-theme-zen */}}
+
+{{ $early := resources.Get "zen/js/script-early.js" | minify | fingerprint -}}
+<script src="{{ $early.RelPermalink }}"></script>
+
+{{ if $.Param "alpine" -}}
+{{ $alpine := resources.Get "zen/vendor/alpine.min.js" | fingerprint -}}
+<script defer src="{{ $alpine.RelPermalink }}"></script>
+{{ end -}}
+
+{{ if $.Param "jquery" -}}
+{{ $jquery := resources.Get "zen/vendor/jquery.slim.min.js" | fingerprint -}}
+<script defer src="{{ $jquery.RelPermalink }}"></script>
+{{ end -}}
+
+{{ if $.Param "umbrella" -}}
+{{ $umbrella := resources.Get "zen/vendor/umbrella.min.js" | fingerprint -}}
+<script defer src="{{ $umbrella.RelPermalink }}"></script>
+{{ end -}}
+
+{{ if $.Param "mobilemenu" -}}
+{{ $mobilemenu := resources.Get "zen/js/mobile.js" | minify | fingerprint -}}
+<script defer src="{{ $mobilemenu.RelPermalink }}"></script>
+{{ end -}}
+
+{{ if $.Param "cookieconsent" -}}
+{{ $cookieconsent := resources.Get "zen/js/cookieconsent.js" | minify | fingerprint -}}
+<script defer src="{{ $cookieconsent.RelPermalink }}"></script>
+{{ end -}}
+
+{{ if $.Param "listsort" -}}
+{{ $listmin := resources.Get "zen/vendor/list.min.js" | fingerprint -}}
+<script defer src="{{ $listmin.RelPermalink }}"></script>
+{{ $listsort := resources.Get "zen/js/listsort.js" | fingerprint -}}
+<script defer src="{{ $listsort.RelPermalink }}"></script>
+{{ end -}}
+
+{{ if .HasShortcode "contact" -}}
+{{ $contact := resources.Get "zen/js/contact.js" | minify | fingerprint -}}
+<script defer src="{{ $contact.RelPermalink }}"></script>
+{{ end -}}
+
+{{ if .HasShortcode "search" -}}
+{{ $flexsearch := resources.Get "zen/vendor/flexsearch.compact.js" | fingerprint -}}
+<script defer src="{{ $flexsearch.RelPermalink }}"></script>
+{{ $search_opts := dict "minify" true "params" (dict "searchLimit" (site.Params.searchLimit | default 20)) -}}
+{{ $search := resources.Get "zen/js/search.js" | js.Build $search_opts | fingerprint -}}
+<script defer src="{{ $search.RelPermalink }}"></script>
+{{ end -}}
+
+{{ $script := resources.Get "zen/js/script.js" | minify | fingerprint -}}
+<script defer src="{{ $script.RelPermalink }}"></script>

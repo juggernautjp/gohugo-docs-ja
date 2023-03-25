@@ -29,10 +29,10 @@ a directory named `foo` with an `_index.md` file (see [Branch Bundles][branch bu
 for more information).
 
 
-{{% note %}}
+{{< note >}}
 A **section** cannot be defined or overridden by a front matter parameter -- it
 is strictly derived from the content organization structure.
-{{% /note %}}
+{{< /note >}}
 
 ## Nested Sections
 
@@ -51,12 +51,12 @@ content
 
 **The important part to understand is, that to make the section tree fully navigational, at least the lower-most section needs a content file. (e.g. `_index.md`).**
 
-{{% note %}}
+{{< note >}}
 When we talk about a **section** in correlation with template selection, it is
 currently always the *root section* only (`/blog/funny-cats/mypost/ => blog`).
 
 If you need a specific template for a sub-section, you need to adjust either the `type` or `layout` in front matter.
-{{% /note %}}
+{{< /note >}}
 
 ## Example: Breadcrumb Navigation
 

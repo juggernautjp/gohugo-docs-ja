@@ -42,9 +42,9 @@ Hugo の [ページ付け (ページネーション)](https://developer.mozilla.
 
 ## ページネーターのページを一覧表示する {#list-paginator-pages}
 
-{{% warning %}}
+{{< warning >}}
 `.Paginator` は、ページャー メニューのビルドを支援するために提供されています。 この機能は現在、ホームページとリストページ (つまり、タクソノミーとセクションリスト) でのみサポートされています。
-{{% /warning %}}
+{{< /warning >}}
 
 `.Paginator` を設定し、使用するには以下の 2 つの方法があります。
 
@@ -82,7 +82,7 @@ Hugo の [ページ付け (ページネーション)](https://developer.mozilla.
 
 {{% note "When to Create `.Paginator`" %}}
 フィルターまたは順序付け関数を使用して `.Paginator` を作成し、**かつ**、ページリストの前にナビゲーション ボタンを表示したい場合は、使用する前に `.Paginator` を作成する必要があります。
-{{% /note %}}
+{{< /note >}}
 
 以下の例では、使用する前に `.Paginator` を作成する方法を示しています。
 

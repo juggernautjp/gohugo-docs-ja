@@ -18,9 +18,9 @@ aliases: [/layouts/introduction/,/layout/introduction/, /templates/go-templates/
 toc: true
 ---
 
-{{% note %}}
+{{< note >}}
 The following is only a primer on Go Templates. For an in-depth look into Go Templates, check the official [Go docs](https://golang.org/pkg/text/template/).
-{{% /note %}}
+{{< /note >}}
 
 Go Templates provide an extremely simple template language that adheres to the belief that only the most basic of logic belongs in the template or view layer.
 
@@ -99,9 +99,9 @@ by the dot-prefix (`.Title`):
 
 Values can also be stored in custom variables and referenced later:
 
-{{% note %}}
+{{< note >}}
 The custom variables need to be prefixed with `$`.
-{{% /note %}}
+{{< /note >}}
 
 ```go-html-template
 {{ $address := "123 Main St." }}
@@ -144,16 +144,16 @@ Note that both examples make use of Go Template's [math][math] functions.
 
 {{% note "Additional Boolean Operators" %}}
 There are more boolean operators than those listed in the Hugo docs in the [Go Template documentation](https://golang.org/pkg/text/template/#hdr-Functions).
-{{% /note %}}
+{{< /note >}}
 
 ## Includes
 
 When including another template, you will need to pass it the data that it would
 need to access.
 
-{{% note %}}
+{{< note >}}
 To pass along the current context, please remember to include a trailing **dot**.
-{{% /note %}}
+{{< /note >}}
 
 The templates location will always be starting at the `layouts/` directory
 within Hugo.
@@ -176,10 +176,10 @@ in much older Hugo versions. Now it's useful only for calling
 [_internal_ templates][internal templates]. The syntax is `{{ template
 "_internal/<TEMPLATE>.<EXTENSION>" . }}`.
 
-{{% note %}}
+{{< note >}}
 The available **internal** templates can be found
 [here](https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates).
-{{% /note %}}
+{{< /note >}}
 
 Example of including the internal `opengraph.html` template:
 
@@ -262,9 +262,9 @@ Go Templates treat the following values as **false**:
 It is common to write "if something exists, do this" kind of
 statements using `with`.
 
-{{% note %}}
+{{< note >}}
 `with` rebinds the context `.` within its scope (just like in `range`).
-{{% /note %}}
+{{< /note >}}
 
 It skips the block if the variable is absent, or if it evaluates to
 "false" as explained above.
@@ -414,9 +414,9 @@ The following shows how to define a variable independent of the context.
 </ul>
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 Notice how once we have entered the loop (i.e. `range`), the value of `{{ . }}` has changed. We have defined a variable outside the loop (`{{$title}}`) that we've assigned a value so that we have access to the value from within the loop as well.
-{{% /note %}}
+{{< /note >}}
 
 ### 2. Use `$.` to Access the Global Context
 
@@ -435,7 +435,7 @@ Notice how once we have entered the loop (i.e. `range`), the value of `{{ . }}` 
 
 {{% warning "Don't Redefine the Dot" %}}
 The built-in magic of `$` would cease to work if someone were to mischievously redefine the special character; e.g. `{{ $ := .Site }}`. *Don't do it.* You may, of course, recover from this mischief by using `{{ $ := . }}` in a global context to reset `$` to its default value.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Whitespace
 
@@ -506,9 +506,9 @@ If you need to produce HTML comments from your templates, take a look at the [In
 
 HTML comments are by default stripped, but their content is still evaluated. That means that although the HTML comment will never render any content to the final HTML pages, code contained within the comment may fail the build process.
 
-{{% note %}}
+{{< note >}}
 Do **not** try to comment out Go Template code using HTML comments.
-{{% /note %}}
+{{< /note >}}
 
 ```go-html-template
 <!-- {{ $author := "Emma Goldman" }} was a great woman. -->

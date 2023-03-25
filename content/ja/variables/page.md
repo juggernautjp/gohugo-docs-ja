@@ -24,7 +24,7 @@ weight: 20
 
 {{% note "`.Scratch`" %}}
 ページスコープの書き込み可能な変数については、[`.Scratch`](/functions/scratch/) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ## ページ変数 {#page-variables}
 
@@ -213,7 +213,7 @@ tags: [two,three,four]
 
 {{% note "Casing of Params" %}}
 ページレベルの `.Params` は、小文字で *のみ* アクセス可能です。
-{{% /note %}}
+{{< /note >}}
 
 `.Params` 変数は、コンテンツファイルにユーザー定義のフロントマター フィールドを導入する際に特に便利です。たとえば、書評に関する Hugo の Web サイトでは、`/content/review/book01.md` に以下のフロントマターを含めることができます。
 
@@ -242,9 +242,9 @@ recommendedby: "私の母"
 <p>私の母に勧められました。</p>
 {{< /output >}}
 
-{{% note %}}
+{{< note >}}
 コンテンツ間の `Params` の一貫性については、 [「アーキタイプ」](/content-management/archetypes/) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ### `.Param` メソッド {#the-param-method}
 

@@ -27,7 +27,7 @@ weight: 150
 
 {{% note "Hugo Ships with an RSS Template" %}}
 Hugo には、独自の [RSS 2.0 テンプレート](#the-embedded-rssxml) が付属しています。ほとんどの場合、この埋め込みテンプレートで十分です。
-{{% /note %}}
+{{< /note >}}
 
 RSS ページは `Page` というタイプで、テンプレートで使用できるすべての [ページ変数](/variables/page/) を持っています。
 

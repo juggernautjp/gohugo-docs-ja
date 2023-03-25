@@ -28,7 +28,7 @@ workson: []
 {{ if isset .Params "project_url" }} {{ index .Params "project_url" }}{{ end }}
 ```
 
-{{% warning %}}
+{{< warning >}}
 サイトレベルの設定キーはすべて小文字で保存されます。したがって、[サイト設定ファイル](/getting-started/configuration/) 内の `myParam` というキーと値のセットには、`{{if isset .Site.Params "myparam"}}` でアクセスし、 `{{if isset .Site.Params "myParam"}}` ではアクセスできない必要があるのです。なお、[`with`](/functions/with) を使用する場合など、`.Site.Params.myParam` *または* `.Site.Params.myparam` を使用して同じ設定キーにアクセスできることに注意してください。
 この制限は、[ショートコード](/content-management/shortcodes/) 内からページレベルのフロントマターのキーにアクセスする場合にも適用されます。
-{{% /warning %}}
+{{< /warning >}}

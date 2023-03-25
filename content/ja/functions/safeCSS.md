@@ -39,4 +39,4 @@ workson: []
 
 {{% note "ZgotmplZ" %}}
 "ZgotmplZ" は、安全でないコンテンツが CSS または URL コンテキストに到達したことを示す特別な値です。
-{{% /note %}}
+{{< /note >}}

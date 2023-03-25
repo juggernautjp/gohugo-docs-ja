@@ -1,3 +1,7 @@
+{{- /* 
+  docs-navbar.html: トップバー (Navigation) のテンプレートファイル。
+  docs-navbar-links.html, docs-navbar-darkmode.html を利用している。 
+  */ -}}
 {{- $docs_version_menu := .Site.Params.menuDocsVersion -}}
 <header class="navbar navbar-expand-lg bd-navbar sticky-top">
   <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
@@ -13,7 +17,7 @@
     {{- end }}
 
     <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
-      {{ partial "icons/bootstrap-white-fill.svg" (dict "class" "d-block my-1" "width" "40" "height" "32") }}
+      {{ partial "svg/hugo-logo.svg" (dict "class" "d-block my-1" "width" "40" "height" "32") }}
     </a>
 
     <div class="d-flex">
@@ -77,42 +81,8 @@
           </li>
         {{- end -}}
 
-          <li class="nav-item dropdown">
-            <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
-                    id="bd-theme"
-                    type="button"
-                    aria-expanded="false"
-                    data-bs-toggle="dropdown"
-                    data-bs-display="static"
-                    aria-label="Toggle theme (auto)">
-              <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
-              <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text" style="--bs-dropdown-min-width: 8rem;">
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                  <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
-                  Light
-                  <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                </button>
-              </li>
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-                  <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
-                  Dark
-                  <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                </button>
-              </li>
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-                  <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
-                  Auto
-                  <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                </button>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        {{ partial "docs-navbar-darkmode" . }}
+      </ul>
       </div>
     </div>
   </nav>

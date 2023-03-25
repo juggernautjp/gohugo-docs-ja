@@ -38,7 +38,7 @@ would produce the following:
 
 The above example uses the [`.Format` function](/functions/format), which page includes a full listing of date formatting using Go's layout string.
 
-{{% note %}}
+{{< note >}}
 Older Hugo themes may still be using the obsolete Page’s `.Now` (uppercase with leading dot), which causes build error that looks like the following:
 
     ERROR ... Error while rendering "..." in "...": ...
@@ -46,4 +46,4 @@ Older Hugo themes may still be using the obsolete Page’s `.Now` (uppercase wit
     can't evaluate field Now in type *hugolib.PageOutput
 
 Be sure to use `now` (lowercase with _**no**_ leading dot) in your templating.
-{{% /note %}}
+{{< /note >}}

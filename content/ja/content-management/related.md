@@ -66,9 +66,9 @@ Hugo は、フロントマターのパラメータに基づいて、ページの
 {{ $related := site.RegularPages.RelatedTo ( keyVals "tags" "hugo" "rocks")  ( keyVals "date" .Date ) }}
 ```
 
-{{% note %}}
+{{< note >}}
 この機能のより高度な使用方法については、[このブログの記事](https://regisphilibert.com/blog/2018/04/hugo-optmized-relashionships-with-related-content/) を読んでください。
-{{% /note %}}
+{{< /note >}}
 
 ## 関連コンテンツを設定する {#configure-related-content}
 
@@ -94,9 +94,9 @@ related:
 
 カスタム設定も同じ構文で設定する必要があります。
 
-{{% note %}}
+{{< note >}}
 `related` 設定セクションを追加する場合、完全な設定を追加する必要があります。たとえば `includeNewer` のみ設定し、残りは Hugo のデフォルトを使用する、ということはできません。
-{{% /note %}}
+{{< /note >}}
 
 ### トップレベルの設定オプション {#top-level-config-options}
 
@@ -138,6 +138,6 @@ Scott S. Lowe は、タグの `intersect` テンプレート機能を使って�
 * `Related` メソッドを使用しない場合は、Relate Content (関連コンテンツ) 機能を使用せず、パフォーマンスは以前と同じになります。
 * `.RegularPages.Related` などを呼び出すと、同じページコレクション内の検索に再利用される 1 つの逆インデックス (投稿リストと呼ばれることもあります) が作成されます。 例として、`.Pages.Related` の呼び出しに加えてこれを行うと、期待どおりに機能しますが、追加の逆インデックスが 1 つ作成されます。 これでも非常に高速ですが、特に大規模なサイトの場合は注意が必要です。
 
-{{% note %}}
+{{< note >}}
 現在、**ページコンテンツ** のインデックスは作成していません。[シャーロックの最後の事件](https://github.com/joearms/sherlock) を解決する前に、多くの人に喜んでもらえるようなものを公開しようと考えたのです。
-{{% /note %}}
+{{< /note >}}

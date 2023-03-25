@@ -59,7 +59,7 @@ Hugo は、デフォルトで以下のような適切なデフォルト引数を
 
 {{% warning "Performance of External Helpers" %}}
 追加のフォーマットは外部コマンドであるため、生成のパフォーマンスは、使用している外部ツールのパフォーマンスに大きく依存します。 この機能はまだ初期段階にあるため、フィードバックを歓迎します。
-{{% /warning %}}
+{{< /warning >}}
 
 ### 外部ヘルパー AsciiDoc {#external-helper-asciidoc}
 
@@ -73,9 +73,9 @@ Asciidoctor コミュニティは、Hugo に追加してインストールでき
 [インストール方法は Asciidoctor のドキュメントを参照してください](https://asciidoctor.org/docs/install-toolchain/)。 
 必要であれば、`asciidoctor-diagram` や `asciidoctor-html5s` などのオプションの拡張もすべてインストールされていることを確認してください。
 
-{{% note %}}
+{{< note >}}
 外部の `asciidoctor` コマンドでは、 Hugo レンダリングが特定の宛先ディレクトリへ _disk_ するように要求します。 コマンド オプション `--destination` を指定して Hugo を実行する必要があります。
-{{% /note %}}
+{{< /note >}}
 
 一部の [Asciidoctor](https://asciidoctor.org/man/asciidoctor/) パラメータは、Hugo でカスタマイズできます。
 

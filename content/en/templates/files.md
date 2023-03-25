@@ -49,9 +49,9 @@ As `readFile` is a function, it is only available to you in your templates and n
 {{</* readfile file="/path/to/local/file.txt" markdown="true" */>}}
 ```
 
-{{% warning %}}
+{{< warning >}}
 If you are going to create [custom shortcodes](/templates/shortcode-templates/) with `readFile` for a theme, note that usage of the shortcode will refer to the project root and *not* your `themes` directory.
-{{% /warning %}}
+{{< /warning >}}
 
 [called directly in the Hugo docs]: https://github.com/gohugoio/hugoDocs/blob/master/content/en/templates/files.md
 [dirindex]: https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/directoryindex.html

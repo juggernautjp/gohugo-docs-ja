@@ -34,11 +34,11 @@ workson:
 {{ $d.AddDate -1 -1 -1 | time.Format "2006-01-02" }} --> 2020-11-30
 ```
 
-{{% note %}}
+{{< note >}}
 月または年を追加するとき、結果の日が存在しない場合、Hugo は最終的な `time.Time` 値を正規化します。 たとえば、1 月 31 日に 1 か月を追加すると、年によって 3 月 2 日または 3 月 3 日になります。
 
 Go チームによる [この説明](https://github.com/golang/go/issues/31145#issuecomment-479067967) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 ```go-html-template
 {{ $d := "2023-01-31" | time.AsTime }}

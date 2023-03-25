@@ -20,9 +20,9 @@ toc: true
 
 Shortcodes are a means to consolidate templating into small, reusable snippets that you can embed directly inside your content. In this sense, you can think of shortcodes as the intermediary between [page and list templates][templates] and [basic content files][].
 
-{{% note %}}
+{{< note >}}
 Hugo also ships with built-in shortcodes for common use cases. (See [Content Management: Shortcodes](/content-management/shortcodes/).)
-{{% /note %}}
+{{< /note >}}
 
 ## Create Custom Shortcodes
 
@@ -108,10 +108,10 @@ A shortcode with content declared via the `.Inner` variable can also be declared
 {{</* innershortcode /*/>}}
 ```
 
-{{% warning %}}
+{{< warning >}}
 Any shortcode that refers to `.Inner` must be closed or self-closed.
 
-{{% /warning %}}
+{{< /warning >}}
 
 #### `.Params`
 
@@ -148,9 +148,9 @@ You could then include the following as part of your shortcode templating:
 
 See the [example Vimeo shortcode][vimeoexample] below for `.IsNamedParams` in action.
 
-{{% warning %}}
+{{< warning >}}
 While you can create shortcode templates that accept both positional and named parameters, you *cannot* declare shortcodes in content with a mix of parameter types. Therefore, a shortcode declared like `{{</* image src="images/my-image.jpg" "This is my alt text" */>}}` will return an error.
-{{% /warning %}}
+{{< /warning >}}
 
 You can also use the variable `.Page` to access all the normal [page variables][pagevars].
 

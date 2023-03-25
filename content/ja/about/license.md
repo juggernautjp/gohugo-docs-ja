@@ -22,10 +22,10 @@ toc: true
 weight: 60
 ---
 
-{{% note %}}
+{{< note >}}
 Hugo v0.15 以降は、Apache 2.0 ライセンスでリリースされています。
 Hugo の以前のバージョンは、[Simple Public License](https://opensource.org/licenses/Simple-2.0) でリリースされていました。
-{{% /note %}}
+{{< /note >}}
 
 _Version 2.0, January 2004_ <br>
 <https://www.apache.org/licenses/LICENSE-2.0>

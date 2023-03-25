@@ -224,9 +224,9 @@ From content files, you can use the [`ref` or `relref` shortcodes](/content-mana
 
 A new output format needs a corresponding template in order to render anything useful.
 
-{{% note %}}
+{{< note >}}
 The key distinction for Hugo versions 0.20 and newer is that Hugo looks at an output format's `Name` and MediaType's `Suffixes` when choosing the template used to render a given `Page`.
-{{% /note %}}
+{{< /note >}}
 
 The following table shows examples of different output formats, the suffix used, and Hugo's respective template [lookup order][]. All the examples in the table can:
 

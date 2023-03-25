@@ -210,7 +210,7 @@ The `highlight` shortcode example above would produce the following HTML when th
 
 {{% note "More on Syntax Highlighting" %}}
 To see even more options for adding syntax-highlighted code blocks to your website, see [Syntax Highlighting in Developer Tools](/tools/syntax-highlighting/).
-{{% /note %}}
+{{< /note >}}
 
 ### `instagram`
 
@@ -247,9 +247,9 @@ Using the preceding `instagram` with `hidecaption` example above, the following 
 {{< instagram BWNjjyYFxVx hidecaption >}}
 
 
-{{% note %}}
+{{< note >}}
 The `instagram`-shortcode refers an endpoint of Instagram's API, that's deprecated since October 24th, 2020. Thus, no images can be fetched from this API endpoint, resulting in an error when the `instagram`-shortcode is used. For more information please have a look at GitHub issue [#7879](https://github.com/gohugoio/hugo/issues/7879).
-{{% /note %}}
+{{< /note >}}
 
 ### `param`
 
@@ -277,7 +277,7 @@ These shortcodes will look up the pages by their relative path (e.g., `blog/post
 
 {{% note "More on Cross References" %}}
 Read a more extensive description of `ref` and `relref` in the [cross references](/content-management/cross-references/) documentation.
-{{% /note %}}
+{{< /note >}}
 
 `ref` and `relref` take exactly one required parameter of _reference_, quoted and in position `0`.
 
@@ -351,13 +351,13 @@ Using the preceding `vimeo` example, the following HTML will be added to your re
 {{< vimeo 146022717 >}}
 {{< /output >}}
 
-{{% tip %}}
+{{< tip >}}
 If you want to further customize the visual styling of the YouTube or Vimeo output, add a `class` named parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
 
 ```go
 {{</* vimeo id="146022717" class="my-vimeo-wrapper-class" title="My vimeo video" */>}}
 ```
-{{% /tip %}}
+{{< /tip >}}
 
 #### Example `vimeo` Display
 

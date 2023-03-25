@@ -22,7 +22,7 @@ weight: 190
 
 {{% note "Lazy Blogger"%}}
 セクションのシンプルなメニューだけが必要な場合は、[メニュー テンプレートの「怠惰なブロガーのためのセクション メニュー」](/templates/menu-templates/#section-menu-for-lazy-bloggers) を参照してください。
-{{% /note %}}
+{{< /note >}}
 
 You can do this:
 
@@ -37,7 +37,7 @@ You can do this:
 
 {{% note "Menus on Multilingual Sites" %}}
 [多言語機能](/content-management/multilingual/) を利用すると、言語に依存しないメニューを定義できます。
-{{% /note %}}
+{{< /note >}}
 
 メニューエントリに関連するすべての変数と関数については、[「メニューエントリ プロパティ」][me-props] を参照してください。
 
@@ -91,9 +91,9 @@ menu:
     url = "/getting-started/"
 {{< /code-toggle >}}
 
-{{% note %}}
+{{< note >}}
 URL はコンテキストルートからの相対パスである必要があります。 `baseURL` が `https://example.com/mysite/` の場合、メニューの URL にはコンテキストルートである `mysite` を含んではいけません。 絶対 URL を使用すると、baseURL がオーバーライドされます。上記の例で `URL` に使用した値が `https://subdomain.example.com/` である場合、出力は `https://subdomain.example.com` となります。
-{{% /note %}}
+{{< /note >}}
 
 ## ネスト {#nesting}
 

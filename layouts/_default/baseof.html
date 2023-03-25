@@ -14,7 +14,9 @@
 
     {{ partial "footer-new" . }}
     {{ partial "scripts" . }}
-
+    {{/* add hugo-theme-zen's JS for Flexsearch.js */}}
+    {{ partial "scripts-zen.html" . }}
+    
     {{ block "footer" . }}
     {{ end }}
   </body>

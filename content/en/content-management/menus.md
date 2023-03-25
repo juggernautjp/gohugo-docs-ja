@@ -15,7 +15,7 @@ aliases: [/extras/menus/]
 
 {{% note "Lazy Blogger"%}}
 If all you want is a simple menu for your sections, see the ["Section Menu for Lazy Bloggers" in Menu Templates](/templates/menu-templates/#section-menu-for-lazy-bloggers).
-{{% /note %}}
+{{< /note >}}
 
 You can do this:
 
@@ -30,7 +30,7 @@ A **menu** is a named array of menu entries accessible by name via the [`.Site.M
 
 {{% note "Menus on Multilingual Sites" %}}
 If you make use of the [multilingual feature](/content-management/multilingual/), you can define language-independent menus.
-{{% /note %}}
+{{< /note >}}
 
 See the [Menu Entry Properties][me-props] for all the variables and functions related to a menu entry.
 
@@ -84,9 +84,9 @@ Here’s an example snippet pulled from a configuration file:
     url = "/getting-started/"
 {{< /code-toggle >}}
 
-{{% note %}}
+{{< note >}}
 The URLs must be relative to the context root. If the `baseURL` is `https://example.com/mysite/`, then the URLs in the menu must not include the context root `mysite`. Using an absolute URL will override the baseURL. If the value used for `URL` in the above example is `https://subdomain.example.com/`, the output will be `https://subdomain.example.com`.
-{{% /note %}}
+{{< /note >}}
 
 ## Nesting
 

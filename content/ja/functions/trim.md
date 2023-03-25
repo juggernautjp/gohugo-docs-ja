@@ -37,9 +37,9 @@ workson: []
 {{ trim .Inner "\n" }}
 ```
 
-{{% note %}}
+{{< note >}}
 Go テンプレートは、ハイフン (`-`) を含めることにより、Go タグの両側から単純に [空白文字を削除する方法](/templates/introduction/#whitespace) も提供します。
-{{% /note %}}
+{{< /note >}}
 
 
 [shortcodevars]: /variables/shortcodes/

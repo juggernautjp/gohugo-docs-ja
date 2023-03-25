@@ -42,12 +42,12 @@ scoop install hugo-extended
 
 {{% readfile file="/installation/common/05-build-from-source.md" %}}
 
-{{% note %}}
+{{< note >}}
 When building the extended edition of Hugo from source on Windows, you will also need to install the [GCC compiler]. See these [detailed instructions].
 
 [detailed instructions]: https://discourse.gohugo.io/t/41370
 [GCC compiler]: https://gcc.gnu.org/
-{{% /note %}}
+{{< /note >}}
 
 ## Comparison
 

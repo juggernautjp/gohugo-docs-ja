@@ -19,7 +19,7 @@ Previously, there was no out-of-the-box way to specify which heading levels you 
 
 Hugo [v0.60.0](https://github.com/gohugoio/hugo/releases/tag/v0.60.0) made a switch to [Goldmark](https://github.com/yuin/goldmark/) as the default library for Markdown which has improved and configurable implementation of TOC. Take a look at [how to configure TOC](/getting-started/configuration-markup/#table-of-contents) for Goldmark renderer.
 
-{{% /note %}}
+{{< /note >}}
 
 ## Usage
 
@@ -80,9 +80,9 @@ The following is a [partial template][partials] that adds slightly more logic fo
 {{ end }}
 {{< /code >}}
 
-{{% note %}}
+{{< note >}}
 With the preceding example, even pages with > 400 words *and* `toc` not set to `false` will not render a table of contents if there are no headings in the page for the `{{.TableOfContents}}` variable to pull from.
-{{% /note %}}
+{{< /note >}}
 
 ## Usage with AsciiDoc
 

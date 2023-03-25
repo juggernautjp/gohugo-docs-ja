@@ -74,7 +74,7 @@ guessSyntax
 : Boolean. Default is `false`.\
 If the `LANG` parameter is blank or an unrecognized language, auto-detect the language if possible, otherwise use a fallback language.
 
-{{% note %}}
+{{< note >}}
 Instead of specifying both `lineNos` and `lineNumbersInTable`, you can use the following shorthand notation:
 
 `lineNos=inline`
@@ -82,7 +82,7 @@ Instead of specifying both `lineNos` and `lineNumbersInTable`, you can use the f
 
 `lineNos=table`
 : equivalent to `lineNos=true` and `lineNumbersInTable=true`
-{{% /note %}}
+{{< /note >}}
 
 ## Examples
 

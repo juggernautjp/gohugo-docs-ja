@@ -25,6 +25,6 @@ Examples:
 ```
 
 
-{{% note %}}
+{{< note >}}
 `split` essentially does the opposite of [delimit]({{< ref "functions/delimit" >}}). While `split` creates a slice from a string, `delimit` creates a string from a slice.
-{{% /note %}}
+{{< /note >}}

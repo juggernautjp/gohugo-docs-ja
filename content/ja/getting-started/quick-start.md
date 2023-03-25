@@ -42,11 +42,11 @@ weight: 10
 
 ### コマンド {#commands}
 
-{{% note %}}
+{{< note >}}
 Windows ユーザーの場合は、これらのコマンドを [PowerShell] で実行する必要があります。 別のアプリケーションである Windows Powershell やコマンド プロンプトは使用できません。 可能であれば、Linux シェルを使用することもできます。
 
 [PowerShell]: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows
-{{% /note %}}
+{{< /note >}}
 
 これらのコマンドを実行して、[Ananke] テーマの Hugo サイトを作成します。 次のセクションでは、各コマンドについて説明します。
 
@@ -147,12 +147,12 @@ hugo server -D
 
 端末に表示された URL でサイトを表示します。開発用サーバーを起動したまま、コンテンツの追加や変更を続けてください。
 
-{{% note %}}
+{{< note >}}
 Hugo のレンダリング エンジンは、Markdown の CommonMark [仕様][specification] に準拠しています。 CommonMark 組織は、リファレンス実装を利用した便利な [ライブ テストツール][live testing tool] を提供しています。
 
 [live testing tool]: https://spec.commonmark.org/dingus/
 [specification]: https://spec.commonmark.org/
-{{% /note %}}
+{{< /note >}}
 
 ## サイトを設定する {#configure-the-site}
 
@@ -179,7 +179,7 @@ Hugo の開発サーバーを起動して変更を確認します。下書きの
 hugo server -D
 ```
 
-{{% note %}}
+{{< note >}}
 ほとんどのテーマの作者は、設定のガイドラインとオプションを提供しています。詳細については、テーマのリポジトリまたはドキュメントサイトを参照してください。
 
 Ananke テーマの作者である [The New Dynamic] は、設定や使用方法についての [ドキュメント][documentation] を提供しています。また、[デモサイト][demonstration site] も提供されています。
@@ -187,7 +187,7 @@ Ananke テーマの作者である [The New Dynamic] は、設定や使用方法
 [demonstration site]: https://gohugo-ananke-theme-demo.netlify.app/
 [documentation]: https://github.com/theNewDynamic/gohugo-theme-ananke#readme
 [The New Dynamic]: https://www.thenewdynamic.com/
-{{% /note %}}
+{{< /note >}}
 
 ## サイトを公開する {#publish-the-site}
 

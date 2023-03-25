@@ -21,7 +21,7 @@ Know of a Hugo-related starter kit that isn't mentioned here? [Please add it to 
 
 {{% note "Starter Kits are Not Maintained by the Hugo Team"%}}
 The following starter kits are developed by active members of the Hugo community. If you find yourself having issues with any of the projects, it's best to file an issue directly with the project's maintainer(s).
-{{% /note %}}
+{{< /note >}}
 
 * [Wowchemy][]. Wowchemy is the 5,500+ star open source Hugo starter kit and website builder trusted by 750,000+ sites since 2016. Create _any_ kind of site with [50+ templates, widgets, and extensions](https://wowchemy.com/). Translated into 35+ languages and backed by a large, active community of 150+ contributors.
 * [Hugo Wrapper][hugow]. Hugo Wrapper is a POSIX-style shell script which acts as a wrapper to download and run Hugo binary for your platform. It can be executed in variety of [Operating Systems][hugow-test] and [Command Shells][hugow-test].

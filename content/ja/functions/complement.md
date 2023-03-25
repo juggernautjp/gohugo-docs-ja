@@ -29,11 +29,11 @@ title: complement
 {{ complement $c1 $c2 $c3 }} → [1 2]
 ```
 
-{{% note %}}
+{{< note >}}
 [チェーン パイプライン][chained pipeline] を使用して、コードを理解しやすくします。
 
 [chained pipeline]: https://pkg.go.dev/text/template#hdr-Pipelines
-{{% /note %}}
+{{< /note >}}
 
 
 ```go-html-template
@@ -61,11 +61,11 @@ content/
 {{ end }}
 ```
 
-{{% note %}}
+{{< note >}}
 上記の例では `complement` 関数を使用していますが、以下のように、[`where`] 関数も同様に使用できます。
 
 [`where`]: /functions/where/
-{{% /note %}} 
+{{< /note >}} 
 
 ```go-html-template
 {{ range where site.RegularPages "Type" "not in" (slice "blog" "faqs") }}
