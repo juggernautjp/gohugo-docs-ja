@@ -23,7 +23,9 @@
         {{- end -}}
       </div>
 
-      {{ partial "right-toc.html" . }}
+      {{ if (eq .Page.Params.toc true) -}}
+        {{ partial "right-toc.html" . }}
+      {{- end }}
 
       <div class="bd-content ps-lg-2">
         {{ if .Page.Params.sections }}
@@ -45,7 +47,7 @@
   </div>
 {{ end }}
 {{ define "footer" }}
- {{ range .Page.Params.extra_js -}}
+  {{ range .Page.Params.extra_js -}}
     <script{{ with .async }} async{{ end }} src="{{ .src }}"></script>
   {{- end -}}
   <div class="position-fixed" aria-hidden="true"><input type="text" tabindex="-1"></div>

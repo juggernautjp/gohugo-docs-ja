@@ -28,7 +28,7 @@ weight: 40
 
 ## インストールをテストする {#test-your-installation}
 
-Hugo を [インストール][installing] し後で、正しくインストールされたかどうかを以下のコマンドで確認します。
+Hugo を [インストール][installing] した後で、正しくインストールされたかどうかを以下のコマンドで確認します。
 
 ```bash
 hugo version

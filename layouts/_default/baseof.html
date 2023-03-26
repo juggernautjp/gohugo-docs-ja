@@ -1,21 +1,19 @@
 <!doctype html>
 <html lang={{ .Site.Language.Lang }} data-bs-theme="auto">
   <head>
-    {{ partial "header" . }}
+    {{ partial "header-ja" . }}
   </head>
   {{ block "body_override" . }}<body>{{ end }}
     {{ partial "skippy" . }}
     {{ partial "icons" . }}
 
-    {{ partial "docs-navbar" . }}
+    {{ partial "docs-navbar-ja" . }}
 
     {{ block "main" . }}
     {{ end }}
 
-    {{ partial "footer-new" . }}
-    {{ partial "scripts" . }}
-    {{/* add hugo-theme-zen's JS for Flexsearch.js */}}
-    {{ partial "scripts-zen.html" . }}
+    {{ partial "footer-ja" . }}
+    {{ partial "scripts-ja" . }}
     
     {{ block "footer" . }}
     {{ end }}

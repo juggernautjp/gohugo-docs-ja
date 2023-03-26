@@ -1,4 +1,4 @@
-{{ if (eq .Page.Params.toc true) }}
+{{/* most-right column toc */}}
 <div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
   <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
     On this page
@@ -7,7 +7,8 @@
   <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
   <hr class="d-none d-md-block my-2 ms-3">
   <div class="collapse bd-toc-collapse" id="tocContents">
+   <aside>
     {{ .TableOfContents }}
+   </aside>
   </div>
 </div>
-{{ end }}

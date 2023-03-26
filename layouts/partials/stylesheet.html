@@ -31,3 +31,11 @@
 
   <link href="{{ $style.Permalink | relURL }}" rel="stylesheet">
 {{- end }}
+
+{{/* cite from hugo-theme-zen/layouts/partials/styles.html */}}
+{{ $zen_options := (dict "targetPath" "css/zen.css" "outputStyle" "expanded" "precision" 6 "transpiler" (site.Params.sassTranspiler | default "libsass")) -}}
+{{ if eq hugo.Environment "production" -}}
+  {{ $zen_options = merge $zen_options (dict "outputStyle" "compressed") -}}
+{{ end -}}
+{{ $zen_style := resources.Get "zen/sass/styles.scss" | toCSS $zen_options -}}
+<link rel="stylesheet" href="{{ $zen_style.Permalink | relURL }}" >

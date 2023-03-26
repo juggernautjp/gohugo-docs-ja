@@ -32,7 +32,6 @@ vendor:
 
 clean:
 	rm -rf public
-	rm -rf _vendor
 #	$(HUGO_BIN) mod clean
 #	$(GO_BIN) clean -modcache
 
@@ -48,3 +47,6 @@ copycontent:
 npm.install:
 	$(NPM_BIN) install -D postcss postcss-cli autoprefixer
 	$(NPM_BIN) install -D sass sass-true
+
+lint:
+	npm run css-lint-stylelint

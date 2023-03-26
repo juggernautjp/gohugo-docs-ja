@@ -44,8 +44,11 @@ flex_box_interior_classes = "flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-
 
 
 # The followings are .Site.Params for hugo-theme-zen:
+# if use SEO (JSON-LD), then set true
+enableSEO = true
+
 # The Sass transpiler to use, default "libsass".
-sassTranspiler = "dartsass"
+# sassTranspiler = "dartsass"
 # Max number of search hits, default 20.
 searchLimit = 20
 

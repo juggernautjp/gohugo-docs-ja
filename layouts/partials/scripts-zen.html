@@ -1,4 +1,6 @@
-{{/* cite from hugo-theme-zen */}}
+{{- /* 
+  cite from hugo-theme-zen for Flexsearch.js
+  */ -}}
 
 {{ $early := resources.Get "zen/js/script-early.js" | minify | fingerprint -}}
 <script src="{{ $early.RelPermalink }}"></script>

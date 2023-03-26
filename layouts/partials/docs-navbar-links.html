@@ -3,34 +3,34 @@
   */ -}}
 <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
   {{ range .Site.Menus.global.ByWeight }}
-    {{/* $icon := printf "%s" .Icon */}}
-    {{/* $icon_flag := len $icon */}}
+    {{- /* $icon := printf "%s" .Icon */ -}}
+    {{- /* $icon_flag := len $icon */ -}}
     {{- warnf "Menu name: %q, icon: " .Menu -}}
-    {{/* if eq $icon_flag 0 */}}
-      <li class="nav-item col-6 col-lg-auto">
-        {{ $post_status := printf "%s" .Post }}
-        {{ if eq $post_status "external" }}
+    {{- /* if eq $icon_flag 0 */ -}}
+      <li class="nav-item col-6 col-lg-auto d-inline-flex">
+        {{- $post_status := printf "%s" .Post -}}
+        {{- if eq $post_status "external" -}}
           <a class="nav-link py-2 px-0 px-lg-2" href="{{ .URL }}" target="_blank" rel="noopener">{{ .Name }}</a>
           <!-- TODO: the following line for SEO are commented-out;
                onclick="ga('send', 'event', 'Navbar', 'Community links', 'Icons');"
                onclick="ga('send', 'event', 'Navbar', 'Community links', 'Themes');"
                onclick="ga('send', 'event', 'Navbar', 'Community links', 'Blog');" --> 
-          {{/* <span class="pl1"> */}}
-            {{/* partial "svg/link-ext.svg" (dict "size" "10") */}}
-          {{/* </span> */}}
+          {{- /* <span class="pl1"> */ -}}
+            {{- partial "svg/link-ext.svg" (dict "size" "15" "class" "navbar-nav-svg") -}}
+          {{- /* </span> */ -}}
         {{- else -}}
-          {{/*
+          {{- /*
           <a class="nav-link py-2 px-0 px-lg-2{{ if eq .Page.Layout "docs" }} active" aria-current="true{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
            <!-- TODO: the following line for SEO are commented-out;
              onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');"
             -->
-          */}}
+          */ -}}
           <a class="nav-link py-2 px-0 px-lg-2 active" aria-current="true" href="{{ .URL }}">{{ .Name }}</a>
           <!-- TODO: the following line for SEO are commented-out;
              onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');"
           -->
         {{- end -}}
       </li>
-    {{/* end */}}
+    {{- /* end */ -}}
   {{- end -}}
 </ul>

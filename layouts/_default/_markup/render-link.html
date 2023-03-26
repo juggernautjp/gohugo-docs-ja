@@ -1,0 +1,4 @@
+{{- /* "fill-current align-baseline" */ -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" -}} 
+   target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+   {{- if strings.HasPrefix .Destination "http" -}}&nbsp;{{- partial "svg/link-ext.svg" (dict "size" "15" "class" "navbar-nav-svg") -}}{{- end }}

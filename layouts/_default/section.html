@@ -1,47 +1,47 @@
-{{ define "body_override" }}<body data-bs-spy="scroll" tabindex="0" data-bs-target="#TableOfContents">{{ end }}
-  {{ define "main" }}
-  {{- $enable_add := .Site.Params.enableCarbonAds -}}
-    <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
-      {{ partial "sidebar" . }}
+{{/* define "body_override" }}<body data-bs-spy="scroll" tabindex="0" data-bs-target="#TableOfContents">{{ end */}}
+{{ define "main" }}
+{{- $enable_add := .Site.Params.enableCarbonAds -}}
+  <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+    {{ partial "sidebar" . }}
   
-      <main class="bd-main order-1">
-        <div class="bd-intro pt-2 ps-lg-2">
-          <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-            <div class="mb-3 mb-md-0 d-flex text-nowrap">
-              {{- if .Page.Params.added -}}
-                <small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">Added in v{{ .Page.Params.added }}</small>
-              {{- end -}}
-              <a class="btn btn-sm btn-bd-light rounded-2" href="{{ .Site.Params.repo }}/{{ .Page.File.Path | replaceRE `\\` "/" }}" title="View and edit this file on GitHub" target="_blank" rel="noopener">
-                View on GitHub
-              </a>
-            </div>
-            <h1 class="bd-title mb-0" id="content">{{ .Title | markdownify }}</h1>
+    <main class="bd-main order-1">
+      <div class="bd-intro pt-2 ps-lg-2">
+        <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap">
+            {{- if .Page.Params.added -}}
+              <small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">Added in v{{ .Page.Params.added }}</small>
+            {{- end -}}
+            <a class="btn btn-sm btn-bd-light rounded-2" href="{{ .Site.Params.repo }}/{{ .Page.File.Path | replaceRE `\\` "/" }}" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+              View on GitHub
+            </a>
           </div>
-          <p class="bd-lead">{{ .Page.Params.Description | markdownify }}</p>
-          {{- if $enable_add -}}
-            {{ partial "ads" . }}
-          {{- end -}}
+          <h1 class="bd-title mb-0" id="content">{{ .Title | markdownify }}</h1>
         </div>
-
-        <div class="bd-content ps-lg-2">
-          {{ .Content }}<br />
-
-          {{ $paginator := .Paginate (.Pages | lang.Merge (where .Sites.First.RegularPages "Section" .Section)) }}
-          {{ $section_to_display :=  .Sections | default $paginator.Pages }}
-            <div class="row g-3">
-            {{ range $section_to_display }}
-            <div class="col-md-6">
-              <a class="d-block text-decoration-none" href="{{ .RelPermalink }}/">
-                <strong class="d-block h5 mb-0">{{ .Title }}</strong>
-                <span class="text-secondary">{{ .Description }}</span>
-              </a>
-            </div>
-            {{ end }}
-          </div>
+        <p class="bd-lead">{{ .Page.Params.Description | markdownify }}</p>
+        {{- if $enable_add -}}
+          {{ partial "ads" . }}
+        {{- end -}}
       </div>
 
-    </main>
-  </div>
+      <div class="bd-content ps-lg-2">
+        {{ .Content }}<br />
+
+        {{ $paginator := .Paginate (.Pages | lang.Merge (where .Sites.First.RegularPages "Section" .Section)) }}
+        {{ $section_to_display :=  .Sections | default $paginator.Pages }}
+          <div class="row g-3">
+          {{ range $section_to_display }}
+          <div class="col-md-6">
+            <a class="d-block text-decoration-none" href="{{ .RelPermalink }}/">
+              <strong class="d-block h5 mb-0">{{ .Title }}</strong>
+              <span class="text-secondary">{{ .Description }}</span>
+            </a>
+          </div>
+          {{ end }}
+        </div>
+    </div>
+
+  </main>
+</div>
 {{ end }}
 {{ define "footer" }}
 {{ range .Page.Params.extra_js -}}

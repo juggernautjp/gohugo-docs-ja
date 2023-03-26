@@ -17,6 +17,7 @@ block = true
 title = true
 [goldmark.renderer]
 hardWraps = false
+# if Bootstrap, unsafe = true
 unsafe = false
 xhtml = false
 
@@ -26,6 +27,6 @@ lineNumbersInTable = true
 noClasses = false
 
 [tableOfContents]
-endLevel = 2
 ordered = false
 startLevel = 2
+endLevel = 2

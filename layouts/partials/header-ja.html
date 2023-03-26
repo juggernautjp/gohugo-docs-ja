@@ -4,8 +4,10 @@
 <meta name="author" content="{{ .Site.Params.authors }}">
 <meta name="generator" content="Hugo {{ hugo.Version }}">
 
+{{ if .Params.enableDocSearch -}}
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="{{ .Site.Params.docs_version }}">
+{{- end }}
 
 <title>{{ if .IsHome }}{{ .Site.Title | markdownify }} · {{ .Site.Params.subtitle | markdownify }}{{ else }}{{ .Title | markdownify }} · {{ .Site.Title | markdownify }} v{{ .Site.Params.docs_version }}{{ end }}</title>
 
@@ -19,10 +21,17 @@
 <meta name="robots" content="{{ . }}">
 {{- end }}
 
-{{- $colorModeJS := printf "/docs/%s/assets/js/color-modes.js" $.Site.Params.docs_version -}}
+{{- $colorModeJS :="/js/color-modes.js" -}}
 <script src="{{ $colorModeJS | relURL }}"></script>
 
 {{ partial "stylesheet" . }}
 {{ partial "favicons" . }}
 {{ partial "social" . }}
 {{ partial "analytics" . }}
+
+{{ if .Params.enableSEO -}}
+{{ partial "meta.html" . }}
+{{ partial "meta_json_ld.html" . }}
+{{ partialCached "tracking.html" . }}
+{{- end }}
+{{ if $.Param "math" }}{{ partialCached "math.html" . }}{{ end -}}
