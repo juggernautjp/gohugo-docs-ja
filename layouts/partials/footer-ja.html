@@ -3,15 +3,15 @@
     <div class="row">
        <ul class="list-unstyled"><!-- "d-block me-2" --> 
           <li class="mb-2">Powered by &nbsp; 
-            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="https://gohugo.io/" aria-label="Hugo" target="_blank" rel="noopener">
-              {{- partial "svg/hugo-logo.svg" (dict "class" "navbar-nav-svg" "width" "40" "height" "32") -}} <small class="d-lg-none ms-2">Hugo</small></a> 
-              <a href="{{ .Site.Params.hugo_hp }}">Hugo</a>, &nbsp; 
-            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="https://getbootstrap.com/" aria-label="Bootstrap" target="_blank" rel="noopener">
-              {{- partial "svg/bootstrap-fill.svg" (dict "class" "navbar-nav-svg" "width" "40" "height" "32") -}} <small class="d-lg-none ms-2">GitHub</small></a>
-            <a href="{{ .Site.Params.bootstrap_hp }}">Bootstrap</a>, and &nbsp; 
-            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="https://www.cloudflare.com/ja-jp/products/pages/" aria-label="Cloudflare" target="_blank" rel="noopener">
-              {{- partial "svg/cloudflare-logo.svg" (dict "class" "navbar-nav-svg" "width" "40" "height" "32") -}} <small class="d-lg-none ms-2">Cloudflare Pages</small></a> 
-            <a href="{{ .Site.Params.cloudflare_pages }}">Cloudflare Pages</a>.
+            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="{{ .Site.Params.hugo_hp }}" aria-label="Hugo" target="_blank" rel="noopener">
+              {{- partial "svg/hugo-logo.svg" (dict "class" "navbar-nav-svg" "width" "40" "height" "32") -}} <small class="d-lg-none ms-2">Hugo</small> 
+              Hugo</a>, &nbsp; 
+            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="{{ .Site.Params.bootstrap_hp }}" aria-label="Bootstrap" target="_blank" rel="noopener">
+              {{- partial "svg/bootstrap-fill.svg" (dict "class" "navbar-nav-svg" "width" "40" "height" "32") -}} <small class="d-lg-none ms-2">GitHub</small>
+              Bootstrap</a>, and &nbsp; 
+            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="{{ .Site.Params.cloudflare_pages }}" aria-label="Cloudflare" target="_blank" rel="noopener">
+              {{- partial "svg/cloudflare-logo.svg" (dict "class" "navbar-nav-svg" "width" "40" "height" "32") -}} <small class="d-lg-none ms-2">Cloudflare Pages</small> 
+              Cloudflare Pages</a>.
           </li>
         </ul>
         <ul class="list-unstyled">

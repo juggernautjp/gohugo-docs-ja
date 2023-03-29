@@ -233,7 +233,7 @@ Hugo のバージョン 0.20 以降の主な違いは、指定された `Page` �
 下の表は、さまざまな出力形式の例と、使用されるサフィックス、および Hugo のそれぞれのテンプレートの [検索順序][lookup order] を示しています。表のすべての例は、以下のことができます。
 
 * [ベーステンプレート][base] を使用する。
-* [部分テンプレート][partials] をインクルードする。
+* [パーシャル][partials] をインクルードする。
 
 {{< datatable-ja "output" "layouts" "Example" "OutputFormat" "Suffix" "Template Lookup Order" >}}
 

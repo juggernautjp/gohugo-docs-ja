@@ -60,7 +60,7 @@ weight: 30
 
 ### `.Site.Taxonomies` の使用例 {#example-usage-of-sitetaxonomies}
 
-以下の [部分テンプレート][partials] は、サイトのすべてのタクソノミー、それぞれのキー、およびそれぞれのキーに割り当てられたすべてのコンテンツを一覧表示します。タクソノミーの順序とレンダリング方法のその他の例については、[「タクソノミー テンプレート」][taxonomytemplates] を参照してください。
+以下の [パーシャル][partials] は、サイトのすべてのタクソノミー、それぞれのキー、およびそれぞれのキーに割り当てられたすべてのコンテンツを一覧表示します。タクソノミーの順序とレンダリング方法のその他の例については、[「タクソノミー テンプレート」][taxonomytemplates] を参照してください。
 
 {{< code file="all-taxonomies-keys-and-pages.html" download="all-taxonomies-keys-and-pages.html" >}}
 <section>

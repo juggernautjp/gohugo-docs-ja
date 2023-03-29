@@ -25,9 +25,9 @@ weight: 10
 
 以下はサイトレベル (別名 「グローバル」) 変数のリストです。 これらの変数の多くはサイトの [設定ファイル][config] で定義されますが、他の変数は Hugo のコアに組み込まれており、テンプレートで便利に使用できます。
 
-## 部分テンプレートからサイトオブジェクトを取得する {#get-the-site-object-from-a-partial}
+## パーシャル からサイトオブジェクトを取得する {#get-the-site-object-from-a-partial}
 
-以下のすべてのメソッド、たとえば `.Site.RegularPages` は、グローバルな [`site`](/functions/site/) 関数からもアクセスできます。たとえば `site.RegularPages` は、 `Page` オブジェクトを簡単に利用できない部分テンプレートで便利です。 {{< new-in "0.53" >}}.
+以下のすべてのメソッド、たとえば `.Site.RegularPages` は、グローバルな [`site`](/functions/site/) 関数からもアクセスできます。たとえば `site.RegularPages` は、 `Page` オブジェクトを簡単に利用できないパーシャルで便利です。 {{< new-in "0.53" >}}.
 
 ## サイト変数リスト {#site-variables-list}
 
@@ -122,7 +122,7 @@ baseURL = "https://yoursite.example.com/"
   author = "Nikola Tesla"
 {{</ code-toggle >}}
 
-[部分テンプレート](/templates/partials/) の中で `.Site.Params` を使用すると、デフォルトのサイトの説明文を呼び出すことができます。
+[パーシャル](/templates/partials/) の中で `.Site.Params` を使用すると、デフォルトのサイトの説明文を呼び出すことができます。
 
 {{< code file="layouts/partials/head.html" >}}
 <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />

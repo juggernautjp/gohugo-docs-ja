@@ -34,7 +34,7 @@ workson: []
     url = "irc://irc.freenode.net/#golang"
 {{< /code >}}
 
-以下は、前述のフロントマターの例と組み合わせて使用することができる、サイドバーの部分テンプレート (パーシャル) の例です。
+以下は、前述のフロントマターの例と組み合わせて使用することができる、サイドバーのパーシャルの例です。
 
 {{< code file="layouts/partials/bad-url-sidebar-menu.html" copy="false" >}}
 <!-- この順序付けられていないリストは、サイドバー メニューの一部である可能性があります -->
@@ -45,7 +45,7 @@ workson: []
 </ul>
 {{< /code >}}
 
-この部分テンプレートは、以下の HTML を出力します。
+このパーシャルは、以下の HTML を出力します。
 
 {{< output file="bad-url-sidebar-menu-output.html" >}}
 <!-- この順序付けられていないリストは、サイドバー メニューの一部である可能性があります -->

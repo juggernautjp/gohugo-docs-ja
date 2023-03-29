@@ -75,9 +75,9 @@ Hugo は上記の Markdown を受け取り、`## Introduction`、`## My Heading`
 {{ end }}
 {{< /code >}}
 
-## テンプレートの例: TOC パーシャル (部分テンプレート) {#template-example-toc-partial}
+## テンプレートの例: TOC パーシャル {#template-example-toc-partial}
 
-以下は、目次をページレベルで制御するためのロジックを少し追加した [部分テンプレート][partials] です。コンテンツの [フロントマター][front matter] で `toc` フィールドを使用していることを前提としています。特に `false` に設定しない限り、`.WordCount` ([ページ変数][pagevars] を参照) が 400 を超えるページには目次が追加されます。この例は、テンプレートで [条件][conditionals] を使用する方法も示しています。
+以下は、目次をページレベルで制御するためのロジックを少し追加した [パーシャル][partials] です。コンテンツの [フロントマター][front matter] で `toc` フィールドを使用していることを前提としています。特に `false` に設定しない限り、`.WordCount` ([ページ変数][pagevars] を参照) が 400 を超えるページには目次が追加されます。この例は、テンプレートで [条件][conditionals] を使用する方法も示しています。
 
 {{< code file="layouts/partials/toc.html" download="toc.html" >}}
 {{ if and (gt .WordCount 400 ) (.Params.toc) }}

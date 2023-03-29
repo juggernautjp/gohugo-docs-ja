@@ -24,7 +24,7 @@ weight: 220
 
 Hugo では、JavaScript を介して Web サイトにコメントやコミュニティの機能を提供するサードパーティ製サービスである [Disqus](https://disqus.com/) をサポートしています。
 
-あなたのテーマはすでに Disqus をサポートしているかもしれませんが、そうでない場合は、[Hugo 内蔵の Disqus パーシャル (部分テンプレート)][disquspartial] を介してテンプレートに簡単に追加できます。
+あなたのテーマはすでに Disqus をサポートしているかもしれませんが、そうでない場合は、[Hugo 内蔵の Disqus パーシャル][disquspartial] を介してテンプレートに簡単に追加できます。
 
 ## Disqus を追加する {#add-disqus}
 
@@ -44,7 +44,7 @@ disqusShortname = "yourDisqusShortname"
 * `disqus_title`
 * `disqus_url`
 
-### Hugo 内蔵の Disqus 部分テンプレートをレンダリングする {#render-hugos-built-in-disqus-partial-template}
+### Hugo 内蔵の Disqus パーシャルをレンダリングする {#render-hugos-built-in-disqus-partial-template}
 
 Disqus は独自の [内部テンプレート](https://gohugo.io/templates/internal/#disqus) を用意しており、コメントを表示する場所に以下のコードを追加してレンダリングします。
 

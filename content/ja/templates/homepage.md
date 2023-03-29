@@ -42,7 +42,7 @@ weight: 30
 
 ## ホームページ テンプレートの例 {#example-homepage-template}
 
-以下は、[パーシャル (部分テンプレート)][partials], [ベース][base] テンプレートと `content/_index.md` のコンテンツファイルを使って、 `{{.Title}}` と `{.Content}}` [ページ変数][pagevars] に値を設定したホームページ テンプレートの例です。
+以下は、[パーシャル][partials], [ベース][base] テンプレートと `content/_index.md` のコンテンツファイルを使って、 `{{.Title}}` と `{.Content}}` [ページ変数][pagevars] に値を設定したホームページ テンプレートの例です。
 
 {{< code file="layouts/index.html" download="index.html" >}}
 {{ define "main" }}

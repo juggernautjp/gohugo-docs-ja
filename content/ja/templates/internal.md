@@ -25,7 +25,7 @@ wip: true
 code: https://github.com/gohugoio/hugo/blob/e445c35d6a0c7f5fc2f90f31226cd1d46e048bbc/tpl/template_embedded.go#L147 -->
 
 {{< warning >}}
-以下の内部テンプレートはパーシャル (部分テンプレート) と同様に呼ばれますが、部分テンプレートの検索順序を *守りません*。
+以下の内部テンプレートはパーシャルと同様に呼ばれますが、パーシャルの検索順序を *守りません*。
 {{< /warning >}}
 
 ## Google アナリティクス {#google-analytics}
@@ -123,7 +123,7 @@ Hugo Web サーバーをを `localhost` で実行しているときに (つま�
 
 `if` 文は、`localhost` で実行している場合、 Disqus のコメント インジェクションの初期化をスキップします。
 
-次に、カスタムの Disqus 部分テンプレートを以下のようにレンダリングできます。
+次に、カスタムの Disqus パーシャルを以下のようにレンダリングできます。
 
 ```go-html-template
 {{ partial "disqus.html" . }}

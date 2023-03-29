@@ -26,7 +26,7 @@
 }
 
 @mixin margin-block($x) {
-  @include spacing('', $x);
+  @include spacing(margin-block, $x);
 }
 
 @mixin margin-top($x) {

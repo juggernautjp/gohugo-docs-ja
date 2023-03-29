@@ -59,7 +59,7 @@ names: [ "Derek Perkins", "Joe Bergevin", "Tanner Linsley" ]
 
 ただし、範囲の出力を [`delimit`関数][delimit] に与えることはできないので、それを `apply` する必要があります。
 
-`post-tag-list.html` と `post-tag-link.html` が [部分テンプレート][[partials] であれば、それぞれ以下のようなスニペットを使うことが*できます。
+`post-tag-list.html` と `post-tag-link.html` が [パーシャル][partials] であれば、それぞれ以下のようなスニペットを使うことが*できます。
 
 {{< code file="layouts/partials/post-tag-list.html" copy="false" >}}
 {{ with .Params.tags }}

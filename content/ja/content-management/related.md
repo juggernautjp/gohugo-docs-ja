@@ -22,7 +22,7 @@ Hugo は、フロントマターのパラメータに基づいて、ページの
 
 ## 関連コンテンツを一覧表示する {#list-related-content}
 
-最大 5 つの関連ページ (同じ _date_ または _keyword_ パラメータを共有する) を一覧表示するには、シングルページのテンプレートに以下のパーシャル (部分テンプレート) と同様のものを含めるだけです。
+最大 5 つの関連ページ (同じ _date_ または _keyword_ パラメータを共有する) を一覧表示するには、シングルページのテンプレートに以下のパーシャルと同様のものを含めるだけです。
 
 {{< code file="layouts/partials/related.html" >}}
 {{ $related := .Site.RegularPages.Related . | first 5 }}

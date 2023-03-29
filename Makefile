@@ -2,6 +2,7 @@ SHELL=/usr/bin/bash
 HUGO_BIN=hugo
 GO_BIN=go
 NPM_BIN=npm
+SRC_SITE=../hugo-docs-ja
 
 .PHONY: build demo release
 
@@ -32,17 +33,17 @@ vendor:
 
 clean:
 	rm -rf public
-#	$(HUGO_BIN) mod clean
+	$(HUGO_BIN) mod clean
 #	$(GO_BIN) clean -modcache
 
 copycontent: 
-	cp -r ../hugo-docs-ja/archietypes ./
-	cp -r ../hugo-docs-ja/config ./
-	cp -r ../hugo-docs-ja/content ./
-	cp -r ../hugo-docs-ja/data ./
-	cp -r ../hugo-docs-ja/i18n ./
-	cp -r ../hugo-docs-ja/layouts ./
-	cp -r ../hugo-docs-ja/static ./
+	cp -r $(SRC_SITE)/archietypes ./
+	cp -r $(SRC_SITE)/hugo-docs-ja/config ./
+	cp -r $(SRC_SITE)/hugo-docs-ja/content ./
+	cp -r $(SRC_SITE)/hugo-docs-ja/data ./
+	cp -r $(SRC_SITE)/hugo-docs-ja/i18n ./
+	cp -r $(SRC_SITE)/hugo-docs-ja/layouts ./
+	cp -r $(SRC_SITE)/hugo-docs-ja/static ./
 
 npm.install:
 	$(NPM_BIN) install -D postcss postcss-cli autoprefixer
@@ -50,3 +51,14 @@ npm.install:
 
 lint:
 	npm run css-lint-stylelint
+
+recover:
+	mv config-ja config
+	rm -rf content
+	mv content-ja content
+	mv layouts-ja layouts
+	rm -rf resources
+	mv resources-ja resources
+	rm -rf static
+	mv static-ja static
+	rm config.yml

@@ -152,7 +152,7 @@ Go テンプレートはいくつかの基本的な関数を備えているだ�
 
 テンプレートの場所は、常に Hugo 内の `layouts/` ディレクトリから始まります。
 
-### パーシャル (部分テンプレート) {#partial}
+### パーシャル {#partial}
 
 [`partial`][partials] 関数は、構文 `{{ partial "<PATH>/<PARTIAL>.<EXTENSION>" . }}` を使用して _部分_ テンプレートをインクルードするために使用されます。
 
@@ -509,7 +509,7 @@ notoc: true
 ---
 ```
 
-以下は、`toc.html` [部分テンプレート][partials] の内部で使用できる対応するコードの例です。
+以下は、`toc.html` [パーシャル][partials] の内部で使用できる対応するコードの例です。
 
 {{< code file="layouts/partials/toc.html" download="toc.html" >}}
 {{ if not .Params.notoc }}
@@ -594,7 +594,7 @@ start_date = 2021-12-05T09:00:00-08:00
 end_date = 2021-12-05T11:00:00-08:00
 {{< /code-toggle >}}
 
-以下の [部分テンプレート][partials] は、将来のイベントをレンダリングします。
+以下の [パーシャル][partials] は、将来のイベントをレンダリングします。
 
 {{< code file="layouts/partials/future-events.html" >}}
 <h2>Future Events</h2>

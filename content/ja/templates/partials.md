@@ -6,39 +6,39 @@ aliases:
 categories:
 - templates
 date: "2017-02-01"
-description: 部分テンプレート (パーシャル) は、リストやページのテンプレートに含まれる、文脈を考慮した小さなコンポーネントで、テンプレートを DRY に保つために経済的に使用できます。
+description: パーシャルは、リストやページのテンプレートに含まれる、文脈を考慮した小さなコンポーネントで、テンプレートを DRY に保つために経済的に使用できます。
 draft: false
 keywords:
 - lists
 - sections
 - partials
 lastmod: "2017-02-01"
-linktitle: 部分テンプレート
+linktitle: パーシャル
 menu:
   docs:
     parent: templates
     weight: 90
 publishdate: "2017-02-01"
 sections_weight: 90
-title: 部分テンプレート
+title: パーシャル
 toc: true
 weight: 90
 ---
 
 {{< youtube pjS4pOLyB7c >}}
 
-## 部分テンプレートの検索順序 {#partial-template-lookup-order}
+## パーシャルの検索順序 {#partial-template-lookup-order}
 
-[シングルページ テンプレート][singletemps] および [リストページ テンプレート][listtemps] のような **部分テンプレート**には、特定の [検索順序][lookup order] があります。 ただし、部分テンプレートは、Hugo が 2 つの場所でのみチェックするという点で単純です。
+[シングルページ テンプレート][singletemps] および [リストページ テンプレート][listtemps] のような **パーシャル** には、特定の [検索順序][lookup order] があります。 ただし、パーシャルは、Hugo が 2 つの場所でのみチェックするという点で単純です。
 
 1. `layouts/partials/*<PARTIALNAME>.html`
 2. `themes/<THEME>/layouts/partials/*<PARTIALNAME>.html`
 
-これにより、テーマのエンドユーザーは、[さらなるカスタマイズ][customize] のために、部分テンプレートのコンテンツを同じ名前のファイルにコピーできます。
+これにより、テーマのエンドユーザーは、[さらなるカスタマイズ][customize] のために、パーシャルのコンテンツを同じ名前のファイルにコピーできます。
 
-## テンプレートに部分テンプレートを使用する {#use-partials-in-your-templates}
+## テンプレートにパーシャルを使用する {#use-partials-in-your-templates}
 
-Hugo プロジェクトのすべての部分テンプレートは、単一の `layouts/partials` ディレクトリに格納されます。 より良い構成のために、以下のように、`partials` 内に複数のサブディレクトリを作成することもできます。
+Hugo プロジェクトのすべてのパーシャルは、単一の `layouts/partials` ディレクトリに格納されます。 より良い構成のために、以下のように、`partials` 内に複数のサブディレクトリを作成することもできます。
 
 ```txt
 layouts/
@@ -56,7 +56,7 @@ layouts/
         └── site-nav.html
 ```
 
-すべての部分テンプレートは、テンプレート内で以下のパターンを使用して呼び出されます。
+すべてのパーシャルは、テンプレート内で以下のパターンを使用して呼び出されます。
 
 ```go-html-template
 {{ partial "<PATH>/<PARTIAL>.html" . }}
@@ -70,7 +70,7 @@ layouts/
 `baseof` を含む `<PARTIAL>` は予約されています。([#5373](https://github.com/gohugoio/hugo/issues/5373))
 {{< /note >}}
 
-上記のディレクトリ構造の例で示したように、 ディレクトリを `partials` 内にネストさせることで、より良いソース構成を実現できます。ネストされた部分テンプレートのパスは、以下のように、 `partials` ディレクトリからの相対パスとして呼び出すだけです。
+上記のディレクトリ構造の例で示したように、 ディレクトリを `partials` 内にネストさせることで、より良いソース構成を実現できます。ネストされたパーシャルのパスは、以下のように、 `partials` ディレクトリからの相対パスとして呼び出すだけです。
 
 ```go-html-template
 {{ partial "header/site-header.html" . }}
@@ -79,13 +79,13 @@ layouts/
 
 ### 変数のスコープ {#variable-scoping}
 
-部分呼び出しの 2 番目の引数は、渡される変数です。 上記の例では `.` を渡していますが、これは部分テンプレートを受け取るテンプレートに現在の [コンテキスト][context] を適用するように指示します。
+部分呼び出しの 2 番目の引数は、渡される変数です。 上記の例では `.` を渡していますが、これはパーシャルを受け取るテンプレートに現在の [コンテキスト][context] を適用するように指示します。
 
-これは、部分テンプレートがこれらの変数に *唯一* アクセスできることを意味します。部分テンプレートは分離され、*外部スコープにはアクセスできません*。 部分テンプレート内では、`$.Var` は `.Var` と同等です。
+これは、パーシャルがこれらの変数に *唯一* アクセスできることを意味します。パーシャルは分離され、*外部スコープにはアクセスできません*。 パーシャル内では、`$.Var` は `.Var` と同等です。
 
-## 部分テンプレートから値を返す {#returning-a-value-from-a-partial}
+## パーシャルから値を返す {#returning-a-value-from-a-partial}
 
-マークアップの出力に加えて、部分テンプレートを使用して任意の型の値を返すことができます。 値を返すために、部分テンプレートは *部分テンプレートの末尾に*、単一の `return` 文を含める必要があります。
+マークアップの出力に加えて、パーシャルを使用して任意の型の値を返すことができます。 値を返すために、パーシャルは *パーシャルの末尾に*、単一の `return` 文を含める必要があります。
 
 ### GetFeatured の例 {#example-getfeatured}
 
@@ -123,12 +123,12 @@ layouts/
 ```
 
 {{< note >}}
-1つの 部分テンプレートファイルにつき、`return` 文は 1 つだけ許可されます。
+1つの パーシャルファイルにつき、`return` 文は 1 つだけ許可されます。
 {{< /note >}}
 
-## インライン部分テンプレート {#inline-partials}
+## インライン パーシャル {#inline-partials}
 
-テンプレートで部分テンプレートをインラインで定義することもできます。 ただし、テンプレートの名前空間はグローバルであるため、競合を避けるために名前が一意であることを確認する必要があります。
+テンプレートでパーシャルをインラインで定義することもできます。 ただし、テンプレートの名前空間はグローバルであるため、競合を避けるために名前が一意であることを確認する必要があります。
 
 ```go-html-template
 Value: {{ partial "my-inline-partial.html" . }}
@@ -139,7 +139,7 @@ Value: {{ partial "my-inline-partial.html" . }}
 {{ end }}
 ```
 
-## キャッシュされた部分テンプレート {#cached-partials}
+## キャッシュされたパーシャル {#cached-partials}
 
 [`partialCached` テンプレート関数][partialcached] は、呼び出しごとに再レンダリングする必要のない複雑なテンプレートのパフォーマンスを大幅に向上させることができます。 最も単純な使用方法は、以下のとおりです。
 
@@ -161,11 +161,11 @@ Value: {{ partial "my-inline-partial.html" . }}
 {{ partialCached "footer.html" . .Params.country .Params.province }}
 ```
 
-バリアント パラメータは基本的な部分テンプレートでは利用できないことに注意してください。これらは、一意のキャッシュキーを作成するためにのみ使用されます。
+バリアント パラメータは基本的なパーシャルでは利用できないことに注意してください。これらは、一意のキャッシュキーを作成するためにのみ使用されます。
 
 ### `header.html` の例 {#example-headerhtml}
 
-以下の `header.html` 部分テンプレートは、 [spf13.com](https://spf13.com/) のために使用されています。
+以下の `header.html` パーシャルは、 [spf13.com](https://spf13.com/) のために使用されています。
 
 {{< code file="layouts/partials/header.html" download="header.html" >}}
 <!DOCTYPE html>
@@ -185,12 +185,12 @@ Value: {{ partial "my-inline-partial.html" . }}
 {{< /code >}}
 
 {{< note >}}
-`header.html` のサンプルの部分テンプレートは、ブロックテンプレートが Hugo に導入される前に作成されました。 マスターテンプレートの外側のクロムまたはシェル (つまり、サイトのヘッド、ヘッダー、およびフッター) を定義するために、[ベーステンプレートとブロック](/templates/base/) の詳細を参照してください。 柔軟性を高めるために、ブロックと部分テンプレートを組み合わせることもできます。
+`header.html` のサンプルのパーシャルは、ブロックテンプレートが Hugo に導入される前に作成されました。 マスターテンプレートの外側のクロムまたはシェル (つまり、サイトのヘッド、ヘッダー、およびフッター) を定義するために、[ベーステンプレートとブロック](/templates/base/) の詳細を参照してください。 柔軟性を高めるために、ブロックとパーシャルを組み合わせることもできます。
 {{< /note >}}
 
 ### `footer.html` の例 {#example-footerhtml}
 
-以下の `footer.html` 部分テンプレートは、 [spf13.com](https://spf13.com/) のために使用されています。
+以下の `footer.html` パーシャルは、 [spf13.com](https://spf13.com/) のために使用されています。
 
 {{< code file="layouts/partials/footer.html" download="footer.html" >}}
 <footer>
@@ -208,6 +208,6 @@ Value: {{ partial "my-inline-partial.html" . }}
 [customize]: /themes/customizing/ "Hugo は、ユーザーが Hugo のテンプレート検索順序に慣れている限り、テーマをカスタマイズする簡単な手段を提供します。"
 [listtemps]: /templates/lists/ "Hugo のシステムを効果的に活用するには、セクション、タクソノミー、ホームページのコンテンツをリスト化し、順序付けるリストページの処理方法を確認してください。"
 [lookup order]: /templates/lookup-order/ "テンプレートをドライに保つには、Hugo の検索順序に関するドキュメントを読んでください。"
-[partialcached]: /functions/partialcached/ "Hugo がすべてのページでレンダリングする必要のない部分テンプレートをキャッシュできる場合は、部分テンプレート キャッシュ関数を使用してビルド時間を改善します。"
+[partialcached]: /functions/partialcached/ "Hugo がすべてのページでレンダリングする必要のないパーシャルをキャッシュできる場合は、パーシャル キャッシュ関数を使用してビルド時間を改善します。"
 [singletemps]: /templates/single-page-templates/ "Hugo のテンプレートの最も一般的な形式は、シングルコンテンツ テンプレートです。 個々のページのためのテンプレートを作成する方法については、ドキュメントを参照してください。"
 [themes]: /themes/

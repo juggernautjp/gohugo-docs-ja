@@ -1,23 +1,25 @@
 // Zen custom styles
 
 // Article and content.
-article > .content,
-aside {
-  font-size: var(--fs-xs);
-}
-
-article > header > h2 {
-  font-size: var(--fs-xxxxl);
-  overflow-wrap: break-word;
-}
-
-article > header > div > time {
-  font-size: var(--fs-xxl);
-  overflow-wrap: break-word;
-}
-
 .search-results {
-  @include margin-block(5);
+  @include margin-block(2);
+  > article {
+    @include margin-block(1);
+
+    > header {
+      > h2 {
+        // font-size: var(--fs-xxxxl);
+        overflow-wrap: break-word;
+      }
+      > div > time {
+        font-style : italic;
+      }
+    }
+
+    > .content {
+      @include margin-block(1);
+    }
+  }
 }
 
 // Search
@@ -32,3 +34,13 @@ article > header > div > time {
   max-width: 80%;
 }
 */
+
+// Re-Define code-font-size
+$code-font-size:           1.25em !default;
+
+.highlight {
+  pre code {
+    font-size: $code-font-size;
+  }
+}
+

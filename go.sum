@@ -22,6 +22,10 @@ github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230324210342-1543ed267e89 
 github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230324210342-1543ed267e89/go.mod h1:z2xw7ux09nQvcDbbUpYBYZqWq3dEOULo888pfBP8mnM=
 github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230326192440-d58a780bd1b0 h1:m7SCoB24V+xqjFUoCY27028N6u7XjIy6qyoNr5/IXJk=
 github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230326192440-d58a780bd1b0/go.mod h1:WiFuphGVazck+UzHw6owff7lVOkcs4Jrb+SfkzH6HKg=
+github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230328162404-ae818ac753a6 h1:toMa3PSboO6FgWYJG7a1KI36SOIrjMJcAWfLnyy/lh0=
+github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230328162404-ae818ac753a6/go.mod h1:zqzJS/40b0ALL6OuulGKrHg30N6AK9fKc7cIAGGzIlI=
+github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230328165047-2b20c5cda538 h1:087jeaCeJmIR4buBKn347xSj4VnCX96t3v9Z7UKOjIg=
+github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230328165047-2b20c5cda538/go.mod h1:zqzJS/40b0ALL6OuulGKrHg30N6AK9fKc7cIAGGzIlI=
 github.com/twbs/bootstrap v5.2.3+incompatible h1:lOmsJx587qfF7/gE7Vv4FxEofegyJlEACeVV+Mt7cgc=
 github.com/twbs/bootstrap v5.2.3+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
 github.com/twbs/bootstrap v5.3.0-alpha1.0.20230206120820-cbc4e3a40985+incompatible h1:FQJzTrYYk+qGYEb4oiQlcAUBKykaw+qPRmHXqicRLgw=
@@ -46,3 +50,5 @@ github.com/twbs/bootstrap v5.3.0-alpha2+incompatible h1:1AOkDPZ3DgC7AznxgSVY3hhL
 github.com/twbs/bootstrap v5.3.0-alpha2+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
 github.com/twbs/bootstrap v5.3.0-alpha2.0.20230326105120-43bc20a59eb2+incompatible h1:MQ5jQ0N0TZKXfgjihYDjLum32VRQIXbd3BPaFslEibE=
 github.com/twbs/bootstrap v5.3.0-alpha2.0.20230326105120-43bc20a59eb2+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
+github.com/twbs/bootstrap v5.3.0-alpha2.0.20230328140237-c5fde53c8d87+incompatible h1:FZYb3JDD+xHbhAxtBgR++chWvnvpaxbYC3iD7XhkugY=
+github.com/twbs/bootstrap v5.3.0-alpha2.0.20230328140237-c5fde53c8d87+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=

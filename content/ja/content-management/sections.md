@@ -60,7 +60,7 @@ content
 
 ## 例: パンくずリスト {#example-breadcrumb-navigation}
 
-利用可能な [セクション変数とメソッド](#section-page-variables-and-methods) を使用すると、強力なナビゲーションを構築できます。一般的な例の 1 つは、パンくずリストを表示するパーシャル (部分テンプレート) です。
+利用可能な [セクション変数とメソッド](#section-page-variables-and-methods) を使用すると、強力なナビゲーションを構築できます。一般的な例の 1 つは、パンくずリストを表示するパーシャルです。
 
 {{< code file="layouts/partials/breadcrumb.html" download="breadcrumb.html" >}}
 <ol  class="nav navbar-nav">

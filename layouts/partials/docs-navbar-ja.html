@@ -5,16 +5,17 @@
 {{- $docs_version_menu := .Site.Params.menuDocsVersion -}}
 <header class="navbar navbar-expand-lg bd-navbar sticky-top">
   <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
-    {{- if eq .Layout "docs" }}
+    {{- /* if eq .Layout "docs" */}}
     <div class="bd-navbar-toggle">
       <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" aria-controls="bdSidebar" aria-label="Toggle docs navigation">
         {{ partial "icons/hamburger.svg" (dict "class" "bi" "width" "24" "height" "24") }}
-        <span class="d-none fs-6 pe-1">{{ i18n "browse" }}</span>
+        <span class="d-none fs-6 pe-1">Browse</span>
       </button>
     </div>
-    {{- else }}
+    {{- /* else }}
+      // 現状、すべてのページを "docs" レイアウトとして、左メニューを表示するようにする。
       <div class="d-lg-none" style="width: 1.5rem;"></div>
-    {{- end }}
+    {{- end */}}
 
     <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
       {{ partial "svg/hugo-logo.svg" (dict "class" "d-block my-1" "width" "40" "height" "32") }}
@@ -26,7 +27,7 @@
       {{ end }}
 
       <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
-        <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
+        <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>{{/* Three-dots Icon */}}
       </button>
     </div>
 

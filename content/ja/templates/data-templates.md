@@ -188,7 +188,7 @@ URL にプレフィックスまたはポストフィックスを使用した場�
 
 ### CSV ファイルの例 {#example-for-csv-files}
 
-`getCSV` の場合、最初の位置に 1 文字長のセパレーターを配置し、その後に URL を配置する必要があります。 以下は、公開された CSV から [部分テンプレート][partials] で HTML テーブルを作成する例です。
+`getCSV` の場合、最初の位置に 1 文字長のセパレーターを配置し、その後に URL を配置する必要があります。 以下は、公開された CSV から [パーシャル][partials] で HTML テーブルを作成する例です。
 
 {{< code file="layouts/partials/get-csv.html" >}}
   <table>

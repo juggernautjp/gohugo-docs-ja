@@ -1,17 +1,32 @@
 {{ define "title" }}{{ site.Title }}{{ end }}
-
+{{ define "body_override" }}<body data-bs-spy="scroll" data-bs-target="#TableOfContents">{{ end }}
 {{ define "main" -}}
-<main class="main layout__main">
-<div class="content">
-{{ .Content }}
+  <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+  {{ partial "sidebar" . }}
+
+  <main class="main layout__main">
+    <style>
+      p {
+        padding: 10px;
+        font-size: 1.6rem;
+      }
+    </style>
+
+    <div class="content">
+      <p>
+      {{ .Content }}
+      </p>
+    </div>
+
+    {{/* 
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ $paginator := .Paginate $pages -}}
+    {{ range $paginator.Pages -}}
+    {{ .Render "summary"}}
+    {{ end -}}
+
+    {{ partial "pagination.html" . }}
+    */}}
+  </main>
 </div>
-
-{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{ $paginator := .Paginate $pages -}}
-{{ range $paginator.Pages -}}
-{{ .Render "summary"}}
-{{ end -}}
-
-{{ partial "pagination.html" . }}
-</main>
 {{ end }}

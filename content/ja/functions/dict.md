@@ -20,7 +20,7 @@ title: dict
 workson: []
 ---
 
-`dict` は、特に部分テンプレートに複数の値を渡す場合に便利です。
+`dict` は、特にパーシャルに複数の値を渡す場合に便利です。
 
  `key` は `string` または `string slice` のどちらかであることに注意してください。後者は、たとえば以下のような、深くネストした構造を作成するのに役立ちます。
 
@@ -32,7 +32,7 @@ workson: []
 
 以下のパーシャルは SVG を作成し、呼び出し元から `fill`、`height`、`width` を受け取るようにします。
 
-### 部分テンプレートの定義 {#partial-definition}
+### パーシャルの定義 {#partial-definition}
 
 {{< code file="layouts/partials/svgs/external-links.svg" download="external-links.svg" >}}
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -41,9 +41,9 @@ fill="{{ .fill }}" width="{{ .width }}" height="{{ .height }}" viewBox="0 0 32 3
 </svg>
 {{< /code >}}
 
-### 部分テンプレートの呼び出し {#partial-call}
+### パーシャルの呼び出し {#partial-call}
 
-`fill`、`height`、`width` の値は `dict` を用いて 1 つのオブジェクトに格納し、部分テンプレートに渡すことができます。
+`fill`、`height`、`width` の値は `dict` を用いて 1 つのオブジェクトに格納し、パーシャルに渡すことができます。
 
 {{< code file="layouts/_default/list.html" >}}
 {{ partial "svgs/external-links.svg" (dict "fill" "#01589B" "width" 10 "height" 20 ) }}

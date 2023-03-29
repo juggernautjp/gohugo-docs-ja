@@ -4,7 +4,7 @@ categories:
 - functions
 date: "2017-02-01"
 deprecated: false
-description: 呼び出しごとに再レンダリングする必要のない部分テンプレートのキャッシュを可能にします。
+description: 呼び出しごとに再レンダリングする必要のないパーシャルのキャッシュを可能にします。
 draft: false
 hugoversion: null
 keywords:
@@ -44,7 +44,7 @@ workson: []
 {{ partialCached "footer.html" . .Params.country .Params.province }}
 ```
 
-バリアント パラメータは基本的な部分テンプレートでは利用できないことに注意してください。 これらは、一意なキャッシュキーを作成するためだけに使われます。 Hugo `0.61.0` 以降では、文字列だけでなく、任意のオブジェクトをキャッシュキーとして使用できます。
+バリアント パラメータは基本的なパーシャルでは利用できないことに注意してください。 これらは、一意なキャッシュキーを作成するためだけに使われます。 Hugo `0.61.0` 以降では、文字列だけでなく、任意のオブジェクトをキャッシュキーとして使用できます。
 
 
 > ["The Full Partial Series Part 1: Caching!"](https://regisphilibert.com/blog/2019/12/hugo-partial-series-part-1-caching-with-partialcached/) も参照してください。

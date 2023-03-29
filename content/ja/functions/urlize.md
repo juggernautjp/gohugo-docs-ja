@@ -31,7 +31,7 @@ tags = ["pizza","beer","hot dogs"]
 +++
 {{< /code >}}
 
-以下は、[シングルページ テンプレート][singletemplate] 内の部分テンプレートとして使用される可能性があります。
+以下は、[シングルページ テンプレート][singletemplate] 内のパーシャルとして使用される可能性があります。
 
 {{< code file="layouts/partials/content-header.html" download="content-header.html" >}}
 <header>
@@ -52,7 +52,7 @@ tags = ["pizza","beer","hot dogs"]
 </header>
 {{< /code >}}
 
-ページが Hugo のデフォルトのプリティ URL でビルドされていると仮定すると、前述の部分テンプレートは以下のようにレンダリングしたページを出力します。
+ページが Hugo のデフォルトのプリティ URL でビルドされていると仮定すると、前述のパーシャルは以下のようにレンダリングしたページを出力します。
 
 {{< output file="/blog/greatest-city/index.html" >}}
 <header>
