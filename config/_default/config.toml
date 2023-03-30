@@ -1,11 +1,12 @@
 # baseURL = "https://gohugo.io/"
 # publish to CloudFlare Pages
-baseURL = "https://gohugo-docs-ja.pages.dev/"
+# baseURL = "https://gohugo-docs-ja.pages.dev/"
+baseURL = "https://juggernautjp.info/"
 # baseURL = "https://localhost:1313/"
 # defaultContentLanguage = "en"
 defaultContentLanguage = "ja"
 enableEmoji = true
-googleAnalytics = "G-TT4FBJ4J5Z"
+googleAnalytics = "G-4T8X7YWQKE"
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 # languageCode = "en-us"
 languageCode = "ja-jp"
