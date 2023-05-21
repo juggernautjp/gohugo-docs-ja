@@ -300,7 +300,7 @@
     - title: lang
       url: /lang/
     - title: lang.Merge
-      url: /lang.merge/
+      url: /lang_merge/
     - title: last
       url: /last/
     - title: le
@@ -324,7 +324,7 @@
     - title: now
       url: /now/
     - title: os.Stat
-      url: /os.stat/
+      url: /os_stat/
     - title: partialCached
       url: /partial_cached/
     - title: path.Base
@@ -458,7 +458,7 @@
     - title: urlquery
       url: /urlquery/
     - title: urls.Parse
-      url: /urls.parse/
+      url: /urls_parse/
     - title: where
       url: /where/
     - title: with
