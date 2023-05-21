@@ -463,14 +463,14 @@ hugo --gc
 ```
 
 [`anchor`]: {{< relref "content-management/image-processing#anchor" >}}
-[`lang.FormatNumber`]: {{< relref "functions/lang#langformatnumber" >}}
+[`lang.FormatNumber`]: {{< relref "function/lang#langformatnumber" >}}
 [Exif]: <https://en.wikipedia.org/wiki/Exif>
-[filters]: {{< relref "functions/images" >}}
+[filters]: {{< relref "function/images" >}}
 [github.com/disintegration/imaging]: <https://github.com/disintegration/imaging#image-resizing>
 [mounted]: {{< relref "hugo-modules/configuration#module-config-mounts">}}
 [page bundle]: {{< relref "content-management/page-bundles" >}}
 [Smartcrop]: <https://github.com/muesli/smartcrop#smartcrop>
-[time.Format]: {{< relref "functions/dateformat" >}}
+[time.Format]: {{< relref "function/dateformat" >}}
 [`Colors`]: #colors
 [`Crop`]: #crop
 [`Exif`]: #exif
