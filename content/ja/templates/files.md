@@ -61,8 +61,8 @@ Hugo の [`readDir`][readDir] および [`readFile`][readFile] テンプレー�
 [called directly in the Hugo docs]: https://github.com/gohugoio/hugoDocs/blob/master/content/en/templates/files.md
 [dirindex]: https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/directoryindex.html
 [osfileinfo]: https://golang.org/pkg/os/#FileInfo
-[readDir]: /functions/readdir/
-[readFile]: /functions/readfile/
+[readDir]: /function/readdir/
+[readFile]: /function/readfile/
 [sc]: /content-management/shortcodes/
 [sct]: /templates/shortcode-templates/
 [readfilesource]: https://github.com/gohugoio/hugoDocs/blob/master/layouts/shortcodes/readfile.html

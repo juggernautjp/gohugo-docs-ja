@@ -114,8 +114,8 @@ names: [ "Derek Perkins", "Joe Bergevin", "Tanner Linsley" ]
 パイプラインを介してシーケンスを引数として受け取る場合、`apply` は動作しません。
 {{< /note >}}
 
-[chomp]: /functions/chomp/ "chomp 関数のドキュメントを参照してください"
-[delimit]: /functions/delimit/ "delimit 関数のドキュメントを参照してください"
-[functions]: /functions/ "apply 関数に引数として渡すことができるものを確認するには、Hugo 関数の完全なリストを参照してください。"
+[chomp]: /function/chomp/ "chomp 関数のドキュメントを参照してください"
+[delimit]: /function/delimit/ "delimit 関数のドキュメントを参照してください"
+[functions]: /function/ "apply 関数に引数として渡すことができるものを確認するには、Hugo 関数の完全なリストを参照してください。"
 [partials]: /templates/partials/
-[range]: /functions/range/ "Hugo テンプレートと Go プログラミング言語の両方の基本的なキーワードである range 関数の重要性を学びます。"
+[range]: /function/range/ "Hugo テンプレートと Go プログラミング言語の両方の基本的なキーワードである range 関数の重要性を学びます。"

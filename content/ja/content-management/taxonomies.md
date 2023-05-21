@@ -212,7 +212,7 @@ wikipedia: "https://en.wikipedia.org/wiki/Bruce_Willis"
 {{< /code >}}
 
 
-[`urlize` template function]: /functions/urlize/
+[`urlize` template function]: /function/urlize/
 [content section]: /content-management/sections/
 [content type]: /content-management/types/
 [documentation on archetypes]: /content-management/archetypes/

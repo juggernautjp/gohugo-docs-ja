@@ -341,8 +341,8 @@ Front Matter with weighted tags and categories
 <!-- TODO: ### `.Site.GetPage` Taxonomy Terms Example -->
 
 
-[delimit]: /functions/delimit/
-[getpage]: /functions/getpage/
+[delimit]: /function/delimit/
+[getpage]: /function/getpage/
 [lists]: /templates/lists/
 [renderlists]: /templates/lists/
 [single page template]: /templates/single-page-templates/

@@ -429,7 +429,7 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 {{ end }}
 {{< /code >}}
 
-{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/functions/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
+{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/function/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
 
 ### 公開日 (Publish Date) による {#by-publish-date}
 
@@ -448,7 +448,7 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 {{ end }}
 {{< /code >}}
 
-{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/functions/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
+{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/function/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
 
 ### 最終更新日 (Lastmod) による {#by-lastmod}
 
@@ -467,7 +467,7 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 {{ end }}
 {{< /code >}}
 
-{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/functions/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
+{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/function/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
 
 ### 有効期限 (Expiry Date) による {#by-expiry-date}
 
@@ -486,7 +486,7 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 {{ end }}
 {{< /code >}}
 
-{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/functions/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
+{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/function/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
 
 ### ページパラメータによる {#by-page-parameter}
 
@@ -583,9 +583,9 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 [base]: /templates/base/
 [bepsays]: https://bepsays.com/en/2016/12/19/hugo-018/
 [directorystructure]: /getting-started/directory-structure/
-[`Format` function]: /functions/format/
+[`Format` function]: /function/format/
 [front matter]: /content-management/front-matter/
-[getpage]: /functions/getpage/
+[getpage]: /function/getpage/
 [homepage]: /templates/homepage/
 [homepage]: /templates/homepage/
 [mentalmodel]: https://webstyleguide.com/wsg3/3-information-architecture/3-site-structure.html
@@ -600,6 +600,6 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 [taxterms]: /templates/taxonomy-templates/#taxonomy-terms-templates
 [taxvars]: /variables/taxonomy/
 [views]: /templates/views/
-[wherefunction]: /functions/where/
-[firstfunction]: /functions/first/
-[mainsections]: /functions/where/#mainsections
+[wherefunction]: /function/where/
+[firstfunction]: /function/first/
+[mainsections]: /function/where/#mainsections

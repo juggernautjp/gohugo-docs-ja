@@ -158,9 +158,9 @@ Hugo の [ページ付け (ページネーション)](https://developer.mozilla.
 ....
 ```
 
-[`first`]: /functions/first/
-[`last`]: /functions/last/
-[`after`]: /functions/after/
+[`first`]: /function/first/
+[`last`]: /function/last/
+[`after`]: /function/after/
 [configuration]: /getting-started/configuration/
 [lists]: /templates/lists/
-[where]: /functions/where/
+[where]: /function/where/

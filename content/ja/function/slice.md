@@ -34,4 +34,4 @@ workson: []
 {{< /code >}}
 
 
-[`delimit` function]: /functions/delimit/
+[`delimit` function]: /function/delimit/

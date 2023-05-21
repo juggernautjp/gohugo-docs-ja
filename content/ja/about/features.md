@@ -62,7 +62,7 @@ weight: 20
 [Dynamic menu]: /templates/menu-templates/
 [Extremely fast]: https://github.com/bep/hugo-benchmark
 [front matter]: /content-management/front-matter/
-[functions]: /functions/
+[functions]: /function/
 [Go]: https://pkg.go.dev/html/template
 [Google Analytics]: https://google-analytics.com/
 [homepage]: /templates/homepage/

@@ -66,7 +66,7 @@ workson: []
 {{ end }}
 {{< /code >}}
 
-[`first` function]: /functions/first/
+[`first` function]: /function/first/
 [list/section page]: /templates/section-templates/
 [lists]: /templates/lists/#order-content
-[slice]: /functions/slice/
+[slice]: /function/slice/

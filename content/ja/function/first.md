@@ -54,5 +54,5 @@ workson:
 
 
 [limitkeyword]: https://www.techonthenet.com/sql/select_limit.php
-[wherefunction]: /functions/where/
-[mainsections]: /functions/where/#mainsections
+[wherefunction]: /function/where/
+[mainsections]: /function/where/#mainsections

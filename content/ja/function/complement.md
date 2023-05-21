@@ -64,7 +64,7 @@ content/
 {{< note >}}
 上記の例では `complement` 関数を使用していますが、以下のように、[`where`] 関数も同様に使用できます。
 
-[`where`]: /functions/where/
+[`where`]: /function/where/
 {{< /note >}} 
 
 ```go-html-template

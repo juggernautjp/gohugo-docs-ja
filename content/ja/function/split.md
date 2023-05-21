@@ -30,5 +30,5 @@ workson: []
 
 
 {{< note >}}
-`split` は基本的に、[delimit]({{< ref "functions/delimit" >}}) の逆を行います。 `split` が文字列からスライスを作成するのに対して、 `delimit` はスライスから文字列を作成します。
+`split` は基本的に、[delimit]({{< ref "function/delimit" >}}) の逆を行います。 `split` が文字列からスライスを作成するのに対して、 `delimit` はスライスから文字列を作成します。
 {{< /note >}}

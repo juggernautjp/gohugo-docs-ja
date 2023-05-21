@@ -208,6 +208,6 @@ Value: {{ partial "my-inline-partial.html" . }}
 [customize]: /themes/customizing/ "Hugo は、ユーザーが Hugo のテンプレート検索順序に慣れている限り、テーマをカスタマイズする簡単な手段を提供します。"
 [listtemps]: /templates/lists/ "Hugo のシステムを効果的に活用するには、セクション、タクソノミー、ホームページのコンテンツをリスト化し、順序付けるリストページの処理方法を確認してください。"
 [lookup order]: /templates/lookup-order/ "テンプレートをドライに保つには、Hugo の検索順序に関するドキュメントを読んでください。"
-[partialcached]: /functions/partialcached/ "Hugo がすべてのページでレンダリングする必要のないパーシャルをキャッシュできる場合は、パーシャル キャッシュ関数を使用してビルド時間を改善します。"
+[partialcached]: /function/partialcached/ "Hugo がすべてのページでレンダリングする必要のないパーシャルをキャッシュできる場合は、パーシャル キャッシュ関数を使用してビルド時間を改善します。"
 [singletemps]: /templates/single-page-templates/ "Hugo のテンプレートの最も一般的な形式は、シングルコンテンツ テンプレートです。 個々のページのためのテンプレートを作成する方法については、ドキュメントを参照してください。"
 [themes]: /themes/

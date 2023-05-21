@@ -47,7 +47,7 @@ Hugo は、Hugo プロジェクトのルートにある `data` ディレクト�
 - `x123.json` - 有効
 - `_123.json` - 有効
 
-[`index`](/functions/index-function/) 関数を使用してデータにアクセスする場合、ファイル名は関係ありません。  たとえば、以下のようになります。
+[`index`](/function/index-function/) 関数を使用してデータにアクセスする場合、ファイル名は関係ありません。  たとえば、以下のようになります。
 
 データファイル | テンプレート コード
 :--|:--
@@ -266,7 +266,7 @@ URL のコンテンツが変更されたときに [LiveReload][] をトリガー
 [json]: https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf "JSON (JavaScript Object Notation) の仕様"
 [LiveReload]: /getting-started/usage/#livereload
 [lookup]: /templates/lookup-order/
-[markdownify]: /functions/markdownify/
+[markdownify]: /function/markdownify/
 [OAuth]: https://en.wikipedia.org/wiki/OAuth
 [partials]: /templates/partials/
 [themes]: /themes/

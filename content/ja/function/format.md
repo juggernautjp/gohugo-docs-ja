@@ -129,7 +129,7 @@ date: 2017-03-03T14:15:59-06:00
 : **戻り値**: `03 Mar 17 14:15 CST`
 
 [CST]: https://en.wikipedia.org/wiki/Central_Time_Zone
-[dateFormat]: /functions/dateformat/
+[dateFormat]: /function/dateformat/
 [gdex]: https://golang.org/pkg/time/#example_Time_Format
 [pagevars]: /variables/page/
 [time]: https://golang.org/pkg/time/

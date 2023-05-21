@@ -54,4 +54,4 @@ workson: []
 
 上記は、固定されていない限り、`page` または `about` タイプでない通常ページをフェッチします。 最後に、Page パラメータに `images` が設定されていないすべてのページを除外します。
 
-`AND `については、[intersect](/functions/intersect) を参照してください。
+`AND `については、[intersect](/function/intersect) を参照してください。

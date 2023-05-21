@@ -28,5 +28,5 @@ Go テンプレートは HTML に対応しているため、`truncate` は通常
 ```
 
 {{< note >}}
-HTML として扱いたい HTML タグを含む生の文字列がある場合、値を truncate に送る前に、[`safeHTML` テンプレート関数](/functions/safehtml) を使用して文字列を HTML に変換する必要があります。そうしないと、 `truncate` 関数に渡されたときに HTML タグがエスケープされてしまいます。
+HTML として扱いたい HTML タグを含む生の文字列がある場合、値を truncate に送る前に、[`safeHTML` テンプレート関数](/function/safehtml) を使用して文字列を HTML に変換する必要があります。そうしないと、 `truncate` 関数に渡されたときに HTML タグがエスケープされてしまいます。
 {{< /note >}}

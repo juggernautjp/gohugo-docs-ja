@@ -37,7 +37,7 @@ workson: []
 
 上記は、固定されていない限り、 `page` または `about` タイプではない通常ページを取得します。 最後に、Page パラメータに `images` が設定されていないページをすべて除外します。
 
-`OR` については [union](/functions/union) を参照してください。
+`OR` については [union](/function/union) を参照してください。
 
 
 [partials]: /templates/partials/

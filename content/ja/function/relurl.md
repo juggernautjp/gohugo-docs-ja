@@ -4,25 +4,24 @@ categories:
 - functions
 date: "2017-02-01"
 deprecated: false
-description: 絶対 URL を返します。
+description: 相対 URL を返します。
 draft: false
 hugoversion: null
 keywords:
 - urls
-lastmod: "2017-02-01"
 menu:
   docs:
     parent: functions
 publishdate: "2017-02-01"
 relatedfuncs:
-- relURL
+- absURL
 signature:
-- absURL INPUT
-title: absURL
+- "relURL INPUT"
+title: relURL
 workson: []
 ---
 
-多言語設定では、代わりに [`absLangURL`] 関数を使用してください。 この関数によって返される URL は、以下によって異なります。
+多言語設定では、代わりに [`relLangURL`] 関数を使用してください。 この関数によって返される URL は、以下によって異なります。
 
 - 入力がスラッシュで始まるかどうか
 - サイト設定の `baseURL` の値
@@ -34,17 +33,17 @@ workson: []
 `baseURL = https://example.org/` の場合
 
 ```go-html-template
-{{ absURL "" }}           →   https://example.org/
-{{ absURL "articles" }}   →   https://example.org/articles
-{{ absURL "style.css" }}  →   https://example.org/style.css
+{{ relURL "" }}           →   /
+{{ relURL "articles" }}   →   /articles
+{{ relURL "style.css" }}  →   /style.css
 ```
 
 `baseURL = https://example.org/docs/` の場合
 
 ```go-html-template
-{{ absURL "" }}           →   https://example.org/docs/
-{{ absURL "articles" }}   →   https://example.org/docs/articles
-{{ absURL "style.css" }}  →   https://example.org/docs/style.css
+{{ relURL "" }}           →   /docs/
+{{ relURL "articles" }}   →   /docs/articles
+{{ relURL "style.css" }}  →   /docs/style.css
 ```
 
 ### 入力がスラッシュで始まる場合 {#input-begins-with-a-slash}
@@ -54,21 +53,21 @@ workson: []
 `baseURL = https://example.org/` の場合
 
 ```go-html-template
-{{ absURL "/" }}          →   https://example.org/
-{{ absURL "/articles" }}  →   https://example.org/articles
-{{ absURL "/style.css" }} →   https://example.org/style.css
+{{ relURL "/" }}          →   /
+{{ relURL "/articles" }}  →   /articles
+{{ relURL "style.css" }}  →   /style.css
 ```
 
 `baseURL = https://example.org/docs/` の場合
 
 ```go-html-template
-{{ absURL "/" }}          →   https://example.org/
-{{ absURL "/articles" }}  →   https://example.org/articles
-{{ absURL "/style.css" }} →   https://example.org/style.css
+{{ relURL "/" }}          →   /
+{{ relURL "/articles" }}  →   /articles
+{{ relURL "/style.css" }} →   /style.css
 ```
 
 {{< note >}}
 最後の 3 つの例は、ほとんどの場合において望ましいものではありません。ベストプラクティスとして、この関数を使うときは、絶対に先頭のスラッシュを含めないでください。
 {{< /note >}}
 
-[`absLangURL`]: /functions/abslangurl/
+[`relLangURL`]: /function/rellangurl/

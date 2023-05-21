@@ -38,4 +38,4 @@ workson: []
 <div>buzz foo bar</div>
 {{< /output >}}
 
-この例では、[slice](/functions/slice/) および [seq](/functions/seq/) 関数も使用しています。
+この例では、[slice](/function/slice/) および [seq](/function/seq/) 関数も使用しています。

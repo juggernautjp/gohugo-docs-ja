@@ -84,7 +84,7 @@ In conjunction with the [`dateFormat` function][dateFormat], you can also conver
 : **Returns**: `03 Mar 17 14:15 CST`
 
 [CST]: https://en.wikipedia.org/wiki/Central_Time_Zone
-[dateFormat]: /functions/dateformat/
+[dateFormat]: /function/dateformat/
 [gdex]: https://golang.org/pkg/time/#example_Time_Format
 [pagevars]: /variables/page/
 [time]: https://golang.org/pkg/time/

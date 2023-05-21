@@ -23,7 +23,7 @@ toc: true
 workson: []
 ---
 
-パイプラインで、他の処理によって追加された改行を削除するのに役立ちます (たとえば、 [`markdownify`](/functions/markdownify/))。
+パイプラインで、他の処理によって追加された改行を削除するのに役立ちます (たとえば、 [`markdownify`](/function/markdownify/))。
 
 ```go-html-template
 {{chomp "<p>Blockhead</p>\n"}} → "<p>Blockhead</p>"

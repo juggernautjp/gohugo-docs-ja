@@ -40,7 +40,7 @@ weight: 50
 
 .PageRef
 : _string_   
-サイト設定で定義されていて、メニューエントリがページを参照している場合に設定できます。 [site.GetPage](/functions/getpage/) は、ページ検索を行うために使用されます。 これが設定されている場合、`URL` を設定する必要はありません。
+サイト設定で定義されていて、メニューエントリがページを参照している場合に設定できます。 [site.GetPage](/function/getpage/) は、ページ検索を行うために使用されます。 これが設定されている場合、`URL` を設定する必要はありません。
 
 .Name
 : _string_  
@@ -100,11 +100,11 @@ Aさらに、ページのメニューで使用できるいくつかの関連す�
 
 .IsMenuCurrent
 : _(menu string, menuEntry *MenuEntry ) boolean_  
-[`.IsMenuCurrent` メソッド](/functions/ismenucurrent/) を参照してください。
+[`.IsMenuCurrent` メソッド](/function/ismenucurrent/) を参照してください。
 
 .HasMenuCurrent
 : _(menu string, menuEntry *MenuEntry) boolean_  
-[`.HasMenuCurrent` メソッド](/functions/hasmenucurrent/) を参照してください。
+[`.HasMenuCurrent` メソッド](/function/hasmenucurrent/) を参照してください。
 
 [menu-template]: /templates/menu-templates/
 [page-object]: /variables/page/

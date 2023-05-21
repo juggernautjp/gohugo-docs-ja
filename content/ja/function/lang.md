@@ -1,6 +1,6 @@
 ---
 aliases:
-- /functions/numfmt/
+- /function/numfmt/
 categories:
 - functions
 date: "2021-07-28"

@@ -452,7 +452,7 @@ Hugo がテーマを読み込むディレクトリ。
 
 ### timeZone
 
-[`time` 関数](/functions/time/) で、そのような情報なしでフロントマターの日付を解析するために使用される、たとえば `Europe/Oslo` のようなタイムゾーン (または場所)。有効な値のリストはシステムに依存しますが、 `UTC`、`Local`、そして [IANA タイムゾーンデータベース](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) にある任意の場所を含める必要があります。
+[`time` 関数](/function/time/) で、そのような情報なしでフロントマターの日付を解析するために使用される、たとえば `Europe/Oslo` のようなタイムゾーン (または場所)。有効な値のリストはシステムに依存しますが、 `UTC`、`Local`、そして [IANA タイムゾーンデータベース](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) にある任意の場所を含める必要があります。
 
 ### title
 
@@ -576,7 +576,7 @@ Hugo は、`404.html` テンプレートで `hugo server` を実行すると、�
 
 ## タイトルケースを設定する {#configure-title-case}
 
-[title](/functions/title/) テンプレート関数と Hugo の自動セクションタイトルで使用されるタイトルスタイルを指定するには、`titleCaseStyle` を設定します。タイトルケースのデフォルトは [AP Stylebook](https://www.apstylebook.com/) ですが、`Chicago` や `Go` (すべての単語を大文字で始める) に設定することもできます。
+[title](/function/title/) テンプレート関数と Hugo の自動セクションタイトルで使用されるタイトルスタイルを指定するには、`titleCaseStyle` を設定します。タイトルケースのデフォルトは [AP Stylebook](https://www.apstylebook.com/) ですが、`Chicago` や `Go` (すべての単語を大文字で始める) に設定することもできます。
 
 ## コンフィギュレーション環境変数 {#configuration-environment-variables}
 

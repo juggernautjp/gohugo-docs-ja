@@ -1,6 +1,6 @@
 ---
 aliases:
-- /functions/index/
+- /function/index/
 categories:
 - functions
 date: "2017-02-01"

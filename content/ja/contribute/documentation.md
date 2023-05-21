@@ -51,7 +51,7 @@ Hugo リポジトリをクローンしたら、以下のコマンドで新しい
 hugo new functions/newfunction.md
 ```
 
-Hugo のドキュメントによると、`functions`のアーキタイプは以下の通りです。
+Hugo のドキュメントによると、`functions` のアーキタイプは以下の通りです。
 
 {{< code file="archetypes/functions.md" >}}
 {{< readfile file="/archetypes/functions.md">}}
@@ -68,7 +68,7 @@ Hugo のドキュメントによると、`functions`のアーキタイプは以�
 : 関数の実際のケーシング (たとえば、`replacere` ではなく `replaceRE`) を指定します。
 
 ***`description`***
-: [関数のクイックリファレンス](/functions/) に入力するための簡単な説明です。
+: [関数のクイックリファレンス](/function/) に入力するための簡単な説明です。
 
 `categories`
 : 現在、将来性と移植性の理由から `functions` が自動入力されています。ですから、このフィールドは無視してください。
@@ -343,4 +343,4 @@ This is a warning, which should be reserved for *important* information like bre
 [hugodev]: /contribute/development/
 [shortcodeparams]: content-management/shortcodes/#shortcodes-without-markdown
 [sourceforge]: https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions
-[templating function]: /functions/
+[templating function]: /function/

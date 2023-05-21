@@ -338,7 +338,7 @@ Go テンプレートの構文は非常に単純であるため、関数呼び�
 
 ### 例 2: `index` {#example-2-index}
 
-以下は "disqus_url" というページパラメータにアクセスし、HTML をエスケープしています。この例では、Go テンプレートに組み込まれている [`index` 関数](/functions/index-function/) も使用しています。
+以下は "disqus_url" というページパラメータにアクセスし、HTML をエスケープしています。この例では、Go テンプレートに組み込まれている [`index` 関数](/function/index-function/) も使用しています。
 
 ```go-html-template
 {{ index .Params "disqus_url" | html }}
@@ -626,17 +626,17 @@ end_date = 2021-12-05T11:00:00-08:00
 
 [config]: {{< relref "getting-started/configuration" >}}
 [dotdoc]: https://golang.org/pkg/text/template/#hdr-Variables
-[first]: {{< relref "functions/first" >}}
+[first]: {{< relref "function/first" >}}
 [front matter]: {{< relref "content-management/front-matter" >}}
-[functions]: {{< relref "functions" >}}
+[functions]: {{< relref "function" >}}
 [internal templates]: {{< relref "templates/internal" >}}
-[isset]: {{< relref "functions/isset" >}}
-[math]: {{< relref "functions/math" >}}
+[isset]: {{< relref "function/isset" >}}
+[math]: {{< relref "function/math" >}}
 [pagevars]: {{< relref "variables/page" >}}
-[param]: {{< relref "functions/param" >}}
+[param]: {{< relref "function/param" >}}
 [partials]: {{< relref "templates/partials" >}}
 [relpermalink]: {{< relref "variables/page#page-variables" >}}
-[safehtml]: {{< relref "functions/safehtml" >}}
+[safehtml]: {{< relref "function/safehtml" >}}
 [sitevars]: {{< relref "variables/site" >}}
 [variables]: {{< relref "variables" >}}
-[with]: {{< relref "functions/with" >}}
+[with]: {{< relref "function/with" >}}

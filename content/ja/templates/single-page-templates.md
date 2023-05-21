@@ -85,7 +85,7 @@ weight: 60
 [content type]: /content-management/types/
 [directory structure]: /getting-started/directory-structure/
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-[`.Format` function]: /functions/format/
+[`.Format` function]: /function/format/
 [front matter]: /content-management/front-matter/
 [pagetaxonomy]: /templates/taxonomy-templates/#display-a-single-piece-of-contents-taxonomies
 [pagevars]: /variables/page/
@@ -93,4 +93,4 @@ weight: 60
 [section]: /content-management/sections/
 [site variables]: /variables/site/
 [spf13]: https://spf13.com/
-[`with`]: /functions/with/
+[`with`]: /function/with/

@@ -28,6 +28,6 @@ workson: []
 {{ .Title | markdownify }}
 ```
 
-{{< new-in "0.93.0" >}} **注意**: `markdownify` は [.RenderString](/functions/renderstring/) と同様に [レンダーフック][Render Hooks] をサポートするようになりました。
+{{< new-in "0.93.0" >}} **注意**: `markdownify` は [.RenderString](/function/renderstring/) と同様に [レンダーフック][Render Hooks] をサポートするようになりました。
 
 [Render Hooks]: /templates/render-hooks/

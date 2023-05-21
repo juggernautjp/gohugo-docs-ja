@@ -132,7 +132,7 @@ Markdown の構文は一度で習得できるほどシンプルです。以下�
 * [Markdown Tutorial (Interactive), Garen Torikian][mdtutorial]
 * [The Markdown Guide, Matt Cone][mdguide]
 
-[`emojify` function]: /functions/emojify/
+[`emojify` function]: /function/emojify/
 [ascii]: https://asciidoctor.org/
 [config]: /getting-started/configuration/
 [developer tools]: /tools/

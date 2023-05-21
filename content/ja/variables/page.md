@@ -23,7 +23,7 @@ weight: 20
 以下は、ページレベル変数のリストです。 これらの多くは、フロントマターで定義されるか、ファイルの場所から派生するか、コンテンツ自体から抽出されます。
 
 {{% note "`.Scratch`" %}}
-ページスコープの書き込み可能な変数については、[`.Scratch`](/functions/scratch/) を参照してください。
+ページスコープの書き込み可能な変数については、[`.Scratch`](/function/scratch/) を参照してください。
 {{< /note >}}
 
 ## ページ変数 {#page-variables}
@@ -103,7 +103,7 @@ weight: 20
 : 同じトップレベル セクション (たとえば、 `/blog`) の次の [通常ページ](/variables/site/#site-pages) までを指します。ページは Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます。 たとえば、 `{with .NextInSection}}{.Permalink}{{end}}` です。 最初のページから `.NextInSection` を呼び出すと、`nil` が返されます。
 
 .OutputFormats
-: 指定されたページの現在の形式を含む、すべての形式を含みます。 特定の形式を取得するには、[`.Get`関数](/functions/get/) と組み合わせることができます。([「出力形式」](/templates/output-formats/) を参照してください)。
+: 指定されたページの現在の形式を含む、すべての形式を含みます。 特定の形式を取得するには、[`.Get`関数](/function/get/) と組み合わせることができます。([「出力形式」](/templates/output-formats/) を参照してください)。
 
 .Pages
 : 関連するページのコレクションです。この値は、通常のコンテンツページのコンテキスト内では `nil` になります。 [`.Pages`]({{< relref "page.md#pages" >}}) を参照してください。

@@ -112,8 +112,8 @@ Hugo のすべての `Page` には、 `.Kind` 属性があります。
 ```
 
 [contentorg]: /content-management/organization/
-[getpage]: /functions/getpage/
+[getpage]: /function/getpage/
 [lists]: /templates/lists/
 [lookup]: /templates/lookup-order/
-[where]: /functions/where/
+[where]: /function/where/
 [sections]: /content-management/sections/

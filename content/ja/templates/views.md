@@ -111,7 +111,7 @@ Hugo は、以下の `summary.html` ビュー テンプレートにページオ�
 [lists]: /templates/lists/
 [lookup]: /templates/lookup-order/
 [pagevars]: /variables/page/
-[render]: /functions/render/
+[render]: /function/render/
 [single]: /templates/single-page-templates/
 [spf]: https://spf13.com
 [spfsourceli]: https://github.com/spf13/spf13.com/blob/master/layouts/_default/li.html

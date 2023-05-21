@@ -103,7 +103,7 @@ Hugo/GO のテンプレートコードをページ上でハイライト表示す
 
 ## ハイライトテンプレート関数 {#highlight-template-func}
 
-[「highlight 関数」](/functions/highlight/) を参照してください。
+[「highlight 関数」](/function/highlight/) を参照してください。
 
 ## コードフェンスでのハイライト表示 {#highlighting-in-code-fences}
 

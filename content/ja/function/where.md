@@ -176,5 +176,5 @@ series: golang
   mainSections = ["blog", "docs"]
 {{< /code-toggle >}}
 
-[intersect]: /functions/intersect/
+[intersect]: /function/intersect/
 [wherekeyword]: https://www.techonthenet.com/sql/where.php

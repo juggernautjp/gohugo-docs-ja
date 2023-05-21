@@ -32,7 +32,7 @@ workson: []
 {{% note "Usage Note" %}}
 入力文字列が 10 進数を表すと想定されていて、先頭に 0 がある場合、文字列を `int` 関数に渡す前にそれらの 0 を削除する必要があります。そうしないと、その文字列は 8 進数表現としてパースされます。
 
-この目的のためには、[`strings.TrimLeft` 関数](/functions/strings.trimleft/) を使用できます。
+この目的のためには、[`strings.TrimLeft` 関数](/function/strings.trimleft/) を使用できます。
 
 ```go-html-template
 {{ int ("0987" | strings.TrimLeft "0") }}

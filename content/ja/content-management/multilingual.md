@@ -586,23 +586,23 @@ hugo new content/en/post/test.md
 hugo new content/de/post/test.md
 ```
 
-[abslangurl]: /functions/abslangurl
+[abslangurl]: /function/abslangurl
 [config]: /getting-started/configuration/
 [contenttemplate]: /templates/single-page-templates/
 [go-i18n-source]: https://github.com/nicksnyder/go-i18n
 [go-i18n]: https://github.com/nicksnyder/go-i18n
 [homepage]: /templates/homepage/
 [Hugo Multilingual Part 1: Content translation]: https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
-[i18func]: /functions/i18n/
-[lang.FormatAccounting]: /functions/lang/#langformataccounting
-[lang.FormatCurrency]: /functions/lang/#langformatcurrency
-[lang.FormatNumber]: /functions/lang/#langformatnumber
-[lang.FormatNumberCustom]: /functions/lang/#langformatnumbercustom
-[lang.FormatPercent]: /functions/lang/#langformatpercent
-[lang.Merge]: /functions/lang.merge/
+[i18func]: /function/i18n/
+[lang.FormatAccounting]: /function/lang/#langformataccounting
+[lang.FormatCurrency]: /function/lang/#langformatcurrency
+[lang.FormatNumber]: /function/lang/#langformatnumber
+[lang.FormatNumberCustom]: /function/lang/#langformatnumbercustom
+[lang.FormatPercent]: /function/lang/#langformatpercent
+[lang.Merge]: /function/lang.merge/
 [menus]: /content-management/menus/
 [OS environment]: /getting-started/configuration/#configure-with-environment-variables
-[rellangurl]: /functions/rellangurl
+[rellangurl]: /function/rellangurl
 [RFC 5646]: https://tools.ietf.org/html/rfc5646
 [single page templates]: /templates/single-page-templates/
-[time.Format]: /functions/dateformat
+[time.Format]: /function/dateformat

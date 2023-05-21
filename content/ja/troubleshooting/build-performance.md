@@ -84,4 +84,4 @@ Hugo は、複数のページが同時に生成される並列処理でページ
 初期コンテキスト以外に `partialCached` に追加のパラメータを渡すことで、各 `partial` のキャッシュされたバリアントを作成することができることに注意してください。 詳細については、 `partialCached` のドキュメントを参照してください。
 {{< /tip >}}
 
-[partialCached]:{{< ref "/functions/partial_cached.md" >}}
+[partialCached]:{{< ref "/function/partial_cached.md" >}}

@@ -42,7 +42,7 @@ weight: 20
 .Inner
 : [終了ショートコード][markdownshortcode] が使用されている場合、開始ショートコード タグと終了ショートコード タグの間のコンテンツを表します。
 
-[getfunction]: /functions/get/
+[getfunction]: /function/get/
 [markdownshortcode]: /content-management/shortcodes/#shortcodes-with-markdown
 [shortcodes]: /templates/shortcode-templates/
 

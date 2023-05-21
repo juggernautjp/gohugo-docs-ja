@@ -84,7 +84,7 @@ CSS クラスを持つブロック引用の例:
 ````
 
 autoHeadingIDType ("github") {{< new-in "0.62.2" >}}
-: 自動生成される ID (アンカー名) を作成する際に使用するストラテジー。利用可能なタイプは `github`、`github-ascii`、`blackfriday` です。`github` は GitHub 互換の ID を作成し、 `github-ascii` はアクセントの正規化後に非アスキー文字を削除し、`blackfriday` は Hugo 0.60 以前のデフォルト Markdown エンジンである Blackfriday と互換性のある ID を作成します。 Goldmark がデフォルトの Markdown エンジンである場合、これは [anchorize](/functions/anchorize/) テンプレート関数で使用される戦略でもあることに注意してください。
+: 自動生成される ID (アンカー名) を作成する際に使用するストラテジー。利用可能なタイプは `github`、`github-ascii`、`blackfriday` です。`github` は GitHub 互換の ID を作成し、 `github-ascii` はアクセントの正規化後に非アスキー文字を削除し、`blackfriday` は Hugo 0.60 以前のデフォルト Markdown エンジンである Blackfriday と互換性のある ID を作成します。 Goldmark がデフォルトの Markdown エンジンである場合、これは [anchorize](/function/anchorize/) テンプレート関数で使用される戦略でもあることに注意してください。
 
 ### ハイライト {#highlight}
 

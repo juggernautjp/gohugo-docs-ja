@@ -36,4 +36,4 @@ markup (defaults to the Page's markup)
 {{  "/italic org mode/" | $p.RenderString  $optOrg }}
 ```
 
-{{< new-in "0.93.0" >}} **注意**: [markdownify](/functions/markdownify/) は、[レンダーフック](/getting-started/configuration-markup/#markdown-render-hooks) をサポートするためにこの関数を使用します。
+{{< new-in "0.93.0" >}} **注意**: [markdownify](/function/markdownify/) は、[レンダーフック](/getting-started/configuration-markup/#markdown-render-hooks) をサポートするためにこの関数を使用します。

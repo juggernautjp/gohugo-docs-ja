@@ -65,4 +65,4 @@ workson:
 [list templates]: /templates/lists/
 [section]: /content-management/sections/
 [site variable]: /variables/site/
-[`where`]: /functions/where/
+[`where`]: /function/where/

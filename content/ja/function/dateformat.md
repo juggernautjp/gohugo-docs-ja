@@ -37,10 +37,10 @@ workson: []
 
 `LAYOUT` 文字列は、以下のいずれかになります。
 
-* [Go のレイアウト文字列](/functions/format/#gos-layout-string) で `LAYOUT` 文字列がどのようにフォーマットしなければならないかを学びます。また、いくつかの有用な例もあります。
+* [Go のレイアウト文字列](/function/format/#gos-layout-string) で `LAYOUT` 文字列がどのようにフォーマットしなければならないかを学びます。また、いくつかの有用な例もあります。
 * Hugo レイアウトのカスタム識別子 (以下の全リストを参照してください)。
 
-タイムスタンプ文字列を Go の `time.Time` 型の値に変換するには、[`time` 関数](/functions/time/) を参照してください。
+タイムスタンプ文字列を Go の `time.Time` 型の値に変換するには、[`time` 関数](/function/time/) を参照してください。
 
 
 ## 日付/時刻のフォーマット レイアウト {#datetime-formatting-layouts}

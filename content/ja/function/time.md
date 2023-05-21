@@ -63,6 +63,6 @@ workson: []
 {{< /code >}}
 
 
-[int]: /functions/int/
+[int]: /function/int/
 [multilingual]: /content-management/multilingual/
-[`printf`]: /functions/printf/
+[`printf`]: /function/printf/

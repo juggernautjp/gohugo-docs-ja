@@ -27,7 +27,7 @@ weight: 10
 
 ## パーシャル からサイトオブジェクトを取得する {#get-the-site-object-from-a-partial}
 
-以下のすべてのメソッド、たとえば `.Site.RegularPages` は、グローバルな [`site`](/functions/site/) 関数からもアクセスできます。たとえば `site.RegularPages` は、 `Page` オブジェクトを簡単に利用できないパーシャルで便利です。 {{< new-in "0.53" >}}.
+以下のすべてのメソッド、たとえば `.Site.RegularPages` は、グローバルな [`site`](/function/site/) 関数からもアクセスできます。たとえば `site.RegularPages` は、 `Page` オブジェクトを簡単に利用できないパーシャルで便利です。 {{< new-in "0.53" >}}.
 
 ## サイト変数リスト {#site-variables-list}
 
@@ -80,7 +80,7 @@ weight: 10
 : サイト設定で定義された言語タグを表す文字列です。
 
 .Site.LanguagePrefix
-: これは、正しい言語を指すように URL にプレフィックスを付けるために使用できます。 定義された言語が 1 つだけの場合でも機能します。 関数 [absLangURL](/functions/abslangurl/) および [relLangURL](/functions/rellangurl) も参照してください。
+: これは、正しい言語を指すように URL にプレフィックスを付けるために使用できます。 定義された言語が 1 つだけの場合でも機能します。 関数 [absLangURL](/function/abslangurl/) および [relLangURL](/function/rellangurl) も参照してください。
 
 .Site.Languages
 : (定義された重みで並べられた) 言語の順序付きリストです。
