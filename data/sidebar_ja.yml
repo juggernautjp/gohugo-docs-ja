@@ -234,7 +234,7 @@
     - title: countwords
       url: /countwords/
     - title: crypto.FNV32a
-      url: /crypto.fnv32a/
+      url: /crypto_fnv32a/
     - title: default
       url: /default/
     - title: delimit
@@ -328,19 +328,19 @@
     - title: partialCached
       url: /partial_cached/
     - title: path.Base
-      url: /path.base/
+      url: /path_base/
     - title: path.BaseName
-      url: /path.basename/
+      url: /path_basename/
     - title: path.Clean
-      url: /path.clean/
+      url: /path_clean/
     - title: path.Dir
-      url: /path.dir/
+      url: /path_dir/
     - title: path.Ext
-      url: /path.ext/
+      url: /path_ext/
     - title: path.Join
-      url: /path.join/
+      url: /path_join/
     - title: path.Split
-      url: /path.split/
+      url: /path_split/
     - title: plainify
       url: /plainify/
     - title: pluralize
@@ -362,9 +362,9 @@
     - title: ref
       url: /ref/
     - title: reflect.IsMap
-      url: /reflect.ismap/
+      url: /reflect_ismap/
     - title: reflect.IsSlice
-      url: /reflect.isslice/
+      url: /reflect_isslice/
     - title: relLangURL
       url: /rellangurl/
     - title: relref
@@ -406,41 +406,43 @@
     - title: string
       url: /string/
     - title: strings.Contains
-      url: /strings.contains/
+      url: /strings_contains/
     - title: strings.ContainsAny
-      url: /strings.containsany/
+      url: /strings_containsany/
     - title: strings.Count
-      url: /strings.count/
+      url: /strings_count/
     - title: strings.FirstUpper
-      url: /strings.firstupper/
+      url: /strings_firstupper/
     - title: strings.HasSuffix
-      url: /strings.hassuffix/
+      url: /strings_hassuffix/
     - title: strings.Repeat
-      url: /strings.repeat/
+      url: /strings_repeat/
     - title: strings.RuneCount
-      url: /strings.runecount/
+      url: /strings_runecount/
     - title: strings.TrimLeft
-      url: /strings.trimleft/
+      url: /strings_trimleft/
+    - title: strings.TrimPrefix
+      url: /strings_trimprefix/
     - title: strings.TrimRight
-      url: /strings.trimright/
+      url: /strings_trimright/
     - title: strings.TrimSuffix
-      url: /strings.trimsuffix/
+      url: /strings_trimsuffix/
     - title: substr
       url: /substr/
     - title: symdiff
       url: /symdiff/
     - title: templates.Exists
-      url: /templates.exists/
+      url: /templates_exists/
     - title: time
       url: /time/
     - title: time.Format
       url: /dateformat/
     - title: time.ParseDuration
-      url: /time.parseduration/
+      url: /time_parseduration/
     - title: title
       url: /title/
     - title: transform.Unmarshal
-      url: /transform.unmarshal/
+      url: /transform_unmarshal/
     - title: trim
       url: /trim/
     - title: truncate

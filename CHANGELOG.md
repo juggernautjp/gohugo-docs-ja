@@ -5,8 +5,8 @@
 ## 0.1.1 (2023/05/21)
 
 - Bootstrap v5.3.0-alpha3 に対応
-- Issue #1 を修正 (content/ja/function/) の下のファイル名で大文字の英字を小文字に修正した。
-- Issue #2 を修正 (content/ja/function/lang.md) JSON のデータを Markdown に修正した。
+- [Issue #1](https://github.com/juggernautjp/gohugo-docs-ja/issues/1) を修正 - (content/ja/function/) の下のファイル名で大文字の英字を小文字に修正した。
+- [Issue #2](https://github.com/juggernautjp/gohugo-docs-ja/issues/1) を修正 (content/ja/function/lang.md) JSON のデータを Markdown に修正した。
 - 日本語コンテンツファイル (content/ja/) の下の「関数」セクションのディレクトリ `functions` を `function` に変更した。
 
 
