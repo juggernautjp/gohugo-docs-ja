@@ -3,14 +3,6 @@
 Hugo でサイト構築する方法に関連し、Hugo を記述した Go 言語やテーマ作成で利用する Bootstrap などの技術情報を提供するサイトです。
 
 
-
-## 変更履歴
-
-1. 以前、[Hugo](https://gohugo.io/) と同じテーマを用いた日本語版サイトを [GitHub Pages]() にて公開
-2. Bootstrap v5.3.0-alpha1 にテーマを変更したサイトを [Cloudflare Pages](https://juggernautjp.info/) に移行
-
-
-
 ## コンテンツ
 
 - [Hugo ドキュメント](https://gohugo.io/documentation/) の日本語訳
@@ -21,7 +13,7 @@ Hugo でサイト構築する方法に関連し、Hugo を記述した Go 言語
 
 - [Hugo](https://gohugo.io/)
 - [Go 言語](https://go.dev/) - スクリプト作成 (WIP)
-- [Bootstrap](https://getbootstrap.com/) v5.3.0 (現時点では、正式版ではなく alpha1 版)
+- [Bootstrap](https://getbootstrap.com/) v5.3.0 (現時点では、正式版ではなく alpha2 版)
 - [Flexsearch.js](https://github.com/nextapps-de/flexsearch) + [Kuromoji.js](https://github.com/takuyaa/kuromoji.js/)/[kuromojin](https://github.com/azu/kuromojin)
 - [Couldflare](https://dash.cloudflare.com/) [Pages](https://www.cloudflare.com/ja-jp/products/pages/)
 

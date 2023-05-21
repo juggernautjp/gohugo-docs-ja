@@ -194,7 +194,7 @@
     - title: .Get
       url: /get/
     - title: .GetPage
-      url: /GetPage/
+      url: /getpage/
     - title: .HasMenuCurrent
       url: /hasmenucurrent/
     - title: .IsMenuCurrent
@@ -204,7 +204,7 @@
     - title: .Render
       url: /render/
     - title: .RenderString
-      url: /RenderString/
+      url: /renderstring/
     - title: .Scratch
       url: /scratch/
     - title: .Unix
@@ -234,7 +234,7 @@
     - title: countwords
       url: /countwords/
     - title: crypto.FNV32a
-      url: /crypto.FNV32a/
+      url: /crypto.fnv32a/
     - title: default
       url: /default/
     - title: delimit
@@ -252,9 +252,9 @@
     - title: errorf と warnf
       url: /errorf/
     - title: fileExists
-      url: /fileExists/
+      url: /file_exists/
     - title: findRE
-      url: /findRe/
+      url: /findre/
     - title: first
       url: /first/
     - title: float
@@ -268,15 +268,15 @@
     - title: gt
       url: /gt/
     - title: hasPrefix
-      url: /hasPrefix/
+      url: /has_prefix/
     - title: highlight
       url: /highlight/
     - title: hmac
       url: /hmac/
     - title: htmlEscape
-      url: /htmlEscape/
+      url: /html_escape/
     - title: htmlUnescape
-      url: /htmlUnescape/
+      url: /html_unescape/
     - title: hugo
       url: /hugo/
     - title: humanize
@@ -300,7 +300,7 @@
     - title: lang
       url: /lang/
     - title: lang.Merge
-      url: /lang.Merge/
+      url: /lang.merge/
     - title: last
       url: /last/
     - title: le
@@ -324,23 +324,23 @@
     - title: now
       url: /now/
     - title: os.Stat
-      url: /os.Stat/
+      url: /os.stat/
     - title: partialCached
-      url: /partialCached/
+      url: /partial_cached/
     - title: path.Base
-      url: /path.Base/
+      url: /path.base/
     - title: path.BaseName
-      url: /path.BaseName/
+      url: /path.basename/
     - title: path.Clean
-      url: /path.Clean/
+      url: /path.clean/
     - title: path.Dir
-      url: /path.Dir/
+      url: /path.dir/
     - title: path.Ext
-      url: /path.Ext/
+      url: /path.ext/
     - title: path.Join
-      url: /path.Join/
+      url: /path.join/
     - title: path.Split
-      url: /path.Split/
+      url: /path.split/
     - title: plainify
       url: /plainify/
     - title: pluralize
@@ -362,11 +362,11 @@
     - title: ref
       url: /ref/
     - title: reflect.IsMap
-      url: /reflect.IsMap/
+      url: /reflect.ismap/
     - title: reflect.IsSlice
-      url: /reflect.IsSlice/
-    - title: refLangURL
-      url: /relLangURL/
+      url: /reflect.isslice/
+    - title: relLangURL
+      url: /rellangurl/
     - title: relref
       url: /relref/
     - title: refURL
@@ -376,15 +376,15 @@
     - title: replaceRE
       url: /replacere/
     - title: safeCSS
-      url: /safeCSS/
+      url: /safecss/
     - title: safeHTML
-      url: /safeHTML/
+      url: /safehtml/
     - title: safeHTMLAttr
-      url: /safeHTMLAttr/
+      url: /safehtmlattr/
     - title: safeJS
-      url: /safeJS/
+      url: /safejs/
     - title: safeURL
-      url: /safeURL/
+      url: /safeurl/
     - title: seq
       url: /seq/
     - title: sha
@@ -406,41 +406,41 @@
     - title: string
       url: /string/
     - title: strings.Contains
-      url: /strings.Contains/
+      url: /strings.contains/
     - title: strings.ContainsAny
-      url: /strings.ContainsAny/
+      url: /strings.containsany/
     - title: strings.Count
-      url: /strings.Count/
+      url: /strings.count/
     - title: strings.FirstUpper
-      url: /strings.FirstUpper/
+      url: /strings.firstupper/
     - title: strings.HasSuffix
-      url: /strings.HasSuffix/
+      url: /strings.hassuffix/
     - title: strings.Repeat
-      url: /strings.Repeat/
+      url: /strings.repeat/
     - title: strings.RuneCount
-      url: /strings.RuneCount/
+      url: /strings.runecount/
     - title: strings.TrimLeft
-      url: /strings.TrimLeft/
+      url: /strings.trimleft/
     - title: strings.TrimRight
-      url: /strings.TrimRight/
+      url: /strings.trimright/
     - title: strings.TrimSuffix
-      url: /strings.TrimSuffix/
+      url: /strings.trimsuffix/
     - title: substr
       url: /substr/
     - title: symdiff
       url: /symdiff/
     - title: templates.Exists
-      url: /templates.Exists/
+      url: /templates.exists/
     - title: time
       url: /time/
     - title: time.Format
       url: /dateformat/
     - title: time.ParseDuration
-      url: /time.ParseDuration/
+      url: /time.parseduration/
     - title: title
       url: /title/
     - title: transform.Unmarshal
-      url: /transform.Unmarshal/
+      url: /transform.unmarshal/
     - title: trim
       url: /trim/
     - title: truncate
@@ -456,7 +456,7 @@
     - title: urlquery
       url: /urlquery/
     - title: urls.Parse
-      url: /urls.Parse/
+      url: /urls.parse/
     - title: where
       url: /where/
     - title: with

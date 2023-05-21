@@ -26,6 +26,8 @@ github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230328162404-ae818ac753a6 
 github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230328162404-ae818ac753a6/go.mod h1:zqzJS/40b0ALL6OuulGKrHg30N6AK9fKc7cIAGGzIlI=
 github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230328165047-2b20c5cda538 h1:087jeaCeJmIR4buBKn347xSj4VnCX96t3v9Z7UKOjIg=
 github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230328165047-2b20c5cda538/go.mod h1:zqzJS/40b0ALL6OuulGKrHg30N6AK9fKc7cIAGGzIlI=
+github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230521075217-0de0c852b081 h1:Et6HxeS6AONB3vG53YheUvU538xufx49eKf2UJF2Mtg=
+github.com/juggernautjp/hugo-widebs5-theme v0.1.2-0.20230521075217-0de0c852b081/go.mod h1:suSz1UEacx+zEnhs5sFrxLbfNO2fUyIY0NEA+Qpqc64=
 github.com/twbs/bootstrap v5.2.3+incompatible h1:lOmsJx587qfF7/gE7Vv4FxEofegyJlEACeVV+Mt7cgc=
 github.com/twbs/bootstrap v5.2.3+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
 github.com/twbs/bootstrap v5.3.0-alpha1.0.20230206120820-cbc4e3a40985+incompatible h1:FQJzTrYYk+qGYEb4oiQlcAUBKykaw+qPRmHXqicRLgw=
@@ -52,3 +54,5 @@ github.com/twbs/bootstrap v5.3.0-alpha2.0.20230326105120-43bc20a59eb2+incompatib
 github.com/twbs/bootstrap v5.3.0-alpha2.0.20230326105120-43bc20a59eb2+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
 github.com/twbs/bootstrap v5.3.0-alpha2.0.20230328140237-c5fde53c8d87+incompatible h1:FZYb3JDD+xHbhAxtBgR++chWvnvpaxbYC3iD7XhkugY=
 github.com/twbs/bootstrap v5.3.0-alpha2.0.20230328140237-c5fde53c8d87+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
+github.com/twbs/bootstrap v5.3.0-alpha3.0.20230519160509-a6dc107dfd19+incompatible h1:9PtJHyX+lBIkI/pVkvHLhkhDZ5sRz+ymPQAH/AYGvZs=
+github.com/twbs/bootstrap v5.3.0-alpha3.0.20230519160509-a6dc107dfd19+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=

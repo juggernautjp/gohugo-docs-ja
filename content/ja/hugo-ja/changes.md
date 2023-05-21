@@ -25,13 +25,14 @@ toc: true
 ## 変更履歴
 
 
-### 2023年03月26日の変更
+### 2023年03月31日の変更
 
-- テーマを Hugo 公式サイトのテーマから Bootstrap v5.3.0-alpha1 のテーマに変更
-- ホスティングサービスを [GitHub Pages]() から [Cloudflare Pages](https://www.cloudflare.com/ja-jp/products/pages/) に変更
+- テーマを Hugo 公式サイトのテーマから [Bootstrap](https://getbootstrap.com/) [v5.3.0-alpha2](https://github.com/twbs/bootstrap/releases/tag/v5.3.0-alpha2) のテーマに変更
+- ホスティングサービスを [GitHub Pages](https://docs.github.com/ja/pages/getting-started-with-github-pages/about-github-pages) から [Cloudflare Pages](https://www.cloudflare.com/ja-jp/products/pages/) に変更
 - サイト URL を [juggernautjp.info](https://juggernautjp.info/) に変更
 - Google で検索可能に
-- サイト内検索を可能に
+- サイト内で日本語検索を可能に
+- "Partial" の訳語「部分テンプレート」を「パーシャル」に変更
 - 上記のサイトを Cloudflare Pages で公開し、下記 Qiita の記事にて告知
 - Qiita、[Hugo ドキュメント (日本語訳) を公開し直しました](https://qiita.com/juggernautjp/items/)
 
