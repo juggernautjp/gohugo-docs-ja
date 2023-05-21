@@ -25,6 +25,13 @@ toc: true
 ## 変更履歴
 
 
+### 2023年05月21日の変更
+
+- [Bootstrap](https://getbootstrap.com/) v5.3.0-alpha3 に対応した
+- 「関数」セクションのコンテンツが全く表示されない
+
+
+
 ### 2023年03月31日の変更
 
 - テーマを Hugo 公式サイトのテーマから [Bootstrap](https://getbootstrap.com/) [v5.3.0-alpha2](https://github.com/twbs/bootstrap/releases/tag/v5.3.0-alpha2) のテーマに変更

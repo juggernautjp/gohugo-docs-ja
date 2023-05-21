@@ -181,12 +181,12 @@
       url: /template-debugging/
 - title: 関数
   identifier: functions
-  url: /functions/
+  url: /methods/
   icon: menu-button-wide-fill
   icon_color: cyan
   pages:
     - title: 関数のクイックリファレンス
-      url: /functions/
+      url: /methods/
     - title: .AddDate
       url: /adddate/
     - title: .Format
