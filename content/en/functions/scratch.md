@@ -1,29 +1,22 @@
 ---
 title: .Scratch
 description: Acts as a "scratchpad" to store and manipulate data.
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
 keywords: [iteration]
 categories: [functions]
 menu:
   docs:
-    parent: "functions"
+    parent: functions
 toc:
 signature: []
-workson: []
-hugoversion:
 relatedfuncs: []
-deprecated: false
-draft: false
 aliases: [/extras/scratch/,/doc/scratch/]
 ---
 
 Scratch is a Hugo feature designed to conveniently manipulate data in a Go Template world. It is either a Page or Shortcode method for which the resulting data will be attached to the given context, or it can live as a unique instance stored in a variable.
 
-{{< note >}}
+{{% note %}}
 Note that Scratch was initially created as a workaround for a [Go template scoping limitation](https://github.com/golang/go/issues/10608) that affected Hugo versions prior to 0.48. For a detailed analysis of `.Scratch` and contextual use cases, see [this blog post](https://regisphilibert.com/blog/2017/04/hugo-scratch-explained-variable/).
-{{< /note >}}
+{{% /note %}}
 
 ### Contexted `.Scratch` vs. local `newScratch`
 
@@ -53,9 +46,9 @@ A Scratch instance can also be assigned to any variable using the `newScratch` f
 
 A Scratch has the following methods:
 
-{{< note >}}
+{{% note %}}
 Note that the following examples assume a [local Scratch instance](#the-local-newscratch) has been stored in `$scratch`.
-{{< /note >}}
+{{% /note %}}
 
 #### .Set
 

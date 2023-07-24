@@ -1,30 +1,27 @@
 ---
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: Go テンプレートによるエスケープを避けるため、指定された文字列を「安全な」 HTML ドキュメントとして宣言します。
 draft: false
-hugoversion: null
 keywords:
 - strings
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - safeHTML INPUT
 title: safeHTML
-workson: []
 ---
 
 サードパーティの HTML や、タグやコメントが閉じられていない HTML には使用しないでください。
 
 サイト全体の [`config.toml`][config] に以下の `copyright` 値があるとします。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 copyright = "© 2015 Jane Doe.  <a href=\"https://creativecommons.org/licenses/by/4.0/\">Some rights reserved</a>."
 {{< /code-toggle >}}
 

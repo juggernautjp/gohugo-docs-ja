@@ -1,7 +1,7 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
 deprecated: false
 description: 言語のプレフィックスがあれば、それを付けた絶対 URL を返します。
@@ -14,7 +14,7 @@ keywords:
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - relLangURL

@@ -9,16 +9,16 @@
   pages:
     - title: 概要
       url: /about/
-    - title: Hugo のセキュリティモデル
-      url: /security-model/
-    - title: Hugo と GDPR
-      url: /hugo-and-gdpr/
     - title: Hugo とは
       url: /what-is-hugo/
     - title: Hugo の機能
       url: /features/
     - title: SSG のメリット
       url: /benefits/
+    - title: Hugo のセキュリティモデル
+      url: /security-model/
+    - title: Hugo と GDPR
+      url: /hugo-and-gdpr/
     - title: ライセンス
       url: /license/
 - title: インストール
@@ -137,12 +137,10 @@
       url: /introduction/
     - title: テンプレートの検索順序
       url: /lookup-order/
-    - title: カスタム出力形式
-      url: /output-formats/
     - title: ベーステンプレートとブロック
       url: /base/
-    - title: レンダーフック
-      url: /render-hooks/
+    - title: シングルページ テンプレート
+      url: /single-page-templates/
     - title: リストテンプレート
       url: /lists/
     - title: ホームページ テンプレート
@@ -151,36 +149,38 @@
       url: /section-templates/
     - title: タクソノミー テンプレート
       url: /taxonomy-templates/
-    - title: シングルページ テンプレート
-      url: /single-page-templates/
+    - title: ページ付け
+      url: /pagination/
     - title: コンテンツビュー テンプレート
       url: /views/
-    - title: データテンプレート
-      url: /data-templates/
-    - title: 部分テンプレート
+    - title: パーシャル
       url: /partials/
     - title: ショートコード テンプレート
       url: /shortcode-templates/
-    - title: ローカルファイル テンプレート
-      url: /files/
-    - title: 404 ページ
-      url: /404/
     - title: メニューテンプレート
       url: /menu-templates/
-    - title: ページ付け
-      url: /pagination/
+    - title: データテンプレート
+      url: /data-templates/
     - title: RSS テンプレート
       url: /rss/
     - title: サイトマップ テンプレート
       url: /sitemap-template/
-    - title: Robots.txt
-      url: /robots/
+    - title: ローカルファイル テンプレート
+      url: /files/
     - title: 内部テンプレート
       url: /internal/
+    - title: レンダーフック
+      url: /render-hooks/
+    - title: カスタム出力形式
+      url: /output-formats/
+    - title: 404 ページ
+      url: /404/
+    - title: Robots.txt
+      url: /robots/
     - title: テンプレートのデバッグ
       url: /template-debugging/
 - title: 関数
-  identifier: functions
+  identifier: function
   url: /function/
   icon: menu-button-wide-fill
   icon_color: cyan
@@ -207,6 +207,8 @@
       url: /renderstring/
     - title: .Scratch
       url: /scratch/
+    - title: .Store
+      url: /store/
     - title: .Unix
       url: /unix/
     - title: absLangURL
@@ -271,6 +273,8 @@
       url: /has_prefix/
     - title: highlight
       url: /highlight/
+    - title: hasSuffix
+      url: /has_suffix/
     - title: hmac
       url: /hmac/
     - title: htmlEscape
@@ -413,6 +417,8 @@
       url: /strings_count/
     - title: strings.FirstUpper
       url: /strings_firstupper/
+    - title: strings.HasPrefix
+      url: /strings_hasprefix/
     - title: strings.HasSuffix
       url: /strings_hassuffix/
     - title: strings.Repeat
@@ -457,6 +463,8 @@
       url: /urlize/
     - title: urlquery
       url: /urlquery/
+    - title: urls.JoinPath
+      url: /urls_joinpath/
     - title: urls.Parse
       url: /urls_parse/
     - title: where
@@ -499,26 +507,26 @@
       url: /hugo-pipes/
     - title: Hugo パイプ入門
       url: /introduction/
-    - title: Sass / SCSS
-      url: /scss-sass/
-    - title: 後処理 (PostProcess)
-      url: /postprocess/
+    - title: Sass を SCSS にトランスパイル
+      url: /transpile-sass-to-css/
     - title: PostCSS
       url: /postcss/
+    - title: 後処理 (PostProcess)
+      url: /postprocess/
     - title: JavaScript のビルド
       url: /js/
     - title: Babel
       url: /babel/
     - title: アセットのミニファイ
       url: /minification/
-    - title: アセットバンドル
+    - title: アセットの連結
       url: /bundling/
     - title: フィンガープリントと SRI
       url: /fingerprint/
-    - title: テンプレートからのリソース
-      url: /resource-from-template/
     - title: 文字列からのリソース
       url: /resource-from-string/
+    - title: テンプレートからのリソース
+      url: /resource-from-template/
 - title: Hugo コマンド
   identifier: commands
   url: /commands/
@@ -599,12 +607,16 @@
       url: /hugo_mod_verify/
     - title: hugo new
       url: /hugo_new/
+    - title: hugo new content
+      url: /hugo_new_content/
     - title: hugo new site
       url: /hugo_new_site/
     - title: hugo new theme
       url: /hugo_new_theme/
     - title: hugo server
       url: /hugo_server/
+    - title: hugo server trust
+      url: /hugo_server_trust/
     - title: hugo version
       url: /hugo_version/
 - title: トラブルシューティング
@@ -629,8 +641,6 @@
       url: /tools/
     - title: Hugo への移行
       url: /migrations/
-    - title: スターターキット
-      url: /starter-kits/
     - title: フロントエンド
       url: /frontends/
     - title: エディター プラグイン
@@ -649,16 +659,18 @@
       url: /hosting-and-deployment/
     - title: Hugo デプロイ
       url: /hugo-deploy/
+    - title: Rsync を使ったデプロイメント
+      url: /deployment-with-rsync/
+    - title: Rclone を使ったデプロイメント
+      url: /deployment-with-rclone/
     - title: 21YunBox でのホスト
       url: /hosting-on-21yunbox/
     - title: AWS Amplify でのホスト
       url: /hosting-on-aws-amplify/
     - title: Azure Static Web Apps でのホスト
       url: /hosting-on-azure-static-web-apps/
-    - title: Netlify でのホスト
-      url: /hosting-on-netlify/
-    - title: Render でのホスト
-      url: /hosting-on-render/
+    - title: Cloudflare Pages でのホスト
+      url: /hosting-on-cloudflare-pages/
     - title: Firebase でのホスト
       url: /hosting-on-firebase/
     - title: GitHub でのホスト
@@ -667,14 +679,10 @@
       url: /hosting-on-gitlab/
     - title: KeyCDN でのホスト
       url: /hosting-on-keycdn/
-    - title: Cloudflare Pages でのホスト
-      url: /hosting-on-cloudflare-pages/
-    - title: Rsync を使ったデプロイメント
-      url: /deployment-with-rsync/
-    - title: Rclone を使ったデプロイメント
-      url: /deployment-with-rclone/
-    - title: Azure Static Web Apps でのホスティング
-      url: /hosting-on-azure-static-web-apps/
+    - title: Netlify でのホスト
+      url: /hosting-on-netlify/
+    - title: Render でのホスト
+      url: /hosting-on-render/
 - title: 貢献
   identifier: contribute
   url: /contribute/

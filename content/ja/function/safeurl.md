@@ -1,25 +1,21 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された文字列を安全な URL または URL 部分文字列として宣言します。
 draft: false
-hugoversion: null
 keywords:
 - strings
 - urls
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - safeURL INPUT
 title: safeURL
-workson: []
 ---
 
 `safeURL` は指定された文字列を「安全な」 URL または URL の部分文字列として宣言します ([RFC 3986][] を参照してください)。信頼できるソースからの `javascript:checkThatFormNotEditedBeforeLeavingPage()` のような URL はページに入れるべきですが、動的な `javascript:` URL は頻繁に悪用されるインジェクション ベクトルであるため、デフォルトでフィルタリングされて除外されます。
@@ -28,15 +24,15 @@ workson: []
 
 以下の例では、[サイトの `config.toml`][configuration] に以下のような [メニューエントリ][menus] を設定しています。
 
-{{< code file="config.toml" copy="false" >}}
+{{< code-toggle file="hugo" copy=false >}}
 [[menu.main]]
-    name = "IRC: #golang at freenode"
-    url = "irc://irc.freenode.net/#golang"
-{{< /code >}}
+name = "IRC: #golang at freenode"
+url = "irc://irc.freenode.net/#golang"
+{{< /code-toggle >}}
 
 以下は、前述のフロントマターの例と組み合わせて使用することができる、サイドバーのパーシャルの例です。
 
-{{< code file="layouts/partials/bad-url-sidebar-menu.html" copy="false" >}}
+{{< code file="layouts/partials/bad-url-sidebar-menu.html" copy=false >}}
 <!-- この順序付けられていないリストは、サイドバー メニューの一部である可能性があります -->
 <ul>
   {{ range .Site.Menus.main }}
@@ -47,16 +43,16 @@ workson: []
 
 このパーシャルは、以下の HTML を出力します。
 
-{{< output file="bad-url-sidebar-menu-output.html" >}}
+```html
 <!-- この順序付けられていないリストは、サイドバー メニューの一部である可能性があります -->
 <ul>
-    <li><a href="#ZgotmplZ">IRC: #golang at freenode</a></li>
+  <li><a href="#ZgotmplZ">IRC: #golang at freenode</a></li>
 </ul>
-{{< /output >}}
+```
 
 上記の奇妙な出力は、以下のように、ページ変数 `.URL` に ` | safeURL` を追加することで改善できます。
 
-{{< code file="layouts/partials/correct-url-sidebar-menu.html" copy="false" >}}
+{{< code file="layouts/partials/correct-url-sidebar-menu.html" copy=false >}}
 <!-- この順序付けられていないリストは、サイドバー メニューの一部である可能性があります -->
 <ul>
     <li><a href="{{ .URL | safeURL }}">{{ .Name }}</a></li>
@@ -65,11 +61,11 @@ workson: []
 
 `.URL` ページ変数が `safeURL` を通してパイプされることで、目的の出力が得られます。
 
-{{< output file="correct-url-sidebar-menu-output.html" >}}
+```html
 <ul class="sidebar-menu">
     <li><a href="irc://irc.freenode.net/#golang">IRC: #golang at freenode</a></li>
 </ul>
-{{< /output >}}
+```
 
 [configuration]: /getting-started/configuration/
 [menus]: /content-management/menus/

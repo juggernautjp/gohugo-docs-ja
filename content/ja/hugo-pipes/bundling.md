@@ -8,15 +8,18 @@ keywords: []
 lastmod: "2018-07-14"
 menu:
   docs:
-    parent: pipes
-    weight: 60
+    parent: hugo-pipes
+    weight: 90
 publishdate: "2018-07-14"
-sections_weight: 60
-title: アセットバンドル
-weight: 60
+title: Concat
+linkTitle: アセットの連結
+weight: 90
+signature: ["resources.Concat TARGET_PATH SLICE_RESOURCES"]
 ---
 
-同じ MIME タイプのアセットファイルは、ターゲットパスとリソース オブジェクトのスライスの 2つの引数を取る `resources.Concat` を使用して 1 つのリソースにバンドルできます。
+## 使用方法 {#usage}
+
+同じ MIME タイプのアセットファイルは、作成されたリソースバンドルのターゲット パスと連結されるリソース オブジェクトのスライスという 2 つの引数を取る `resources.Concat` を使用して 1 つのリソースにバンドルできます。
 
 ```go-html-template
 {{ $plugins := resources.Get "js/plugins.js" }}

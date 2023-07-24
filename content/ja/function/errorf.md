@@ -1,11 +1,10 @@
 ---
 categories:
-- functions
+- function
 date: "2017-09-30"
 deprecated: false
 description: テンプレートから ERROR または WARNING をログに記録します。
 draft: false
-hugoversion: null
 keywords:
 - strings
 - log
@@ -13,14 +12,13 @@ keywords:
 lastmod: "2017-09-30"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-09-30"
 relatedfuncs:
 - printf
 signature:
 - "errorf FORMAT INPUT"
 title: errorf と warnf
-workson: []
 ---
 
 `errorf` または `warnf` はフォーマット文字列を評価し、その結果を ERROR または WARNING ログに出力します (ログがあふれないように、エラーメッセージごとに一度だけ出力されます)。
@@ -53,6 +51,6 @@ ERROR が発生すると、ビルドも失敗します (`hugo` コマンドは�
 
 ```
 ERROR 2021/06/07 17:47:38 You should consider fixing this.
-If you feel that this should not be logged as an ERROR, you can ignore it by adding this to your site config:
+If you feel that this should not be logged as an ERROR, you can ignore it by adding this to your site configuration:
 ignoreErrors = ["my-custom-error"]
 ```

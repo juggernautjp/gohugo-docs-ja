@@ -1,7 +1,6 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2019-08-08"
 description: 2 つ以上のマップをマージした結果を返します。
 draft: false
@@ -10,7 +9,7 @@ keywords:
 - dictionary
 menu:
   docs:
-    parent: functions
+    parent: function
 relatedfuncs:
 - dict
 - append
@@ -20,7 +19,6 @@ signature:
 - collections.Merge MAP MAP...
 - merge MAP MAP...
 title: merge
-workson: []
 ---
 
 2 つ以上のマップを左から右へマージした結果を返します。 キーがすでに存在する場合、 `merge` はその値を更新します。 キーが存在しない場合、 `merge` がその値を新しいキーの下に挿入します。
@@ -76,5 +74,5 @@ workson: []
 ```
 
 {{< note >}}
-深さに関係なく、マージはマップにのみ適用されます。 スライスの場合は、 [append]({{< ref "function/append" >}}) を使ってください。
+深さに関係なく、マージはマップにのみ適用されます。 スライスの場合は、 [append](/function/append) を使ってください。
 {{< /note >}}

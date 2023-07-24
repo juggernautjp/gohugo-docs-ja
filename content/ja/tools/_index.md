@@ -9,12 +9,12 @@ lastmod: "2017-02-26"
 linktitle: デベロッパーツールの概要
 menu:
   docs:
+    identifier: developer-tools-overview
     parent: tools
-    weight: 1
+    weight: 10
 publishdate: "2016-12-05"
-sections_weight: 1
 title: デベロッパーツール
-weight: 1
+weight: 10
 ---
 
 Hugo の最大の強みは、その情熱的で常に進化し続ける開発者コミュニティです。[シンタックスハイライト][syntax] で紹介した `highlight` ショートコードを除き、このセクションで紹介するツールやその他のプロジェクトは、商用サービスとオープンソースプロジェクトの両方から提供されており、その多くはあなたのような Hugo 開発者によって開発されたものです。
@@ -22,4 +22,4 @@ Hugo の最大の強みは、その情熱的で常に進化し続ける開発者
 [「他の静的サイトジェネレータと比較した Hugo の人気度」][staticgen] を参照してください。
 
 [staticgen]: https://staticgen.com
-[syntax]: /tools/syntax-highlighting/
+[syntax]: /content-management/syntax-highlighting/

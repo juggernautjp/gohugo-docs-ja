@@ -15,12 +15,11 @@ linktitle: セクション テンプレート
 menu:
   docs:
     parent: templates
-    weight: 40
+    weight: 80
 publishdate: "2017-02-01"
-sections_weight: 40
 title: セクションページ テンプレート
 toc: true
-weight: 40
+weight: 80
 ---
 
 ## セクション テンプレートにコンテンツとフロントマターを追加する {#add-content-and-front-matter-to-section-templates}
@@ -52,13 +51,13 @@ Hugo のすべての `Page` には、 `.Kind` 属性があります。
 
 ## 例: デフォルトのセクション テンプレートを作成する {#example-creating-a-default-section-template}
 
-{{< code file="layouts/_default/section.html" download="section.html" >}}
+{{< code file="layouts/_default/section.html" >}}
 {{ define "main" }}
   <main>
       {{ .Content }}
           <ul class="contents">
           {{ range .Paginator.Pages }}
-              <li>{{.Title}}
+              <li>{{ .Title }}
                   <div>
                     {{ partial "summary.html" . }}
                   </div>

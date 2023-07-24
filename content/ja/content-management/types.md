@@ -25,5 +25,5 @@ weight: 130
 
 コンテンツタイプは、以下の目的で使用されます。
 
-- コンテンツのレンダリング方法を決定します。 詳細については、[「テンプレートの検索順序」](/templates/lookup-order/) と [「コンテンツ ビュー」](https://gohugo.io/templates/views) を参照してください。
+- コンテンツのレンダリング方法を決定します。 詳細については、[「テンプレートの検索順序」](/templates/lookup-order/) と [「コンテンツ ビュー」](/templates/views) を参照してください。
 - 新しいコンテンツにどの [アーキタイプ](/content-management/archetypes/) テンプレートを使用するかを決定します。

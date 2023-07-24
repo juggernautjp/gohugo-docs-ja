@@ -28,7 +28,7 @@ weight: 20
 
 Hugo `0.32` では、ページ関連の画像やその他のリソースが `Page Bundles` にパッケージされていることが発表されました。
 
-これらの用語は関連しており、全体像を把握するためには、[「ページリソース」]({{< relref "/content-management/page-resources" >}}) や [「画像処理」]({{< relref "/content-management/image-processing" >}}) についても読む必要があります。
+これらの用語は関連しており、全体像を把握するためには、[「ページリソース」](/content-management/page-resources) や [「画像処理」](/content-management/image-processing) についても読む必要があります。
 
 {{< imgproc 1-featured Resize "300x" >}}
 図では、3 つのバンドルが示されています。 ホームページバンドルには、他のコンテンツページを含めることはできませんが、他のファイル (画像など) を含めることは可能であることに注意してください。
@@ -139,10 +139,8 @@ https://example.com/posts/my-first-hugo-post/index.html
 
 ### `slug`
 
-コンテンツの `slug` は、 `name.extension` または `name/` のどちらかです。 `slug` の値は、以下のように決定されます。
-
-* コンテンツファイルの名前 (たとえば、 `lollapalooza.md`) **または**
-* フロントマターのオーバーライド
+`slug` は URL パスの最後のセグメントで、ファイル名で定義され、オプションでフロントマターの `slug` 値で上書きされる。
+詳細は、[URL 管理](/content-management/urls/#slug) を参照してください。
 
 ### `path`
 
@@ -153,78 +151,8 @@ https://example.com/posts/my-first-hugo-post/index.html
 
 ### `url`
 
-`url` は、コンテンツのピースに対する相対 URL です。 `url` は，
-
-* ディレクトリ構造内のコンテンツアイテムの場所に基づく、**または**
-* フロントマターで定義されている場合、それは *上記のすべてを上書きします*。
-
-## フロントマターによる宛先パスのオーバーライド {#override-destination-paths-via-front-matter}
-
-Hugo は、コンテンツが目的を持って構成されていることを前提としています。 ソースコンテンツの構成に使用するのと同じ構造が、レンダリングされたサイトの構成に使用されます。 上に表示されているように、ソースコンテンツの構成はコピー先でミラーリングされます。
-
-コンテンツ構成をより細かく制御する必要がある場合があります。 このような場合、フロントマターのフィールドを使用して、特定のコンテンツの宛先を決定できます。
-
-以下のアイテムは、リストの下位で説明されているアイテムが上位のアイテムよりも優先されるという理由で、特定の順序で定義されています。ただし、すべてのアイテムをフロントマターで定義できるわけではないことに注意してください。
-
-### `filename`
-
-`filename` は、フロントマターのフィールドではなく、実際のファイル名から拡張子を除いたものです。これが転送先のファイル名となります (たとえば、`content/posts/my-post.md` は `example.com/posts/my-post/` となります)。
-
-### `slug`
-
-フロントマターで定義されている場合、`slug` は宛先のファイル名の代わりとして使用できます。
-
-{{< code file="content/posts/old-post.md" >}}
----
-title: A new post with the filename old-post.md
-slug: "new-post"
----
-{{< /code >}}
-
-これは、Hugo のデフォルトの動作に従って、以下の宛先にレンダリングされます。
-
-```txt
-example.com/posts/new-post/
-```
-
-### `section`
-
-`section` はコンテンツアイテムのディスク上の場所によって決定され、フロントマターで指定することは *できません*。詳しくは、[セクション][sections] を参照してください。
-
-### `type`
-
-コンテンツアイテムの `type` もディスク上の場所によって決まりますが、 `section` とは異なり、フロントマターの中で指定することが *できます*。 [タイプ][types] を参照してください。これは、コンテンツの一部を別のレイアウトでレンダリングしたい場合に、特に便利です。以下の例では、`layouts/new/mylayout.html` にレイアウトを作成して、Hugo が他の多くの投稿の中にあっても、このコンテンツのレンダリングに使用することができます。
-
-{{< code file="content/posts/my-post.md" >}}
----
-title: My Post
-type: new
-layout: mylayout
----
-{{< /code >}}
-<!-- https://discourse.gohugo.io/t/path-not-works/6387 を参照してください -->
-<!-- ### `path`-->
-
-<!-- `path` はフロントマターで指定できます。 これにより、ディスク上のファイルへの実際のパスが置き換えられます。 宛先は、セクションを含む同じパスで宛先を作成します。 -->
-
-### `url`
-
-完全な URL を指定できます。 これは、最終目的地に関連するため、上記のすべてをオーバーライドします。 これは baseURL からのパス (`/` で始まる) でなければなりません。 `url` はフロントマターで定義されているとおりに使用され、サイト設定の `--uglyURLs` 設定は無視されます。
-
-{{< code file="content/posts/old-url.md" >}}
----
-title: Old URL
-url: /blog/new-url/
----
-{{< /code >}}
-
-`baseURL` が `https://example.com` に [設定][config] されていると仮定すると、フロントマターに `url` を追加すると、 `old-url.md` は以下の宛先にレンダリングされるようになります。
-
-```txt
-https://example.com/blog/new-url/
-```
-
-出力パスを制御する方法の詳細については、[「URL 管理」][urls] を参照してください。
+`url` は URL パス全体であり、ファイルパスによって定義され、オプションでフロントマターの `url` 値によって上書きされます。
+詳細は、[URL 管理](/content-management/urls/#slug) を参照してください。
 
 [config]: /getting-started/configuration/
 [formats]: /content-management/formats/
@@ -233,7 +161,7 @@ https://example.com/blog/new-url/
 [homepage template]: /templates/homepage/
 [homepage]: /templates/homepage/
 [lists]: /templates/lists/
-[pretty]: /content-management/urls/#pretty-urls
+[pretty]: /content-management/urls/#appearance
 [section templates]: /templates/section-templates/
 [sections]: /content-management/sections/
 [singles]: /templates/single-page-templates/

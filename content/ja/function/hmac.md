@@ -1,20 +1,17 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2020-05-29"
-deprecated: false
 description: 鍵を使ってメッセージに署名するための暗号化ハッシュを返します。
 draft: false
-hugoversion: null
 keywords:
 - hmac
 - checksum
 lastmod: "2020-05-29"
-linktitle: hmac
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2020-05-29"
 relatedfuncs:
 - hmac

@@ -1,5 +1,4 @@
 ---
-aliases: []
 categories:
 - templates
 date: "2017-02-01"
@@ -11,12 +10,11 @@ lastmod: "2017-02-01"
 menu:
   docs:
     parent: templates
-    weight: 70
+    weight: 110
 publishdate: "2017-02-01"
-sections_weight: 70
 title: コンテンツビュー テンプレート
 toc: true
-weight: 70
+weight: 110
 ---
 
 これらの代替 **コンテンツビュー** は、[リストテンプレート][lists] で特に役立ちます。
@@ -69,13 +67,13 @@ Hugo は、特定のコンテンツビュー テンプレートがそのタイ�
 
 この例では、`.Render` がテンプレートに渡され、[.Render (レンダー) 関数][render] を呼び出しています。`.Render` は特殊な関数で、最初の引数として与えられたビューテンプレートでコンテンツ自身をレンダリングするように指示します。この場合、テンプレートは以下の `summary.html` ビューをレンダリングします。
 
-{{< code file="layouts/_default/list.html" download="list.html" >}}
+{{< code file="layouts/_default/list.html" >}}
 <main id="main">
   <div>
-  <h1 id="title">{{ .Title }}</h1>
-  {{ range .Pages }}
-    {{ .Render "summary"}}
-  {{ end }}
+    <h1 id="title">{{ .Title }}</h1>
+    {{ range .Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
   </div>
 </main>
 {{< /code >}}
@@ -84,7 +82,7 @@ Hugo は、特定のコンテンツビュー テンプレートがそのタイ�
 
 Hugo は、以下の `summary.html` ビュー テンプレートにページオブジェクト全体を渡します。 (完全なリストは、 [「ページ変数」][pagevars] を参照してください)。
 
-{{< code file="layouts/_default/summary.html" download="summary.html" >}}
+{{< code file="layouts/_default/summary.html" >}}
 <article class="post">
   <header>
     <h2><a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
@@ -101,7 +99,7 @@ Hugo は、以下の `summary.html` ビュー テンプレートにページオ�
 
 前の例の続きで、`.Render` 関数の呼び出しの引数を変更することで、より小さな `li.html` ビューを使用するようにレンダー関数を変更できます (つまり、 `{{ .Render "li" }}`)。
 
-{{< code file="layouts/_default/li.html" download="li.html" >}}
+{{< code file="layouts/_default/li.html" >}}
 <li>
   <a href="{{ .Permalink }}">{{ .Title }}</a>
   <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>

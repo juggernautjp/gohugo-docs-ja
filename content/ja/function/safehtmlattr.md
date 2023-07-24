@@ -1,29 +1,25 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された文字列を安全な HTML 属性として宣言します。
 draft: false
-hugoversion: null
 keywords:
 - strings
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - "safeHTMLAttr INPUT"
 title: safeHTMLAttr
-workson: []
 ---
 
 以下のメニューエントリを含むサイト設定があるとします。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [[menu.main]]
   name = "IRC"
   url = "irc://irc.freenode.net/#golang"

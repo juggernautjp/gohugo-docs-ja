@@ -1,25 +1,22 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された文字の位置から文字列の一部を抽出し、指定された文字数を返します。
 draft: false
-hugoversion: null
 keywords:
 - strings
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - "substr STRING START [LENGTH]"
 - "strings.Substr STRING START [LENGTH]"
 title: substr
-workson: []
 ---
 
 通常、`start` と `length` の 2 つのパラメータを取ります。 また、`start` という 1 つのパラメータを取ることもできます。つまり、 `length` が省略された場合は、文字列の先頭から末尾までの部分文字列が返されます。

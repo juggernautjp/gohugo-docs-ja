@@ -1,24 +1,20 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 相対 URL を返します。
 draft: false
-hugoversion: null
 keywords:
 - urls
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - absURL
 signature:
 - "relURL INPUT"
 title: relURL
-workson: []
 ---
 
 多言語設定では、代わりに [`relLangURL`] 関数を使用してください。 この関数によって返される URL は、以下によって異なります。

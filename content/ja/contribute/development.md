@@ -13,12 +13,11 @@ linktitle: 開発
 menu:
   docs:
     parent: contribute
-    weight: 10
+    weight: 20
 publishdate: "2017-02-01"
-sections_weight: 10
 title: Hugo の開発に貢献する
 toc: true
-weight: 10
+weight: 20
 ---
 
 ## はじめに {#introduction}
@@ -32,7 +31,7 @@ Hugo はオープンソース プロジェクトであり、その [貢献者][c
 * Git またはオープンソース プロジェクト全般が初めての方
 * Hugo のファンで、プロジェクトに貢献することに熱心な方
 
-{{% note "Additional Questions?" %}}
+{{% note %}}
 この貢献ガイドのどこかで苦労している場合は、[Hugo のディスカッション フォーラム](https://discourse.gohugo.io) で Hugo コミュニティに連絡してください。
 {{< /note >}}
 
@@ -131,7 +130,9 @@ hub version 2.10.0
 
 `GOPATH` が設定されていることを前提としています (不明な点がある場合は、上記のセクションを参照してください)。 次に、Hugo リポジトリをコンピューターにコピーする必要があります。 これは「リポジトリのクローン」と呼ばれます。 GitHub の [ヘルプページ](https://help.github.com/articles/cloning-a-repository/) に、簡単な説明があります。
 
-> GitHub でリポジトリを作成すると、リモートリポジトリとして存在します。 コンピューターにリポジトリのローカル クローンを作成し、2 つの場所の間で同期することができます。
+{{% note %}}
+GitHub でリポジトリを作成すると、リモートリポジトリとして存在します。 コンピューターにリポジトリのローカル クローンを作成し、2 つの場所の間で同期することができます。
+{{% /note %}}
 
 Hugo の [master リポジトリ](https://github.com/gohugoio/hugo) をクローンすることにします。コミット権がないので、直感に反するように思えます。しかし、Go のワークフローでは必要なことなのです。 master のコピーで作業し、その変更を GitHub の自分のリポジトリにプッシュします。
 
@@ -143,8 +144,8 @@ cd $HOME/src
 git clone https://github.com/gohugoio/hugo.git
 ```
 
-> Hugo 0.48 以降、Hugo は Go 1.11 に組み込まれている Go モジュールのサポートを使用してビルドします。
-> 最も簡単な方法は、GOPATH 以外のディレクトリに Hugo をクローンすることです。
+Hugo 0.48 以降、Hugo は Go 1.11 に組み込まれている Go モジュールのサポートを使用してビルドします。
+最も簡単な方法は、GOPATH 以外のディレクトリに Hugo をクローンすることです。
 
 そして、クローンしたディレクトリで以下のコマンドを実行し、Hugo の依存関係をインストールします。
 
@@ -163,7 +164,9 @@ go install github.com/magefile/mage@latest
 
 この用語に慣れていない場合は、GitHub の [ヘルプページ](https://help.github.com/articles/fork-a-repo/) に以下のような簡単な説明があります。
 
-> フォークとは、リポジトリのコピーのことです。リポジトリをフォークすることで、元のプロジェクトに影響を与えることなく、自由に変更を試すことができます。
+{{% note %}}
+フォークとは、リポジトリのコピーのことです。リポジトリをフォークすることで、元のプロジェクトに影響を与えることなく、自由に変更を試すことができます。
+{{% /note %}}
 
 #### 手動でフォークする {#fork-by-hand}
 
@@ -321,7 +324,7 @@ git commit --amend
 
 {{% warning "Be Careful Modifying Multiple Commits"%}}
 このセクションで説明するような変更は、意図しない重大な結果を招くことがあります。よくわからない場合は、このセクションをスキップしてください。
-{{< /warning >}}
+{{% /warning %}}
 
 これはもう少し高度です。 Git では、対話的に [リベース](https://git-scm.com/docs/git-rebase) コミットできます。 つまり、コミット履歴を書き換えることができます。
 

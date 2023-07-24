@@ -1,12 +1,9 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 最初の配列と同じ順序で、2 つの配列またはスライスの共通要素を返します。
 draft: false
-hugoversion: null
 keywords:
 - collections
 - intersect
@@ -14,16 +11,14 @@ keywords:
 - complement
 - symdiff
 lastmod: "2017-02-01"
-linktitle: intersect
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - intersect SET1 SET2
 title: intersect
-workson: []
 ---
 便利な例としては、where と組み合わせて、`AND` フィルターとして使用することができます。
 

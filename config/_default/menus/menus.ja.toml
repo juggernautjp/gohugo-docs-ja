@@ -41,8 +41,8 @@
 [[docs]]
   name = "関数"
   weight = 70
-  identifier = "functions"
-  url = "/functions/"
+  identifier = "function"
+  url = "/function/"
 
 [[docs]]
   name = "変数"

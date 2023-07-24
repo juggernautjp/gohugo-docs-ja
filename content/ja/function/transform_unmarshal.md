@@ -1,15 +1,13 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2018-12-23"
 description: '`transform.Unmarshal` (別名 `unmarshal`) は入力をパースして、マップまたは配列に変換します。 サポートされている形式は、 JSON、TOML、YAML、XML、CSV です。'
 draft: false
-hugoversion: "0.53"
 keywords: []
 menu:
   docs:
-    parent: functions
+    parent: function
 signature:
 - RESOURCE or STRING | transform.Unmarshal [OPTIONS]
 title: transform.Unmarshal
@@ -67,7 +65,7 @@ comment
 次の例は、RSS フィードの項目を一覧表示します。
 
 ```go-html-template
-{{ with resources.Get "https://example.com/rss.xml" | transform.Unmarshal }}
+{{ with resources.GetRemote "https://example.com/rss.xml" | transform.Unmarshal }}
     {{ range .channel.item }}
         <strong>{{ .title | plainify | htmlUnescape }}</strong><br />
         <p>{{ .description | plainify | htmlUnescape }}</p>

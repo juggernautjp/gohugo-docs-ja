@@ -1,5 +1,4 @@
 ---
-aliases: []
 categories:
 - maintenance
 date: "2018-02-09"
@@ -10,7 +9,6 @@ keywords:
 menu:
   docs:
     weight: 200
-slug: null
 title: メンテナンス
 toc: true
 ---

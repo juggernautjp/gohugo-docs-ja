@@ -1,24 +1,20 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 文字列がプレフィックスで始まるかどうかをテストします。
 draft: false
-hugoversion: null
-keywords: []
+keywords: [strings]
 lastmod: "2017-02-01"
-linktitle: hasPrefix
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
-relatedfuncs: []
+relatedfuncs: [hasSuffix]
 signature:
 - hasPrefix STRING PREFIX
-title: hasprefix
-workson: []
+title: hasPrefix
 ---
 
 * `{{ hasPrefix "Hugo" "Hu" }}` → true

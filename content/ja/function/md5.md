@@ -1,25 +1,20 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された入力をハッシュし、その MD5 チェックサムを返します。
 draft: false
-hugoversion: null
 keywords: []
 lastmod: "2017-02-01"
-linktitle: md5
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - sha
 signature:
 - md5 INPUT
 title: md5
-workson: []
 ---
 
 ```go-html-template

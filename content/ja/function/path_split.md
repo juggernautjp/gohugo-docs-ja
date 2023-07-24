@@ -1,18 +1,16 @@
 ---
 categories:
-- functions
+- function
 date: "2018-11-28"
-deprecated: false
 description: 最後のスラッシュの直後にパスを分割します。
 draft: false
-hugoversion: "0.39"
 keywords:
 - path
 - split
 lastmod: "2018-11-28"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2018-11-28"
 relatedfuncs:
 - path.Base
@@ -24,7 +22,6 @@ relatedfuncs:
 signature:
 - path.Split PATH
 title: path.Split
-workson: []
 ---
 
 `path.Split` は、最後のスラッシュの直後にある `PATH` を分割し、ディレクトリとベース コンポーネントに分割します。

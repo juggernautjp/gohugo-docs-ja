@@ -1,18 +1,15 @@
 ---
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定されたフィールドにマッチする値を含む要素のみに配列をフィルタリングします。
 draft: false
-hugoversion: null
 keywords:
 - filtering
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
-needsexample: true
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - intersect
@@ -42,11 +39,10 @@ workson:
 
 第 2 引数をドットチェインすることで、値のネストした要素を参照することができます。
 
-```yaml
-+++
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
+title: Example
 series: golang
-+++
-```
+{{< /code-toggle >}}
 
 ```go-html-template
 {{ range where .Site.Pages "Params.series" "golang" }}
@@ -91,9 +87,9 @@ series: golang
 `intersect`
 : 文字列または整数のスライス/配列である与えられたフィールド値が、マッチする値と共通する要素を含んでいる場合、 `true` となります。 つまり、[`intersect` 関数][intersect] と同じルールに従います。
 
-## `where` を `Booleans` と共に使用する {#use-where-with-booleans}
+## `where` をブール値で使用する {#use-where-with-boolean-values}
 
-ブール値をを使用する場合は、引用符を付けないでください。
+ブール値を使用する場合は、引用符を付けないでください。
 
 ```go-html-template
 {{range where .Pages "Draft" true}}
@@ -124,7 +120,7 @@ series: golang
 
 ## `where` を `first` と共に使用する {#use-where-with-first}
 
-`first` と `where` を一緒に使うと、とても強力です。 以下のスニペットは、[**メインセクション**]({{< relref "where.md#mainsections" >}}) からのみ投稿のリストを取得し、リストの [デフォルトの順序付け](/templates/lists/) を使ってソートし (つまり、 `weight => date`)、そのリストの最初の 5 個の投稿だけを対象とします。
+`first` と `where` を一緒に使うと、とても強力です。 以下のスニペットは、[**メインセクション**](#mainsections) からのみ投稿のリストを取得し、リストの [デフォルトの順序付け](/templates/lists/) を使ってソートし (つまり、 `weight => date`)、そのリストの最初の 5 個の投稿だけを対象とします。
 
 {{< code file="first-and-where-together.html" >}}
 {{ range first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
@@ -171,7 +167,7 @@ series: golang
 
 ユーザーは、以下のように、デフォルトをオーバーライドできます。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [params]
   mainSections = ["blog", "docs"]
 {{< /code-toggle >}}

@@ -90,21 +90,21 @@ Hugo では、**タクソノミー** と呼ばれるユーザー定義のコン�
     ...
 ```
 
-## Hugo タクソノミーのデフォルト {#default-taxonomies}
+## タクソノミーのデフォルト {#default-taxonomies}
 
 Hugo はタクソノミーをネイティブにサポートしています。
 
-[サイト設定][config] ファイルに一行も追加しなくても、Hugo は自動的に `tags` と `categories` にタクソノミーを作成します。これは、以下のように手動で [タクソノミーを設定する](#configure-taxonomies) のと同じことになります。
+[サイト設定][site configuration] ファイルに一行も追加しなくても、Hugo は自動的に `tags` と `categories` にタクソノミーを作成します。これは、以下のように手動で [タクソノミーを設定する](#configure-taxonomies) のと同じことになります。
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle file="hugo" copy=false >}}
 [taxonomies]
   tag = "tags"
   category = "categories"
 {{</ code-toggle >}}
 
-Hugo にタクソノミーを作成させたくない場合は、[サイト設定][config] で `disableKinds` を以下のように設定します。
+Hugo にタクソノミーを作成させたくない場合は、[サイト設定][site configuration] で `disableKinds` を以下のように設定します。
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle file="hugo" copy=false >}}
 disableKinds = ["taxonomy","term"]
 {{</ code-toggle >}}
 
@@ -119,15 +119,15 @@ disableKinds = ["taxonomy","term"]
 
 ## タクソノミーを設定する {#configure-taxonomies}
 
-[デフォルト]({{< relref "taxonomies.md#default-taxonomies" >}}) 以外のカスタム タクソノミーをサイト全体で使用する前に、[サイト設定][config] で定義する必要があります。各タクソノミーの複数形と単数形のラベルを指定する必要があります。 たとえば、TOML では `singular key = "plural value"`、YAML では `singular key: "plural value"` となります。
+[デフォルト](#default-taxonomies) 以外のカスタム タクソノミーをサイト全体で使用する前に、[サイト設定][config] で定義する必要があります。各タクソノミーの複数形と単数形のラベルを指定する必要があります。 たとえば、TOML では `singular key = "plural value"`、YAML では `singular key: "plural value"` となります。
 
 ### 例 "シリーズ" という名前のカスタム タクソノミーを追加する {#example-adding-a-custom-taxonomy-named-series}
 
-{{< note >}}
+{{% note %}}
 カスタムタクソノミーを追加する際に、 _カスタムタクソノミーを残しておきたい場合は_、デフォルト タクソノミーにそれらを入れる必要があります。
-{{< /note >}}
+{{% /note %}}
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle file="hugo" copy=false >}}
 [taxonomies]
   tag = "tags"
   category = "categories"
@@ -136,26 +136,26 @@ disableKinds = ["taxonomy","term"]
 
 ### 例: デフォルトのタクソノミーを削除する {#example-removing-default-taxonomies}
 
-デフォルトの `tags` タクソノミーのみを使用し、 サイトの `categories` タクソノミーを削除したい場合は、 [サイト設定][config] の `taxonomies` 値を変更することで実行できます。
+デフォルトの `tags` タクソノミーのみを使用し、 サイトの `categories` タクソノミーを削除したい場合は、 [サイト設定][site configuration] の `taxonomies` 値を変更することで実行できます。
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle file="hugo" copy=false >}}
 [taxonomies]
   tag = "tags"
 {{</ code-toggle >}}
 
 すべてのタクソノミーを完全に無効にしたい場合は、[Hugo タクソノミーのデフォルト]({{< relref "taxonomies.md#default-taxonomies" >}}) の `disableKinds` の使い方を参照してください。
 
-{{< note >}}
+{{% note %}}
 タクソノミーのリストとタクソノミーの用語のページには、コンテンツとフロントマターを追加できます。この目的のために `_index.md` を追加する方法については、[「コンテンツ構成」](/content-management/organization/) を参照してください。
 
 通常のページと同様に、タクソノミーのリストの [パーマリンク](/content-management/urls/) は設定可能ですが、タクソノミー用語ページのパーマリンクは設定できません。
-{{< /note >}}
+{{% /note %}}
 
-{{< warning >}}
+{{% warning %}}
 設定オプション `preserveTaxonomyNames` は、 Hugo 0.55 で削除されました。
 
 これで、関連するタクソノミー ノードで `.Page.Title` を使用すれば、元の値を取得できるようになりました。
-{{< /warning >}}
+{{% /warning %}}
 
 ## コンテンツにタクソノミーを追加する {#add-taxonomies-to-content}
 
@@ -169,7 +169,7 @@ disableKinds = ["taxonomy","term"]
 
 ### 例: タクソノミーを使ったフロントマター {#example-front-matter-with-taxonomies}
 
-{{< code-toggle copy="false">}}
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
 title = "Hugo: A fast and flexible static site generator"
 tags = [ "Development", "Go", "fast", "Blogging" ]
 categories = [ "Development" ]
@@ -186,7 +186,7 @@ project_url = "https://github.com/gohugoio/hugo"
 
 ### 例: タクソノミーの `weight` (重み) {#example-taxonomic-weight}
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle copy=false >}}
 title = "foo"
 tags = [ "a", "b", "c" ]
 tags_weight = 22
@@ -196,15 +196,15 @@ categories_weight = 44
 
 タクソノミーの重みを使用することで、同じコンテンツが異なるタクソノミーの中で異なる位置に表示されることがあります。
 
-{{% note "Limits to Ordering Taxonomies" %}}
+{{% note %}}
 現在、タクソノミーは、 [リストコンテンツのデフォルトの `weight => date` の順序](/templates/lists/#default-weight--date--linktitle--filepath) のみをサポートしています。より詳しい情報については、[「タクソノミー テンプレート」](/templates/taxonomy-templates/) のドキュメントを参照してください。
-{{< /note >}}
+{{% /note %}}
 
 ## タクソノミーまたは用語にカスタム メタデータを追加する {#add-custom-metadata-to-a-taxonomy-or-term}
 
 タクソノミーの用語にカスタム メタデータを追加する必要がある場合、その用語のページを `/content/<TAXONOMY>/<TERM>/_index.md` に作成し、そのフロントマターにメタデータを追加する必要があります。「俳優」の例を続けて、各俳優にウィキペディアのページへのリンクを追加したいとします。用語ページは以下のようになります。
 
-{{< code file="/content/actors/bruce-willis/_index.md" >}}
+{{< code file="content/actors/bruce-willis/_index.md" fm=true copy=false >}}
 ---
 title: "Bruce Willis"
 wikipedia: "https://en.wikipedia.org/wiki/Bruce_Willis"
@@ -220,4 +220,4 @@ wikipedia: "https://en.wikipedia.org/wiki/Bruce_Willis"
 [taxonomy list templates]: /templates/taxonomy-templates/#taxonomy-list-templates
 [taxonomy templates]: /templates/taxonomy-templates/
 [terms within the taxonomy]: /templates/taxonomy-templates/#taxonomy-terms-templates "タクソノミーに関連する用語の順序を確認する"
-[config]: /getting-started/configuration/
+[site configuration]: /getting-started/configuration/

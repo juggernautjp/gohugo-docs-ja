@@ -4,181 +4,135 @@ aliases:
 categories:
 - templates
 date: "2017-02-01"
-description: メニューはコンテンツ管理のための強力でシンプルな機能ですが、デザインのニーズを満たすためにテンプレートで簡単に操作できます。
+description: メニューをレンダリングするには、テンプレートでメニュー変数とメソッドを使用します。
 draft: false
 keywords:
 - lists
 - sections
 - menus
 lastmod: "2017-02-01"
-linktitle: メニューテンプレート
 menu:
   docs:
     parent: templates
     title: テンプレートでメニューを使用する方法
     weight: 130
 publishdate: "2017-02-01"
-sections_weight: 130
+sections_weight: 140
 title: メニューテンプレート
 toc: false
-weight: 130
+weight: 140
 ---
 
-Hugo は、レンダリングされた HTML がどのように構造化されるかについて、何も仮定しません。 代わりに、必要に応じてメニューを作成するために必要なすべての機能を提供します。
+## 概要 {#overview}
 
-以下はその例です。
+[メニュー エントリの定義][defining menu entries] の後、[メニュー変数とメソッド][menu variables and methods] を使用してメニューをレンダリングします。
 
-{{< code file="layouts/partials/sidebar.html" download="sidebar.html" >}}
-<!-- sidebar start -->
-<aside>
+メニューのレンダリング方法を決定する 3 つの要素は、以下です。
+
+1. メニューエントリの定義に使用される方法: [自動][automatic]、[フロントマター内][in front matter]、または [サイト設定内][in site configuration] 
+2. メニュー構造: フラットまたはネスト
+3. [メニュー エントリのローカライズ][localize the menu entries] に使用される方法: サイト構成または翻訳テーブル
+
+以下の例では、あらゆる組み合わせを処理します。
+
+## 例 {#example}
+
+この部分テンプレート (パーシャル) はメニュー構造を再帰的に「ウォーク」し、ローカライズされたアクセス可能なネストされたリストをレンダリングする。
+
+{{< code file="layouts/partials/menu.html" >}}
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- with index site.Menus $menuID }}
+  <nav>
     <ul>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-                <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-                    <a href="#">
-                        {{ .Pre }}
-                        <span>{{ .Name }}</span>
-                    </a>
-                </li>
-                <ul class="sub-menu">
-                    {{ range .Children }}
-                        <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                            <a href="{{ .URL }}">{{ .Name }}</a>
-                        </li>
-                    {{ end }}
-                </ul>
-            {{ else }}
-                <li>
-                    <a href="{{ .URL }}">
-                        {{ .Pre }}
-                        <span>{{ .Name }}</span>
-                    </a>
-                </li>
-            {{ end }}
-        {{ end }}
-        <li>
-            <a href="#" target="_blank">Hardcoded Link 1</a>
-        </li>
-        <li>
-            <a href="#" target="_blank">Hardcoded Link 2</a>
-        </li>
+      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
-</aside>
+  </nav>
+{{- end }}
+
+{{- define "partials/inline/menu/walk.html" }}
+  {{- $page := .page }}
+  {{- range .menuEntries }}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $page.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+    {{- else if $page.HasMenuCurrent .Menu .}}
+      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+    {{- end }}
+    <li>
+      <a
+        {{- range $k, $v := $attrs }}
+          {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{- end }}
+        {{- end -}}
+      >{{ or (T .Identifier) .Name | safeHTML }}</a>
+      {{- with .Children }}
+        <ul>
+          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      {{- end }}
+    </li>
+  {{- end }}
+{{- end }}
 {{< /code >}}
 
-{{% note "`absLangURL` and `relLangURL`" %}}
-テーマが [多言語機能](/content-management/multilingual/) を利用している場合は、 [`absLangURL`](/function/abslangurl) または [`relLangURL`](/function/rellangurl) 関数を使用します。 `absURL` と `relURL` とは対照的に、この 2 つの関数は正しい言語プレフィックスを URL に追加します。
-{{< /note >}}
+Call the partial above, passing a menu ID and the current page in context.
 
-## 怠惰なブロガーのためのセクションメニュー {#section-menu-for-lazy-bloggers}
+{{< code file="layouts/_default/single.html" >}}
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+{{ partial "menu.html" (dict "menuID" "footer" "page" .) }}
+{{< /code >}}
 
-このメニューを有効にするには、以下のように、サイトの `config` で `sectionPagesMenu` を設定します。
+## ページ参照 {#page-references}
 
-```yml
-sectionPagesMenu = "main"
-```
+[メニュー エントリを定義する][define menu entries] 方法に関係なく、ページに関連付けられたエントリはページ変数とメソッドにアクセスできます。
 
-メニュー名は何でもかまいませんが、それが何であるかをメモしておいてください。
+この単純な例では、各エントリの `name` の隣に `version` という名前のページ パラメータが表示されます。
+(a) エントリが外部リソースを指している場合、または (b) `version` パラメータが定義されていない場合、`with` または `if` を使用して防御的にエントリを処理するコードを作成します。
 
-これにより、すべてのセクションがメニュー項目であり、すべてのセクションのページを「シャドウメンバー」とするメニューが作成されます。このメニューに表示させたい第一階層のディレクトリは、すべて [ブランチバンドル](https://gohugo.io/content-management/sections/) であることを確認してください。リーフバンドルはセクションを形成しません。
+{{< code file="layouts/_default/single.html" >}}
+{{- range site.Menus.main }}
+  <a href="{{ .URL }}">
+    {{ .Name }}
+    {{- with .Page }}
+      {{- with .Params.version -}}
+        ({{ . }})
+      {{- end }}
+    {{- end }}
+  </a>
+{{- end }}
+{{< /code >}}
 
-_シャドウ_ は、ページがメニュー項目自体によって表されていないことを意味しますが、これにより、以下のようなトップレベル メニューを作成できます。
+## メニューエントリ パラメータ {#menu-entry-parameters}
 
-```go-html-template
-<nav class="sidebar-nav">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-    {{ end }}
-</nav>
-```
+メニューエントリーを [サイト構成][in site configuration] または [フロントマター][in front matter] で定義するとき、以下の例に示すように `params` キーを含めることができます。
 
-上記では、現在のセクションのリストページまたはそのセクション内のページにある場合、メニュー項目はアクティブとしてマークされます。
+- [サイト構成で定義されたメニューエントリ][Menu entry defined in site configuration]
+- [フロントマターで定義されたメニューエントリ][Menu entry defined in front matter]
 
-## サイト設定メニュー {#site-config-menus}
+この単純化した例では、各アンカー要素に `class` 属性をレンダリングします。 `with` または `if` を使用して、`params.class` が定義されていないエントリを処理します。
 
-必要なものは以上です。 ただし、カスタムメニュー項目が必要な場合、たとえば、重み、名前、またはリンクタイトル属性を変更したい場合は、サイト設定ファイルでこれらを手動で定義できます。
+{{< code file="layouts/partials/menu.html" >}}
+{{- range site.Menus.main }}
+  <a {{ with .Params.class -}} class="{{ . }}" {{ end -}} href="{{ .URL }}">
+    {{ .Name }}
+  </a>
+{{- end }}
+{{< /code >}}
 
-{{< code-toggle file="config" >}}
-[[menu.main]]
-    name = "This is the blog section"
-    title = "blog section"
-    weight = -110
-    identifier = "blog"
-    url = "/blog/"
-{{</ code-toggle >}}
+## ローカライズする {#localize}
 
-{{< note >}}
-`identifier` は、セクション名と一致 *しなければなりません*。
-{{< /note >}}
+Hugo は、メニュー項目をローカライズするために2つの方法を提供します。 [多国語化][multilingual] を参照してください。
 
-## ページのフロントマターからのメニューエントリ {#menu-entries-from-the-pages-front-matter}
-
-また、ページ (すなわち `.md` ファイル) からメニューエントリを作成することも可能です。
-
-以下は `yaml` の例です。
-
-```yml
----
-title: メニューテンプレート
-linktitle: メニューテンプレート
-menu:
-  docs:
-    title: "テンプレートでメニューを使用する方法"
-    parent: "templates"
-    weight: 130
----
-...
-```
-
-{{< note >}}
-メニューは複数定義することができます。また、複雑な値である必要はなく、`menu` は文字列、文字列の配列、または上記の例のような複雑な値の配列にすることもできます。
-{{< /note >}}
-
-### メニューで .Page を使用する {#using-page-in-menus}
-
-メニューエントリを定義するフロントマター メソッドを使用すると、`.Page` 変数にアクセスできます。
-これにより、[ページ変数](/variables/page/) から到達可能なすべての変数を使用できます。
-
-この変数は、ページのフロントマターでメニューエントリが定義されている場合にのみ設定されます。
-サイト設定のメニューエントリは、`.Page` について何も知りません。
-
-そのため、テンプレート言語で go テンプレートの `with` キーワードまたは類似のものを使用する必要があります。
-
-以下はその一例です。
-
-```go-html-template
-<nav class="sidebar-nav">
-  {{ range .Site.Menus.main }}
-    <a href="{{ .URL }}" title="{{ .Title }}">
-      {{- .Name -}}
-      {{- with .Page -}}
-        <span class="date">
-        {{- dateFormat " (2006-01-02)" .Date -}}
-        </span>
-      {{- end -}}
-    </a>
-  {{ end }}
-</nav>
-```
-
-## メニューで .Params を使用する {#using-params-in-menus}
-
-メニュー項目のユーザー定義コンテンツは、`.Params` を介してアクセスできます。
-
-以下はその一例です。
-
-```go-html-template
-<nav class="sidebar-nav">
-  {{ range .Site.Menus.main }}
-    <a href="{{ .URL }}" title="{{ .Title }}" class="{{ with .Params.class }}{{ . }}{{ end }}">
-      {{- .Name -}}
-    </a>
-  {{ end }}
-</nav>
-```
-
-{{< note >}}
-メニューレベルの .Params を使用すると、あるメニューには存在するが、別のメニューには存在しないということが簡単に起こり得ます。 [with 関数](/function/with) を使用して適切にアクセスすることをお勧めします。
-{{< /note >}}
+[automatic]: /content-management/menus/#define-automatically
+[define menu entries]: /content-management/menus/
+[defining menu entries]: /content-management/menus/
+[in front matter]: /content-management/menus/#define-in-front-matter
+[in site configuration]: /content-management/menus/#define-in-site-configuration
+[localize the menu entries]: /content-management/multilingual/#menus
+[menu entry defined in front matter]: /content-management/menus/#example-front-matter
+[menu entry defined in site configuration]: /content-management/menus/#example-site-configuration
+[menu variables and methods]: /variables/menus/
+[multilingual]: /content-management/multilingual/#menus

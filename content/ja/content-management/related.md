@@ -36,39 +36,86 @@ Hugo は、フロントマターのパラメータに基づいて、ページの
 {{ end }}
 {{< /code >}}
 
-### メソッド {#methods}
+`Related` メソッドは、 `Page` またはオプションマップを引数にとります。
+オプションマップには、以下のオプションがあります。
 
-以下は、 `.RegularPages` のようなページコレクションで利用できる "Related" メソッドのリストです。
+indices
+: 検索するインデックス。
 
-#### .Related PAGE
+document
+: 関連コンテンツを検索するドキュメント。
 
-指定されたページに関連するページのコレクションを返します。
+namedSlices
+: 検索するキーワード
 
-```go-html-template
-{{ $related := site.RegularPages.Related . }}
-```
+fragments
+: フラグメントは、"fragments" タイプとして設定されたインデックスに使用される 特別なキーワードのリストを保持します。これはドキュメントのフラグメント識別子と一致します。
 
-#### .RelatedIndices PAGE INDICE1 [INDICE2 ...]
-
-インデックスのリストに制限された特定のページに関連するページのコレクションを返します。
-
-```go-html-template
-{{ $related := site.RegularPages.RelatedIndices . "tags" "date" }}
-```
-
-#### .RelatedTo KEYVALS [KEYVALS2 ...]
-
-一連のインデックスとそれらの一致によって関連付けられたページのコレクションを返します。
-
-これらのセットを作成して引数として渡すには、 `keyVals` 関数を使用する必要があります。この関数では、最初の引数が `indice` で、それ以降の引数は潜在的な `matches` となるものです。
+上記のオプションをすべて使用した架空の例として、以下を挙げておきます。
 
 ```go-html-template
-{{ $related := site.RegularPages.RelatedTo ( keyVals "tags" "hugo" "rocks")  ( keyVals "date" .Date ) }}
+{{ $page := . }}
+{{ $opts := 
+  "indices" (slice "tags" "keywords")
+  "document" $page
+  "namedSlices" (slice (keyVals "tags" "hugo" "rocks") (keyVals "date" $page.Date))
+  "fragments" (slice "heading-1" "heading-2")
+}}
 ```
 
-{{< note >}}
-この機能のより高度な使用方法については、[このブログの記事](https://regisphilibert.com/blog/2018/04/hugo-optmized-relashionships-with-related-content/) を読んでください。
-{{< /note >}}
+{{% note %}}
+Hugo 0.111.0 では、この機能が改善および簡素化されました。
+以前は `Related`、`RelatedTo`、`RelatedIndicies` の3つの異なるメソッドがありましたが、
+現在は `Related` という1つのメソッドのみです。
+古いメソッドもまだ利用できますが、非推奨です。
+また、この機能のより高度な使い方については、[このブログの記事](https://regisphilibert.com/blog/2018/04/hugo-optmized-relashionships-with-related-content/) を参照してください。
+{{% /note %}}
+
+## 関連コンテンツのコンテンツ見出しにインデックスを付ける {#index-content-headings-in-related-content}
+
+{{< new-in "0.111.0" >}}
+
+Hugo はコンテンツ内の見出しにインデックスを付け、これを使用して関連コンテンツを検索できます。
+これを有効にするには、以下のように `related` 設定に `fragments` 型のインデックスを追加します。
+
+{{< code-toggle file="hugo" copy=false >}}
+[related]
+threshold    = 20
+includeNewer = true
+toLower      = false
+[[related.indices]]
+name        = "fragmentrefs"
+type        = "fragments"
+applyFilter = false
+weight      = 80
+{{< /code-toggle >}}
+
+* `name` はオプションのフロントマターのスライス属性にマップされ、ページレベルからフラグメント/見出しレベルへリンクするために使用できます。.
+* `applyFilter` が有効な場合、結果の各ページの `.HeadingsFiltered` はフィルタリングされた見出しを反映します。これは関連コンテンツのリストで見出しを表示したい、以下のような場合に便利です。
+
+```go-html-template
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+  <h2>See Also</h2>
+  <ul>
+    {{ range $i, $p := . }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ with .HeadingsFiltered }}
+          <ul>
+            {{ range . }}
+              {{ $link := printf "%s#%s" $p.RelPermalink .ID | safeURL }}
+              <li>
+                <a href="{{ $link }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
+```
 
 ## 関連コンテンツを設定する {#configure-related-content}
 
@@ -78,7 +125,7 @@ Hugo では、関連コンテンツのデフォルトの設定を適切に行う
 
 プロジェクトに `related` 設定がない場合、Hugo の Related Content (関連コンテンツ) メソッドは以下のものを使用します。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 related:
   threshold: 80
   includeNewer: false
@@ -114,8 +161,17 @@ toLower
 name
 : インデックス名です。この値は、ページパラメータに直接マッピングされます。Hugo は文字列 (例では `author`) とリスト (`tags`、`keywords` など)、そして時刻と日付のオブジェクトをサポートしています。
 
+type
+: {{< new-in "0.111.0" >}}. `basic` (デフォルト) または `fragments` のいずれか。
+
+applyFilter
+: {{< new-in "0.111.0" >}}. 検索結果に `type` 固有のフィルタを適用します。これは現在のところ、`fragments` タイプにのみ使用されます。
+
 weight
 : このパラメータが他のパラメータに対してどの程度重要であるかを示す、整数の重みです。 0 を指定するとこの指数をオフにすることができ、 負の値を指定することもできます。さまざまな値を試して、自分のコンテンツに最適なものを確認してください。
+
+cardinalityThreshold (default 0)
+: {{< new-in "0.111.0" >}}. インデックスから一般的なキーワードを削除するために使用されるパーセンテージ (0 ～ 100) です。 たとえば、これを 50 に設定すると、インデックス内のドキュメントの 50% 以上で使用されているすべてのキーワードが削除されます。
 
 pattern
 : これは現在、日付にのみ関連しています。 関連コンテンツを一覧表示する場合、時間的にも近いコンテンツをリストしたい場合があります。 日付インデックスのパターンとして "2006" (日付インデックスのデフォルト値) を設定すると、同じ年に公開されたページに重みが追加されます。 より忙しいブログの場合は、"200601" (年と月) がデフォルトとして適している場合があります。

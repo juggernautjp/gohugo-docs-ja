@@ -1,11 +1,9 @@
 ---
 categories:
-- functions
+- function
 date: "2018-11-28"
-deprecated: false
 description: Ext は、パスのファイル名の拡張子を返します。
 draft: false
-hugoversion: "0.40"
 keywords:
 - path
 - ext
@@ -13,7 +11,7 @@ keywords:
 lastmod: "2018-11-28"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2018-11-28"
 relatedfuncs:
 - path.Base
@@ -25,7 +23,6 @@ relatedfuncs:
 signature:
 - path.Ext PATH
 title: path.Ext
-workson: []
 ---
 
 `path.Ext` は、ファイル名の拡張子 `PATH` を返します。

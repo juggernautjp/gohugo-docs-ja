@@ -1,24 +1,21 @@
 ---
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 文字列のスライスから、カットセットで指定された先頭および末尾の文字を削除して返します。
 draft: false
-hugoversion: null
 keywords:
 - strings
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - "trim INPUT CUTSET"
 - "strings.Trim INPUT CUTSET"
 title: trim
-workson: []
 ---
 
 ```go-html-template
@@ -37,9 +34,9 @@ workson: []
 {{ trim .Inner "\n" }}
 ```
 
-{{< note >}}
+{{% note %}}
 Go テンプレートは、ハイフン (`-`) を含めることにより、Go タグの両側から単純に [空白文字を削除する方法](/templates/introduction/#whitespace) も提供します。
-{{< /note >}}
+{{% /note %}}
 
 
 [shortcodevars]: /variables/shortcodes/

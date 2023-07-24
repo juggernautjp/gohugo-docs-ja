@@ -1,10 +1,10 @@
 ---
 title: strings.ContainsAny
 description: 文字列指定された文字列の文字が含まれているかどうかを報告します。
-categories: [functions]
+categories: [function]
 menu:
   docs:
-    parent: "functions"
+    parent: function
 keywords: [string strings substring contains any]
 signature: 
 - "strings.ContainsAny STRING CHARACTERS"

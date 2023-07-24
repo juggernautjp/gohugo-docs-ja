@@ -10,23 +10,21 @@ draft: false
 keywords:
 - homepage
 lastmod: "2017-02-01"
-linktitle: ホームページ テンプレート
 menu:
   docs:
     parent: templates
-    weight: 30
+    weight: 370
 publishdate: "2017-02-01"
-sections_weight: 30
 title: ホームページ テンプレート
 toc: true
-weight: 30
+weight: 70
 ---
 
 ホームページは `Page` なので、すべての [ページ変数][pagevars] と [サイト変数][sitevars] を使用できます。
 
-{{% note "The Only Required Template" %}}
+{{% note %}}
 ホームページ テンプレートは、サイトをビルドするために必要な *唯一の* テンプレートであるため、新しいサイトとテンプレートをブートストラップするときに役立ちます。 また、シングルページの Web サイトを開発している場合にも、このテンプレートが唯一の必須テンプレートとなります。
-{{< /note >}}
+{{% /note %}}
 
 {{< youtube ut1xtRZ1QOA >}}
 
@@ -42,27 +40,27 @@ weight: 30
 
 ## ホームページ テンプレートの例 {#example-homepage-template}
 
-以下は、[パーシャル][partials], [ベース][base] テンプレートと `content/_index.md` のコンテンツファイルを使って、 `{{.Title}}` と `{.Content}}` [ページ変数][pagevars] に値を設定したホームページ テンプレートの例です。
+以下は、[パーシャル][partials], [ベース][base] テンプレートと `content/_index.md` のコンテンツファイルを使って、 `{{ .Title }}` と `{{ .Content }}` [ページ変数][pagevars] に値を設定したホームページ テンプレートの例です。
 
-{{< code file="layouts/index.html" download="index.html" >}}
+{{< code file="layouts/index.html" >}}
 {{ define "main" }}
-    <main aria-role="main">
-      <header class="homepage-header">
-        <h1>{{.Title}}</h1>
-        {{ with .Params.subtitle }}
-        <span class="subtitle">{{.}}</span>
-        {{ end }}
-      </header>
-      <div class="homepage-content">
-        <!-- index.html のコンテンツは、一種のリストページとして、content/_index.md から取得されることに注意してください -->
-        {{.Content}}
-      </div>
-      <div>
-        {{ range first 10 .Site.RegularPages }}
-            {{ .Render "summary"}}
-        {{ end }}
-      </div>
-    </main>
+  <main aria-role="main">
+    <header class="homepage-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}
+      <span class="subtitle">{{ . }}</span>
+      {{ end }}
+    </header>
+    <div class="homepage-content">
+      <!-- Index.html のコンテンツは、一種のリスト ページとして、content/_index.md から取得されることに注意してください -->
+      {{ .Content }}
+    </div>
+    <div>
+      {{ range first 10 .Site.RegularPages }}
+          {{ .Render "summary" }}
+      {{ end }}
+    </div>
+  </main>
 {{ end }}
 {{< /code >}}
 

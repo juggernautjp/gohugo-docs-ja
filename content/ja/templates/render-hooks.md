@@ -2,7 +2,7 @@
 categories:
 - templates
 date: "2017-03-11"
-description: レンダーフックを使用すると、カスタムテンプレートで Markdown レンダリング機能をオーバーライドできます。
+description: レンダーフックにより、カスタムテンプレートがマークダウンのレンダリングをオーバーライドできるようになります。
 draft: false
 keywords:
 - markdown
@@ -10,10 +10,10 @@ linkTitle: レンダーフック
 menu:
   docs:
     parent: templates
-    title: Markdown レンダーフック
-    weight: 20
+    weight: 200
 title: Markdown レンダーフック
 toc: true
+weight: 200
 ---
 
 これは、 [Goldmark](/getting-started/configuration-markup#goldmark) レンダラーでのみサポートされていることに注意してください。
@@ -52,6 +52,8 @@ layouts/
 
 ## 見出し、リンク、画像のレンダーフック {#render-hooks-for-headings-lLinks-and-images}
 
+### `render-link` と `render-image` に渡されるコンテキスト {#context-passed-to-renderlink-and-renderimage}
+
 `render-link` および `render-image` テンプレートは、以下のコンテキストを受け取ります。
 
 Page
@@ -68,6 +70,8 @@ Text
 
 PlainText
 : 上記のプレーンテキストのバリアントです。
+
+### `render-Heading` に渡されるコンテキスト {#context-passed-to-renderheading}
 
 `render-heading` テンプレートは、以下のコンテキストを受け取ります。
 
@@ -107,7 +111,7 @@ Ordinal  {{< new-in "0.108.0" >}}
 以下は、render-link.html テンプレートがどのように見えるかのコード例です。
 
 {{< code file="layouts/_default/_markup/render-link.html" >}}
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
 {{< /code >}}
 
 ### 画像 Markdown の例 {#image-markdown-example}
@@ -120,7 +124,7 @@ Ordinal  {{< new-in "0.108.0" >}}
 
 {{< code file="layouts/_default/_markup/render-image.html" >}}
 <p class="md__image">
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}"{{ end }} />
 </p>
 {{< /code >}}
 

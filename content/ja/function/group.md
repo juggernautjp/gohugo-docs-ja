@@ -1,15 +1,14 @@
 ---
 categories:
-- functions
+- function
 date: "2018-09-14"
 description: '`group` は、ページのリストをグループ化します。'
 draft: false
-hugoversion: "0.49"
 keywords:
 - collections
 menu:
   docs:
-    parent: functions
+    parent: function
 signature:
 - PAGES | group KEY
 title: group

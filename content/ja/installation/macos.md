@@ -1,6 +1,5 @@
 ---
 title: macOS
-linkTitle: macOS
 description: macOS に Hugo をインストールします。
 categories: [installation]
 menu:

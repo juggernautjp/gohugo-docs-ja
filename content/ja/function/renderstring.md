@@ -1,6 +1,6 @@
 ---
 categories:
-- functions
+- function
 date: "2019-12-18"
 description: マークアップを HTML にレンダリングします。
 draft: false
@@ -10,7 +10,7 @@ keywords:
 - render
 menu:
   docs:
-    parent: functions
+    parent: function
 signature:
 - ".RenderString MARKUP"
 title: .RenderString
@@ -32,8 +32,8 @@ markup (defaults to the Page's markup)
 {{ $optBlock := dict "display" "block" }}
 {{ $optOrg := dict "markup" "org" }}
 {{ "**Bold Markdown**" | $p.RenderString }}
-{{  "**Bold Block Markdown**" | $p.RenderString  $optBlock }}
-{{  "/italic org mode/" | $p.RenderString  $optOrg }}
+{{ "**Bold Block Markdown**" | $p.RenderString $optBlock }}
+{{ "/italic org mode/" | $p.RenderString $optOrg }}
 ```
 
 {{< new-in "0.93.0" >}} **注意**: [markdownify](/function/markdownify/) は、[レンダーフック](/getting-started/configuration-markup/#markdown-render-hooks) をサポートするためにこの関数を使用します。

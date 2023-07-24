@@ -4,6 +4,7 @@ aliases:
 - /gdpr/
 date: "2018-05-25"
 description: 新規制に対応するための Hugo サイトを構成する方法について。
+lastmod: "2023-07-15"
 draft: false
 keywords:
 - GDPR
@@ -14,18 +15,18 @@ linktitle: Hugo と GDPR
 menu:
   docs:
     parent: about
-    weight: 5
-sections_weight: 5
+    weight: 60
+sections_weight: 60
 title: Hugo と 一般データ保護規則 (GDPR)
 toc: true
-weight: 5
+weight: 60
 ---
 
 一般データ保護規則 ([GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)) は、欧州連合および欧州経済領域内のすべての個人のデータ保護とプライバシーに関する EU 法の規則です。 2018 年 5 月 25 日に施行されました。
 
 **Hugo は静的サイトジェネレーターです。 Hugo を使用することで、すでに非常に強固な基盤の上に立っています。 ディスク上の静的 HTML ファイルは、サーバーやデータベース駆動型の Web サイトと比較して、はるかに簡単に推論できます。**
 
-ただし、静的な Web サイトでも外部サービスと統合できるため、バージョン `0.41` から、Hugo は関連する組み込みテンプレートをカバーする **Privacy Config** を提供します。
+ただし、静的な Web サイトでも外部サービスと統合できるため、バージョン `0.41` から、Hugo は関連する組み込みテンプレートをカバーする **プライバシー設定** を提供します。
 
 注意事項:
 
@@ -37,7 +38,7 @@ weight: 5
 
 以下は、すべてのプライバシー設定とそのデフォルト値です。これらの設定は、サイトの設定ファイル (たとえば、`config.toml`) に記述する必要があります。
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 [privacy]
 [privacy.disqus]
 disable = false
@@ -65,9 +66,9 @@ privacyEnhanced = false
 
 ## すべてのサービスを無効にする {#disable-all-services}
 
-Hugo の関連サービスをすべて無効にするプライバシー設定の例です。この設定では、他の設定は重要ではありません。
+Hugo の関連サービスをすべて無効にするプライバシー設定の例です。この設定では、他の設定は有効になりません。
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 [privacy]
 [privacy.disqus]
 disable = true
@@ -107,7 +108,7 @@ simple
 
 **注意:** Instagram に _シンプルモード_ を使用し、Bootstrap 4 でスタイル設定されたサイトを使用している場合、Hugo が提供するインライン スタイルを無効にすることができます。
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 [services]
 [services.instagram]
 disableInlineCSS = true
@@ -123,7 +124,7 @@ simple
 
 **注意:** Twitter で _シンプルモード_ を使用する場合、Hugo が提供するインラインスタイルを無効化することができます。
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 [services]
 [services.twitter]
 disableInlineCSS = true

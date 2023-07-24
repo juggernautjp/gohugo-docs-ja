@@ -20,117 +20,222 @@ toc: true
 weight: 190
 ---
 
-{{% note "Lazy Blogger"%}}
-セクションのシンプルなメニューだけが必要な場合は、[メニュー テンプレートの「怠惰なブロガーのためのセクション メニュー」](/templates/menu-templates/#section-menu-for-lazy-bloggers) を参照してください。
-{{< /note >}}
+## 概要 {#overview}
 
-You can do this:
+サイトのメニューを作成するには、以下のようにします。
 
-* 1 つまたは複数のメニューにコンテンツを配置する
-* ネストされたメニューの深さを無制限で扱える
-* コンテンツに付属しないメニューエントリを作成する
-* アクティブな要素 (およびアクティブなブランチ) を区別する
+1. メニューエントリを定義する
+2. 各エントリを [ローカライズ][Localize] します
+3. [テンプレート][template] を使用してメニューをレンダリングします
 
-## Hugo におけるメニューとは? {#what-is-a-menu-in-hugo}
+フラットまたはネストされた複数のメニューを作成します。 たとえば、ヘッダーにはメイン メニューを作成し、フッターには別のメニューを作成します。
 
-**メニュー** は、[`.Site.Menus` サイト変数][sitevars] を介してアクセスできるメニューエントリの名前付き配列です。たとえば、サイトの `メイン` メニューには `.Site.Menus.main` という変数でアクセスできます。
+メニュー エントリを定義するには、以下の 3 つの方法があります。
 
-{{% note "Menus on Multilingual Sites" %}}
-[多言語機能](/content-management/multilingual/) を利用すると、言語に依存しないメニューを定義できます。
-{{< /note >}}
+1. 自動的に
+2. フロントマターで
+3. サイト設定で
 
-メニューエントリに関連するすべての変数と関数については、[「メニューエントリ プロパティ」][me-props] を参照してください。
+{{% note %}}
+メニューを定義するとき、これらの方法を組み合わせて使用することもできますが、サイト全体を通して一つの方法を使用する方が、メニューの概念化と保守が容易になります。
+{{% /note %}}
 
-## メニューにコンテンツを追加する {#add-content-to-menus}
+## 自動的に定義する {#define-automatically}
 
-Hugo では、コンテンツの [フロントマター](/content-management/front-matter/) を介して、メニューにコンテンツを追加することができます。
+サイトの最上位セクションごとにメニューエントリを自動的に定義するには、サイト設定でセクション ページ メニューを有効にします。
 
-### 単純なエントリ {#simple}
-
-メニューにエントリを追加するだけであれば、単純なフォームで十分です。
-
-#### 単一のメニュー {#a-single-menu}
-
-{{< code-toggle >}}
-menu: "main"
+{{< code-toggle file="hugo" copy=false >}}
+sectionPagesMenu = "main"
 {{< /code-toggle >}}
 
-#### 複数のメニュー {#multiple-menus}
+これにより、テンプレートの `site.Menus.main` でアクセスできるメニュー構造が作成されます。
+詳細は、[メニューテンプレート][menu templates] を参照してください。
 
-{{< code-toggle >}}
-menu: ["main", "footer"]
+## フロントマターで定義する {#define-in-front-matter}
+
+「メイン」メニューにページを追加するには、以下のようにします。
+
+{{< code-toggle file="content/about.md" copy=false fm=true >}}
+title = 'About'
+menu = 'main'
 {{< /code-toggle >}}
 
-#### より高度なメニュー {#advanced}
+テンプレート内の `site.Menus.main` のエントリーにアクセスしてください。
+詳細は、[メニューテンプレート][menu templates] を参照してください。
 
-{{< code-toggle >}}
-menu:
-  docs:
-    parent: 'extras'
-    weight: 20
+「メイン」メニューと「フッター」メニューにページを追加するには、以下のようにします。
+
+{{< code-toggle file="content/contact.md" copy=false fm=true >}}
+title = 'Contact'
+menu = ['main','footer']
 {{< /code-toggle >}}
 
-## メニューにコンテンツ以外のエントリを追加する {#add-non-content-entries-to-a-menu}
+テンプレート内の `site.Menus.main` および `site.Menus.footer` を使用してエントリにアクセスします。 
+詳細は、[メニューテンプレート][menu templates] を参照してください。
 
-コンテンツに関連付けられていないメニューにエントリを追加することもできます。 これは、Hugo プロジェクトの [`config` ファイル][config] で行われます。
+### プロパティ {#properties-front-matter}
 
-以下は、設定ファイルから取り出したスニペットの例です。
+これらのプロパティは、フロントマターでメニュー項目を定義するときに以下のように使用します。
 
-{{< code-toggle file="config" >}}
+identifier
+: (`string`) 2 つ以上のメニュー項目が同じ `name` を持つとき、または翻訳テーブルを使って `name` をローカライズするときに必要です。文字で始まり、その後にアルファベット、数字、アンダースコアが続く必要があります。
+
+name
+: (`string`) メニューエントリをレンダリングするときに表示するテキストです。
+
+params
+: (`map`) メニューエントリのユーザー定義プロパティです。
+
+parent
+: (`string`) 親メニューエントリの `identifier` を指定します。 `identifier` が定義されていない場合は `name` を使用します。ネストされたメニューの子エントリに必要です。
+
+post
+: (`string`) メニューエントリをレンダリングするときに後ろに追加する HTML。
+
+pre
+: (`string`) メニューエントリをレンダリングするときに先頭に追加する HTML。
+
+title
+: (`string`) レンダリングされたメニューエントリの HTML `title` 属性。
+
+weight
+: (`int`) 0 ではない整数値で、メニューのルートからの相対的な位置、 または子エントリの場合は親からの相対的な位置を表します。軽いエントリは上に浮き、重いエントリは下に沈みます。
+
+### 例 {#example-front-matter}
+
+このフロントマターのメニュー エントリは、以下のような使用可能なプロパティの一部を示しています。
+
+{{< code-toggle file="content/products/software.md" copy=false fm=true >}}
+title = 'Software'
+[menu.main]
+parent = 'Products'
+weight = 20
+pre = '<i class="fa-solid fa-code"></i>'
+[menu.main.params]
+class = 'center'
+{{< /code-toggle >}}
+
+テンプレート内の `site.Menus.main` のエントリーにアクセスしてください。
+詳細は、[メニューテンプレート][menu templates] を参照してください。
+
+
+## サイト構成で定義する {#define-in-site-configuration}
+
+「メイン」メニューのエントリを定義するには、以下のようにします。
+
+{{< code-toggle file="hugo" copy=false >}}
 [[menu.main]]
-    name = "about hugo"
-    pre = "<i class='fa fa-heart'></i>"
-    weight = -110
-    identifier = "about"
-    url = "/about/"
+name = 'Home'
+pageRef = '/'
+weight = 10
+
 [[menu.main]]
-    name = "getting started"
-    pre = "<i class='fa fa-road'></i>"
-    post = "<span class='alert'>New!</span>"
-    weight = -100
-    url = "/getting-started/"
+name = 'Products'
+pageRef = '/products'
+weight = 20
+
+[[menu.main]]
+name = 'Services'
+pageRef = '/services'
+weight = 30
 {{< /code-toggle >}}
 
-{{< note >}}
-URL はコンテキストルートからの相対パスである必要があります。 `baseURL` が `https://example.com/mysite/` の場合、メニューの URL にはコンテキストルートである `mysite` を含んではいけません。 絶対 URL を使用すると、baseURL がオーバーライドされます。上記の例で `URL` に使用した値が `https://subdomain.example.com/` である場合、出力は `https://subdomain.example.com` となります。
-{{< /note >}}
+これにより、テンプレートの `site.Menus.main` でアクセスできるメニュー構造が作成されます。
+詳細は、[メニューテンプレート][menu templates] を参照してください。
 
-## ネスト {#nesting}
+「フッター」メニューのエントリを定義するには、以下のようにします。
 
-コンテンツのネストはすべて `parent` フィールドを介して行われます。
+{{< code-toggle file="hugo" copy=false >}}
+[[menu.footer]]
+name = 'Terms'
+pageRef = '/terms'
+weight = 10
 
-エントリの親は、別のエントリの識別子である必要があります。 識別子は (メニュー内で) 一意である必要があります。
+[[menu.footer]]
+name = 'Privacy'
+pageRef = '/privacy'
+weight = 20
+{{< /code-toggle >}}
 
-識別子の決定には、以下の順序が使用されます。
+これにより、テンプレートの `site.Menus.footer` でアクセスできるメニュー構造が作成されます。
+詳細は、[メニューテンプレート][menu templates] を参照してください。
 
-`.Name > .LinkTitle > .Title`
+### プロパティ {#properties-site-configuration}
 
-つまり、 `.LinkTitle` が存在しない限り、 `.Title` が使用されるといったことです。 実際には、`.Name` と `.Identifier` は関係を構造化するためにのみ使用されるため、表示されることはありません。
+{{% note %}}
+[フロントマターで定義されたエントリで利用可能なプロパティ][properties available to entries defined in front matter] は、サイト構成で定義されたエントリでも利用可能です。
 
-この例では、メニューのトップレベルは [サイトの `config` ファイル][config] で定義されています。 すべてのコンテンツエントリは、`.Parent` フィールドを介して、これらのエントリの 1 つに関連付けられます。
+[properties available to entries defined in front matter]: /content-management/menus/#properties-front-matter
+{{% /note %}}
 
-## パラメータ {#params}
+サイト構成で定義された各メニュー エントリには、2 つ以上のプロパティが必要です。
 
-また、`params` フィールドを介して、メニュー項目にユーザー定義のコンテンツを追加することもできます。
+- 内部リンクには `name` と `pageRef` を指定します
+- 外部リンクには `name` と `url` を指定します
 
-一般的な使用例は、特定のメニュー項目に css クラスを追加するカスタム パラメータを定義することです。
+pageRef
+: (`string`) `content` ディレクトリを基準とした、ターゲット ページのファイル パスです。 言語コードとファイル拡張子を省略します。 *内部* リンクには必須です。
 
-{{< code-toggle file="config" >}}
+Kind|pageRef
+:--|:--
+home|`/`
+page|`/books/book-1`
+section|`/books`
+taxonomy|`/tags`
+term|`/tags/foo`
+
+url
+: (`string`) *外部* リンクには必須です。
+
+### 例 {#example-site-configuration}
+
+このネストされたメニューは、以下のような、利用可能なプロパティのいくつかを示しています。
+
+{{< code-toggle file="hugo" copy=false >}}
 [[menu.main]]
-    name = "about hugo"
-    pre = "<i class='fa fa-heart'></i>"
-    weight = -110
-    identifier = "about"
-    url = "/about/"
-    [menu.main.params]
-      class = "highlight-menu-item"
-{{</ code-toggle >}}
+name = 'Products'
+pageRef = '/products'
+weight = 10
 
-## メニューをレンダリングする {#render-menus}
+[[menu.main]]
+name = 'Hardware'
+pageRef = '/products/hardware'
+parent = 'Products'
+weight = 1
 
-テンプレート内でサイトメニューを表示する方法については、[「メニュー テンプレート」](/templates/menu-templates/) を参照してください。
+[[menu.main]]
+name = 'Software'
+pageRef = '/products/software'
+parent = 'Products'
+weight = 2
 
-[config]: /getting-started/configuration/
-[multilingual]: /content-management/multilingual/
-[sitevars]: /variables/
-[me-props]: /variables/menus/
+[[menu.main]]
+name = 'Services'
+pageRef = '/services'
+weight = 20
+
+[[menu.main]]
+name = 'Hugo'
+pre = '<i class="fa fa-heart"></i>'
+url = 'https://gohugo.io/'
+weight = 30
+[menu.main.params]
+rel = 'external'
+{{< /code-toggle >}}
+
+これにより、テンプレートの `site.Menus.main` でアクセスできるメニュー構造が作成されます。
+詳細は、[メニューテンプレート][menu templates] を参照してください。
+
+## ローカライズする {#localize}
+
+Hugo は、メニュー エントリをローカライズする 2 つの方法を提供します。
+[多言語対応][multilingual] を参照してください。
+
+## レンダリングする {#render}
+
+[メニューテンプレート][menu templates] を参照してください。
+
+[localize]: /content-management/multilingual/#menus
+[menu templates]: /templates/menu-templates/
+[multilingual]: /content-management/multilingual/#menus
+[template]: /templates/menu-templates/

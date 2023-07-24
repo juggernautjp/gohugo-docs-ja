@@ -1,8 +1,7 @@
 ---
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: シンタックス ハイライターを使用してコードをレンダリングします。
 draft: false
 keywords:
@@ -13,7 +12,7 @@ lastmod: "2021-12-06"
 linktitle: highlight
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
@@ -43,19 +42,19 @@ lineNos
 
 lineNumbersInTable
 : Boolean. デフォルトは、 `true` です。\
-ハイライト表示されたコードを 2 つのセルを持つ HTML テーブルにレンダリングします。 左側のテーブルのセルには行番号が含まれています。 右側のテーブルのセルにはコードが表示され、ユーザは行番号のないコードを選択してコピーすることができます。lineNos` が false の場合は関係ありません。
+ハイライト表示されたコードを 2 つのセルを持つ HTML テーブルにレンダリングします。 左側のテーブルのセルには行番号が含まれています。 右側のテーブルのセルにはコードが表示され、ユーザは行番号のないコードを選択してコピーすることができます。 `lineNos` が `false` の場合は関係ありません。
 
 anchorLineNos
 : Boolean. デフォルトは、 `false` です。\
-各行番号を HTML アンカー要素としてレンダリングし、周囲の `<span>` の `id` 属性を行番号に設定します。 `lineNos` が false の場合は、関係ありません。
+各行番号を HTML アンカー要素としてレンダリングし、周囲の `<span>` の `id` 属性を行番号に設定します。 `lineNos` が `false` の場合は、関係ありません。
 
 lineAnchors
 : String. デフォルトは、 `""` です。\
-行番号を HTML アンカー要素としてレンダリングする場合、この値を周囲の `<span>` の `id` 属性の前に付けます。これにより、ページが 2 つ以上のコードブロックを含んでいる場合に、一意の `id` 属性を提供できます。 `lineNos` または `anchorLineNos` が false の場合は、関係ありません。
+行番号を HTML アンカー要素としてレンダリングする場合、この値を周囲の `<span>` の `id` 属性の前に付けます。これにより、ページが 2 つ以上のコードブロックを含んでいる場合に、一意の `id` 属性を提供できます。 `lineNos` または `anchorLineNos` が `false` の場合は、関係ありません。
 
 lineNoStart
 : Integer. デフォルトは、 `1` です。\
-最初の行の先頭に表示する番号です。 `lineNos` が false の場合は関係ありません。
+最初の行の先頭に表示する番号です。 `lineNos` が `false` の場合は関係ありません。
 
 hl_Lines
 : String. デフォルトは、 `""` です。\
@@ -75,7 +74,7 @@ noClasses
 
 tabWidth
 : Integer. デフォルトは、 `4` です。\
-ハイライト表示したコードで、各タブ文字をこの個数の空白文字に置き換えます。
+ハイライト表示したコードで、各タブ文字をこの個数の空白文字に置き換えます。 `noClasses` が `false` の場合は、無関係です。
 
 guessSyntax
 : Boolean. デフォルトは、 `false` です。\
@@ -103,13 +102,13 @@ guessSyntax
 
 {{ $input := `echo "Hello World!"` }}
 {{ $lang := "bash" }}
-{{ $options := slice "lineNos=table" "style=dracula" }}
-{{ transform.Highlight $input $lang (delimit $options ",") }}
+{{ $options := dict "lineNos" "table" "style" "dracula" }}
+{{ transform.Highlight $input $lang $options }}
 ```
 
 [Chroma]: https://github.com/alecthomas/chroma
-[hugo client]: {{< relref "commands/hugo_gen_chromastyles" >}}
-[options]: {{< relref "#options" >}}
-[site configuration]: {{< relref "getting-started/configuration-markup#highlight">}}
+[hugo client]: /commands/hugo_gen_chromastyles
+[options]: #options
+[site configuration]: /getting-started/configuration-markup#highlight
 [style gallery]: https://xyproto.github.io/splash/docs/
-[supported languages]: {{< relref "content-management/syntax-highlighting#list-of-chroma-highlighting-languages" >}}
+[supported languages]: /content-management/syntax-highlighting#list-of-chroma-highlighting-languages

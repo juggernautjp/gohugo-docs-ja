@@ -10,7 +10,8 @@ lastmod: "2017-02-01"
 linktitle: 関数のクイックリファレンス
 menu:
   docs:
-    parent: functions
+    identifier: functions-overview
+    parent: function
 publishdate: "2017-02-01"
 title: 関数のクイックリファレンス
 weight: 1

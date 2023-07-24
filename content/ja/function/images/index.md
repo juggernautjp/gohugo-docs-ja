@@ -2,7 +2,7 @@
 aliases:
 - /functions/imageconfig/
 categories:
-- functions
+- function
 date: "2017-02-01"
 description: images 名前空間は、フィルターおよびその他の画像関連関数のリストを提供します。
 draft: false
@@ -10,7 +10,7 @@ keywords:
 - images
 menu:
   docs:
-    parent: functions
+    parent: function
 title: 画像フィルター
 toc: true
 ---
@@ -54,7 +54,7 @@ images.Text TEXT DICT)
 以下の例では、指定した色、サイズ、位置の画像に、テキスト `Hugo rocks!` を追加します。
 
 ```go-html-template
-{{ $img := resources.Get "/images/background.png"}}
+{{ $img := resources.Get "/images/background.png" }}
 {{ $img = $img.Filter (images.Text "Hugo rocks!" (dict
     "color" "#ffffff"
     "size" 60
@@ -68,8 +68,8 @@ images.Text TEXT DICT)
 
 ```go-html-template
 
-{{ $font := resources.Get "https://github.com/google/fonts/raw/main/apache/roboto/static/Roboto-Black.ttf" }}
-{{ $img := resources.Get "/images/background.png"}}
+{{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/apache/roboto/static/Roboto-Black.ttf" }}
+{{ $img := resources.Get "/images/background.png" }}
 {{ $img = $img.Filter (images.Text "Hugo rocks!" (dict
     "font" $font
 ))}}
@@ -230,6 +230,6 @@ images.ImageConfig PATH
 
 ```go-html-template
 {{ with (imageConfig "favicon.ico") }}
-favicon.ico: {{.Width}} x {{.Height}}
+favicon.ico: {{ .Width }} x {{ .Height }}
 {{ end }}
 ```

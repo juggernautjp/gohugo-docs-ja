@@ -1,5 +1,4 @@
 ---
-aliases: []
 authors:
 - Anurag Goel
 categories:
@@ -10,16 +9,12 @@ draft: false
 keywords:
 - hosting
 - deployment
-linktitle: Render でのホスト
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 10
 publishdate: "2019-06-06"
-sections_weight: 10
 title: Render でのホスト
 toc: true
-weight: 10
 ---
 
 ## はじめに {#introduction}
@@ -49,7 +44,7 @@ weight: 10
 
 Render では、以下の 2 つの手順で、簡単に Hugo サイトを立ち上げることができます。
 
-1. Render 上に新しい **静的サイト** を作成し、Render に GitHub/Gitlab リポジトリへのアクセス権限を与えます。
+1. Render 上に新しい **静的サイト** を作成し、Render に GitHub/GitLab リポジトリへのアクセス権限を与えます。
 2. 作成時には、以下の値を使用します。
 
   フィールド            | 値
@@ -61,7 +56,7 @@ Render では、以下の 2 つの手順で、簡単に Hugo サイトを立ち�
 
 ## 継続的デプロイ {#continuous-deploys}
 
-Render がリポジトリに接続されたので、GitHub/Gitlab にプッシュするたびに **自動的にサイトをビルドして公開** します。
+Render がリポジトリに接続されたので、GitHub/GitLab にプッシュするたびに **自動的にサイトをビルドして公開** します。
 
 サイトの **設定 (Settings)** セクションで自動デプロイを無効にし、Render ダッシュボードから手動でデプロイすることを選択できます。
 

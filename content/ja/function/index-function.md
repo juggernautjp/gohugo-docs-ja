@@ -2,26 +2,21 @@
 aliases:
 - /function/index/
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 渡されたデータ構造のインデックスまたはキーを検索します。
 draft: false
-hugoversion: null
 keywords: []
 lastmod: "2017-02-01"
-linktitle: index
 menu:
   docs:
-    parent: functions
-needsexample: true
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - index COLLECTION INDEXES
 - index COLLECTION KEYS
 title: index
-workson: []
 ---
 
 `index` 関数は、最初の引数を以下の引数でインデックス付けした結果を返します。 インデックス付きの各アイテムは、マップまたはスライスである必要があります。 たとえば、以下のようです。
@@ -66,7 +61,7 @@ workson: []
 
 以下は、その一例です。
 
-{{< code-toggle file="data/locations/oslo" >}}
+{{< code-toggle file="data/locations/oslo" copy=false >}}
 website = "https://www.oslo.kommune.no"
 pop_city = 658390
 pop_metro = 1717900
@@ -74,10 +69,10 @@ pop_metro = 1717900
 
 ここではオスロ (oslo) に関する記事を例にとり、そのフロントマターには `data/locations/` 内の対応するファイル名とまったく同じ名前を設定します。
 
-```ini
+{{< code-toggle file="content/articles/oslo.md" fm=true copy=false >}}
 title = "My Norwegian Vacation"
 location = "oslo"
-```
+{{< /code-toggle >}}
 
 `oslo.toml` のコンテンツには、`.Site.Data.locations.oslo` というノードパスを使用してテンプレートからアクセスできます 。 ただし、フロントマターによって、必要なファイルは変わってきます。
 

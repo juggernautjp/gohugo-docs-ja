@@ -11,14 +11,13 @@ keywords:
 - sections
 - content types
 - organization
-lastmod: "2017-02-01"
-linktitle: セクション
+lastmod: "2023-07-15"
 menu:
   docs:
     parent: content-management
     weight: 120
 publishdate: "2017-02-01"
-title: コンテンツセクション
+title: セクション
 toc: true
 weight: 120
 ---
@@ -62,20 +61,19 @@ content
 
 利用可能な [セクション変数とメソッド](#section-page-variables-and-methods) を使用すると、強力なナビゲーションを構築できます。一般的な例の 1 つは、パンくずリストを表示するパーシャルです。
 
-{{< code file="layouts/partials/breadcrumb.html" download="breadcrumb.html" >}}
-<ol  class="nav navbar-nav">
-  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-</ol>
-{{ define "breadcrumbnav" }}
-{{ if .p1.Parent }}
-{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
-{{ else if not .p1.IsHome }}
-{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
-{{ end }}
-<li{{ if eq .p1 .p2 }} class="active" aria-current="page" {{ end }}>
-  <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
-</li>
-{{ end }}
+{{< code file="layouts/partials/breadcrumb.html" >}}
+<nav aria-label="breadcrumb">
+  <ol>
+    {{ range .Ancestors.Reverse }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+      </li>
+    {{ end }}
+    <li class="active">
+      <a aria-current="page" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+    </li>
+  </ol>
+</nav>
 {{< /code >}}
 
 ## セクション ページの変数とメソッド {#section-page-variables-and-methods}

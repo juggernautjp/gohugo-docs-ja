@@ -21,22 +21,22 @@ toc: true
 weight: 210
 ---
 
-{{% note "TOC Heading Levels are Fixed" %}}
+{{% note %}}
 
 以前は、目次をレンダリングする見出しレベルをすぐに指定する方法はありませんでした。
 [関連する GitHub の議論 (#1778) を参照してください](https://github.com/gohugoio/hugo/issues/1778)。 
-そのため、結果の `<nav id="TableOfContents"><ul></ul></nav>` は `{{.Content}}` から取得する際に `<h1>` から始まることになっていました。
+そのため、結果の `<nav id="TableOfContents"><ul></ul></nav>` は `{{ .Content }}` から取得する際に `<h1>` から始まることになっていました。
 
 Hugo [v0.60.0](https://github.com/gohugoio/hugo/releases/tag/v0.60.0) は Markdown のデフォルトライブラリを [Goldmark](https://github.com/yuin/goldmark/) に変更しました。これにより、目次の実装が改善され、設定可能になりました。 Goldmark レンダラーについては、 [「目次の設定方法」](/getting-started/configuration-markup/#table-of-contents) を参照してください。
 
-{{< /note >}}
+{{% /note %}}
 
 ## 使用方法 {#usage}
 
 適切な見出しを付けて、通常の方法で Markdown を作成します。以下はコンテンツの例です。
 
 ```md
-<!-- ここにフロントマターを記述します -->
+<!-- ここから上にフロントマターを記述します -->
 
 ## Introduction
 
@@ -59,7 +59,7 @@ Hugo は上記の Markdown を受け取り、`## Introduction`、`## My Heading`
 
 以下は、ごく基本的な [シングルページテンプレート][single page template] の例です。
 
-{{< code file="layout/_default/single.html" download="single.html" >}}
+{{< code file="layout/_default/single.html" >}}
 {{ define "main" }}
 <main>
     <article>
@@ -79,20 +79,20 @@ Hugo は上記の Markdown を受け取り、`## Introduction`、`## My Heading`
 
 以下は、目次をページレベルで制御するためのロジックを少し追加した [パーシャル][partials] です。コンテンツの [フロントマター][front matter] で `toc` フィールドを使用していることを前提としています。特に `false` に設定しない限り、`.WordCount` ([ページ変数][pagevars] を参照) が 400 を超えるページには目次が追加されます。この例は、テンプレートで [条件][conditionals] を使用する方法も示しています。
 
-{{< code file="layouts/partials/toc.html" download="toc.html" >}}
+{{< code file="layouts/partials/toc.html" >}}
 {{ if and (gt .WordCount 400 ) (.Params.toc) }}
 <aside>
     <header>
-    <h2>{{.Title}}</h2>
+    <h2>{{ .Title }}</h2>
     </header>
-    {{.TableOfContents}}
+    {{ .TableOfContents }}
 </aside>
 {{ end }}
 {{< /code >}}
 
-{{< note >}}
-上記の例では、400 語以上のページで、*かつ* `toc` が `false` に設定されていない場合でも、 取得するページ内に `{{.TableOfContents}}` 変数の見出しがなければ、目次は表示されません。
-{{< /note >}}
+{{% note %}}
+上記の例では、400 語以上のページで、*かつ* `toc` が `false` に設定されていない場合でも、 取得するページ内に `{{ .TableOfContents }}` 変数の見出しがなければ、目次は表示されません。
+{{% /note %}}
 
 ## AsciiDoc での使用方法 {#usage-with-asciidoc}
 

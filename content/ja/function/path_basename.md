@@ -1,8 +1,7 @@
 ---
 categories:
-- functions
+- function
 date: "2022-06-04"
-deprecated: false
 description: BaseName はパスの最後の要素を返し、拡張子がある場合は拡張子を削除します。
 draft: false
 keywords:
@@ -10,7 +9,7 @@ keywords:
 - base
 menu:
   docs:
-    parent: functions
+    parent: function
 relatedfuncs:
 - path.Base
 - path.Clean

@@ -1,10 +1,10 @@
 ---
 title: time.ParseDuration
 description: 与えられた継続時間文字列を `time.Duration` 構造体にパースします。
-categories: [functions]
+categories: [function]
 menu:
   docs:
-    parent: "functions"
+    parent: function
 keywords: [time parse duration]
 signature: ["time.ParseDuration DURATION"]
 hugoversion:

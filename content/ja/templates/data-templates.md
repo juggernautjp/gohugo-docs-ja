@@ -17,16 +17,14 @@ keywords:
 - yaml
 - xml
 lastmod: "2017-03-12"
-linktitle: null
 menu:
   docs:
     parent: templates
-    weight: 80
+    weight: 150
 publishdate: "2017-02-01"
-sections_weight: 80
 title: データテンプレート
 toc: true
-weight: 80
+weight: 150
 ---
 
 <!-- begin data files -->
@@ -37,17 +35,25 @@ Hugo は、Hugo プロジェクトのルートにある `data` ディレクト�
 
 ## データフォルダー {#the-data-folder}
 
-`data` フォルダーは、Hugo がサイトを生成するときに使用する追加データを保存できる場所です。 データファイルは、スタンドアロン ページの生成には使用されるのではなく、むしろ、コンテンツファイルを補足するためのものです。 この機能は、フロントマター フィールドが制御不能になった場合にコンテンツを拡張できます。 あるいは、テンプレートでより大きなデータセットを表示したい場合があります (以下の例を参照してください)。 どちらの場合も、独自のファイルでデータをアウトソースすることをお勧めします。
+`data` フォルダには、Hugo がサイトを生成する際に使用する追加データを保存しておく必要があります。 
+
+データファイルは独立したページを生成するためのものではありません。
+データファイルは、以下のような方法でコンテンツファイルを補完する必要があります。
+
+- フロントマター・フィールドが制御不能になったときにコンテンツを拡張する。
+- テンプレートでより大きなデータセットを表示する (下の例を参照)。
+
+どちらの場合も、(独自の) ファイル内のデータをアウトソースすることをお勧めします。
 
 これらのファイルは、YAML、JSON、XML、または TOML ファイル (拡張子は `.yml`、`.yaml`、`.json`、`.xml`、`.toml`) である必要があります。データは `.Site.Data` 変数内の `map` としてアクセスできます。 
 
-`.Site.Data.filename` 表記を使用してデータにアクセスする場合、ファイル名はアンダースコアまたは Unicode 文字で始まり、その後に 0 個以上のアンダースコア、Unicode 文字、または Unicode 数字が続く必要があります。 たとえば、以下のようになります。
+`.site.Data.filename` 表記を使用してデータにアクセスする場合、ファイル名はアンダースコアまたは Unicode 文字で始まり、その後に 0 個以上のアンダースコア、Unicode 文字、または Unicode 数字が続く必要があります。 たとえば、以下のようになります。
 
 - `123.json` - 無効
 - `x123.json` - 有効
 - `_123.json` - 有効
 
-[`index`](/function/index-function/) 関数を使用してデータにアクセスする場合、ファイル名は関係ありません。  たとえば、以下のようになります。
+[`index`](/function/index-function/) 関数を使用してデータにアクセスする場合、ファイル名は関係ありません。 たとえば、以下のようになります。
 
 データファイル | テンプレート コード
 :--|:--
@@ -58,11 +64,13 @@ Hugo は、Hugo プロジェクトのルートにある `data` ディレクト�
 
 ## テーマ内のデータファイル {#data-files-in-themes}
 
-データファイルは [Hugo テーマ][themes] でも使用できますが、テーマのデータファイルはプロジェクト ディレクトリを優先してマージされることに注意してください (つまり、同じ名前と相対パスを持つ 2 つのファイルがあると、 *重複するキーについて*、ルートプロジェクトの `data` ディレクトリのファイルのデータが `themes/<THEME>/data` ディレクトリのファイルのデータをオーバーライドします)。
+データファイルは [Hugo テーマ][themes] でも使用できます。
+
+ただし、テーマ データファイルはプロジェクト ディレクトリに優先してマージされることに注意してください。 つまり、同じ名前と相対パスを持つ 2 つのファイルがある場合、ルートプロジェクトの `data` ディレクトリにあるファイルのデータが、`themes/<THEME>/data` ディレクトリにあるファイルのデータよりも優先されます。
 
 したがって、テーマの作成者は、ユーザーが [テーマをカスタマイズする][customize] と決めたときに、簡単に上書きされてしまうようなデータファイルを含まないように注意する必要があります。オーバーライドされて困るテーマ固有のデータ項目については、フォルダー構造のプレフィックスに名前空間を付けるのが賢明です。たとえば `mytheme/data/<THEME>/somekey/...` といった具合です。このような重複があるかどうかを調べるには、`-v` フラグを付けて hugo を実行します。
 
-データファイルからデータテンプレートを使って作成したマップ内のキーは、ファイル中の `path`、`filename`、`key` のドット連結したセットになります (該当する場合)。
+データファイルからデータテンプレートを使って作成したマップ内のキーは、ファイル中の `path`、`filename`、`key` (該当する場合) のドット連結したセットになります。
 
 これは、例を挙げて説明するのが一番わかりやすいです。
 
@@ -135,7 +143,7 @@ Achievements:
 以下のコードを使用して、レイアウトに `Short Description` をレンダリングできます。
 
 ```go-html-template
-<div>Short Description of {{.Site.Data.User0123.Name}}: <p>{{ index .Site.Data.User0123 "Short Description" | markdownify }}</p></div>
+<div>Short Description of {{ .Site.Data.User0123.Name }}: <p>{{ index .Site.Data.User0123 "Short Description" | markdownify }}</p></div>
 ```
 
 [`markdownify` テンプレート関数][markdownify] を使用していることに注意してください。これは Markdown レンダリングエンジンを通して説明を送信します。
@@ -177,13 +185,13 @@ URL にプレフィックスまたはポストフィックスを使用した場�
 `getJSON` と `getCSV` のどちらも、最後の引数としてオプションのマップを受け取ります。たとえば、以下のようになります。
 
 ```go-html-template
-{{ $data := getJSON "https://example.org/api" (dict "Authorization" "Bearer abcd")  }}
+{{ $data := getJSON "https://example.org/api" (dict "Authorization" "Bearer abcd") }}
 ```
 
 同じヘッダーキーに複数の値が必要な場合は、以下のようにスライスを使用します。
 
 ```go-html-template
-{{ $data := getJSON "https://example.org/api" (dict "X-List" (slice "a" "b" "c"))  }}
+{{ $data := getJSON "https://example.org/api" (dict "X-List" (slice "a" "b" "c")) }}
 ```
 
 ### CSV ファイルの例 {#example-for-csv-files}
@@ -213,11 +221,11 @@ URL にプレフィックスまたはポストフィックスを使用した場�
   </table>
 {{< /code >}}
 
-現在の行から n 番目の列を出力するには、式 `{{index $r number}}` を使用する必要があります。
+現在の行から n 番目の列を出力するには、式 `{{ index $r number }}` を使用する必要があります。
 
 ### キャッシュ URL {#cache-urls}
 
-ダウンロードされた各 URL は、デフォルトフォルダー `$TMPDIR/hugo_cache/` にキャッシュされます。 変数 `$TMPDIR` は、システム依存の一時ディレクトリに解決されます。
+ダウンロードされた各 URL は、デフォルトフォルダー `$TMPDIR/hugo_cache_$USER/` にキャッシュされます。 変数 `$TMPDIR` は、システム依存の一時ディレクトリに解決されます。
 
 コマンドラインフラグ `--cacheDir` を使用すると、システム上の任意のフォルダをキャッシュ ディレクトリとして指定することができます。
 
@@ -227,7 +235,7 @@ URL にプレフィックスまたはポストフィックスを使用した場�
 
 ### REST URL 使用時の認証 {#authentication-when-using-rest-urls}
 
-現状では、URL に入れることができる認証方法のみ使用可能です。 [OAuth][] などの認証方式は実装されていません。
+現状では、URL に入れることができる認証方法のみ使用可能です。 [OAuth] などの認証方式は実装されていません。
 
 ## ローカルファイルをロードする {#load-local-files}
 
@@ -241,7 +249,7 @@ URL にプレフィックスまたはポストフィックスを使用した場�
 
 ## データファイルを使用した LiveReload {#livereload-with-data-files}
 
-URL のコンテンツが変更されたときに [LiveReload][] をトリガーする機会はありません。しかし、*ローカル* ファイル (すなわち、`data/*` と `themes/<THEME>/data/*`) が変更されると、LiveReload がトリガーされることになります。シンボリックリンクはサポートされていません。また、データのダウンロードには時間がかかるため、Hugo はデータのダウンロードが完了するまで Markdown ファイルの処理を停止することにも注意してください。
+URL のコンテンツが変更されたときに [LiveReload] をトリガーする機会はありません。しかし、*ローカル* ファイル (すなわち、`data/*` と `themes/<THEME>/data/*`) が変更されると、LiveReload がトリガーされることになります。シンボリックリンクはサポートされていません。また、データのダウンロードには時間がかかるため、Hugo はデータのダウンロードが完了するまで Markdown ファイルの処理を停止することにも注意してください。
 
 {{% warning "URL Data and LiveReload" %}}
 ローカルファイルを変更して LiveReload がトリガーされると、Hugo はキャッシュからデータ駆動型 (URL) のコンテンツを読み取ります。キャッシュを無効にしている場合 (たとえば `hugo server --ignoreCache` でサーバを起動した場合)、Hugo は LiveReload がトリガーされるたびにコンテンツを再ダウンロードします。これにより、*非常に大きな* トラフィックを発生させる可能性があり、API の制限にすぐに達してしまうかもしれません。
@@ -262,15 +270,14 @@ URL のコンテンツが変更されたときに [LiveReload][] をトリガー
 
 [config]: /getting-started/configuration/
 [csv]: https://tools.ietf.org/html/rfc4180
-[customize]: /themes/customizing/
+[customize]: /hugo-modules/theme-components/
 [json]: https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf "JSON (JavaScript Object Notation) の仕様"
 [LiveReload]: /getting-started/usage/#livereload
 [lookup]: /templates/lookup-order/
 [markdownify]: /function/markdownify/
 [OAuth]: https://en.wikipedia.org/wiki/OAuth
 [partials]: /templates/partials/
-[themes]: /themes/
-[toml]: https://github.com/toml-lang/toml
+[toml]: https://toml.io/en/
 [variadic]: https://en.wikipedia.org/wiki/Variadic_function
 [vars]: /variables/
 [yaml]: https://yaml.org/spec/

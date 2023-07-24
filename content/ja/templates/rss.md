@@ -9,25 +9,23 @@ keywords:
 - xml
 - templates
 lastmod: "2017-02-01"
-linktitle: RSS テンプレート
 menu:
   docs:
     parent: templates
-    weight: 150
+    weight: 160
 publishdate: "2017-02-01"
-sections_weight: 150
 title: RSS テンプレート
 toc: true
-weight: 150
+weight: 160
 ---
 
 ## RSS テンプレートの検索順序 {#rss-template-lookup-order}
 
 完全なリファレンスについては、[テンプレートの検索順序](/templates/lookup-order/) を参照してください。
 
-{{% note "Hugo Ships with an RSS Template" %}}
-Hugo には、独自の [RSS 2.0 テンプレート](#the-embedded-rssxml) が付属しています。ほとんどの場合、この埋め込みテンプレートで十分です。
-{{< /note >}}
+{{% note %}}
+Hugo には、独自の [RSS 2.0 テンプレート](#the-embedded-rssxml-template) が付属しています。ほとんどの場合、この埋め込みテンプレートで十分です。
+{{% /note %}}
 
 RSS ページは `Page` というタイプで、テンプレートで使用できるすべての [ページ変数](/variables/page/) を持っています。
 
@@ -45,11 +43,11 @@ Hugo は、必要な RSS タイプを定義する機能を提供し、セクシ�
 
 ## RSS を設定する {#configure-rss}
 
-デフォルトでは、Hugo は無制限の数の RSS エントリを作成します。 プロジェクトの [`config` ファイル][config] の `rssLimit:` フィールドに数値を割り当てることで、組み込みの RSS テンプレートに含まれる記事の数を制限できます。
+デフォルトでは、Hugo は無制限の数の RSS エントリを作成します。 プロジェクトの設定ファイル の `rssLimit:` フィールドに数値を割り当てることで、組み込みの RSS テンプレートに含まれる記事の数を制限できます。
 
 また、以下の値が指定されている場合は、RSS 出力に含まれます。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 languageCode = "en-us"
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 
@@ -89,7 +87,6 @@ RSS のリンクだけが必要な場合は、フォーマットをクエリで�
 
 _上記の例では、`BaseURL` を `https://example.com/`、`$.Site.Title`を `"Site Title"` と仮定しています。_
 
-[config]: /getting-started/configuration/
 [embedded]: #the-embedded-rss-xml
 [RSS 2.0]: https://cyber.harvard.edu/rss/rss.html "RSS 2.0 仕様書"
 [section]: /content-management/sections/

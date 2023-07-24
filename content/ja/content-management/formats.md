@@ -13,7 +13,6 @@ keywords:
 - asciidoc
 - pandoc
 - content format
-linktitle: コンテンツ形式
 menu:
   docs:
     parent: content-management
@@ -57,15 +56,9 @@ Hugo は、デフォルトで以下のような適切なデフォルト引数を
 - `rst2html`: `--leave-comments --initial-header-level=2`
 - `pandoc`: `--mathjax`
 
-{{% warning "Performance of External Helpers" %}}
+{{% note %}}
 追加のフォーマットは外部コマンドであるため、生成のパフォーマンスは、使用している外部ツールのパフォーマンスに大きく依存します。 この機能はまだ初期段階にあるため、フィードバックを歓迎します。
-{{< /warning >}}
-
-### 外部ヘルパー AsciiDoc {#external-helper-asciidoc}
-
-[AsciiDoc](https://github.com/asciidoc/asciidoc) の実装は 2020年1月に EOL となり、サポートが終了しています。
-なお、AsciiDoc の開発は [Ascidoctor](https://github.com/asciidoctor) のもとで継続されています。 
-もちろん AsciiDoc のフォーマットは残ります。実装は Asciidoctor で続けてください。
+{{< /note >}}
 
 ### 外部ヘルパー Asciidoctor {#external-helper-asciidoctor}
 

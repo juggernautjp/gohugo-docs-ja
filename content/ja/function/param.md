@@ -1,44 +1,58 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
-description: テンプレートにページやサイトの変数を呼び出します。
+description: ページ パラメータを返し、サイト パラメータが存在する場合はフォールバックします。
 draft: false
-hugoversion: null
 keywords:
 - front matter
+- params
 lastmod: "2017-04-30"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
-relatedfuncs:
-- default
 signature:
 - .Param KEY
 title: .Param
-toc: null
-workson: []
 ---
 
-Hugo では、[サイト全体のパラメータ][sitevars] (つまり、 [設定][configuration] の中) と、[個々のページ][pagevars] に対するパラメータを宣言することができます。
+`.Page` の `.Param` メソッドは、ページ パラメータで指定された `KEY` を検索し、対応する値を返します。
+ページパラメータで `KEY` が見つからない場合は、サイトパラメータで `KEY` を探します。
+どちらの場所でも `KEY` が見つからない場合、`.Param` メソッドは `nil` を返します。
 
-一般的な使用例は、サイトに一般的な値を設定し、一部のページ (画像など) に特定の値を設定することです。
+サイトおよびテーマの開発者は通常、サイトレベルでパラメータを設定し、コンテンツ作成者がページレベルでそれらのパラメータをオーバーライドできるようにします。
 
-これらの値をテンプレートに呼び出すには、 `.Param` メソッドを使用します。以下は、最初に特定のコンテンツの [フロントマター][front matter] にある `image` パラメータを探します。見つからない場合、Hugo はサイトの設定から `image` パラメータを探します。
+たとえば、すべてのページに目次を表示し、必要に応じて作成者が目次を非表示にできるようにするには、以下のようにします。
 
-```go-html-template
-$.Param "image"
-```
+**設定ファイル (Configuration)**
 
-{{< note >}}
-`Param` メソッドは、コンテンツのフロントマターの空文字列を "not found" と見なさないことがあります。 Hugo のアーキタイプを使用して、あらかじめ設定されたフロントマター フィールドを空文字列に設定している場合は、 `Param` の代わりに [`default` 関数](/function/default/) を使用すると良いかもしれません。 これについては、[GitHub の関連する問題](https://github.com/gohugoio/hugo/issues/3366) を参照してください。
-{{< /note >}}
+{{< code-toggle file="hugo" copy=false >}}
+[params]
+display_toc = true
+{{< /code-toggle >}}
 
+**コンテンツ (Content)**
 
-[configuration]: /getting-started/configuration/
-[front matter]: /content-management/front-matter/
-[pagevars]: /variables/page/
-[sitevars]: /variables/site/
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
+title = 'Example'
+date = 2023-01-01
+draft = false
+display_toc = false
+{{< /code-toggle >}}
+
+**テンプレート (Template)**
+
+{{< code file="layouts/_default/single.html" copy=false >}}
+{{ if .Param "display_toc" }}
+  {{ .TableOfContents }}
+{{ end }}
+{{< /code >}}
+
+`.Param` メソッドは、値が真か偽かに関係なく、指定された `KEY` に関連付けられた値を返します。 
+偽の値を無視する必要がある場合は、代わりに以下の構成を使用します。
+
+{{< code file="layouts/_default/single.html" copy=false >}}
+{{ or .Params.foo site.Params.foo }}
+{{< /code >}}

@@ -1,5 +1,4 @@
 ---
-aliases: []
 authors:
 - Robert van Gent
 categories:
@@ -14,16 +13,14 @@ keywords:
 - hosting
 - deployment
 lastmod: "2021-05-03"
-linktitle: Hugo デプロイ
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 2
+    weight: 20
 publishdate: "2019-05-30"
-sections_weight: 2
 title: Hugo デプロイ
 toc: true
-weight: 2
+weight: 20
 ---
 
 "hugo deploy" コマンドを使用すると、Google Cloud Storage (GCS) バケット、AWS S3 バケット、Azure Storage コンテナにサイトを直接アップロードできます。

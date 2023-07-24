@@ -1,25 +1,20 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: マップ、配列、スライスを反復処理します。
 draft: false
-hugoversion: null
 keywords:
 - iteration
 lastmod: "2017-02-01"
-linktitle: null
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - range COLLECTION
 title: range
-workson: []
 ---
 
 Go プログラミング言語と同様に、Go や Hugo のテンプレートでは `range` を多用してマップや配列、スライスを反復処理します。他のテンプレート言語では、同等の機能を実現するために foreach を使用します。

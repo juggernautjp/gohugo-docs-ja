@@ -5,23 +5,23 @@ aliases:
 date: "2017-02-01"
 description: Hugo は Go で書かれた高速でモダンな静的サイトジェネレーターで、Web サイト制作を再び楽しくするように設計されています。
 draft: false
-lastmod: "2017-02-01"
+lastmod: "2023-07-15"
 layout: single
 linktitle: Hugo とは
 menu:
   docs:
     parent: about
-    weight: 10
+    weight: 20
 publishdate: "2017-02-01"
-sections_weight: 10
+sections_weight: 20
 title: Hugo とは
 toc: true
-weight: 10
+weight: 20
 ---
 
 Hugo は、汎用的な Web サイトのフレームワークです。技術的に言えば、Hugo は [静的サイトジェネレーター][static site generator] です。訪問者のリクエストごとに動的にページを作成するシステムとは異なり、Hugo はコンテンツを作成または更新したときにページを作成します。Web サイトは編集される頻度よりも閲覧される頻度の方がはるかに高いため、Hugo は Web サイトのエンドユーザーに最適な閲覧体験を、Web サイトの作成者には理想的な執筆体験を提供できるよう設計されています。
 
-Hugo で構築された Web サイトは、非常に高速で安全です。Hugo のサイトは、[Netlify][]、[Heroku][]、[GoDaddy][]、[DreamHost][]、[GitHub Pages][]、[GitLab Pages][]、[Surge][]、[Firebase][]、[Google Cloud Storage][]、[Amazon S3][]、[Rackspace][]、[Azure][]、[CloudFront][] など、どこでもホストでき、CDN でもうまく機能することができます。Hugo のサイトは、データベースを必要とせず、Ruby、Python、PHP などの高価なランタイムに依存することなく実行できます。
+Hugo で構築された Web サイトは、非常に高速で安全です。Hugo のサイトは、[Netlify]、[Heroku]、[GoDaddy]、[DreamHost]、[GitHub Pages]、[GitLab Pages]、[Surge]、[Firebase]、[Google Cloud Storage]、[Amazon S3]、[Rackspace]、[Azure]、[CloudFront] など、どこでもホストでき、CDN でもうまく機能することができます。Hugo のサイトは、データベースを必要とせず、Ruby、Python、PHP などの高価なランタイムに依存することなく実行できます。
 
 Hugo は、ほぼ瞬時にビルドできる理想的な Web サイト作成ツールであり、変更が加えられるたびに再構築できると考えています。
 

@@ -1,29 +1,16 @@
 ---
-aliases:
-- /templates/list/
-- /layout/indexes/
-categories:
-- templates
-date: "2017-02-01"
+title: Hugo のコンテンツリスト
+linkTitle: リストテンプレート
 description: サイトのホームページ、セクションページ、タクソノミー リスト、またはタクソノミー用語リストのレンダリングに関して、Hugo ではリストに特定の意味と使用法があります。
-draft: false
-keywords:
-- lists
-- sections
-- rss
-- taxonomies
-- terms
-lastmod: "2017-02-01"
-linktitle: リストテンプレート
+categories: [templates]
+keywords: [lists,sections,rss,taxonomies,terms]
 menu:
   docs:
     parent: templates
-    weight: 22
-publishdate: "2017-02-01"
-sections_weight: 22
-title: Hugo のコンテンツリスト
+    weight: 60
+weight: 60
+aliases: [/templates/list/,/layout/indexes/]
 toc: true
-weight: 22
 ---
 
 ## リストページ テンプレートとは {#what-is-a-list-page-template}
@@ -34,16 +21,18 @@ weight: 22
 
 Hugo では、*リスト* という用語を本当の意味で使っています。つまり、特にアルファベット順または数字順で、資料を順番に並べます。 Hugo では、出力される HTML ページの中で、伝統的にリスト化されたコンテンツに以下のリストテンプレートを使用します。
 
-* [タクソノミー用語ページ][taxterms]
-* [タクソノミー リストページ][taxlists]
-* [セクション リストページ][sectiontemps]
-* [RSS][rss]
+* [ホームページ](/templates/homepage)
+* [セクションページ](/templates/section-templates)
+* [タクソノミー ページ](/templates/taxonomy-templates)
+* [タクソノミー用語ページ](/templates/taxonomy-templates)
+* [RSS フィード](/templates/rss)
+* [サイトマップ](/templates/sitemap-template)
 
 テンプレートの検索順序については、[「テンプレートの検索順序」](/templates/lookup-order/) を参照してください。
 
 リストページのアイデアは、[Web の階層的メンタルモデル][mentalmodel] に由来し、以下のように視覚的に示すのが最も効果的です。
 
-[![階層的な Web サイトのサイトマップを示す画像](/images/site-hierarchy.svg)](/images/site-hierarchy.svg)
+[![階層的な Web サイトのサイトマップを示す画像](site-hierarchy.svg)](site-hierarchy.svg)
 
 ## リストのデフォルト {#list-defaults}
 
@@ -59,9 +48,9 @@ v0.18 以降、[Hugo にある全てのものは `Page` です][bepsays]。 つ�
 
 この新しいモデルでは、`.Params` を介してリスト固有のフロントマターを含めることができ、また、リストテンプレート (たとえば、`layouts/_default/list.html`) がすべての [ページ変数][pagevars] にアクセスできることも意味します。
 
-{{< note >}}
+{{% note %}}
 すべての `_index.md` コンテンツファイルは、[シングルページ テンプレート](/templates/single-page-templates/) ではなく、*リスト* テンプレートに従ってレンダリングされることに注意してください。
-{{< /note >}}
+{{% /note %}}
 
 ### プロジェクト ディレクトリの例 {#example-project-directory}
 
@@ -97,32 +86,32 @@ publishdate: 2017-03-24
 
 上記により、リストテンプレートでこの `_index.md` のコンテンツにアクセスできます。
 
-{{< code file="layouts/_default/list.html" download="list.html" >}}
+{{< code file="layouts/_default/list.html" >}}
 {{ define "main" }}
 <main>
-    <article>
-        <header>
-            <h1>{{.Title}}</h1>
-        </header>
-        <!-- "{{.Content}}" は対応する _index.md の Marakdown コンテンツから取得します -->
-        {{.Content}}
-    </article>
-    <ul>
+  <article>
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <!-- "{{.Content}}" は対応する _index.md の Marakdown コンテンツから取得します -->
+    {{ .Content }}
+  </article>
+  <ul>
     <!-- content/posts/*.md の範囲指定 -->
     {{ range .Pages }}
-        <li>
-            <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-        </li>
+      <li>
+        <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</a>
+      </li>
     {{ end }}
-    </ul>
+  </ul>
 </main>
 {{ end }}
 {{< /code >}}
 
 上記により、以下のような HTML が出力されます。
 
-{{< code file="example.com/posts/index.html" copy="false" >}}
-<!-- baseof コードの先頭 -->
+{{< code file="example.com/posts/index.html" copy=false >}}
+<!--baseof コードの先頭-->
 <main>
     <article>
         <header>
@@ -141,12 +130,12 @@ publishdate: 2017-03-24
 
 ### `index.md` がないページを一覧表示する {#list-pages-without-index.md}
 
-すべてのリストページ (つまり、セクション、タクソノミー、タクソノミー用語など) またはホームページに対して `_index.md` ファイルを作成する必要は *ありません*。 リストテンプレートをレンダリングするときに Hugo がそれぞれのコンテンツセクション内で `_index.md` を見つけられない場合、ページは作成されますが、`{{.Content}}` はなく、`.Title` などのデフォルト値のみが作成されます。
+すべてのリストページ (つまり、セクション、タクソノミー、タクソノミー用語など) またはホームページに対して `_index.md` ファイルを作成する必要は *ありません*。 リストテンプレートをレンダリングするときに Hugo がそれぞれのコンテンツセクション内で `_index.md` を見つけられない場合、ページは作成されますが、`{{ .Content }}` はなく、`.Title` などのデフォルト値のみが作成されます。
 
 この同じ `layouts/_default/list.html` テンプレートを使用して、上記の `quotes` セクションに適用すると、以下の出力がレンダリングされます。 `quotes` には、プルする `_index.md` ファイルがないことに注意してください。
 
-{{< code file="example.com/quote/index.html" copy="false" >}}
-<!-- baseof -->
+{{< code file="example.com/quote/index.html" copy=false >}}
+<!--baseof-->
 <main>
     <article>
         <header>
@@ -162,9 +151,9 @@ publishdate: 2017-03-24
 <!--baseof-->
 {{< /code >}}
 
-{{< note >}}
+{{% note %}}
 Hugo のデフォルトの動作は、リストのタイトルを複数形にすることです。 したがって、`.Title` [ページ変数](/variables/page/) で呼び出されると、`quote` セクションが "Quotes" に変換されます。 これは、[サイト設定](/getting-started/configuration/) の `pluralizeListTitles` ディレクティブで変更できます。
-{{< /note >}}
+{{% /note %}}
 
 ## リストテンプレートの例 {#example-list-templates}
 
@@ -181,7 +170,7 @@ Hugo のデフォルトの動作は、リストのタイトルを複数形にす
         <ul>
         <!-- content/posts/*.md ごとに li.html コンテンツビューをレンダリングします -->
             {{ range .Pages }}
-                {{ .Render "li"}}
+                {{ .Render "li" }}
             {{ end }}
         </ul>
   </div>
@@ -191,14 +180,14 @@ Hugo のデフォルトの動作は、リストのタイトルを複数形にす
 
 ### タクソノミー テンプレート {#taxonomy-template}
 
-{{< code file="layouts/_default/taxonomy.html" download="taxonomy.html" >}}
+{{< code file="layouts/_default/taxonomy.html" >}}
 {{ define "main" }}
 <main>
   <div>
    <h1>{{ .Title }}</h1>
    <!-- 特定のタクソノミー用語に関連する各コンテンツファイルを範囲指定し、summary.html コンテンツビューをレンダリングします -->
     {{ range .Pages }}
-        {{ .Render "summary"}}
+        {{ .Render "summary" }}
     {{ end }}
   </div>
 </main>
@@ -334,7 +323,7 @@ Hugo のリストは、[フロントマター][front matter] で指定したメ�
 </ul>
 {{< /code >}}
 
-### パラメータ (Parameter) 順で並べる {#by-parameter}
+### ページパラメータ (Page Parameter) 順で並べる {#by-page-parameter}
 
 指定されたフロントマター パラメータに基づいて並べます。 指定されたフロントマター フィールドを持たないコンテンツは、サイトの `.Site.Params` デフォルトを使用します。 一部のエントリでパラメータがまったく見つからない場合、それらのエントリは順序付けの最後に一緒に表示されます。
 
@@ -396,7 +385,7 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 {{ range .Pages.GroupBy "Section" }}
 <!-- セクションの _index.md があるかどうか確認し、あればフロントマターの "title" から取得します。 -->
 {{ with $.Site.GetPage "section" .Key }}
-<h3>{{.Title}}</h3>
+<h3>{{ .Title }}</h3>
 {{ else }}
 <!-- _index.md がない場合、".Key が デフォルトでセクションのタイトルとなり、タイトルケーシング (タイトルの大文字表記) にフィルタリングされます -->
 <h3>{{ .Key | title }}</h3>
@@ -450,25 +439,6 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 
 {{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/function/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
 
-### 最終更新日 (Lastmod) による {#by-lastmod}
-
-{{< code file="layouts/partials/by-page-lastmod.html" >}}
-<!-- フロントマターの "lastMod" フィールドに従って、コンテンツを月別にグループ化します -->
-{{ range .Pages.GroupByLastmod "2006-01" }}
-<h3>{{ .Key }}</h3>
-<ul>
-    {{ range .Pages }}
-    <li>
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-    <div class="meta">{{ .Lastmod.Format "Mon, Jan 2, 2006" }}</div>
-    </li>
-    {{ end }}
-</ul>
-{{ end }}
-{{< /code >}}
-
-{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/function/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
-
 ### 有効期限 (Expiry Date) による {#by-expiry-date}
 
 {{< code file="layouts/partials/by-page-expiry-date.html" >}}
@@ -480,6 +450,25 @@ Hugo には、セクション、タイプ、日付などでページをグルー
     <li>
     <a href="{{ .Permalink }}">{{ .Title }}</a>
     <div class="meta">{{ .ExpiryDate.Format "Mon, Jan 2, 2006" }}</div>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+{{< /code >}}
+
+{{< new-in "0.97.0" >}} `GroupByDate` は [time.Format](/function/dateformat/) と同じ時間レイアウトを受け入れ、結果の `.Key` は現在の言語にローカライズされます。
+
+### 最終更新日 (Last modified date) による {#by-modified-date}
+
+{{< code file="layouts/partials/by-page-lastmod.html" >}}
+<!-- フロントマターの "lastMod" フィールドに従って、コンテンツを月別にグループ化します -->
+{{ range .Pages.GroupByLastmod "2006-01" }}
+<h3>{{ .Key }}</h3>
+<ul>
+    {{ range .Pages }}
+    <li>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <div class="meta">{{ .Lastmod.Format "Mon, Jan 2, 2006" }}</div>
     </li>
     {{ end }}
 </ul>
@@ -552,7 +541,7 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 
 ### グループ内の順序 {#order-within-groups}
 
-グループ化は `{{.Key}}` とページのスライスを返すので、上記のすべての順序付け方法が利用可能です。
+グループ化は `{{ .Key }}` とページのスライスを返すので、上記のすべての順序付け方法が利用可能です。
 
 ここでは、以下のような順序付けの例を示します。
 
@@ -583,15 +572,15 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 [base]: /templates/base/
 [bepsays]: https://bepsays.com/en/2016/12/19/hugo-018/
 [directorystructure]: /getting-started/directory-structure/
-[`Format` function]: /function/format/
+[`Format` function]: /functions/format/
 [front matter]: /content-management/front-matter/
-[getpage]: /function/getpage/
+[getpage]: /functions/getpage/
 [homepage]: /templates/homepage/
 [homepage]: /templates/homepage/
 [mentalmodel]: https://webstyleguide.com/wsg3/3-information-architecture/3-site-structure.html
 [pagevars]: /variables/page/
 [partials]: /templates/partials/
-[RSS 2.0]: https://cyber.harvard.edu/rss/rss.html "RSS 2.0 仕様書"
+[RSS 2.0]: https://cyber.harvard.edu/rss/rss.html "RSS 2.0 Specification"
 [rss]: /templates/rss/
 [sections]: /content-management/sections/
 [sectiontemps]: /templates/section-templates/
@@ -600,6 +589,6 @@ Hugo には、セクション、タイプ、日付などでページをグルー
 [taxterms]: /templates/taxonomy-templates/#taxonomy-terms-templates
 [taxvars]: /variables/taxonomy/
 [views]: /templates/views/
-[wherefunction]: /function/where/
-[firstfunction]: /function/first/
-[mainsections]: /function/where/#mainsections
+[wherefunction]: /functions/where/
+[firstfunction]: /functions/first/
+[mainsections]: /functions/where/#mainsections

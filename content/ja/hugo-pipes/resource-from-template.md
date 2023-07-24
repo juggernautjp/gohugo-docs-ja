@@ -8,17 +8,18 @@ keywords: []
 linkTitle: テンプレートからのリソース
 menu:
   docs:
-    parent: pipes
-    weight: 80
+    parent: hugo-pipes
+    weight: 120
 publishdate: "2018-07-14"
-sections_weight: 80
-title: テンプレートからリソースを作成する
-weight: 80
+title: ExecuteAsTemplate
+weight: 120
 ---
+
+## 使用方法 {#usage}
 
 Go テンプレートマジックを含むアセットファイルで Hugo パイプの関数を使用するには、 `resources.ExecuteAsTemplate` 関数を使用する必要があります。
 
-この関数は、リソースターゲットのパス、テンプレート コンテキスト、およびリソースオブジェクトの 3 つの引数を取ります。
+この関数は、リソースターゲットのパス、テンプレート コンテキスト、およびリソースオブジェクトの 3 つの引数を取ります。 ターゲット パスは結果をキャッシュするために使用されます。
 
 ```go-html-template
 // assets/sass/template.scss

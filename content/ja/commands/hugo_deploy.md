@@ -28,37 +28,37 @@ title: hugo deploy
 詳細なドキュメントについては、[Hugo デプロイ](/hosting-and-deployment/hugo-deploy/) を参照してください。
 
 ```bash
-hugo deploy [flags]
+hugo deploy [flags] [args]
 ```
 
 ### オプション {#options}
 
 ```bash
-      --clock string               Hugo が使用する時計を設定します。たとえば、 --clock 2021-11-06T22:30:00.00+09:00
-      --confirm                    ターゲットに変更を加える前に確認を求めます
-      --dryRun                     ドライラン (予行演習)
-  -e, --environment string         ビルド環境
-      --force                      全ファイルの強制アップロード
-  -h, --help                       deploy サブコマンドのヘルプ
-      --ignoreVendorPaths string   指定された glob パターンに一致するモジュールパスの _vendor を無視します
-      --invalidateCDN              デプロイ ターゲットに記載されている CDN キャッシュを無効にします (デフォルトは、 true)
-      --maxDeletes int             削除するファイルの最大数、または無効な場合は -1 (デフォルトは、256)
-  -s, --source string              ファイルの相対パスを読み取るファイルシステムのパス
-      --target string              設定ファイルの「デプロイ」セクションからターゲット デプロイを指定します。デフォルトは、最初のものです
-      --themesDir string           テーマディレクトリへのファイルシステムのパス
+      --confirm          ターゲットに変更を加える前に確認を求めます
+      --dryRun           ドライラン (予行演習)
+      --force            全ファイルの強制アップロード
+  -h, --help             deploy サブコマンドのヘルプ
+      --invalidateCDN    デプロイ ターゲットに記載されている CDN キャッシュを無効にします (デフォルトは、 true)
+      --maxDeletes int   削除するファイルの最大数、または無効な場合は -1 (デフォルトは、256)
+      --target string    設定ファイルの「デプロイ」セクションからターゲット デプロイを指定します。デフォルトは、最初のものです
+      --workers int      ファイルを転送するワーカーの数 (デフォルトは 10)
 ```
 
 ### 親コマンドから継承されたオプション {#options-inherited-from-parent-commands}
 
 ```bash
-      --config string              設定ファイル (デフォルトは、 path/config.yaml|json|toml)
+      --clock string               Hugo が使用する時計を設定します。たとえば、 --clock 2021-11-06T22:30:00.00+09:00
+      --config string              設定ファイル (デフォルトは、 hugo.yaml|json|toml)
       --configDir string           設定ディレクトリ (デフォルトは、 "config")
       --debug                      デバッグ出力
-      --log                        ロギングを有効にします
-      --logFile string             ログファイルのパス (設定されている場合、ログが自動的に有効になります)
+  -d, --destination string         ファイルを書き込むファイルシステムのパス
+  -e, --environment string         ビルド環境
+      --ignoreVendorPaths string   指定された glob パターンに一致するモジュールパスの _vendor を無視します
+      --logLevel string            ログレベル (debug|info|warn|error)
       --quiet                      クワイエットモード (通知オフ) でビルドします
+  -s, --source string              ファイルの相対パスを読み取るファイルシステムのパス
+      --themesDir string           テーマディレクトリへのファイルシステムのパス
   -v, --verbose                    詳細出力 (冗長表示)
-      --verboseLog                 詳細ログ出力
 ```
 
 ### 関連項目 {#see-also}

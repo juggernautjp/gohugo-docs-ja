@@ -11,16 +11,12 @@ keywords:
 - amplify
 - hosting
 - deployment
-linktitle: AWS Amplify でのホスト
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 10
 publishdate: "2018-01-31"
-sections_weight: 10
 title: AWS Amplify でのホスト
 toc: true
-weight: 10
 ---
 
 このガイドでは、[AWS Amplify コンソール](https://console.amplify.aws) を使用して、 Hugo サイトをデプロイおよびホストする方法について説明します。

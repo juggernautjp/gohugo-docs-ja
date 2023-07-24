@@ -43,7 +43,7 @@ hugo gen chromastyles --style=monokai > syntax.css
 
 ## ハイライト ショートコード {#highlight-shortcode}
 
-ハイライト表示は、組み込みの [`highlight` ショートコード](https://gohugo.io/content-management/shortcodes/#highlight) を使って行われます。ハイライト表示されるプログラミング言語の必須パラメータを 1 つだけ受け取り、終了ショートコードが必要です。なお、`highlight` はクライアント側の JavaScript のハイライトには *使用されない* ことに注意してください。
+ハイライト表示は、組み込みの [`highlight` ショートコード](/content-management/shortcodes/#highlight) を使って行われます。ハイライト表示されるプログラミング言語の必須パラメータを 1 つだけ受け取り、終了ショートコードが必要です。なお、`highlight` はクライアント側の JavaScript のハイライトには *使用されない* ことに注意してください。
 
 オプション:
 
@@ -87,9 +87,9 @@ func GetTitleFunc(style string) func(s string) string {
 }
 {{< / highlight >}}
 
-## Hugo/GO テンプレートコードのハイライト {#highlight-hugo-go-template-code}
+## Hugo/Go テンプレートコードのハイライト {#highlight-hugo-go-template-code}
 
-Hugo/GO のテンプレートコードをページ上でハイライト表示するには、開始の二重中括弧の後に `/*` を、終了の中括弧の前に `*/` を追加します。
+Hugo/Go のテンプレートコードをページ上でハイライト表示するには、開始の二重中括弧の後に `/*` を、終了の中括弧の前に `*/` を追加します。
 
 ``` go
 {{</*/* myshortcode */*/>}}

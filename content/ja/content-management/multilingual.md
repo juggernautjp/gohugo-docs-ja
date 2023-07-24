@@ -24,80 +24,135 @@ weight: 230
 
 利用可能な言語は、サイト設定の `languages` セクションで定義する必要があります。
 
-> [Hugo の多言語対応 パート1: コンテンツの翻訳][Hugo Multilingual Part 1: Content translation] も参照してください。
+[Hugo の多言語対応 パート1: コンテンツの翻訳][Hugo Multilingual Part 1: Content translation] も参照してください。
 
 ## 言語を設定する {#configure-languages}
 
-以下は、多言語対応した Hugo プロジェクトのサイト構成の例です。
+これは多言語プロジェクトのサイト設定の例です。`languages` オブジェクトで定義されていないキーは、サイト設定のルートにあるグローバル値にフォールバックされます。
 
-{{< code-toggle file="config" >}}
-defaultContentLanguage = "en"
-copyright = "Everything is mine"
+{{< code-toggle file="hugo" >}}
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = true
 
-[params]
-[params.navigation]
-help  = "Help"
-
-[languages]
-[languages.en]
-title = "My blog"
+[languages.de]
+contentDir = 'content/de'
+disabled = false
+languageCode = 'de-DE'
+languageDirection = 'ltr'
+languageName = 'Deutsch'
+title = 'Projekt Dokumentation'
 weight = 1
+
+[languages.de.params]
+subtitle = 'Referenz, Tutorials und Erklärungen'
+
+[languages.en]
+contentDir = 'content/en'
+disabled = false
+languageCode = 'en-US'
+languageDirection = 'ltr'
+languageName = 'English'
+title = 'Project Documentation'
+weight = 2
+
 [languages.en.params]
-linkedin = "https://linkedin.com/whoever"
-
-[languages.fr]
-title = "Mon blogue"
-weight = 2
-[languages.fr.params]
-linkedin = "https://linkedin.com/fr/whoever"
-[languages.fr.params.navigation]
-help  = "Aide"
-
-[languages.ar]
-title = "مدونتي"
-weight = 2
-languagedirection = "rtl"
-
-[languages.pt-pt]
-title = "O meu blog"
-weight = 3
+subtitle = 'Reference, Tutorials, and Explanations'
 {{< /code-toggle >}}
 
-`languages` ブロックで定義されていないものは、そのキーのグローバルな値にフォールバックします (たとえば、英語の `en` 言語では `copyright` となります)。これは、上記の `help` で示したように、 `params` でも動作します。フランス語では `Aide` という値になり、このパラメータが設定されていない他のすべての言語では `Help` という値になります。
+`defaultContentLanguage`
+: (`string`) [RFC 5646] で定義されているプロジェクトのデフォルトの言語タグです。小文字でなければならず、定義されている言語キーのいずれかにマッチする必要があります。デフォルトは `en` です。
+たとえば、以下になります。
 
-上記の設定により、すべてのコンテンツ、サイトマップ、RSS フィード、ページネーション、およびタクソノミーのページは、英語 (デフォルトのコンテンツ言語) では `/` の下にレンダリングされ、フランス語では `/fr` の下にレンダリングされます。
+- `en`
+- `en-gb`
+- `pt-br`
 
-[シングルページ テンプレート][single page templates] でフロントマターの `Params` を使用する場合は、翻訳用のキーで `params` を省略します。
+`defaultContentLanguageInSubdir`
+: (`bool`)  `true` の場合、デフォルトの言語サイトを `defaultContentLanguage` にマッチするサブディレクトリにレンダリングします。デフォルトは `false` です。
 
-`defaultContentLanguage` は、プロジェクトのデフォルト言語を設定します。 設定されていない場合、デフォルトの言語は `en` になります。.
+`contentDir`
+: (`string`) この言語のコンテンツ ディレクトリです。 [ファイル名で翻訳する][translating by file name] 場合は省略します。
 
-デフォルトの言語を他の言語と同じように言語コード (`/en`) の下にレンダリングする必要がある場合は、 `defaultContentLanguageInSubdir: true` を設定します。
+`disabled`
+: (`bool`)  `true` の場合、Hugo はこの言語のコンテンツをレンダリングしません。 デフォルトは `false` です。
 
-言語ごとにオーバーライドできるのは、明らかに非グローバルなオプションのみです。グローバルオプションの例としては、 `baseURL` や `buildDrafts` などがあります。
+`languageCode`
+: (`string`) [RFC 5646] で定義されている言語タグです。この値には大文字や小文字、ハイフンやアンダースコアを含めることができ、ローカライズや URL には影響しません。Hugo はこの値を [組み込み RSS テンプレート][built-in RSS template] の `language` 要素と [組み込みエイリアス テンプレート][built-in alias template] の `html` 要素の `lang` 属性に使用します。たとえば、以下になります。
 
-**注意事項:** 地域言語を使用する場合でも、小文字の言語コードを使用します (例えば、pt-PT の代わりに pt-pt を使用します)。現在、Hugo 言語の内部では言語コードを小文字にしており、小文字にしない `defaultContentLanguage` のような設定と競合する可能性があります。この問題の進展は、[Hugo リポジトリの issue tracker](https://github.com/gohugoio/hugo/issues/7344) で追跡してください。
+- `en`
+- `en-GB`
+- `pt-BR`
+
+`languageDirection`
+: (`string`) 言語の方向です。左から右 (`ltr`) または右から左 (`rtl`) のどちらかになります。この値はグローバルな [`dir`] HTML 属性を持つテンプレートで使用してください。
+
+`languageName`
+: (`string`) 言語名です。通常、言語スイッチャーをレンダリングするときに使用されます。
+
+`title`
+: (`string`) 言語のタイトルです。 設定すると、この言語のサイトタイトルが上書きされます。
+
+`weight`
+: (`int`) 言語の重みです。 0 以外の値に設定すると、これがこの言語の主な並べ替え基準になります。
+
+[`dir`]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir
+[built-in RSS template]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml
+[built-in alias template]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/alias.html
+[RFC 5646]: https://datatracker.ietf.org/doc/html/rfc5646
+[translating by file name]: #translation-by-file-name
+
+### Hugo 0.112.0 での変更点 {#changes-in-Hugo-0.112.0}
+
+{{< new-in "0.112.0" >}}
+
+Hugo `v0.112.0` では、すべての設定オプションを統合し、言語とそのパラメータをメイン設定にマージする方法を改善しました。
+しかし、これを Hugo サイトでテストしているときに、いくつかのエラー報告を受け取り、非推奨の警告を優先して、以下のように変更の一部を元に戻しました。
+
+1. `site.Language.Params` は非推奨です。直接、 `site.Params` を使用してください。
+2. トップレベルの言語設定へのカスタム パラメータの追加は非推奨です。これらをすべて `[params]` の下に追加します。以下の例の `color` を参照してください。
+
+```toml
+title = "My blog"
+languageCode = "en-us"
+
+[languages]
+[languages.sv]
+title = "Min blogg"
+languageCode = "sv"
+[languages.en.params]
+color = "blue"
+```
+
+上記の例では、`params` 以下の `color` 以外のすべての設定は、Hugo のサイトとその言語に関する定義済みの設定オプションにマップされており、以下のような文書化されたアクセサを介してアクセスする必要があります。
+
+```go-html-template
+{{ site.Title }}
+{{ site.LanguageCode }}
+{{ site.Params.color }}
+```
 
 ### 言語を無効にする {#disable-a-language}
 
-1 つ以上の言語を無効にすることができます。 これは、新しい翻訳に取り組むときに役立ちます。
+サイト設定の `languages` オブジェクト内の言語を無効にするには、以下のようにします。
 
-{{< code-toggle file="config" >}}
-disableLanguages = ["fr", "ja"]
+{{< code-toggle file="hugo" copy=false >}}
+[languages.es]
+disabled = true
 {{< /code-toggle >}}
 
+サイト設定のルートで1つまたは複数の言語を無効にするには、以下のようにします。
+
+{{< code-toggle file="hugo" copy=false >}}
+disableLanguages = ["es", "fr"]
+{{< /code-toggle >}}
+
+環境変数を使用して 1 つ以上の言語を無効にするには、以下のようにします。
+
+```bash
+HUGO_DISABLELANGUAGES="es fr" hugo
+```
+
 デフォルトのコンテンツ言語を無効にすることはできないことに注意してください。
-
-[OS 環境][OS environment] を介して設定しやすくするために、これをスタンドアロン設定として残しています。
-
-```bash
-HUGO_DISABLELANGUAGES="fr ja" hugo
-```
-
-すでに `config.toml` に無効な言語のリストがある場合は、以下のように開発時に有効にすることができます。
-
-```bash
-HUGO_DISABLELANGUAGES=" " hugo server
-```
 
 ### 多言語対応マルチホストの設定 {#configure-multilingual-multihost}
 
@@ -105,9 +160,11 @@ HUGO_DISABLELANGUAGES=" " hugo server
 
 つまり、`language` ごとに `baseURL` を設定できるようになったということです。
 
-> `baseURL` が `language` レベルで設定されている場合、すべての言語に `baseURL` が必要であり、それらはすべて異なっている必要があります。
+{{% note %}}
+`baseURL` が `language` レベルで設定されている場合、すべての言語に `baseURL` が必要であり、それらはすべて異なっている必要があります。
+{{% /note %}}
 
-Example:
+例:
 
 {{< code-toggle file="config" >}}
 [languages]
@@ -163,15 +220,15 @@ Press Ctrl+C to stop
 
 同じ **パスとベース ファイル名** を 持つことで、コンテンツの断片は翻訳されたページとして一緒に __リンク__ されます。
 
-{{< note >}}
+{{% note %}}
 ファイルに言語コードがない場合、デフォルトの言語が割り当てられます。
-{{</ note >}}
+{{% /note %}}
 
 ### コンテンツディレクトリによる翻訳 {#translation-by-content-directory}
 
 このシステムでは、各言語ごとに異なるコンテンツディレクトリを使用します。各言語のコンテンツディレクトリは `contentDir` パラメータで設定します。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 languages:
   en:
     weight: 10
@@ -217,12 +274,18 @@ translationKey: "about"
 
 パスとファイル名はリンクの処理に使用されるため、翻訳されたすべてのページは (言語サブディレクトリを除いて) 同じ URL を共有します。
 
-URL をローカライズするには、[`slug`]({{< ref "/content-management/organization/index.md#slug" >}}) または [`url`]({{< ref "/content-management/organization/index.md#url" >}}) フロントマター パラメータは、デフォルト以外の言語ファイルのいずれかに設定できます。
+URL をローカライズするには、以下のようにします。
 
-たとえば、フランス語の翻訳 (`content/about.fr.md`) は、独自のローカライズされたスラグを持つことができます。
+- 通常ページの場合は、フロントマターに [`slug`] または [`url`] を設定します
+- セクションページの場合は、フロントマターに [`url`] を設定します
 
-{{< code-toggle >}}
-Title: A Propos
+[`slug`]: /content-management/urls/#slug
+[`url`]: /content-management/urls/#url
+
+たとえば、フランス語の翻訳は、独自のローカライズされたスラグを持つことができます。
+
+{{< code-toggle file="content/about.fr.md" fm=true copy=false >}}
+title: A Propos
 slug: "a-propos"
 {{< /code-toggle >}}
 
@@ -346,7 +409,7 @@ This article has 101 words.
 {{< code-toggle file="i18n/en-US" >}}
 [readingTime]
 one = "One minute to read"
-other = "{{.Count}} minutes to read"
+other = "{{ .Count }} minutes to read"
 {{< /code-toggle >}}
 
 コンテキストの `.ReadingTime.Count` の値が 525600 であると仮定すると、結果は以下のようになります。
@@ -371,7 +434,7 @@ One minute to read
 
 以下のローカライズの例では、サイトの主要言語を英語とし、フランス語とドイツ語への翻訳を想定しています。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 defaultContentLang = 'en'
 
 [languages]
@@ -470,76 +533,93 @@ Deutsch|512,50 %
 
 ## メニュー {#menus}
 
-各言語のメニューは独立して定義することができます。多言語メニューの作成は、設定ファイルの言語固有のブロックに定義されることを除けば、[通常のメニューの作成][menus] と同様に機能します。
+メニューエントリのローカライズは、以下のように、それをどのように定義するかによって決まります。
 
-{{< code-toggle file="config" >}}
-defaultContentLanguage = "en"
+- セクションページ メニューを使用してメニューエントリを [自動的に][automatically] 定義する場合は、翻訳テーブルを使用して各エントリをローカライズする必要があります。
+- メニューエントリを [フロントマターで][in front matter] 定義した場合、それらはすでにフロントマターそのものに基づいてローカライズされています。フロントマターの値が不十分な場合は、翻訳テーブルを使って各エントリをローカライズしてください。
+- メニューエントリを [サイト設定で][in site configuration] 定義するとき、(a) 翻訳テーブルを使うか、(b) 各言語キーの下に言語固有のメニューエントリを作成できます。
 
-[languages.en]
-weight = 0
-languageName = "English"
+### 翻訳テーブルを使用する {#use-translation-tables}
 
-[[languages.en.menu.main]]
-url    = "/"
-name   = "Home"
-weight = 0
-
-[languages.de]
-weight = 10
-languageName = "Deutsch"
-
-[[languages.de.menu.main]]
-url    = "/"
-name   = "Startseite"
-weight = 0
-{{< /code-toggle >}}
-
-メインナビゲーションのレンダリングは通常通り動作します。`.Site.Menus` は現在の言語でのメニューのみを含みます。下記の `absLangURL` は、Web サイトの正しいロケールにリンクすることに注意してください。これがないと、英語がルートディレクトリに常駐する既定のコンテンツ言語であるため、すべての言語のメニューエントリが英語版にリンクされてしまいます。
+メニューの各エントリに表示されるテキストをレンダリングするとき、[メニュー テンプレートの例][example menu template] は以下のことを行います。
 
 ```go-html-template
-<ul>
-    {{- $currentPage := . -}}
-    {{ range .Site.Menus.main -}}
-    <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-        <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
-    </li>
-    {{- end }}
-</ul>
+{{ or (T .Identifier) .Name | safeHTML }}
 ```
 
-### i18n でメニューを動的にローカライズする {#dynamically-localizing-menus-with-i18n}
+メニューエントリの `identifier` を使って現在の言語の翻訳テーブルに問い合わせ、翻訳された文字列を返します。
+翻訳テーブルが存在しない場合、または `identifier` キーが翻訳テーブルに存在しない場合、`name` にフォールバックします。
 
-言語ごとにメニューをカスタマイズするのは便利ですが、言語数が多くなると設定ファイルのメンテナンスが大変になります。
+`identifier` は、メニューエントリをどのように定義するかによって、以下のように異なります。
 
-メニューがすべての言語で同じである場合 (つまり、翻訳された名前だけが変わる場合)、`.Identifier` をメニュー名の翻訳キーとして使用できます。
+- セクションページ メニューを使用してメニューエントリを [自動的に][automatically] 定義する場合、 `identifier` はページの `.Section` になります。
+- [サイト設定で][in site configuration] または [フロントマターで][in front matter] メニューエントリを定義する場合は、`identifier` プロパティを目的の値に設定します。
 
-{{< code-toggle file="config" >}}
+たとえば、サイト設定でメニューエントリを定義すると、以下のようになります。
+
+{{< code-toggle file="hugo" copy=false >}}
 [[menu.main]]
-name = "About me"
-url = "about"
+  identifier = 'products'
+  name = 'Products'
+  pageRef = '/products'
+  weight = 10
+[[menu.main]]
+  identifier = 'services'
+  name = 'Services'
+  pageRef = '/services'
+  weight = 20
+{{< / code-toggle >}}
+
+以下のように、翻訳テーブルに対応するエントリを作成します。
+
+{{< code-toggle file="i18n/de" copy=false >}}
+products = 'Produkte'
+services = 'Leistungen'
+{{< / code-toggle >}}
+
+[example menu template]: /templates/menu-templates/#example
+[automatically]: /content-management/menus/#define-automatically
+[in front matter]: /content-management/menus/#define-in-front-matter
+[in site configuration]: /content-management/menus/#define-in-site-configuration
+
+### 言語固有のメニューエントリを作成する {#create-languagespecific-menu-entries}
+
+たとえば、以下のようにします。
+
+{{< code-toggle file="hugo" copy=false >}}
+[languages.de]
+languageCode = 'de-DE'
+languageName = 'Deutsch'
 weight = 1
-identifier = "about"
+
+[[languages.de.menu.main]]
+name = 'Produkte'
+pageRef = '/products'
+weight = 10
+
+[[languages.de.menu.main]]
+name = 'Leistungen'
+pageRef = '/services'
+weight = 20
+
+[languages.en]
+languageCode = 'en-US'
+languageName = 'English'
+weight = 2
+
+[[languages.en.menu.main]]
+name = 'Products'
+pageRef = '/products'
+weight = 10
+
+[[languages.en.menu.main]]
+name = 'Services'
+pageRef = '/services'
+weight = 20
 {{< /code-toggle >}}
 
-以下のように、i18n ファイルでメニューキーの翻訳を指定する必要があります。
-
-{{< code file="i18n/pt.toml" >}}
-[about]
-other="Sobre mim"
-{{< /code >}}
-
-そして、 `.Identifier` をキーとして `i18n` タグを使用するようにメニューコードに適切な変更を加えます。また、ここでは `defaultContentLanguage` 設定で指定した言語に `.Identifier` キーが存在しない場合に備えて、 `.Name` にフォールバックするために `default` を使用していることに注意してください。
-
-{{< code file="layouts/partials/menu.html" >}}
-<ul>
-    {{- $currentPage := . -}}
-    {{ range .Site.Menus.main -}}
-    <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-        <a href="{{ .URL | absLangURL }}">{{ i18n .Identifier | default .Name}}</a>
-    </li>
-    {{- end }}
-</ul>
-{{< /code >}}
+2 つの言語を使用したシンプルなメニューの場合、これらのメニューエントリの作成と管理は簡単です。 
+より大きなメニューの場合、または 3 つ以上の言語を使用する場合は、上記のような翻訳テーブルを使用することをお勧めします。
 
 ## 不足している翻訳 {#missing-translations}
 
@@ -594,11 +674,11 @@ hugo new content/de/post/test.md
 [homepage]: /templates/homepage/
 [Hugo Multilingual Part 1: Content translation]: https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
 [i18func]: /function/i18n/
-[lang.FormatAccounting]: /function/lang/#langformataccounting
-[lang.FormatCurrency]: /function/lang/#langformatcurrency
-[lang.FormatNumber]: /function/lang/#langformatnumber
-[lang.FormatNumberCustom]: /function/lang/#langformatnumbercustom
-[lang.FormatPercent]: /function/lang/#langformatpercent
+[lang.FormatAccounting]: /function/lang
+[lang.FormatCurrency]: /function/lang
+[lang.FormatNumber]: /function/lang
+[lang.FormatNumberCustom]: /function/lang
+[lang.FormatPercent]: /function/lang
 [lang.Merge]: /function/lang.merge/
 [menus]: /content-management/menus/
 [OS environment]: /getting-started/configuration/#configure-with-environment-variables

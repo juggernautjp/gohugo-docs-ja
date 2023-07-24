@@ -9,30 +9,27 @@ keywords:
 - internal
 - analytics
 lastmod: "2017-03-06"
-linktitle: 内部テンプレート
 menu:
   docs:
     parent: templates
-    weight: 168
+    weight: 190
 publishdate: "2017-03-06"
-sections_weight: 168
 title: 内部テンプレート
 toc: true
-weight: 168
-wip: true
+weight: 190
 ---
 <!-- reference: https://discourse.gohugo.io/t/lookup-order-for-partials/5705/6
 code: https://github.com/gohugoio/hugo/blob/e445c35d6a0c7f5fc2f90f31226cd1d46e048bbc/tpl/template_embedded.go#L147 -->
 
-{{< warning >}}
+{{% note %}}
 以下の内部テンプレートはパーシャルと同様に呼ばれますが、パーシャルの検索順序を *守りません*。
-{{< /warning >}}
+{{% /note %}}
 
 ## Google アナリティクス {#google-analytics}
 
 Hugo には、[Google アナリティクス 4][GA4] (GA4) とユニバーサル アナリティクスの両方の Google アナリティクスをサポートする内部テンプレートが付属しています。
 
-**注意:** ユニバーサル アナリティクスは非推奨となります。詳細については、[「ユニバーサル アナリティクスの廃止予定」][Universal Analytics will be going away] を参照してください。
+**注意:** ユニバーサル アナリティクスは非推奨となりまた。詳細については、[「ユニバーサル アナリティクスの廃止予定」][Universal Analytics will be going away] を参照してください。
 
 [GA4]: https://support.google.com/analytics/answer/10089681
 [Universal Analytics will be going away]: https://support.google.com/analytics/answer/11583528
@@ -42,12 +39,12 @@ Hugo には、[Google アナリティクス 4][GA4] (GA4) とユニバーサル 
 以下のように、設定ファイルにトラッキング ID を指定します。
 
 **Google アナリティクス 4 (gtag.js)**
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 googleAnalytics = "G-MEASUREMENT_ID"
 {{</ code-toggle >}}
 
 **Google ユニバーサル アナリティクス (analytics.js)**
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 googleAnalytics = "UA-PROPERTY_ID"
 {{</ code-toggle >}}
 
@@ -75,7 +72,7 @@ Hugo には、[Disqus コメント][disqus] の内部テンプレートも同梱
 
 Hugo の Disqus テンプレートを使用するには、まず、以下の設定値を一つ設定する必要があります。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 disqusShortname = "your-disqus-shortname"
 {{</ code-toggle >}}
 
@@ -101,7 +98,7 @@ Hugo Web サーバーをを `localhost` で実行しているときに (つま�
 
 以下の `layouts/partials/disqus.html` を作成できます。
 
-{{< code file="layouts/partials/disqus.html" download="disqus.html" >}}
+{{< code file="layouts/partials/disqus.html" >}}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 
@@ -138,7 +135,7 @@ Hugo Web サーバーをを `localhost` で実行しているときに (つま�
 
 Hugo の Open Graph テンプレートは、個々のページで設定変数と [フロントマター](/content-management/front-matter/) を組み合わせて設定されています。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [params]
   title = "My cool site"
   images = ["site-feature-image.jpg"]
@@ -187,7 +184,7 @@ Open Graph のメタデータを追加するには、テンプレート内の `<
 
 Hugo の Twitter カード テンプレートは、個々のページで設定変数と [フロントマター](/content-management/front-matter/) を組み合わせて設定されています。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [params]
   images = ["site-feature-image.jpg"]
   description = "Text about my cool site"

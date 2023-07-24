@@ -1,16 +1,15 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2018-09-14"
 description: '`append` は、スライスに 1 つ以上の値を追加し、結果のスライスを返す。'
 draft: false
-hugoversion: "0.49"
 keywords:
 - collections
 menu:
   docs:
-    parent: functions
+    parent: function
 relatedfuncs:
 - last
 - first
@@ -20,7 +19,6 @@ signature:
 - COLLECTION | append VALUE [VALUE]...
 - COLLECTION | append COLLECTION
 title: append
-workson: []
 ---
 
 以下は、単一の値を追加する例です。

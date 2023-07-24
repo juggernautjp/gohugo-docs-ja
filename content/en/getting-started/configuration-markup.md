@@ -1,16 +1,18 @@
 ---
-title: Configure Markup
+title: Configure markup
 description: How to handle Markdown and other markup related configuration.
-date: 2019-11-15
-categories: [getting started,fundamentals]
+categories: [fundamentals, getting started]
 keywords: [configuration,highlighting]
-weight: 65
-sections_weight: 65
+menu:
+  docs:
+    parent: getting-started
+    weight: 50
+weight: 50
 slug: configuration-markup
 toc: true
 ---
 
-## Configure Markup
+## Configure markup
 
 See [Goldmark](#goldmark) for settings related to the default Markdown handler in Hugo.
 
@@ -31,6 +33,9 @@ This is the default configuration:
 For details on the extensions, refer to [this section](https://github.com/yuin/goldmark/#built-in-extensions) of the Goldmark documentation
 
 Some settings explained:
+
+hardWraps
+: By default, Goldmark ignores newlines within a paragraph. Set to `true` to render newlines as `<br>` elements.
 
 unsafe
 : By default, Goldmark does not render raw HTMLs and potentially dangerous links. If you have lots of inline HTML and/or JavaScript, you may need to turn this on.
@@ -90,7 +95,7 @@ For `style`, see these galleries:
 
 For CSS, see [Generate Syntax Highlighter CSS](/content-management/syntax-highlighting/#generate-syntax-highlighter-css).
 
-### Table Of Contents
+### Table of contents
 
 {{< code-toggle config="markup.tableOfContents" />}}
 
@@ -105,6 +110,6 @@ endLevel
 ordered
 : Whether or not to generate an ordered list instead of an unordered list.
 
-## Markdown Render Hooks
+## Markdown render hooks
 
 See [Markdown Render Hooks](/templates/render-hooks/).

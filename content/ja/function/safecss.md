@@ -1,12 +1,9 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された文字列を、既知の「安全な」 CSS 文字列として宣言します。
 draft: false
-hugoversion: null
 keywords:
 - style
 - css
@@ -14,7 +11,7 @@ keywords:
 lastmod: "2017-02-26"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - safeHTML
@@ -22,7 +19,6 @@ relatedfuncs:
 signature:
 - safeCSS INPUT
 title: safeCSS
-workson: []
 ---
 
 ここでいう *安全* とは、以下のいずれかに該当する CSS コンテンツを指します。
@@ -37,6 +33,6 @@ workson: []
 * <span class="good">`<p style="{{ .Params.style | safeCSS }}">…</p>` &rarr; `<p style="color: red;">…</p>`</span>
 * <span class="bad">`<p style="{{ .Params.style }}">…</p>` &rarr; `<p style="ZgotmplZ">…</p>`</span>
 
-{{% note "ZgotmplZ" %}}
+{{% note %}}
 "ZgotmplZ" は、安全でないコンテンツが CSS または URL コンテキストに到達したことを示す特別な値です。
-{{< /note >}}
+{{% /note %}}

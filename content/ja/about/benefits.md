@@ -13,12 +13,12 @@ linktitle: SSG のメリット
 menu:
   docs:
     parent: about
-    weight: 30
+    weight: 40
 publishdate: "2017-02-01"
-sections_weight: 30
+sections_weight: 40
 title: 静的サイトジェネレーターのメリット
 toc: false
-weight: 30
+weight: 40
 ---
 
 Web サイトジェネレーターの目的は、コンテンツを HTML ファイルにレンダリングすることです。そのほとんどは「動的サイトジェネレーター」です。つまり、HTTP サーバー (表示するファイルをブラウザに送信するプログラム) は、エンドユーザーがページを要求するたびにジェネレーターを実行して新しい HTML ファイルを作成します。
@@ -31,11 +31,11 @@ Hugo はキャッシュをさらに一歩進め、すべての HTML ファイル
 
 ## 静的サイトジェネレーターの詳細 {#more-on-static-site-generators}
 
-* ["An Introduction to Static Site Generators", David Walsh][]
+* ["An Introduction to Static Site Generators", David Walsh]
 * ["Hugo vs. WordPress page load speed comparison: Hugo leaves WordPress in its dust", GettingThingsTech][hugovwordpress]
-* ["Static Site Generators", O'Reilly][]
-* [StaticGen: Top Open-Source Static Site Generators (GitHub Stars)][]
-* ["Top 10 Static Website Generators", Netlify blog][]
+* ["Static Site Generators", O'Reilly]
+* [StaticGen: Top Open-Source Static Site Generators (GitHub Stars)]
+* ["Top 10 Static Website Generators", Netlify blog]
 * ["The Resurgence of Static", dotCMS][dotcms]
 
 ["An Introduction to Static Site Generators", David Walsh]: https://davidwalsh.name/introduction-static-site-generators

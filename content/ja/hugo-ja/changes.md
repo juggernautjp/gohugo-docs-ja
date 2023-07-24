@@ -8,7 +8,7 @@ linktitle: 変更履歴
 description: Hugo ドキュメント 日本語版の変更履歴について説明しています。 
 date: 2022-12-18
 publishdate: 2022-12-18
-lastmod: 2022-12-18
+lastmod: 2023-07-15
 keywords:
 - docs
 - hugo-ja
@@ -25,11 +25,20 @@ toc: true
 ## 変更履歴
 
 
+### 2023年07月15日の変更
+
+- [Bootstrap](https://getbootstrap.com/) v5.3.0 に対応した
+- [gohugo.io](https://gohugo.io/) のリポジトリである [gohugoio/hugoDocs](https://github.com/gohugoio/hugoDocs) に公開してある Hugo v0.115 に対応
+- フォントの小さなコンテンツの大きさを調整した
+
+
+
 ### 2023年05月21日の変更
 
 - [Bootstrap](https://getbootstrap.com/) v5.3.0-alpha3 に対応した
-- 「関数」セクションのコンテンツが全く表示されない
-
+- 「関数」セクションのコンテンツが全く表示されない問題に対応
+  - [Cloudflare Pages](https://www.cloudflare.com/ja-jp/products/pages/) では、functions の下のコンテンツは Couldflare functions に解釈されるため、Hugo の functions コンテンツの下のファイルをすべて無視している
+  - [Cloudflare Pages](https://www.cloudflare.com/ja-jp/products/pages/) では、Markdown コンテンツファイル名に制限があり、大文字英字と `.` のファイル名はビルド対象とならないため、Hugo の functions コンテンツの下のファイル名をすべて修正した
 
 
 ### 2023年03月31日の変更

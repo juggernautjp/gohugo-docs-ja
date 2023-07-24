@@ -1,25 +1,23 @@
 ---
 categories:
-- functions
+- function
 date: "2018-10-13"
 description: 文字列を受け取り、[`defaultMarkdownHandler`](https://gohugo.io/getting-started/configuration-markup#configure-markup) が Markdown ヘッダーに対して行うのと同じ方法でサニタイズします。
 draft: false
-hugoversion: "0.39"
 keywords:
 - markdown
 - strings
 menu:
   docs:
-    parent: functions
+    parent: function
 relatedfuncs:
 - humanize
 signature:
 - anchorize INPUT
 title: anchorize
-workson: []
 ---
 
-[Goldmark](https://gohugo.io/getting-started/configuration-markup#goldmark) が `defaultMarkdownHandler` として設定されている場合、サニタイズ ロジックは [`markup.goldmark.parser.autoHeadingIDType`](https://gohugo.io/getting-started/configuration-markup#goldmark) の設定に準拠します。.
+[Goldmark](/getting-started/configuration-markup#goldmark) が `defaultMarkdownHandler` として設定されている場合、サニタイズ ロジックは [`markup.goldmark.parser.autoHeadingIDType`](/getting-started/configuration-markup#goldmark) の設定に準拠します。.
 
 `defaultMarkdownHandler`とこのテンプレート関数は同じサニタイズ ロジックを使用しているので、後者を使用して、アンカータグでリンクするためのヘッダー ID を決定ができます。
 

@@ -14,17 +14,12 @@ keywords:
 - git
 - gitlab
 lastmod: "2017-11-16"
-linktitle: GitLab でのホスト
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 40
 publishdate: "2016-06-23"
-sections_weight: 40
 title: GitLab でのホスト
 toc: true
-weight: 40
-wip: false
 ---
 
 ## 前提条件 {#assumptions}

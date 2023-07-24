@@ -1,24 +1,20 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: コンテンツのレンダリング時に、適用するビューを取得します。
 draft: false
-hugoversion: null
 keywords:
 - views
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - .Render LAYOUT
 title: .Render
-workson: []
 ---
 
 ビューは代替レイアウトであり、[コンテンツビュー](/templates/views) のドキュメントで指定された場所のいずれかにあるテンプレートを指すファイル名にする必要があります。
@@ -29,7 +25,7 @@ workson: []
 
 ```go-html-template
 {{ range .Pages }}
-    {{ .Render "summary"}}
+  {{ .Render "summary" }}
 {{ end }}
 ```
 

@@ -8,16 +8,14 @@ keywords:
 - learning
 - usage
 lastmod: "2019-10-20"
-linktitle: 外部の学習リソース
 menu:
   docs:
     parent: getting-started
-    weight: 70
+    weight: 60
 publishdate: "2019-10-20"
-sections_weight: 70
 title: 外部の学習リソース
 toc: false
-weight: 70
+weight: 60
 ---
 
 ## 書籍 {#books}
@@ -38,7 +36,7 @@ weight: 70
 
 ### CloudCannon による Hugo チュートリアル {#hugo-tutorial-by-cloudcannon}
 
-[「ステップバイステップの書き方チュートリアル」](https://cloudcannon.com/community/learn/hugo-101/) で、Hugo サイト作成の基礎が学べます。
+[「ステップバイステップの書き方チュートリアル」](https://cloudcannon.com/community/learn/hugo-beginner-tutorial/) で、Hugo サイト作成の基礎が学べます。
 
 ## 動画チュートリアル {#video-tutorials}
 

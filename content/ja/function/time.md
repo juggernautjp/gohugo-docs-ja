@@ -1,27 +1,22 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: タイムスタンプ文字列を `time.Time` 構造体に変換します。
 draft: false
-hugoversion: v0.77.0
 keywords:
 - dates
 - time
 - location
 lastmod: "2017-02-01"
-linktitle: null
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - time INPUT [TIMEZONE]
 title: time
-workson: []
 ---
 
 
@@ -54,11 +49,11 @@ workson: []
 [多言語サイト][multilingual] を設定する場合、以下のような例が参考になると思います。
 
 {{< code file="unix-to-month-integer.html" >}}
-{{$time := time (int .Params.addDate)}}
+{{ $time := time (int .Params.addDate) }}
 => $time = 1489276800
-{{$time.Month}}
+{{ $time.Month }}
 => "March"
-{{$monthindex := printf "%d" $time.Month }}
+{{ $monthindex := printf "%d" $time.Month }}
 => $monthindex = 3
 {{< /code >}}
 

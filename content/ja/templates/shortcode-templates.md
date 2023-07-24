@@ -13,19 +13,18 @@ linktitle: ショートコード テンプレート
 menu:
   docs:
     parent: templates
-    weight: 100
+    weight: 130
 publishdate: "2017-02-01"
-sections_weight: 100
 title: 独自のショートコードを作成する
 toc: true
-weight: 100
+weight: 130
 ---
 
 ショートコードは、テンプレートを小さく再利用可能なスニペットに統合し、コンテンツ内に直接埋め込むことができる手段です。この意味で、ショートコードは、[ページとリストのテンプレート][templates] と [基本コンテンツファイル][basic content files] の仲介物と考えることができます。
 
-{{< note >}}
+{{% note %}}
 Hugo には、一般的な使用例に対応した組み込みのショートコードも用意されています。 (詳細は [コンテンツ管理: ショートコード](/content-management/shortcodes/) を参照してください)。 
-{{< /note >}}
+{{% /note %}}
 
 ## カスタム ショートコードを作成する {#create-custom-shortcodes}
 
@@ -35,7 +34,7 @@ Hugo の組み込みショートコードは、多くの一般的な使用例を
 
 ### ファイルの場所 {#file-location}
 
-ショートコードを作成するには、[ソース構成][source organization] の `layouts/shortcodes` ディレクトリに HTML テンプレートを配置します。 ショートコードの名前は、拡張子 `.html` を除いたファイルの名前と同じになるので、ファイル名には十分注意してください。 たとえば、`layouts/shortcodes/myshortcode.html` は、あなたが選んだパラメータの種類に応じて、`{{</* myshortcode /*/>}}` または `{%/* myshortcode /*/%}}` で呼び出されます。
+ショートコードを作成するには、[ソース構成][source organization] の `layouts/shortcodes` ディレクトリに HTML テンプレートを配置します。 ショートコードの名前は、拡張子 `.html` を除いたファイルの名前と同じになるので、ファイル名には十分注意してください。 たとえば、`layouts/shortcodes/myshortcode.html` は、`{{</* myshortcode /*/>}}` または `{{%/* myshortcode /*/%}}` で呼び出されます。
 
 ショートコードは、サブフォルダー (たとえば、`layouts/shortcodes/boxes`) に整理することができます。これらのショートコードは、相対パスでアクセスできます。
 
@@ -104,16 +103,16 @@ Hugo の組み込みショートコードは、多くの一般的な使用例を
 
 終了ショートコードが使用されている場合、`.Inner` 変数には、開始ショートコードと終了ショートコードの間のコンテンツが入力されます。 終了ショートコードが必要な場合は、その存在の指標として `.Inner` の長さを確認できます。
 
-`.Inner` 変数によって宣言されたコンテンツを持つショートコードは、自己終了構文 (self-closing syntax) を使用することによって、コンテンツなし、終了なしで宣言することもできます。
+`.Inner` 変数によって宣言されたコンテンツを持つショートコードは、自己終了構文 (self-closing syntax) を使用することによって、コンテンツなし、終了タグなしで宣言することもできます。
 
 ```go-html-template
 {{</* innershortcode /*/>}}
 ```
 
-{{< warning >}}
+{{% note %}}
 `.Inner` を参照するすべてのショートコードは、クローズドまたはセルフクローズドである必要があります。
 
-{{< /warning >}}
+{{% /note %}}
 
 #### `.Params`
 
@@ -150,9 +149,9 @@ Hugo の組み込みショートコードは、多くの一般的な使用例を
 
 `.IsNamedParams` の動作については、以下の [Vimeo ショートコードの例][vimeoexample] を参照してください。
 
-{{< warning >}}
+{{% note %}}
 位置指定パラメータと名前付きパラメータの両方を受け付けるショートコード テンプレートを作成することはできますが、パラメータタイプが混在するコンテンツでショートコードを宣言することは *できません*。したがって、`{{` `</*` `image src="images/my-image.jpg" "This is my alt text"`  `*/>` `}}` のように宣言されたショートコードは、エラーを返します。
-{{< /warning >}}
+{{% /note %}}
 
 また、`.Page` 変数を使用して、通常のすべての [ページ変数][pagevars] にアクセスすることもできます。
 
@@ -195,7 +194,7 @@ Markdown を継続的に確認することなく、コンテンツファイル�
 </div>
 {{< /code >}}
 
-{{< code file="youtube-embed.html" copy="false" >}}
+{{< code file="youtube-embed.html" copy=false >}}
 <div class="embed video-player">
     <iframe class="youtube-player" type="text/html"
         width="640" height="385"
@@ -217,33 +216,33 @@ Hugo の組み込みの [`figure` ショートコード][figure] を使用する
 
 {{< code file="/layouts/shortcodes/img.html" >}}
 <!-- image -->
-<figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
-    {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
-        <img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} />
+<figure {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+  {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
+    <img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} />
     {{ if .Get "link" }}</a>{{ end }}
     {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr") }}
-    <figcaption>{{ if isset .Params "title" }}
+      <figcaption>{{ if isset .Params "title" }}
         <h4>{{ .Get "title" }}</h4>{{ end }}
         {{ if or (.Get "caption") (.Get "attr") }}<p>
         {{ .Get "caption" }}
         {{ with .Get "attrlink" }}<a href="{{ . }}"> {{ end }}
-            {{ .Get "attr" }}
+          {{ .Get "attr" }}
         {{ if .Get "attrlink" }}</a> {{ end }}
         </p> {{ end }}
-    </figcaption>
-    {{ end }}
+      </figcaption>
+  {{ end }}
 </figure>
 <!-- image -->
 {{< /code >}}
 
 上記のコードは、以下のようにレンダリングされます。
 
-{{< code file="img-output.html" copy="false" >}}
+{{< code file="img-output.html" copy=false >}}
 <figure>
-    <img src="/media/spf13.jpg"  />
-    <figcaption>
-        <h4>Steve Francia</h4>
-    </figcaption>
+  <img src="/media/spf13.jpg"  />
+  <figcaption>
+      <h4>Steve Francia</h4>
+  </figcaption>
 </figure>
 {{< /code >}}
 
@@ -270,7 +269,7 @@ Hugo の組み込みの [`figure` ショートコード][figure] を使用する
 
 上記のコードは、以下のようにレンダリングされます。
 
-{{< code file="vimeo-iframes.html" copy="false" >}}
+{{< code file="vimeo-iframes.html" copy=false >}}
 <div class="vimeo-container">
   <iframe src="https://player.vimeo.com/video/49718712" allowfullscreen></iframe>
 </div>
@@ -299,7 +298,7 @@ Hugo の組み込みの [`figure` ショートコード][figure] を使用する
 
 HTML サンプルのコードブロックのレンダリング出力は、以下のようになります。
 
-{{< code file="syntax-highlighted.html" copy="false" >}}
+{{< code file="syntax-highlighted.html" copy=false >}}
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;html&gt;</span>
     <span style="color: #f92672">&lt;body&gt;</span> This HTML <span style="color: #f92672">&lt;/body&gt;</span>
 <span style="color: #f92672">&lt;/html&gt;</span>
@@ -323,9 +322,9 @@ Hugo の [`.Parent` ショートコード変数][parent] は、問題のショ�
 {{< code file="layouts/shortcodes/img.html" >}}
 {{- $src := .Get "src" -}}
 {{- with .Parent -}}
-  <img src="{{$src}}" class="{{ .Get "class" }}-image">
+  <img src="{{ $src }}" class="{{ .Get "class" }}-image">
 {{- else -}}
-  <img src="{{$src}}">
+  <img src="{{ $src }}">
 {{- end -}}
 {{< /code >}}
 
@@ -356,14 +355,14 @@ Hugo の [`.Parent` ショートコード変数][parent] は、問題のショ�
 ```bash
 {{ with .Get "name" }}
 {{ else }}
-{{ errorf "missing value for param 'name': %s" .Position }}
+{{ errorf "missing value for parameter 'name': %s" .Position }}
 {{ end }}
 ```
 
 上記コードが失敗すると、以下のような `ERROR` ログが表示されます。
 
 ```bash
-ERROR 2018/11/07 10:05:55 missing value for param name: "/Users/bep/dev/go/gohugoio/hugo/docs/content/en/variables/shortcodes.md:32:1"
+ERROR 2018/11/07 10:05:55 missing value for parameter name: "/Users/bep/dev/go/gohugoio/hugo/docs/content/en/variables/shortcodes.md:32:1"
 ```
 
 ## その他のショートコードの例 {#more-shortcode-examples}
@@ -376,7 +375,7 @@ ERROR 2018/11/07 10:05:55 missing value for param name: "/Users/bep/dev/go/gohug
 
 この機能はデフォルトで無効になっていますが、以下のようなサイト設定で有効にすることができます:
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 enableInlineShortcodes = true
 {{< /code-toggle >}}
 
@@ -400,19 +399,18 @@ enableInlineShortcodes = true
 {{</* time.inline /*/>}}
 ```
 
-[basic content files]: /content-management/formats/ "Hugo が Markdown (およびその他のサポートされている形式) を利用して Web サイトのコンテンツを作成する方法を参照してください。"
+[basic content files]: /content-management/formats/
 [built-in shortcode]: /content-management/shortcodes/
-[config]: /getting-started/configuration/ "Hugo に組み込まれている設定変数について、また、サイトの設定ファイルにレンダリングされた Web サイト全体で使用できるグローバルなキー値を含める方法について詳しく説明します。"
-[Content Management: Shortcodes]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes "ショートコードとは何かという定義がよくわからない場合や、コンテンツファイルに Hugo の組み込みショートコードを使用する方法についてよくわからない場合は、このセクションを確認してください。"
-[source organization]: /getting-started/directory-structure/#directory-structure-explained "Hugo が新しいサイトを足場かけ (スキャフォールディング) する方法と、各ディレクトリで何を見つけることが期待されているかを学びます。"
-[docsshortcodes]: https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes "現在読んでいるドキュメントサイトのショートコードのソースディレクトリを参照してください。"
+[config]: /getting-started/configuration/
+[Content Management: Shortcodes]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
+[source organization]: /getting-started/directory-structure/#directory-structure-explained
+[docsshortcodes]: https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
 [figure]: /content-management/shortcodes/#figure
 [hugosc]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
-[lookup order]: /templates/lookup-order/ "Hugo がテンプレートファイルをトラバースして、ビルド時にコンテンツをどこでどのようにレンダリングするかを決定する順序を確認します。"
-[pagevars]: /variables/page/ "ページテンプレートとリストテンプレートで、どの変数を活用できるかを確認します。"
+[lookup order]: /templates/lookup-order/
+[pagevars]: /variables/page/
 [parent]: /variables/shortcodes/
-[shortcodesvars]: /variables/shortcodes/ "一部の変数はショートコードに固有ですが、ほとんどの .Page 変数はショートコード テンプレート内でアクセスできます。"
-[spfscs]: https://github.com/spf13/spf13.com/tree/master/layouts/shortcodes "Hugo の生みの親である Steve Francia 氏のブログ spf13.com のソースのショートコード ディレクトリで、より多くのショートコードの例を見ることができます。"
-[templates]: /templates/ "Hugo ドキュメントのテンプレート セクションです。"
+[shortcodesvars]: /variables/shortcodes/
+[spfscs]: https://github.com/spf13/spf13.com/tree/master/layouts/shortcodes 
 [vimeoexample]: #single-flexible-example-vimeo
-[youtubeshortcode]: /content-management/shortcodes/#youtube "Hugo の組み込み YouTube ショートコードの使用方法を参照してください。"
+[youtubeshortcode]: /content-management/shortcodes/#youtube

@@ -1,24 +1,21 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: マップ、配列、またはスライスを指定すると、 `apply` は関数が適用された新しいスライスを返します。
 draft: false
-hugoversion: null
 keywords:
 - advanced
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - apply COLLECTION FUNCTION [PARAM...]
 title: apply
-workson: []
 ---
 
 {{< todo >}}
@@ -33,11 +30,10 @@ workson: []
 
 以下は、フロントマター フィールドとして `names:` を持つコンテンツファイルの例です。
 
-```ini
-+++
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
+title: Example
 names: [ "Derek Perkins", "Joe Bergevin", "Tanner Linsley" ]
-+++
-```
+{{< /code-toggle >}}
 
 そして、以下のように `apply` を使用することができます。
 
@@ -51,7 +47,7 @@ names: [ "Derek Perkins", "Joe Bergevin", "Tanner Linsley" ]
 "derek-perkins", "joe-bergevin", "tanner-linsley"
 ```
 
-これは、[range][] で以下を使用するのと*ほぼ*同等です。
+これは、[range] で以下を使用するのと *ほぼ* 同等です。
 
 ```go-html-template
 {{ range .Params.names }}{{ . | urlize }}{{ end }}
@@ -61,25 +57,25 @@ names: [ "Derek Perkins", "Joe Bergevin", "Tanner Linsley" ]
 
 `post-tag-list.html` と `post-tag-link.html` が [パーシャル][partials] であれば、それぞれ以下のようなスニペットを使うことが*できます。
 
-{{< code file="layouts/partials/post-tag-list.html" copy="false" >}}
+{{< code file="layouts/partials/post-tag-list.html" copy=false >}}
 {{ with .Params.tags }}
-<div class="tags-list">
-  Tags:
-  {{ $len := len . }}
-  {{ if eq $len 1 }}
-    {{ partial "post-tag-link.html" (index . 0) }}
-  {{ else }}
-    {{ $last := sub $len 1 }}
-    {{ range first $last . }}
-      {{ partial "post-tag-link.html" . }},
+  <div class="tags-list">
+    Tags:
+    {{ $len := len . }}
+    {{ if eq $len 1 }}
+      {{ partial "post-tag-link.html" (index . 0) }}
+    {{ else }}
+      {{ $last := sub $len 1 }}
+      {{ range first $last . }}
+        {{ partial "post-tag-link.html" . }},
+      {{ end }}
+      {{ partial "post-tag-link.html" (index . $last) }}
     {{ end }}
-    {{ partial "post-tag-link.html" (index . $last) }}
-  {{ end }}
-</div>
+  </div>
 {{ end }}
 {{< /code >}}
 
-{{< code file="layouts/partials/post-tag-link.html" copy="false" >}}
+{{< code file="layouts/partials/post-tag-link.html" copy=false >}}
 <a class="post-tag post-tag-{{ . | urlize }}" href="/tags/{{ . | urlize }}">{{ . }}</a>
 {{< /code >}}
 
@@ -89,30 +85,30 @@ names: [ "Derek Perkins", "Joe Bergevin", "Tanner Linsley" ]
 
 ```go-html-template
 {{ with .Params.tags }}
-    <div class="tags-list">
-      Tags:
-      {{ $sort := sort . }}
-      {{ $links := apply $sort "partial" "post-tag-link.html" "." }}
-      {{ $clean := apply $links "chomp" "." }}
-      {{ delimit $clean ", " }}
-    </div>
+  <div class="tags-list">
+    Tags:
+    {{ $sort := sort . }}
+    {{ $links := apply $sort "partial" "post-tag-link.html" "." }}
+    {{ $clean := apply $links "chomp" "." }}
+    {{ delimit $clean ", " }}
+  </div>
 {{ end }}
 ```
 
-完成版では、タグをソートし、`layouts/partials/post-tag-link.html` でタグをリンクに変換し、 [chomp][] で不要な改行を削除し、タグを区切りリストで結合して表示することができるようになりました。先ほどの例をさらに DRY にしたものを、以下に示します。
+完成版では、タグをソートし、`layouts/partials/post-tag-link.html` でタグをリンクに変換し、 [chomp] で不要な改行を削除し、タグを区切りリストで結合して表示することができるようになりました。先ほどの例をさらに DRY にしたものを、以下に示します。
 
-{{< code file="layouts/partials/post-tag-list.html" download="post-tag-list.html" >}}
-    {{ with .Params.tags }}
-    <div class="tags-list">
-      Tags:
-      {{ delimit (apply (apply (sort .) "partial" "post-tag-link.html" ".") "chomp" ".") ", " }}
-    </div>
-    {{ end }}
+{{< code file="layouts/partials/post-tag-list.html" >}}
+{{ with .Params.tags }}
+  <div class="tags-list">
+    Tags:
+    {{ delimit (apply (apply (sort .) "partial" "post-tag-link.html" ".") "chomp" ".") ", " }}
+  </div>
+{{ end }}
 {{< /code >}}
 
-{{< note >}}
+{{% note %}}
 パイプラインを介してシーケンスを引数として受け取る場合、`apply` は動作しません。
-{{< /note >}}
+{{% /note %}}
 
 [chomp]: /function/chomp/ "chomp 関数のドキュメントを参照してください"
 [delimit]: /function/delimit/ "delimit 関数のドキュメントを参照してください"

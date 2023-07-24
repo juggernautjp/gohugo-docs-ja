@@ -1,17 +1,15 @@
 ---
 aliases: []
 categories:
-- functions
-deprecated: false
+- function
 description: ファイル名でソートされた FileInfo 構造体の配列を、ディレクトリ エントリごとに 1 つの要素で返します。
 draft: false
-hugoversion: null
 keywords:
 - files
 lastmod: "2021-11-26"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - os.FileExists
@@ -21,7 +19,6 @@ signature:
 - os.ReadDir PATH
 - readDir PATH
 title: readDir
-workson: []
 ---
 `os.ReadDir` 関数は、プロジェクト ディレクトリのルートからの相対パスを解決します。先頭のパス区切り文字 (`/`) は省略可能です。
 
@@ -56,4 +53,4 @@ news --> true
 
 `FileInfo` 構造の詳細については、[Go ドキュメント](https://pkg.go.dev/io/fs#FileInfo) を参照してください。
 
-テンプレートで `readDir` と `readFile` を使用する方法については、[ローカルファイル テンプレート]({{< relref "/templates/files" >}}) を参照してください。
+テンプレートで `readDir` と `readFile` を使用する方法については、[ローカルファイル テンプレート](/templates/files) を参照してください。

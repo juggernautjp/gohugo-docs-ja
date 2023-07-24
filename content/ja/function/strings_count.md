@@ -1,12 +1,10 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2020-09-07"
-deprecated: false
 description: 文字列の中で、重複しない部分文字列の数を返します。
 draft: false
-hugoversion: null
 keywords:
 - count
 - counting
@@ -14,13 +12,12 @@ keywords:
 lastmod: "2020-09-07"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2020-09-07"
 relatedfuncs: []
 signature:
 - "strings.Count SUBSTR STRING"
 title: strings.Count
-workson: []
 ---
 
 `SUBSTR` が空文字列の場合、この関数は 1 に `STRING` の Unicode コードポイントの数を加えた値を返します。

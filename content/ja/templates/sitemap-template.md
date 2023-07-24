@@ -14,11 +14,10 @@ keywords:
 menu:
   docs:
     parent: templates
-    weight: 160
-sections_weight: 160
+    weight: 170
 title: サイトマップ テンプレート
 toc: true
-weight: 160
+weight: 170
 ---
 
 ## 概要 {#overview}
@@ -36,7 +35,7 @@ Hugo の組み込みサイトマップ テンプレートは、[サイトマッ�
 
 [変更頻度][change frequency] と [優先度][priority] のデフォルト値、および生成されるファイル名は、サイト設定で設定してください。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [sitemap]
   changefreq = 'monthly'
   filename = 'sitemap.xml'
@@ -81,11 +80,11 @@ title = 'News'
 
 以下のサイト設定で、サイトマップの生成を無効にすることができます。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 disableKinds = ['sitemap']
 {{</ code-toggle >}}
 
-[`publishDir`]: {{< relref "getting-started/configuration#publishdir" >}}
+[`publishDir`]: /getting-started/configuration#publishdir
 [change frequency]: <https://www.sitemaps.org/protocol.html#changefreqdef>
 [priority]: <https://www.sitemaps.org/protocol.html#priority>
 [sitemap protocol]: <https://www.sitemaps.org/protocol.html>

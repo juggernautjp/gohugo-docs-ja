@@ -1,12 +1,9 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定されたオブジェクトを JSON にエンコードします。
 draft: false
-hugoversion: null
 keywords:
 - strings
 - json
@@ -14,7 +11,7 @@ lastmod: "2020-04-13"
 linktitle: jsonify
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - plainify
@@ -22,7 +19,6 @@ signature:
 - jsonify INPUT
 - jsonify OPTIONS INPUT
 title: jsonify
-workson: []
 ---
 
 Jsonify は、指定されたオブジェクトを JSON にエンコードします。

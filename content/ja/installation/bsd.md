@@ -1,6 +1,5 @@
 ---
 title: BSD
-linkTitle: BSD
 description: BSD 派生製品に Hugo をインストールします。
 categories: [installation]
 menu:

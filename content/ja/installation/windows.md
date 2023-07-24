@@ -1,6 +1,5 @@
 ---
 title: Windows
-linkTitle: Windows
 description: Windows に Hugo をインストールします。
 categories: [installation]
 menu:
@@ -37,6 +36,17 @@ scoop install hugo-extended
 ```
 
 [Scoop]: https://scoop.sh/
+
+### Winget
+
+[Winget] は、Microsoft の公式の Windows 用の無料のオープンソース パッケージ マネージャーです。
+以下のコマンドにより、Hugo の拡張版がインストールされます。
+
+```sh
+winget install Hugo.Hugo.Extended
+```
+
+[Winget]: https://learn.microsoft.com/en-us/windows/package-manager/
 
 {{% readfile file="/content/ja/installation/common/04-docker.md" %}}
 

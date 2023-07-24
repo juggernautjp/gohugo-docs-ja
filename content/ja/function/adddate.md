@@ -1,27 +1,22 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された time.Time 値に、指定された年数、月数、および日数を加算した時間を返します。
 draft: false
-hugoversion: null
 keywords:
 - dates
 - time
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - now
 signature:
 - .AddDate YEARS MONTHS DAYS
 title: .AddDate
-workson:
-- times
 ---
 
 ```go-html-template

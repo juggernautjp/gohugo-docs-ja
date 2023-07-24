@@ -35,10 +35,10 @@ Hugo ドキュメントの日本語訳プロジェクトは、下記のプロジ
 
 と書かれており、2020年以降、プロジェクトはストップした状態です。
 
-しかし、[Hugo](https://github.com/gohugoio/hugo) は、2022年12月現在、[v0.107.0](https://github.com/gohugoio/hugo/releases/tag/v0.107.0) のままであり、
+しかし、[Hugo](https://github.com/gohugoio/hugo) は、2023年6月現在、[v0.115.3](https://github.com/gohugoio/hugo/releases/tag/v0.115.3) のままであり、
 いつ v1 リリースされるのか未定の状態です。
 
-本プロジェクトは、「Hugo ドキュメント (v0.105)」を日本語に翻訳したものです。
+本プロジェクトは、「Hugo ドキュメント (v0.115)」を日本語に翻訳したものです。
 
 
 

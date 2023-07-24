@@ -1,50 +1,39 @@
 {{- /*
-
-  code-toggle.html: code-toggle を Bootstrap 5.3.0 の Navs&Tabs で動作させるためのコード。
-
-JSON、TOML、YAML の各フォーマットで、シンタックスハイライトされた設定データをレンダリングします。
+Renders syntax-highlighted configuration data in JSON, TOML, and YAML formats.
 
 @param {string} config
-  レンダリングする site.Data.docs.config のセクション。
+  Section of site.Data.docs.config to render.
   Example: markup.highlight
   Default: ""
 @param {bool} copy
-  copy ボタンを表示する。
+  Display a copy button.
   Default: true
 @param {string} file
-  レンダリングされたコードの上に表示するファイル名。
+  File name to display above the rendered code.
   Default: ""
 @param {bool} fm
-  中身はフロントマターを表現しているか?
+  Does Inner represent front matter?
   Default: false
 @param {string} Inner
-  ショートコードのオープン/クローズタグの間のコンテンツ。
+  Content between opening and closing shortcode tags.
   Default: ""
 @param {bool} skipHeader
-  site.Data.docs.config のセクションをレンダリングする際に、トップレベルのキー (複数可) を省略する。
+  Omit top level key(s) when rendering a section of site.Data.docs.config.
   Default: false
-@param {string} nav_id
-  Navs tab を一意に識別するための ID。
-  Default: ""
 @returns {template.HTML}
 */ -}}
 
+{{- /* Initialize. */ -}}
 {{- $config := "" -}}
-{{- $copy := false -}}
+{{- $copy := true -}}
 {{- $file := "" -}}
 {{- $fm := false -}}
 {{- $skipHeader := false -}}
-{{- $nav_id := "" -}}
 
-{{- /* パラメータを取得し、文字列をブール値に変換する。 */ -}}
+{{- /* Get parameters, defend against string booleans. */ -}}
 {{- if .Params -}}
   {{- $config = .Get "config" -}}
   {{- $file = .Get "file" -}}
-  {{- if (isset .Params "codeId") -}}
-      {{- $nav_id = (.Params "codeId") -}}
-  {{- else -}}
-      {{- $nav_id = replace $file "/" "-" -}}
-  {{- end -}}
   {{- if (isset .Params "copy") -}}
     {{- if in (slice true "true") (.Get "copy") -}}
       {{- $copy = true -}}
@@ -68,10 +57,12 @@ JSON、TOML、YAML の各フォーマットで、シンタックスハイライ�
   {{- end -}}
 {{- end -}}
 
+{{- /* Define constants. */ -}}
 {{- $delimiters := dict "toml" "+++" "yaml" "---" -}}
 {{- $langs := slice "yaml" "toml" "json" -}}
 {{- $placeHolder := "#-hugo-placeholder-#" -}}
 
+{{- /* Render. */ -}}
 {{- $code := "" -}}
 {{- with $config -}}
   {{- $file = $file | default "config" -}}
@@ -84,47 +75,34 @@ JSON、TOML、YAML の各フォーマットで、シンタックスハイライ�
 {{- else -}}
   {{- $code = $.Inner -}}
 {{- end }}
-<div class="bd-example">
-  <nav>
-  <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+<div class="code relative" {{ with $file }}id="{{ . | urlize }}"{{ end }}>
+  <div class="code-nav flex flex-nowrap items-stretch">
     {{- with $file }}
-    <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled="" tabindex="-1">
-      {{- . -}}{{- if not $fm -}}.{{- end -}}
-    </button>
+      <div class="san-serif f6 dib lh-solid pl2 pv2 mr2">
+        {{- . -}}{{- if not $fm -}}.{{- end -}}
+      </div>
     {{- end -}}
-      {{- $def_active := index $langs 0 -}}
-      {{- range $langs }}
-        {{- $tab_name := . -}}
-        {{- $nav_name := printf "%s-%s" $nav_id $tab_name -}}
-        {{- $is_active := eq $tab_name $def_active -}}
-        <button class="nav-link{{ if $is_active }} active{{ end }}" data-bs-toggle="tab" type="button" role="tab" 
-         id="{{ printf "%s-tab" $nav_name }}" data-bs-target="{{ printf "#%s" $nav_name }}" aria-controls="{{ $nav_name }}" aria-selected="{{ cond $is_active true false }}" tabindex="-1">
-          {{ $tab_name }}
-        </button>
-      {{- end -}}
-  </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    {{- if $copy }}
-    <div class="bd-clipboard">
-      <button type="button" class="btn-clipboard">
-        <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>
+    {{- range $langs }}
+      <button data-toggle-tab="{{ . }}" class="tab-button {{ cond (eq . "yaml") "active" "" }} ba san-serif f6 dib lh-solid ph2 pv2">
+        {{ . }}
       </button>
-    </div>
-    {{- end -}}
-  {{- $def_active := index $langs 0 -}}
-  {{- range $langs }}
-    {{- $tab_name := . -}}
-    {{- $nav_name := printf "%s-%s" $nav_id $tab_name -}}
-    {{- $is_active := eq $tab_name $def_active -}}
-    <div class="tab-pane{{ if $is_active }} active{{ end }}" id="{{ $nav_name }}" role="tabpanel" aria-labelledby="{{ printf "%s-tab" $nav_name }}" tabindex="0">
+      &nbsp;
+    {{- end }}
+  </div>
+  <div class="tab-content">
+    {{- range $langs }}
+      <div data-pane="{{ . }}" class="code-copy-content nt3 tab-pane {{ cond (eq . "yaml") "active" "" }}">
         {{- $hCode := $code | transform.Remarshal . -}}
         {{- if and $fm (in (slice "toml" "yaml") .) -}}
           {{- $hCode = printf "%s\n%s\n%s" $placeHolder $hCode $placeHolder -}}
         {{- end -}}
         {{- $hCode = $hCode | replaceRE `\n+` "\n" }}
         {{ highlight $hCode . "" | replaceRE $placeHolder (index $delimiters .) | safeHTML }}
-    </div>
-  {{- end -}}
+      </div>
+      {{- if $copy }}
+        <button class="needs-js copy copy-toggle bg-accent-color-dark f6 absolute top-0 right-0 lh-solid hover-bg-primary-color-dark bn white ph3 pv2" title="Copy this code to your clipboard." data-clipboard-action="copy" aria-label="copy button"></button>
+        {{- /* Functionality located within filesaver.js The copy here is located in the css with .copy class so it can be replaced with JS on success */ -}}
+      {{- end -}}
+    {{- end }}
   </div>
 </div>

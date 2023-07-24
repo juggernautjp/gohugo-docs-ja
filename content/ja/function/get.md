@@ -1,26 +1,21 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: ショートコード宣言の位置指定パラメータと名前付きパラメータにアクセスします。
 draft: false
-hugoversion: null
 keywords:
 - shortcodes
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
-needsexample: true
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - ".Get INDEX"
 - ".Get KEY"
 title: .Get
-workson: []
 ---
 
 `.Get` は、独自の [ショートコード テンプレート][sc] を作成するときに、渡された [位置指定および名前付き](/templates/shortcode-templates/#positional-vs-named-parameters) パラメータにアクセスするために特に使用されます。 数値の INDEX と一緒に使用すると、位置パラメータ (0 から始まる) を問い合わせます。文字列の KEY と一緒に使うと、名前付きのパラメータを問い合わせます。

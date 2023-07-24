@@ -27,46 +27,235 @@ toc: true
 weight: 180
 ---
 
-## パーマリンク {#permalinks}
+## 概要 {#overview}
 
-構築した Web サイトのデフォルトの Hugo ターゲットディレクトリは `public/` です。ただし、[サイト設定][config] で別の `publishDir` を指定することで、この値を変更できます。セクションのビルド時に作成されるディレクトリは、`content` フォルダー内のコンテンツのディレクトリの位置と、`contentdir` 階層内のレイアウトに合わせた名前空間が反映されます。
+デフォルトでは、Hugo がページをレンダリングするとき、結果の URL は `content` ディレクトリ内のファイルパスと一致します。たとえば、
 
-[サイト構成][config] の `permalinks` オプションを使用すると、ディレクトリパス (つまり URL) をセクションごとに調整することができます。これはファイルが書き込まれる場所を変更し、ページ内部の「正規の」場所を変更します。このため、`.RelPermalink` へのテンプレート参照は、このオプションのマッピングの結果として行われた調整を尊重することになります。
+```text
+content/posts/post-1.md → https://example.org/posts/post-1/
+```
 
-{{% note "Default Publish and Content Folders" %}}
-これらの例では、 `publishDir` と `contentDir` にデフォルト値、つまりそれぞれ `public` と `content` を使用しています。デフォルト値は、[サイトの `config` ファイル](/getting-started/configuration/) でオーバーライドすることができます。
-{{< /note >}}
+フロントマターの値やサイト構成オプションで、URL の構造や外観を変更することができます。
 
-たとえば、[セクション][section] の1つが `posts` という名前で、年、月、投稿タイトルに基づいて階層化するように正規のパスを調整したい場合、YAML と TOML でそれぞれ以下のように設定することが可能です。
+## Front matter
 
-### パーマリンクの設定例 {#permalinks-configuration-example}
+### `slug`
 
-{{< code-toggle file="config" copy="false" >}}
-permalinks:
-  posts: /:year/:month/:title/
+パスの最後のセグメントをオーバーライドするには、フロントマターの `slug` を設定します。
+`slug` の値は、セクションページには影響しません。
+
+{{< code-toggle file="content/posts/post-1.md" copy=false fm=true >}}
+title = 'My First Post'
+slug = 'my-first-post'
 {{< /code-toggle >}}
 
-`posts/` 以下のコンテンツのみが新しい URL 構造を持つことになります。たとえば、`content/posts/sample-entry.md` のフロントマターに `date: 2017-02-27T19:20:00-05:00` があると、ビルド時に `public/2017/02/sample-entry/index.html` にレンダーされるので、 `https://example.com/2017/02/sample-entry/` で到達できるようになります。
+結果の URL は、以下のようになります。
 
-「ルート」セクションのページに対して `permalinks` オプションを設定するには、以下のように、キーとして **/** を使用します。
+```text
+https://example.org/posts/my-first-post/
+```
 
-{{< code-toggle file="config" copy="false" >}}
-permalinks:
-  /: /:year/:month/:filename/
+### `url`
+
+パス全体をオーバーライドするには、フロントマターの `url` を設定します。 
+通常ページまたはセクション ページでこれを使用します。
+
+以下のフロントマターでは、
+
+{{< code-toggle file="content/posts/post-1.md" copy=false fm=true >}}
+title = 'My First Article'
+url = '/articles/my-first-article'
 {{< /code-toggle >}}
 
-標準の日付ベースのパーマリンク構成がニーズを満たさない場合、[Go time フォーマット ディレクティブ](https://golang.org/pkg/time/#Time.Format) を使用して URL セグメントをフォーマットすることも可能です。たとえば、ゼロパディングなしで 2 桁の年と月日の桁を持つ URL 構造は、以下のようにして実現できます。
+結果の URL は以下のようになります。
 
-{{< code-toggle file="config" copy="false" >}}
-permalinks:
-  posts: /:06/:1/:2/:title/
+```text
+https://example.org/articles/my-first-article/
+```
+
+ファイル拡張子を含める場合は、以下のようにします。
+
+{{< code-toggle file="content/posts/post-1.md" copy=false fm=true >}}
+title = 'My First Article'
+url = '/articles/my-first-article.html'
 {{< /code-toggle >}}
 
-また、セクションの代わりにタクソノミーの複数形を使用することで、同じ構文でタクソノミーのパーマリンクを設定することもできます。おそらく、設定値 `:slug` と `:title` のみを使用したいことでしょう。
+結果の URL は以下のようになります。
 
-### パーマリンクの設定値 {#permalink-configuration-values}
+```text
+https://example.org/articles/my-first-article.html
+```
 
-以下は、サイトの `config` ファイルにある `permalink` の定義で使用できる値のリストです。時間に関するすべての参照は、コンテンツの日付に依存します。
+単一言語サイトでは、先頭のスラッシュの有無にかかわらず、 `url` 値は `baseURL` からの相対パスとなります。
+
+多言語サイトの場合は、以下のようになります。
+
+- スラッシュを先頭に持つ `url` 値は、 `baseURL` からの相対パスです。
+- 先頭のスラッシュがない `url` 値は、 `baseURL` に言語プレフィックスを加えたものからの相対パスとなります。
+
+サイトのタイプ | フロントマターの `url` | 結果の URL
+:--|:--|:--
+単一言語 | `/about` | `https://example.org/about/`
+単一言語 | `about` | `https://example.org/about/`
+多言語   | `/about` | `https://example.org/about/`
+多言語   | `about` | `https://example.org/de/about/`
+
+フロントマターに `slug` と `url` の両方を設定した場合、`url` の値が優先されます。
+
+## サイト構成 {#site-configuration}
+
+### パーマリンク {#permalinks}
+
+サイト構成で、各トップレベル セクションの URL パターンを定義します。 
+各 URL パターンは、指定された言語および/または [ページの種類][page kind] をターゲットにすることができます。
+
+フロントマターの `url` 値は、サイト設定の `permalinks` セクションで定義された URL パターンをオーバーライド (上書き) します。
+
+[page kind]: /templates/section-templates/#page-kinds
+
+#### 単一言語の例 {#permalinks-monolingual-examples}
+
+以下のコンテンツ構造を考えます。
+
+```text
+content/
+├── posts/
+│   ├── bash-in-slow-motion.md
+│   └── tls-in-a-nutshell.md
+├── tutorials/
+│   ├── git-for-beginners.md
+│   └── javascript-bundling-with-hugo.md
+└── _index.md
+```
+
+チュートリアル (tutorial) を「トレーニング (training)」の下に表示し、投稿 (post) を日付ベースの階層を使用して「記事 (articles)」の下に表示します。
+
+{{< code-toggle file="hugo" copy=false >}}
+[permalinks.page]
+posts = '/articles/:year/:month/:slug/'
+tutorials = '/training/:slug/'
+[permalinks.section]
+posts = '/articles/'
+tutorials = '/training/'
+{{< /code-toggle >}}
+
+公開されるサイトの構造は、以下のようになります。
+
+```text
+public/
+├── articles/
+│   ├── 2023/
+│   │   ├── 04/
+│   │   │   └── bash-in-slow-motion/
+│   │   │       └── index.html
+│   │   └── 06/
+│   │       └── tls-in-a-nutshell/
+│   │           └── index.html
+│   └── index.html
+├── training/
+│   ├── git-for-beginners/
+│   │   └── index.html
+│   ├── javascript-bundling-with-hugo/
+│   │   └── index.html
+│   └── index.html
+└── index.html
+```
+
+コンテンツルート内の通常ページに日付ベースの階層を作成するには、以下のようにします。
+
+{{< code-toggle file="hugo" copy=false >}}
+[permalinks.page]
+"/" = "/:year/:month/:slug/"
+{{< /code-toggle >}}
+
+タクソノミー用語についても同じ方法を使います。
+たとえば、URL のタクソノミー セグメントを省略する場合は、以下のようにします。
+
+{{< code-toggle file="hugo" copy=false >}}
+[permalinks.term]
+'tags' = '/:slug/'
+{{< /code-toggle >}}
+
+#### 多言語の例 {#permalinks-multilingual-example}
+
+ローカライズ戦略のコンポーネントとして `permalinks` 設定を使用します。
+
+以下のコンテンツ構造を考えます。
+
+```text
+content/
+├── de/
+│   ├── books/
+│   │   ├── les-miserables.md
+│   │   └── the-hunchback-of-notre-dame.md
+│   └── _index.md
+└── en/
+    ├── books/
+    │   ├── les-miserables.md
+    │   └── the-hunchback-of-notre-dame.md
+    └── _index.md
+```
+
+そして、以下のサイト構成を用いると、
+
+{{< code-toggle file="hugo" copy=false >}}
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+
+[languages.en]
+contentDir = 'content/en'
+languageCode = 'en-US'
+languageDirection = 'ltr'
+languageName = 'English'
+weight = 1
+
+[languages.en.permalinks.page]
+books = "/books/:slug/"
+
+[languages.en.permalinks.section]
+books = "/books/"
+
+[languages.es]
+contentDir = 'content/de'
+languageCode = 'es-ES'
+languageDirection = 'ltr'
+languageName = 'Español'
+weight = 2
+
+[languages.es.permalinks.page]
+books = "/libros/:slug/"
+
+[languages.es.permalinks.section]
+books = "/libros/"
+{{< /code-toggle >}}
+
+公開されるサイトの構造は、以下のようになります。
+
+```text
+public/
+├── en/
+│   ├── books/
+│   │   ├── les-miserables/
+│   │   │   └── index.html
+│   │   ├── the-hunchback-of-notre-dame/
+│   │   │   └── index.html
+│   │   └── index.html
+│   └── index.html
+├── es/
+│   ├── libros/
+│   │   ├── les-miserables/
+│   │   │   └── index.html
+│   │   ├── the-hunchback-of-notre-dame/
+│   │   │   └── index.html
+│   │   └── index.html
+│   └── index.html
+└── index.html
+```
+
+#### トークン {#tokens}
+
+URL パターンを定義する際には、以下のトークンを使用します。
+フロントマターの `date` フィールドは、時間に関連するトークンの値を決定します。
 
 `:year`
 : 4 桁の年
@@ -107,216 +296,166 @@ permalinks:
 `:filename`
 : コンテンツのファイル名 (拡張子なし)
 
-さらに、`:` を先頭に持つ Go 時間形式文字列を使用することもできる。
+時間関連の値には、Go の [time パッケージ][time package] で定義されているレイアウト文字列コンポーネントを使用することもできます。たとえば、以下のコードです。
+
+[time package]: https://pkg.go.dev/time#pkg-constants
+
+{{< code-toggle file="hugo" copy=false >}}
+permalinks:
+  posts: /:06/:1/:2/:title/
+{{< /code-toggle >}}
+
+### アピアランス {#appearance}
+
+URL のアピアランスは、アグリーかプリティーのどちらかです。
+
+タイプ|パス|URL
+:--|:--|:--
+アグリー|content/about.md|`https://example.org/about.html`
+プリティー|content/about.md|`https://example.org/about/`
+
+デフォルトでは、Hugo はプリティー URL を生成します。
+アグリー URL を生成するには、サイトの設定を変更してください。
+
+{{< code-toggle file="hugo" copy=false >}}
+uglyURLs = true
+{{< /code-toggle >}}
+
+### 後処理 {#post-processing}
+
+Hugo は、ページのレンダリング後に URL を変更するための、互いに排他的な 2 つの設定オプションを提供しています。
+
+#### 正規 URL {#canonical-urls}
+
+{{% note %}}
+これはレガシーな設定オプションで、テンプレート関数やマークダウンレンダーフックに取って代わられ、おそらく [将来のリリースで削除される][removed in a future release] でしょう。
+
+[removed in a future release]: https://github.com/gohugoio/hugo/issues/4733
+{{% /note %}}
+
+有効にすると、Hugo はページのレンダリング後に検索と置換を実行します。 
+これは `action`、`href`、`src`、`srcset`、`url` 属性に関連するサイト相対 URL (先頭にスラッシュがあるもの) を検索します。
+次に、 `baseURL` を先頭につけて絶対 URL を作成します。
+
+```text
+<a href="/about"> → <a href="https://example.org/about/">
+<img src="/a.gif"> → <img src="https://example.org/a.gif">
+```
+
+これは不完全で強引なアプローチであり、コンテンツだけでなく HTML 属性にも影響を与える可能性があります。
+上で述べたように、これはレガシーな設定オプションであり、将来のリリースでは削除される可能性があります。
+
+有効にするには、以下のようにします。
+
+{{< code-toggle file="hugo" copy=false >}}
+canonifyURLs = true
+{{< /code-toggle >}}
+
+#### 相対 URL {$relative-urls}
+
+{{% note %}}
+ファイルシステム経由でナビゲート可能なサーバーレス サイトを作成する場合を除き、このオプションを有効にしないでください。
+{{% /note %}}
+
+有効にすると、Hugo はページのレンダリング後に検索と置換を実行します。
+これは `action`、`href`、`src`、`srcset`、`url` 属性に関連するサイト相対 URL (先頭にスラッシュがあるもの) を検索します。
+次に、現在のページからの相対 URL に変換します。
+
+たとえば、`content/posts/post-1` をレンダリングするとき、
+
+```text
+<a href="/about"> → <a href="../../about">
+<img src="/a.gif"> → <img src="../../a.gif">
+```
+
+これは不完全で強引なアプローチであり、コンテンツだけでなく HTML 属性にも影響を与える可能性があります。
+上で述べたように、サーバーレス サイトを作成する場合を除き、このオプションを有効にしないでください。
+
+有効にするには、以下のようにします。
+
+{{< code-toggle file="hugo" copy=false >}}
+relativeURLs = true
+{{< /code-toggle >}}
 
 ## エイリアス {#aliases}
 
-エイリアスを使用して、他の URL からページへのリダイレクトを作成できます。
+以下のようにエイリアスを使用して、古い URL から新しい URL へのリダイレクトを作成します。
 
-エイリアスには以下の 2 つの形式があります。
-
-1. たとえば、 `/posts/my-blogpost/` のように、`BaseURL` からの相対パスを意味する `/` で始まる文字列
-2. たとえば、 `my-blogpost` や `../blog/my-blogpost` (Hugo 0.55 の新機能) のように、定義されている `Page` からの相対パスとなります。
+- スラッシュを先頭に持つエイリアスは、 `baseURL` からの相対パスです。
+- スラッシュのないエイリアスは、カレント ディレクトリからの相対パスです。
 
 ### エイリアスの例 {#example-aliases}
 
-たとえば、`content/posts/my-awesome-blog-post.md` に新しいコンテンツを作成すると仮定します。このコンテンツは `content/posts/my-original-url.md` にある前回の投稿の改訂版です。 新しい `my-awesome-blog-post.md` のフロントマターに `aliases` フィールドを作成し、そこに以前のパスを追加できます。以下の例では、このフィールドを TOML と YAML のフロントマターでそれぞれ作成する方法を示しています。
+既存のページのファイル名を変更し、以前の URL から新しい URL へのエイリアスを作成します。
 
-#### TOML フロントマター
+{{< code-toggle file="content/posts/new-file-name.md" copy=false >}}
+aliases = ['/posts/previous-file-name']
+{{< /code-toggle >}}
 
-{{< code file="content/posts/my-awesome-post.md" copy="false" >}}
-+++
-aliases = [
-    "/posts/my-original-url/",
-    "/2010/01/01/even-earlier-url.html"
-]
-+++
-{{< /code >}}
+これらのディレクトリ相対エイリアスのそれぞれは、上記のサイト相対エイリアスと等価です。
 
-#### YAML フロントマター
+- `previous-file-name`
+- `./previous-file-name`
+- `../posts/previous-file-name`
 
-{{< code file="content/posts/my-awesome-post.md" copy="false" >}}
----
-aliases:
-    - /posts/my-original-url/
-    - /2010/01/01/even-earlier-url.html
----
-{{< /code >}}
+現在のページに複数のエイリアスを作成できます。
 
-これで、エイリアスで指定された場所にアクセスすると --- つまり、 _同じサイトドメインであると仮定して_ ---、指定されたページにリダイレクトされるようになります。たとえば、`example.com/posts/my-original-url/` にアクセスした人は、すぐに `example.com/posts/my-awesome-post/` にリダイレクトされます。
+{{< code-toggle file="content/posts/new-file-name.md" copy=false >}}
+aliases = ['previous-file-name','original-file-name']
+{{< /code-toggle >}}
 
-### 例: 多言語版でのエイリアス {#example-aliases-in-multilingual}
+多言語サイトでは、ディレクトリ相対エイリアスを使用するか、以下のようにサイト相対エイリアスに言語プレフィックスを含めます。
 
-[多言語サイト][multilingual] では、投稿の各翻訳に固有のエイリアスを設定できます。複数の言語で同じエイリアスを使用するには、言語コードをプレフィックスとして付けます。
+{{< code-toggle file="content/posts/new-file-name.de.md" copy=false >}}
+aliases = ['/de/posts/previous-file-name']
+{{< /code-toggle >}}
 
-`/posts/my-new-post.es.md` の場合は、以下のように指定します。
+### エイリアスの仕組み {#how-aliases-work}
 
-```md
----
-aliases:
-    - /es/posts/my-original-post/
----
+上記の最初の例を使用して、Hugo は以下のサイト構造を生成します。
+
+```text
+public/
+├── posts/
+│   ├── new-file-name/
+│   │   └── index.html
+│   ├── previous-file-name/
+│   │   └── index.html
+│   └── index.html
+└── index.html
 ```
 
-Hugo 0.55 からは、ページ相対のエイリアスも使用できるようになり、 `/es/posts/my-original-post/` は、より移植性の高い `my-original-post/` に簡略化できます。
+以前の URL から新しい URL へのエイリアスは、以下のようなクライアント側のリダイレクトです。
 
-### Hugo エイリアスの仕組み {#how-hugo-aliases-work}
-
-エイリアスが指定されると、Hugo はエイリアスのエントリにマッチするディレクトリを作成します。そのディレクトリの中に、Hugo はページの正規の URL と新しいリダイレクト先を指定した `.html` ファイルを作成します。
-
-たとえば、`posts/my-intended-url.md` のコンテンツファイルに、以下のようなフロントマターがあるとします。
-
-```yml
----
-title: My New post
-aliases: [/posts/my-old-url/]
----
-```
-
-`baseURL` が `example.com` であると仮定すると、`https://example.com/posts/my-old-url/` にある自動生成されたエイリアス `.html` の内容は、以下のようになります。
-
-```html
+{{< code file="posts/previous-file-name/index.html" copy=false >}}
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <title>https://example.com/posts/my-intended-url</title>
-    <link rel="canonical" href="https://example.com/posts/my-intended-url"/>
+    <title>https://example.org/posts/new-file-name/</title>
+    <link rel="canonical" href="https://example.org/posts/new-file-name/">
     <meta name="robots" content="noindex">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="refresh" content="0; url=https://example.com/posts/my-intended-url"/>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=https://example.org/posts/new-file-name/">
   </head>
 </html>
-```
+{{< /code >}}
 
-`http-equiv="refresh"` 行はリダイレクトを実行するもので、この場合は 0 秒で実行されます。Web サイトのエンドユーザーが `https://example.com/posts/my-old-url` にアクセスした場合、自動的に新しい正しい URL にリダイレクトされます。 `<meta name="robots" content="noindex">` の追加により、検索エンジンのボットに、エイリアスページ (`https://example.com/posts/my-old-url/`) をインデックスしてはいけないことを知らせることができます。
+`head` セクションの要素は、以下のとおりです。
 
-### カスタマイズ {#customize}
+- 新しい URL が正規であることを検索エンジンに伝えます
+- 以前の URL をインデックスに登録しないよう検索エンジンに指示します
+- ブラウザに新しい URL にリダイレクトするように指示します
 
-このエイリアスページをカスタマイズするには、サイトの layouts フォルダーに `alias.html` テンプレートを作成します (たとえば、`layouts/alias.html`)。この場合、テンプレートに渡されるデータは、以下です。
+Hugo はページをレンダリングする前にエイリアス ファイルをレンダリングします。
+予想どおり、以前のファイル名を持つ新しいページによってエイリアスが上書きされます。
+
+### カスタマイズする {#customize}
+
+エイリアスファイルの内容をカスタマイズするために、新しいテンプレート (`layouts/alias.html`) を作成します。
+テンプレートは、以下のコンテキストを受け取ります。
 
 `Permalink`
 : エイリアスが設定されているページへのリンク
 
 `Page`
 : エイリアスが設定されているページのページデータ
-
-### エイリアスの重要な動作 {#important-behaviors-of-aliases}
-
-1. Hugo はエイリアスについて何の仮定もしません。また、UglyURLs の設定に基づいて変更されることもありません。 Web ルートへの絶対パスと完全なファイル名またはディレクトリを指定する必要があります。
-2. エイリアスは、コンテンツがレンダリングされる *前に* レンダリングされるため、同じ場所のコンテンツによって上書きされます。
-
-## プリティー URL {#pretty-urls}
-
-Hugo のデフォルトの動作は、コンテンツを「プリティー URL」でレンダリングすることです。これらの「プリティー URL」を動作させるために、非標準のサーバ側の設定は必要ありません。
-
-以下は、その概念を示すものです。
-
-```txt
-content/posts/_index.md
-=> example.com/posts/
-content/posts/post-1.md
-=> example.com/posts/post-1/
-```
-
-## アグリー URL {#ugly-urls}
-
-「アグリー URL」と呼ばれることが多いもの (たとえば、example.com/urls.html) を使用したい場合は、サイトの `config.toml` または `config.yaml` にそれぞれ `uglyurls = true` または `uglyurls: true` を設定してください。また、`hugo` または `hugo server` を実行する際に、環境変数 `HUGO_UGLYURLS` を `true` に設定することもできます。
-
-特定のコンテンツに正確な URL を持たせたい場合は、`url` キーの下の [フロントマター][front matter] で指定します。以下は、同じコンテンツ ディレクトリで、Hugo がデフォルトの動作で実行されたときに、最終的にどのような URL 構造になるかの例です。
-
-パスの詳細については、[「コンテンツ構成」][contentorg] を参照してください。
-
-```txt
-.
-└── content
-    └── about
-    |   └── _index.md  // <- https://example.com/about/
-    ├── posts
-    |   ├── firstpost.md   // <- https://example.com/posts/firstpost/
-    |   ├── happy
-    |   |   └── ness.md  // <- https://example.com/posts/happy/ness/
-    |   └── secondpost.md  // <- https://example.com/posts/secondpost/
-    └── quote
-        ├── first.md       // <- https://example.com/quote/first/
-        └── second.md      // <- https://example.com/quote/second/
-```
-
-以下は、同じ構成を `hugo --uglyURLs` で実行したものです。
-
-```txt
-.
-└── content
-    └── about
-    |   └── _index.md  // <- https://example.com/about.html
-    ├── posts
-    |   ├── firstpost.md   // <- https://example.com/posts/firstpost.html
-    |   ├── happy
-    |   |   └── ness.md    // <- https://example.com/posts/happy/ness.html
-    |   └── secondpost.md  // <- https://example.com/posts/secondpost.html
-    └── quote
-        ├── first.md       // <- https://example.com/quote/first.html
-        └── second.md      // <- https://example.com/quote/second.html
-```
-
-## 正規化 {#canonicalization}
-
-デフォルトでは、入力で見つかったすべての相対 URL は変更されず、たとえば `/css/foo.css` は `/css/foo.css` として残ります。サイトの `config` にある `canonifyURLs` フィールドは、デフォルトで `false` になっています。
-
-`canonifyURLs` を `true` に設定すると、すべての相対 URL は `baseURL` を使用して *正規化* されます。 たとえば、`baseURL = https://example.com/` と仮定すると、相対 URL である `/css/foo.css` は絶対 URL である `https://example.com/css/foo.css` に変換されます。
-
-正規化の利点は、すべての URL を絶対 URL に固定することが含まれます。これは、一部のパース作業に役立つ場合があります。しかし、最近のブラウザはすべて、クライアント側で問題なくこれを処理することに注意してください。
-
-非正規化の利点としては、スキームに関係なくリソースを含めることができます。 たとえば、`http` と `https` は、ページをどのように取得したかに応じて決定できます。
-
-{{% note "`canonifyURLs` default change" %}}
-2014年5月にリリースされた Hugo v0.11 では、`canonifyURLs` のデフォルト値が `true` から `false` に変更されましたが、これはより良いデフォルトであり、今後もそうあるべきと考えています。 v0.10 またはそれ以前のバージョンからアップグレードする場合は、適宜確認・調整してください。
-{{< /note >}}
-
-Web サイトの `canonifyURLs` の現在の値を知るには、v0.13 で追加された便利な `hugo config` コマンドを使用できます。
-
-```txt
-hugo config | grep -i canon
-```
-
-または、Windows で、`grep` がインストールされていない場合は、以下のコマンドを実行します。
-
-```txt
-hugo config | FINDSTR /I canon
-```
-
-## フロントマターに URL を設定する {#set-url-in-front-matter}
-
-さまざまなコンテンツセクションのサイト設定でパーマリンク値を指定することに加えて、Hugo では、個々のコンテンツをさらに細かく制御できます。
-
-`slug` と `url` の両方は、個々のフロントマターで定義できます。ビルド時のコンテンツの行き先についての詳細は、[「コンテンツ構成」][contentorg] を参照してください。
-
-Hugo 0.55 からは、現在のサイトのコンテキスト (言語) に対する相対的な URL を使用できるようになり、メンテナンスがより簡単になりました。日本語の翻訳の場合、以下の例の両方が同じ URL になります。
-
-```markdown
----
-title: "Custom URL!"
-url: "/jp/custom/foo"
----
-```
-
-```markdown
----
-title: "Custom URL!"
-url: "custom/foo"
----
-```
-
-## 相対 URL {#relative-urls}
-
-Hugo のデフォルトでは、相対 URL はすべて変更されないため、ローカル ファイルシステムからサイトを閲覧できるようにしたい場合に問題となることがあります。
-
-[サイト設定][config] で `relativeURLs` を `true` に設定すると、Hugo はすべての相対 URL を現在のコンテンツからの相対 URL に書き換えます。
-
-たとえば、`/posts/first/` ページに `/about/` へのリンクがある場合、Hugo は URL を `../../about/` に書き換えます。
-
-[config]: /getting-started/configuration/
-[contentorg]: /content-management/organization/
-[front matter]: /content-management/front-matter/
-[multilingual]: /content-management/multilingual/
-[sections]: /content-management/sections/
-[usage]: /getting-started/usage/

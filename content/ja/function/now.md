@@ -1,20 +1,17 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 現在のローカルタイムを返します
 draft: false
-hugoversion: null
 keywords:
 - dates
 - time
 lastmod: "2017-04-30"
-linktitle: now
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - Unix
@@ -22,7 +19,6 @@ relatedfuncs:
 signature:
 - now
 title: now
-workson: []
 ---
 
 [`time.Time`](https://godoc.org/time#Time) を参照してください。
@@ -31,7 +27,7 @@ workson: []
 
 ```go-html-template
 <div>
-    <small>&copy; {{ now.Format "2006"}}</small>
+    <small>&copy; {{ now.Format "2006" }}</small>
 </div>
 ```
 

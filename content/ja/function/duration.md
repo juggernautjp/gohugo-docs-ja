@@ -1,13 +1,12 @@
 ---
 title: duration
 description: 指定された時間単位と継続時間の値を使用して、 `time.Duration` 構造体を返します。
-categories: [functions]
+categories: [function]
 menu:
   docs:
-    parent: "functions"
+    parent: function
 keywords: [time duration]
 signature: ["duration TIME_UNIT DURATION_NUMBER"]
-aliases: []
 ---
 
 `time.Duration` は、指定された数値を [`time.Duration`](https://pkg.go.dev/time#Duration) 構造体に変換して、そのフィールドにアクセスできるようにします。 

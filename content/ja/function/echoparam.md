@@ -1,23 +1,19 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: パラメータが設定されている場合は、それを出力します。
 draft: false
-hugoversion: null
 keywords: []
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - echoParam DICTIONARY KEY
 title: echoParam
-workson: []
 ---
 
 

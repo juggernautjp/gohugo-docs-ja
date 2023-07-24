@@ -1,6 +1,5 @@
 ---
 title: hasprefix
-linktitle: hasPrefix
 description: Tests whether a string begins with prefix.
 date: 2017-02-01
 publishdate: 2017-02-01
@@ -9,11 +8,11 @@ categories: [functions]
 menu:
   docs:
     parent: "functions"
-keywords: []
+keywords: [strings]
 signature: ["hasPrefix STRING PREFIX"]
 workson: []
 hugoversion:
-relatedfuncs: []
+relatedfuncs: [hasSuffix]
 deprecated: false
 aliases: []
 ---

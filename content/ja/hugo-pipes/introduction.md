@@ -7,34 +7,33 @@ date: "2018-07-14"
 description: Hugo パイプは、Hugo のアセット処理関数のセットです。
 draft: false
 keywords: []
-linkTitle: Hugo パイプ
+linkTitle: パイプ入門
 menu:
   docs:
-    parent: pipes
+    parent: hugo-pipes
     weight: 20
 publishdate: "2018-07-14"
-sections_weight: 01
 title: Hugo パイプ入門
 toc: true
-weight: 01
+weight: 20
 ---
 
 ## /assets 内のリソースを検索する {#find-resources-in-assets}
 
 これは `/assets` 内にマウントされたグローバル リソースに関するものです。 `.Page` にスコープされたリソースについては、[「ページリソース」](/content-management/page-resources/) を参照してください。
 
-[マウント設定](/hugo-modules/configuration/#module-config-mounts) を使用して、Hugo の `assets` 仮想フォルダーに任意のディレクトリをマウントできることに注意してください。
+[マウント設定](/hugo-modules/configuration/#module-configuration-mounts) を使用して、Hugo の `assets` 仮想フォルダーに任意のディレクトリをマウントできることに注意してください。
 
 | 関数  | 説明 |
 | ------------- | ------------- |
-| `resources.Get`  | Get は、指定されたファイル名を Hugo のアセット ファイルシステムから探し出し、さらなる変換に使用できる `Resource` オブジェクトを生成します。詳細は、[「resources.Get と resources.GetRemote でリソースを取得する」](#get-resource-with-resourcesget-and-resourcesgetremote) を参照してください。  |
-| `resources.GetRemote`  | `Get` と同じですが、リモートの URL を受け付けます。 [「resources.Get と resources.GetRemote でリソースを取得する」](#get-resource-with-resourcesget-and-resourcesgetremote) を参照してください。 |
+| `resources.Get`  | Get は、指定されたファイル名を Hugo のアセット ファイルシステムから探し出し、さらなる変換に使用できる `Resource` オブジェクトを生成します。詳細は、[「リソースを取得する」](#get-a-resource) を参照してください。  |
+| `resources.GetRemote`  | `Get` と同じですが、リモートの URL を受け付けます。 [「リソースを取得する」](#get-a-resource) を参照してください。 |
 | `resources.GetMatch`  | ``GetMatch` は、指定されたパターンにマッチする最初の Resource を見つけます。 見つからない場合は nil を返します。 使用されるルールについてのより完全な説明は、`Match` を参照してください。 |
 | `resources.Match`  | `Match` は、指定されたベースパスのプレフィックスにマッチするすべてのリソースを取得します。たとえば、 "\*.png" は、すべての png ファイルにマッチします。 "\*" はパスの区切り文字 (`/`) にはマッチしないので、リソースをサブフォルダにまとめる場合は、たとえば、"images/\*.png" のようにそれを明示する必要があります。 バンドル内の任意の PNG 画像にマッチさせるには "\*\*.png" を指定し、images フォルダー以下のすべての PNG 画像にマッチさせるには "images/\*\*.jpg" を使用します。 マッチングは大文字と小文字を区別しません。`Match` は、ファイルシステムのルートからの相対パスで、Unix スタイルのスラッシュ (`/`) と先行するスラッシュを含まないファイル名を使用して、マッチングします (たとえば、 "images/logo.png")。 完全なルールセットについては、https://github.com/gobwas/glob を参照してください。 |
 
 この名前空間のすべてのテンプレート関数の最新の概要については、 `resources` パッケージの [GoDoc ページ](https://pkg.go.dev/github.com/gohugoio/hugo@v0.93.1/tpl/resources) を参照してください。
 
-## resources.Get と resources.GetRemote でリソースを取得する {#get-resource-with-resourcesget-and-resourcesgetremote}
+## リソースを取得する {#get-a-resource}
 
 Hugo パイプでアセットを処理するには、 `resources.Get` または `resources.GetRemote` を使用して `Resource` として取得する必要があります。
 
@@ -54,14 +53,25 @@ Hugo パイプでアセットを処理するには、 `resources.Get` または 
 
 ## リソースをコピーする {#copy-a-resource}
 
-{{< new-in "0.100.0" >}}
-
 `resources.Copy` を使用すると、ほぼすべての Hugo `Resource` (1 つの例外は `Page`) をコピーできます。おそらく、名前を変更するときに最も役に立つでしょう。
 
 ```go-html-template
 {{ $resized := $image.Resize "400x400" |  resources.Copy "images/mynewname.jpg" }}
 <img src="{{ $resized.RelPermalink }}">
 ```
+
+{{< new-in "0.110.0" >}} 返された `Resource` 内の `.Data` を使用して、HTTP レスポンスに関する情報を取得できます。 これは、ボディのない HEAD リクエストの場合に特に便利です。 データ オブジェクトには次のものが含まれます。
+
+StatusCode
+: HTTP ステータスコード。たとえば、 200
+Status
+: HTTP ステータス テキスト。たとえば、「200 OK」
+TransferEncoding
+: 転送エンコーディング。たとえば、 "chunked"
+ContentLength
+: コンテンツの長さ。 たとえば、1234
+ContentType
+: コンテンツタイプ、たとえば、 "text/html"
 
 ### キャッシュ化 {#caching}
 
@@ -92,16 +102,16 @@ Hugo パイプでアセットを処理するには、 `resources.Get` または 
 
 ### リモートオプション {#remote-options}
 
-リモート `Resource` をフェッチするとき、`resources.GetRemote` はオプションのオプションマップを最後の引数として受け取ります。たとえば、次の通りです。
+リモートの `Resource` を取得する場合、`resources.GetRemote` はオプションのオプションマップを第2引数として受け取ります。たとえば、次の通りです。
 
 ```go-html-template
-{{ $resource := resources.GetRemote "https://example.org/api" (dict "headers" (dict "Authorization" "Bearer abcd"))  }}
+{{ $resource := resources.GetRemote "https://example.org/api" (dict "headers" (dict "Authorization" "Bearer abcd")) }}
 ```
 
 同じヘッダーキーに複数の値が必要な場合は、以下のようにスライスを使用します。
 
 ```go-html-template
-{{ $resource := resources.GetRemote "https://example.org/api"  (dict "headers" (dict "X-List" (slice "a" "b" "c")))  }}
+{{ $resource := resources.GetRemote "https://example.org/api"  (dict "headers" (dict "X-List" (slice "a" "b" "c"))) }}
 ```
 
 また、リクエストメソッドを変更したり、リクエストボディを設定することもできます。
@@ -119,6 +129,29 @@ Hugo パイプでアセットを処理するには、 `resources.Get` または 
 ### リモートリソースのキャッシュ化 {#caching-of-remote-resources}
 
 `resources.GetRemote` でフェッチしたリモートリソースは、ディスク上にキャッシュされます。詳細については、[「ファイルキャッシュの設定」](/getting-started/configuration/#configure-file-caches) を参照してください。
+
+## リソースをコピーする {#copy-a-resource}
+
+{{< new-in "0.100.0" >}}
+
+ページリソースやグローバルリソースをコピーするには `resources.Copy` を使用します。
+リソースの公開パスを変更するためによく使用される `resources.Copy` は 2 つの引数、
+`publishDir` のルートからの相対パス（先頭の `/` はあってもなくても構いません）と、コピーするリソースを取ります。
+
+```go-html-template
+{{ with resources.Get "img/a.jpg" }}
+  {{ with .Resize "300x" }}
+    {{ with resources.Copy "img/a-new.jpg" . }}
+      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+    {{ end }}
+  {{ end }}
+{{ end }}
+```
+
+{{% note %}}
+上の例に示すように、ターゲット パスはソース パスとは異なる必要があります。
+GitHub issue [#10412](https://github.com/gohugoio/hugo/issues/10412) を参照してください。
+{{% /note %}}
 
 ## アセットディレクトリ {#asset-directory}
 

@@ -13,7 +13,7 @@
 
 目的のエディション、OS、およびアーキテクチャ用のビルド済みバイナリが表示されない場合は、以下のいずれかの方法で Hugo をインストールしてください。
 
-[commit information]: https://gohugo.io/variables/git
+[commit information]: /svariables/git
 [edition]: #editions
 [Git]: https://git-scm.com/
 [Go]: https://go.dev/

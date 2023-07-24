@@ -25,14 +25,13 @@ title: hugo server
 
 Hugo は、サイトを構築し機能する、独自の Web サーバーを提供します。
 hugo サーバーは高性能ですが、オプションが限られた Web サーバーです。
-多くの人が本番環境で実行しますが、標準的な動作は人々が開発で使用し、本番環境では、Nginx や Caddy などのより高機能のサーバーを使用することです。
 
 'hugo server' は、レンダリングおよび実行されたコンテンツをディスクに書き込むことを避け、メモリに保存することを好みます。
 
 デフォルトでは、hugo はファイルの変更を監視し、サイトを自動的にリビルドします。 次に、開いているブラウザ ページをライブリロードし、最新のコンテンツをプッシュします。 ほとんどの Hugo サイトはほんの一瞬でビルドされるため、変更を保存したのとほぼ同時に確認することができます。
 
 ```bash
-hugo server [flags]
+hugo server [command] [flags]
 ```
 
 ### オプション {#options}
@@ -46,9 +45,7 @@ hugo server [flags]
   -F, --buildFuture                公開日が将来のコンテンツを含めます
       --cacheDir string            キャッシュ ディレクトリへのファイルシステムのパス。 デフォルトは、 $TMPDIR/hugo_cache/ です
       --cleanDestinationDir        静的ディレクトリに見つからないファイルを宛先から削除します
-      --clock string               Hugo が使用する時計を設定します。たとえば、 --clock 2021-11-06T22:30:00.00+09:00
-   -c, --contentDir string         コンテンツ ディレクトリへのファイルシステムのパス
-  -d, --destination string         ファイルを書き込むファイルシステムのパス
+  -c, --contentDir string          コンテンツ ディレクトリへのファイルシステムのパス
       --disableBrowserError        ブラウザでビルドエラーを表示しません
       --disableFastRender          変更時に完全な再レンダリングを有効にします
       --disableKinds strings       さまざまな種類のページ (ホーム、RSS など) を無効にします
@@ -58,8 +55,6 @@ hugo server [flags]
       --gc                         ビルド後にいくつかのクリーンアップ タスク (未使用のキャッシュ ファイルを削除する) を実行できるようにします
   -h, --help                       server サブコマンドのヘルプ
       --ignoreCache                キャッシュ ディレクトリを無視します
-  -e, --environment string         ビルド環境
-      --ignoreVendorPaths string   指定された glob パターンに一致するモジュールパスの _vendor を無視します
   -l, --layoutDir string           レイアウト ディレクトリへのファイルシステムのパス
       --liveReloadPort int         ライブリロード用のポート (つまり、HTTPS プロキシの場合は、443) (デフォルトは、-1)
       --meminterval string         メモリ使用量をポーリングする間隔 (--memstats が必要)。有効な時間単位は、"ns"、"us" (または "µs")、"ms"、"s"、"m"、"h" です。 (デフォルトは、"100ms")
@@ -79,11 +74,12 @@ hugo server [flags]
       --printUnusedTemplates       未使用のテンプレートに関する警告を表示します
       --renderStaticToDisk         静的ファイルはディスクから、動的ファイルはメモリから提供します
       --renderToDisk               ディスクからすべてのファイルを提供します (デフォルトはメモリからです)
-  -s, --source string              ファイルの相対パスを読み取るファイルシステムのパス
       --templateMetrics            テンプレート実行に関するメトリクスを表示します
       --templateMetricsHints       --templateMetrics と組み合わせると、いくつかの改善のヒントが計算されます
-  -t, --theme strings              使用するテーマ (/themes/THEMENAME/ にあります)
-      --themesDir string           テーマディレクトリへのファイルシステムのパス
+  -t, --theme strings              使用するテーマ (/themes/THEMENAME/ に置かれた) 
+      --tlsAuto                    ローカルで信頼できる証明書を生成して使用します。
+      --tlsCertFile string         TLS 証明書ファイルへのパス
+      --tlsKeyFile string          TLS キー ファイルへのパス
       --trace file                 トレースをファイルに書き出します (一般には有用ではありません)
   -w, --watch                      ファイルシステムの変更を監視し、必要に応じて再作成します (デフォルトは、true)
 ```
@@ -91,17 +87,21 @@ hugo server [flags]
 ### 親コマンドから継承されたオプション {#options-inherited-from-parent-commands}
 
 ```bash
-      --config string              設定ファイル (デフォルトは、 path/config.yaml|json|toml)
+      --clock string               Hugo が使用する時計を設定します。たとえば、 --clock 2021-11-06T22:30:00.00+09:00
+      --config string              設定ファイル (デフォルトは、 hugo.yaml|json|toml)
       --configDir string           設定ディレクトリ (デフォルトは、 "config")
       --debug                      デバッグ出力
-      --log                        ロギングを有効にします
-      --logFile string             ログファイルのパス (設定されている場合、ログが自動的に有効になります)
+  -d, --destination string         ファイルを書き込むファイルシステムのパス
+  -e, --environment string         ビルド環境
+      --ignoreVendorPaths string   指定された glob パターンに一致するモジュールパスの _vendor を無視します
+      --logLevel string            ログレベル (debug|info|warn|error)
       --quiet                      クワイエットモード (通知オフ) でビルドします
+  -s, --source string              ファイルの相対パスを読み取るファイルシステムのパス
+      --themesDir string           テーマディレクトリへのファイルシステムのパス
   -v, --verbose                    詳細出力 (冗長表示)
-      --verboseLog                 詳細ログ出力
 ```
 
 ### 関連項目 {#see-also}
 
 * [hugo](/commands/hugo/)	 - あなたのサイトをビルド (構築) します
-
+* [hugo server trust](/commands/hugo_server_trust/)	 - ローカル CA をシステム トラストストアにインストールします。

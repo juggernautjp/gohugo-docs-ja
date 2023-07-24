@@ -1,30 +1,27 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 呼び出しごとに再レンダリングする必要のないパーシャルのキャッシュを可能にします。
 draft: false
-hugoversion: null
 keywords:
 - performance
 lastmod: "2017-02-01"
-linktitle: partialCached
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - partialCached LAYOUT INPUT [VARIANT...]
 title: partialCached
-workson: []
 ---
 
 `partialCached` テンプレート関数は、呼び出しのたびに再レンダリングする必要のない複雑なテンプレートのパフォーマンスを大幅に向上させることができます。
 
 **注意:** 各サイト (または言語) は独自の `partialCached` キャッシュがあるので、各サイトは一度だけパーシャルを実行することになります。
+
+**Note**： Hugo はページを並列にレンダリングし、`partialCached` 関数を同時に呼び出すことで、パーシャルを複数回レンダリングします。Hugo がレンダリングしたパーシャルをキャッシュした後、ビルドパイプラインに入る新しいページはキャッシュされた結果を使用します。
 
 最も簡単な使い方は、以下のとおりです。
 
@@ -47,4 +44,5 @@ workson: []
 バリアント パラメータは基本的なパーシャルでは利用できないことに注意してください。 これらは、一意なキャッシュキーを作成するためだけに使われます。 Hugo `0.61.0` 以降では、文字列だけでなく、任意のオブジェクトをキャッシュキーとして使用できます。
 
 
-> ["The Full Partial Series Part 1: Caching!"](https://regisphilibert.com/blog/2019/12/hugo-partial-series-part-1-caching-with-partialcached/) も参照してください。
+["The Full Partial Series Part 1: Caching!"](https://regisphilibert.com/blog/2019/12/hugo-partial-series-part-1-caching-with-partialcached/) も参照してください。
+

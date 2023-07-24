@@ -9,10 +9,8 @@ keywords:
 - bundle
 - leaf
 - branch
-linktitle: ページバンドル
 menu:
   docs:
-    identifier: page-bundles
     parent: content-management
     weight: 30
 title: ページバンドル
@@ -33,7 +31,7 @@ weight: 30
 | インデックス ファイル名  | `index.md` [^fn:1]                    | `_index.md` [^fn:1]                |
 | 使用可能なリソース       | ページと非ページ (画像、PDF など) のタイプ         | 非ページ (画像、PDF など) タイプのみ        |
 | リソースを置く場所       | リーフバンドルのディレクトリ内の任意のディレクトリレベル。 | ブランチバンドルのディレクトリ **の** ディレクトリレベル、つまり `_index.md` を含むディレクトリのみ ([参照](https://discourse.gohugo.io/t/question-about-content-folder-structure/11822/4?u=kaushalmodi)). |
-| レイアウトタイプ         | `single`                                | `list`                                      |
+| レイアウトタイプ         | [`single`](/templates/single-page-templates/) | [`list`](/templates/lists)       |
 | ネスト                  | その下にさらにバンドルをネストできません    | その下にリーフバンドルまたはブランチバンドルを入れ子にできます      |
 | 例                      | `content/posts/my-post/index.md`        | `content/posts/_index.md`                 |
 | 非インデックスページ ファイルからのコンテンツ... | ページリソースとしてのみアクセス可能    | 通常のページとしてのみアクセス可能     |
@@ -124,9 +122,9 @@ _この例では、`some-headless-bundle` は、`.Name` が `"author*` に一致
 
 リーフバンドルは、フロントマター (`index.md` 内) に以下を追加することでヘッドレス バンドルにすることができます。
 
-```toml
+{{< code-toggle file="content/headless/index.md" fm=true copy=false >}}
 headless = true
-```
+{{< /code-toggle >}}
 
 このようなヘッドレス ページバンドルには、さまざまな使用例があります。
 
@@ -168,8 +166,8 @@ content/
 `branch-bundle-2`
 : このブランチバンドルは `_index.md` とネストしたリーフバンドルが含まれています。
 
-{{< note >}}
+{{% note %}}
 ブランチバンドルが作成される階層の深さは重要ではありません。
-{{< /note >}}
+{{% /note %}}
 
 [^fn:1]: `.md` 拡張子 はほんの一例です。拡張子は `.html` や `.json` など、有効な MIME タイプであれば何でも構いません。

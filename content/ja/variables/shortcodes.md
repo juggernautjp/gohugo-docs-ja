@@ -1,7 +1,7 @@
 ---
 aliases: []
 categories:
-- variables and params
+- variables and parameters
 date: "2017-03-12"
 description: ショートコードはページ変数にアクセスでき、独自の組み込み変数も持っています。
 draft: false
@@ -13,7 +13,6 @@ menu:
     parent: variables
     weight: 20
 publishdate: "2017-03-12"
-sections_weight: 20
 title: ショートコード変数
 toc: false
 weight: 20
@@ -42,9 +41,13 @@ weight: 20
 .Inner
 : [終了ショートコード][markdownshortcode] が使用されている場合、開始ショートコード タグと終了ショートコード タグの間のコンテンツを表します。
 
-[getfunction]: /function/get/
-[markdownshortcode]: /content-management/shortcodes/#shortcodes-with-markdown
-[shortcodes]: /templates/shortcode-templates/
+.Scratch
+: ショートコードコンテキストに添付されるデータを保存および操作するための書き込み可能な [`Scratch`][scratch] を返します。 このスクラッチはサーバーの再構築時にリセットされます。
 
 .InnerDeindent {{< new-in "0.100.0" >}}
 : インデントが削除された `.Inner` を取得します。これは、組み込みの `{{</* highlight */>}}` ショートコードで使用されているものです。
+
+[getfunction]: /function/get/
+[markdownshortcode]: /content-management/shortcodes/#shortcodes-with-markdown
+[shortcodes]: /templates/shortcode-templates/
+[scratch]: /functions/scratch

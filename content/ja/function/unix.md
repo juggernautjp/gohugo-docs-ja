@@ -1,6 +1,6 @@
 ---
 categories:
-- functions
+- function
 date: "2017-02-01"
 description: time.Time 値を Unix エポックからの経過秒数 (うるう秒を除く) に変換します。 Unix エポックは、1970年1月1日の 00:00:00&nbsp; UTC です。
 draft: false
@@ -9,7 +9,7 @@ keywords:
 - time
 menu:
   docs:
-    parent: functions
+    parent: function
 relatedfuncs:
 - Format
 - dateFormat

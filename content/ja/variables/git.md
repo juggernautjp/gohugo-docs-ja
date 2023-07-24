@@ -2,29 +2,25 @@
 aliases:
 - /extras/gitinfo/
 categories:
-- variables and params
+- variables and parameters
 date: "2017-03-12"
 description: すべてのコンテンツファイルについて、最新の Git リビジョン情報を取得します。
 draft: false
 keywords:
 - git
 lastmod: "2017-03-12"
-linktitle: GIt 変数
 menu:
   docs:
     parent: variables
     weight: 70
 publishdate: "2017-03-12"
-sections_weight: 70
-title: GIt Info 変数
-toc: false
+title: GIt 変数
 weight: 70
-wip: false
 ---
 
-{{% note "`.GitInfo` Performance Considerations"  %}}
+{{% note %}}
 Hugo の Git 統合はかなりパフォーマンスが高いはずですが、ビルド時間が増加する可能性が *あります*。これは、Git 履歴のサイズに依存します。
-{{< /note >}}
+{{% /note %}}
 
 ## `.GitInfo` 前提条件 {#gitinfo-prerequisites}
 

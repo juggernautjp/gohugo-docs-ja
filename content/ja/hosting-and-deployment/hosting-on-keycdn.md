@@ -1,5 +1,4 @@
 ---
-aliases: []
 categories:
 - hosting and deployment
 date: "2017-09-12"
@@ -13,10 +12,7 @@ keywords:
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 40
-slug: ""
 title: KeyCDN でのホスト
-toc: false
 ---
 
 [KeyCDN](https://www.keycdn.com/) は、Brotli 圧縮、Let's Encrypt サポート、Origin Shiel dなど、Hugo サイトの高速化と安全性をグローバルに支援する多数の機能を提供します。
@@ -92,7 +88,7 @@ git remote add origin git@gitlab.com:youruser/ci-example.git
 git push -u origin master
 ```
 
-Gitlab プロジェクトの「パイプライン (Pipelines)」で、進捗や CI ジョブの出力を確認できます。
+GitLab プロジェクトの「パイプライン (Pipelines)」で、進捗や CI ジョブの出力を確認できます。
 
 CI ジョブが問題なく実行されたことを確認したら、まず GitLab ページが `https://youruser.gitlab.io/reponame/` で表示されていることを確認します (ブラウザの設定によっては、すべてのリンクが KeyCDN ゾーンを指しているので、壊れたように見える場合がありますが、それは気にしないでください)。 次に、定義したゾーン エイリアス/ゾーン URL に移動します。
 

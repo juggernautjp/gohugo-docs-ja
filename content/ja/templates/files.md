@@ -11,16 +11,14 @@ keywords:
 - files
 - directories
 lastmod: "2017-02-01"
-linktitle: ローカルファイル テンプレート
 menu:
   docs:
     parent: templates
-    weight: 110
+    weight: 180
 publishdate: "2017-02-01"
-sections_weight: 110
 title: ローカルファイル テンプレート
 toc: true
-weight: 110
+weight: 180
 ---
 
 ## ローカルファイルをトラバースする {#traverse-local-files}
@@ -54,12 +52,11 @@ Hugo の [`readDir`][readDir] および [`readFile`][readFile] テンプレー�
 {{</* readfile file="/path/to/local/file.txt" markdown="true" */>}}
 ```
 
-{{< warning >}}
+{{% note %}}
 テーマの [カスタム ショートコード](/templates/shortcode-templates/) を `readFile` で作成する場合、ショートコードの使用はプロジェクトルートを参照し、`themes` ディレクトリを参照 *しない* ことに注意してください。
-{{< /warning >}}
+{{% /note %}}
 
 [called directly in the Hugo docs]: https://github.com/gohugoio/hugoDocs/blob/master/content/en/templates/files.md
-[dirindex]: https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/directoryindex.html
 [osfileinfo]: https://golang.org/pkg/os/#FileInfo
 [readDir]: /function/readdir/
 [readFile]: /function/readfile/

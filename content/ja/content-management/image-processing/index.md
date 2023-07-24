@@ -1,5 +1,6 @@
 ---
 categories:
+- fundamentals
 - content management
 date: "2018-01-24T13:10:00-05:00"
 description: 画像のリサイズ、クロップ (切り抜き)、回転、フィルタリング、および変換を行います。
@@ -90,7 +91,7 @@ assets/
 `image` リソースは、[`Resize`]、[`Fit`]、[`Fill`]、[`Crop`]、[`Filter`]、[`Colors`]、[`Exif`] メソッドを実装しています。
 
 {{% note %}}
-画像変換時にメタデータ (Exif、IPTC、XMP など) は保存されません。JPEG や TIFF 画像から Exif メタデータを抽出するには、_オリジナル_ 画像に [`Exif`] メソッドを使用します。
+画像変換時にメタデータ (EXIF、IPTC、XMP など) は保存されません。JPEG や TIFF 画像から EXIF メタデータを抽出するには、_オリジナル_ 画像に [`Exif`] メソッドを使用します。
 {{% /note %}}
 
 ### Resize {#resize}
@@ -169,11 +170,11 @@ assets/
 この方法は高速ですが、画像を縮小する場合は、縮小した画像から色を抽出するとパフォーマンスが向上します。
 
 
-### Exif
+### EXIF
 
-画像のメタデータを含む [Exif] オブジェクトを提供します。
+画像のメタデータを含む [EXIF] オブジェクトを提供します。
 
-JPEG や TIFF の画像に含まれる Exif データにアクセスすることができます。Exif データのない画像を処理する際のエラーを防ぐため、 [`with`] ステートメントでアクセスをラップします。
+JPEG や TIFF の画像に含まれる EXIF データにアクセスすることができます。EXIF データのない画像を処理する際のエラーを防ぐため、 [`with`] ステートメントでアクセスをラップします。
 
 ```go-html-template
 {{ with $image.Exif }}
@@ -186,7 +187,7 @@ JPEG や TIFF の画像に含まれる Exif データにアクセスすること
 {{ end }}
 ```
 
-また、Exif フィールドに個別にアクセスし、必要に応じて [`lang.FormatNumber`] 関数を使ってフィールドをフォーマットできます。
+また、EXIF フィールドに個別にアクセスし、必要に応じて [`lang.FormatNumber`] 関数を使ってフィールドをフォーマットできます。
 
 ```go-html-template
 {{ with $image.Exif }}
@@ -203,7 +204,7 @@ JPEG や TIFF の画像に含まれる Exif データにアクセスすること
 {{ end }}
 ```
 
-#### Exif 変数 {#exif-variables}
+#### EXIF 変数 {#exif-variables}
 
 .Date
 : 画像の作成日時です。[time.Format] 関数でフォーマットします。
@@ -215,7 +216,7 @@ JPEG や TIFF の画像に含まれる Exif データにアクセスすること
 : GPS の経度 (度) です。
 
 .Tags
-: この画像で使用可能な Exif タグのコレクションです。 [サイト設定](#exif-data) で、このコレクションから特定のタグを含めたり除外したりできます。
+: この画像で使用可能な EXIF タグのコレクションです。 [サイト設定](#exif-data) で、このコレクションから特定のタグを含めたり除外したりできます。
 
 ## 画像処理オプション {#image-processing-options}
 
@@ -389,7 +390,7 @@ _以下の例で使用されている夕日の写真は、著作権 [Bjørn Erik
 
 デフォルトの [画像処理オプション](#image-processing-options) を設定するには、サイト設定で `imaging` セクションを定義します。
 
-{{< code-toggle file="config" copy=true >}}
+{{< code-toggle file="hugo" copy=true >}}
 [imaging]
 resampleFilter = "Box"
 quality = 75
@@ -413,11 +414,11 @@ quality
 resampleFilter
 : 画像処理オプションの [リサンプリング フィルター](#resampling-filter) を参照してください
 
-### Exif データ {#exif-data}
+### EXIF データ {#exif-data}
 
-サイト設定に `imaging.exif` セクションを定義して、Exif データの利用可能性を制御します。
+サイト設定に `imaging.exif` セクションを定義して、EXIF データの利用可能性を制御します。
 
-{{< code-toggle file="config" copy=true >}}
+{{< code-toggle file="hugo" copy=true >}}
 [imaging.exif]
 includeFields = ""
 excludeFields = ""
@@ -432,10 +433,10 @@ disableLatLong
 : Hugo は GPS の緯度と経度を `.Lat` と `.Long` に抽出します。 無効にするには、これを `true` に設定します。デフォルトは `false` です。
 
 excludeFields
-: `.Tags` コレクションから除外する Exif タグに一致する正規表現です。 デフォルトは &nbsp;`""` です。
+: `.Tags` コレクションから除外する EXIF タグに一致する正規表現です。 デフォルトは &nbsp;`""` です。
 
 includeFields
-: `.Tags` コレクションに含める Exif タグに一致する正規表現です。 デフォルトは &nbsp;`""` です。 使用可能なすべてのタグを含めるには、この値を &nbsp;`".*"` に設定します。
+: `.Tags` コレクションに含める EXIF タグに一致する正規表現です。 デフォルトは &nbsp;`""` です。 使用可能なすべてのタグを含めるには、この値を &nbsp;`".*"` に設定します。
 
 {{% note %}}
 パフォーマンスを向上させ、キャッシュサイズを小さくするために、 `excludeFields` と `includeFields` のどちらも設定しない場合、Hugo は以下のタグを除外します。
@@ -462,15 +463,15 @@ Hugo は処理した画像を `resources` ディレクトリにキャッシュ�
 hugo --gc
 ```
 
-[`anchor`]: {{< relref "content-management/image-processing#anchor" >}}
-[`lang.FormatNumber`]: {{< relref "function/lang#langformatnumber" >}}
+[time.Format]: /function/dateformat
+[`anchor`]: /content-management/image-processing#anchor
+[`lang.FormatNumber`]: /function/lang#langformatnumber
 [Exif]: <https://en.wikipedia.org/wiki/Exif>
-[filters]: {{< relref "function/images" >}}
+[filters]: /function/images
 [github.com/disintegration/imaging]: <https://github.com/disintegration/imaging#image-resizing>
-[mounted]: {{< relref "hugo-modules/configuration#module-config-mounts">}}
-[page bundle]: {{< relref "content-management/page-bundles" >}}
+[mounted]: /hugo-modules/configuration#module-config-mounts
+[page bundle]: /content-management/page-bundles
 [Smartcrop]: <https://github.com/muesli/smartcrop#smartcrop>
-[time.Format]: {{< relref "function/dateformat" >}}
 [`Colors`]: #colors
 [`Crop`]: #crop
 [`Exif`]: #exif

@@ -20,11 +20,10 @@ linktitle: Hugo モジュールを使用する
 menu:
   docs:
     parent: modules
-    weight: 20
-sections_weight: 20
+    weight: 30
 title: Hugo モジュールを使用する
 toc: true
-weight: 20
+weight: 30
 ---
 
 ## 前提条件 {#prerequisite}
@@ -48,7 +47,7 @@ hugo mod init github.com/gohugoio/myShortcodes
 1. 右のコマンドを実行して、Hugo モジュール システムを初期化します。 `hugo mod init github.com/<your_user>/<your_project>`
 2. 以下の設定により、テーマをインポートします。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [module]
   [[module.imports]]
     path = "github.com/spf13/hyde"
@@ -98,7 +97,7 @@ replace github.com/bep/hugotestmods/mypartials => /Users/bep/hugotestmods/mypart
 
 `hugo server` を実行している場合、設定がリロードされ、`/Users/bep/hugotestmods/mypartials` が監視リストに追加されます。
 
-また、`go.mod` ファイルを修正する代わりに、モジュール設定の [`replacements`](https://gohugo.io/hugo-modules/configuration/#module-config-top-level) オプションを使用することもできます。
+また、`go.mod` ファイルを修正する代わりに、モジュール設定の [`replacements`](/hugo-modules/configuration/#module-config-top-level) オプションを使用することもできます。
 
 ## 依存関係グラフの印刷 {#print-dependency-graph}
 
@@ -145,3 +144,36 @@ github.com/bep/my-modular-site in-themesdir
 `maxAge` を使用して `modules` キャッシュを設定できることに注意してください。詳細は、[「ファイルキャッシュ」](/getting-started/configuration/#configure-file-caches) を参照してください。
 
 [CLI Doc](/commands/hugo_mod_clean/) も参照してください。
+
+## モジュール ワークスペース {#module-workspaces}
+
+{{< new-in "0.109.0" >}}
+
+ワークスペースのサポートは [Go 1.18](https://go.dev/blog/get-familiar-with-workspaces) で追加され、Hugo は `v0.109.0` バージョンで確実にサポートされました。
+
+ワークスペースの一般的な使用例は、テーマ モジュールを使用したサイトのローカル開発を簡素化することです。
+
+ワークスペースは `*.work` ファイルで設定し、[module.workspace](/hugo-modules/configuration/) 設定でアクティブ化できます。
+この使用法は通常、OS 環境変数 `HUGO_MODULE_WORKSPACE` を介して制御されます。
+
+例については、Hugo Docs リポジトリの [hugo.work](https://github.com/gohugoio/hugo/blob/master/hugo.work) ファイルを参照してください。
+
+```text
+go 1.19
+
+use .
+use ../gohugoioTheme
+```
+
+`use` ディレクティブを使って、作業したいモジュールをすべてリストアップし、相対的な場所を指定します。
+上の例のように、リストには常にメインプロジェクト（"."）を含めることをお勧めします。
+
+これにより、以下のように、そのワークスペースを有効にして Hugo サーバーを起動できます。
+
+```bash
+HUGO_MODULE_WORKSPACE=hugo.work hugo server --ignoreVendorPaths "**"
+```
+
+上記で `--ignoreVendorPaths` フラグを追加していますが、これは `_vendor` 内のベンダリングされた依存関係を無視するためのフラグです。
+ベンダリングを使わないのであれば、このフラグは必要ありません。
+しかし、現在はサーバーがワークスペース内のファイルとディレクトリを監視するように設定されており、ローカルの編集内容がリロードされているのが確認できます。

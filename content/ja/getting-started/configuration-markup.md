@@ -8,15 +8,14 @@ draft: false
 keywords:
 - configuration
 - highlighting
-sections_weight: 65
 slug: configuration-markup
 menu:
   docs:
     parent: getting-started
-    weight: 65
+    weight: 50
 title: マークアップの設定
 toc: true
-weight: 65
+weight: 50
 ---
 
 ## マークアップの設定 {#configure-markup}
@@ -40,6 +39,9 @@ Hugo のデフォルトの Markdown ハンドラーに関連する設定につ�
 拡張機能の詳細については、Goldmark ドキュメントの [このセクション](https://github.com/yuin/goldmark/#built-in-extensions) を参照してください。
 
 以下に、一部の設定について説明します。
+
+hardWraps
+: デフォルトでは、Goldmark は段落内の改行を無視します。 改行を `<br>` 要素としてレンダリングするには、`true` に設定します。
 
 unsafe
 : デフォルトでは、Goldmark は生の HTML と潜在的に危険なリンクをレンダリングしません。 インライン HTML や JavaScript がたくさんある場合は、これをオンにする必要があるかもしれません。

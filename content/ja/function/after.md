@@ -1,7 +1,7 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
 deprecated: false
 description: '`after` は、配列を <em>N</em> 番目のアイテムの後のアイテムのみにスライスします。'
@@ -12,7 +12,7 @@ keywords:
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - last
@@ -44,24 +44,24 @@ workson: []
 {{< code file="layouts/section/articles.html" download="articles.html" >}}
 {{ define "main" }}
 <section class="row featured-article">
-    <h2>注目の記事</h2>
-    {{ range first 1 .Pages.ByPublishDate.Reverse }}
-     <header>
-        <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
-    </header>
-    <p>{{.Description}}</p>
-    {{ end }}
+  <h2>注目の記事</h2>
+  {{ range first 1 .Pages.ByPublishDate.Reverse }}
+  <header>
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+  </header>
+  <p>{{.Description}}</p>
+{{ end }}
 </section>
 <div class="row recent-articles">
-    <h2>最新の記事</h2>
-    {{ range first 3 (after 1 .Pages.ByPublishDate.Reverse) }}
-        <section class="recent-article">
-            <header>
-                <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
-            </header>
-            <p>{{.Description}}</p>
-        </section>
-    {{ end }}
+  <h2>最新の記事</h2>
+  {{ range first 3 (after 1 .Pages.ByPublishDate.Reverse) }}
+    <section class="recent-article">
+      <header>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      </header>
+      <p>{{ .Description }}</p>
+    </section>
+  {{ end }}
 </div>
 {{ end }}
 {{< /code >}}

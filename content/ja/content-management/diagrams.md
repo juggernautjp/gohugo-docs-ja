@@ -52,9 +52,9 @@ Hugo は [GoAT](https://github.com/bep/goat) をネイティブにサポート�
 Hugo は現在、Mermaid ダイアグラムのデフォルト テンプレートを提供していません。しかし、自分で簡単に追加できます。一つの方法は `layouts/_default/_markup/render-codeblock-mermaid.html` を作成することです。
 
 ```go-html-template
-<div class="mermaid">
+<pre class="mermaid">
   {{- .Inner | safeHTML }}
-</div>
+</pre>
 {{ .Page.Store.Set "hasMermaid" true }}
 ```
 
@@ -62,8 +62,8 @@ Hugo は現在、Mermaid ダイアグラムのデフォルト テンプレート
 
 ```go-html-template
 {{ if .Page.Store.Get "hasMermaid" }}
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';>
     mermaid.initialize({ startOnLoad: true });
   </script>
 {{ end }}
@@ -71,6 +71,7 @@ Hugo は現在、Mermaid ダイアグラムのデフォルト テンプレート
 
 これにより、Markdown コードブロックで `mermaid` 言語を使用できます。
 
+````text
 ```mermaid
 sequenceDiagram
     participant Alice
@@ -84,6 +85,7 @@ sequenceDiagram
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 ```
+````
 
 ## Goat アスキー ダイアグラムの例 {#goat-ascii-diagram-examples}
 

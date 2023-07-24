@@ -1,6 +1,9 @@
 
 enableInlineShortcodes = false
 
+[gotemplates]
+  allowActionJSTmpl = true
+
 [exec]
   allow = ['^go$', '^npx$' ]
   osEnv = ['^PATH$']
@@ -11,3 +14,4 @@ enableInlineShortcodes = false
 [http]
   methods = ['(?i)GET|POST']
   urls = ['.*']
+

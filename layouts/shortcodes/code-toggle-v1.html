@@ -1,0 +1,130 @@
+{{- /*
+
+  code-toggle.html: code-toggle を Bootstrap 5.3.0 の Navs&Tabs で動作させるためのコード。
+
+JSON、TOML、YAML の各フォーマットで、シンタックスハイライトされた設定データをレンダリングします。
+
+@param {string} config
+  レンダリングする site.Data.docs.config のセクション。
+  Example: markup.highlight
+  Default: ""
+@param {bool} copy
+  copy ボタンを表示する。
+  Default: true
+@param {string} file
+  レンダリングされたコードの上に表示するファイル名。
+  Default: ""
+@param {bool} fm
+  中身はフロントマターを表現しているか?
+  Default: false
+@param {string} Inner
+  ショートコードのオープン/クローズタグの間のコンテンツ。
+  Default: ""
+@param {bool} skipHeader
+  site.Data.docs.config のセクションをレンダリングする際に、トップレベルのキー (複数可) を省略する。
+  Default: false
+@param {string} nav_id
+  Navs tab を一意に識別するための ID。
+  Default: ""
+@returns {template.HTML}
+*/ -}}
+
+{{- $config := "" -}}
+{{- $copy := false -}}
+{{- $file := "" -}}
+{{- $fm := false -}}
+{{- $skipHeader := false -}}
+{{- $nav_id := "" -}}
+
+{{- /* パラメータを取得し、文字列をブール値に変換する。 */ -}}
+{{- if .Params -}}
+  {{- $config = .Get "config" -}}
+  {{- $file = .Get "file" -}}
+  {{- if (isset .Params "codeId") -}}
+      {{- $nav_id = (.Params "codeId") -}}
+  {{- else -}}
+      {{- $nav_id = replace $file "/" "-" -}}
+  {{- end -}}
+  {{- if (isset .Params "copy") -}}
+    {{- if in (slice true "true") (.Get "copy") -}}
+      {{- $copy = true -}}
+    {{- else -}}
+      {{- $copy = false -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if (isset .Params "fm") -}}
+    {{- if in (slice true "true") (.Get "fm") -}}
+      {{- $fm = true -}}
+    {{- else -}}
+      {{- $fm = false -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if (isset .Params "skipHeader") -}}
+    {{- if in (slice true "true") (.Get "skipHeader") -}}
+      {{- $skipHeader = true -}}
+    {{- else -}}
+      {{- $skipHeader = false -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $delimiters := dict "toml" "+++" "yaml" "---" -}}
+{{- $langs := slice "yaml" "toml" "json" -}}
+{{- $placeHolder := "#-hugo-placeholder-#" -}}
+
+{{- $code := "" -}}
+{{- with $config -}}
+  {{- $file = $file | default "config" -}}
+  {{- $sections := (split . ".") -}}
+  {{- $configSection := index $.Site.Data.docs.config $sections -}}
+  {{- $code = dict $sections $configSection -}}
+  {{- if $skipHeader -}}
+    {{- $code = $configSection -}}
+  {{- end -}}
+{{- else -}}
+  {{- $code = $.Inner -}}
+{{- end }}
+<div class="bd-example">
+  <nav>
+  <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+    {{- with $file }}
+    <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled="" tabindex="-1">
+      {{- . -}}{{- if not $fm -}}.{{- end -}}
+    </button>
+    {{- end -}}
+      {{- $def_active := index $langs 0 -}}
+      {{- range $langs }}
+        {{- $tab_name := . -}}
+        {{- $nav_name := printf "%s-%s" $nav_id $tab_name -}}
+        {{- $is_active := eq $tab_name $def_active -}}
+        <button class="nav-link{{ if $is_active }} active{{ end }}" data-bs-toggle="tab" type="button" role="tab" 
+         id="{{ printf "%s-tab" $nav_name }}" data-bs-target="{{ printf "#%s" $nav_name }}" aria-controls="{{ $nav_name }}" aria-selected="{{ cond $is_active true false }}" tabindex="-1">
+          {{ $tab_name }}
+        </button>
+      {{- end -}}
+  </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    {{- if $copy }}
+    <div class="bd-clipboard">
+      <button type="button" class="btn-clipboard">
+        <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>
+      </button>
+    </div>
+    {{- end -}}
+  {{- $def_active := index $langs 0 -}}
+  {{- range $langs }}
+    {{- $tab_name := . -}}
+    {{- $nav_name := printf "%s-%s" $nav_id $tab_name -}}
+    {{- $is_active := eq $tab_name $def_active -}}
+    <div class="tab-pane{{ if $is_active }} active{{ end }}" id="{{ $nav_name }}" role="tabpanel" aria-labelledby="{{ printf "%s-tab" $nav_name }}" tabindex="0">
+        {{- $hCode := $code | transform.Remarshal . -}}
+        {{- if and $fm (in (slice "toml" "yaml") .) -}}
+          {{- $hCode = printf "%s\n%s\n%s" $placeHolder $hCode $placeHolder -}}
+        {{- end -}}
+        {{- $hCode = $hCode | replaceRE `\n+` "\n" }}
+        {{ highlight $hCode . "" | replaceRE $placeHolder (index $delimiters .) | safeHTML }}
+    </div>
+  {{- end -}}
+  </div>
+</div>

@@ -2,21 +2,25 @@
 categories:
 - asset management
 date: "2018-07-14"
-description: Hugo パイプでは、文字列からリソースを作成できます。
+description: 文字列からリソースを作成します。
 draft: false
 keywords: []
 linkTitle: 文字列からのリソース
 menu:
   docs:
-    parent: pipes
-    weight: 90
+    parent: hugo-pipes
+    weight: 110
 publishdate: "2018-07-14"
-sections_weight: 90
-title: 文字列からリソースを作成する
-weight: 90
+title: FromString
+weight: 110
 ---
 
-指定された文字列とリソースのターゲットパスの 2 つの引数を取る `resources.FromString` を使用して、テンプレートから直接リソースを作成できます。
+## 使用方法 {#usage}
+
+`resources.FromString` を使用して、テンプレートから直接リソースを作成することができます。
+これは、作成されたリソースのターゲット パスと指定されたコンテンツ文字列の 2 つの引数を取ります。
+
+結果は、ターゲット パスをキャッシュ キーとして使用してキャッシュされます。
 
 以下の例では、各プロジェクトの言語用にローカライズされた変数を含むリソースファイルを作成します。
 

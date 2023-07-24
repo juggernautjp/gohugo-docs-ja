@@ -1,22 +1,17 @@
 ---
 title: urlquery
-linktitle: urlquery
 description: 引数のテキスト表現を、URL クエリに埋め込むのに適した形式にエスケープした値を返します。
 date: 2022-01-18
 publishdate: 2022-01-18
 lastmod: 2022-01-18
-categories: [functions]
+categories: [function]
 menu:
   docs:
-    parent: "functions"
+    parent: function
 keywords: [urls]
 signature:
 - "urlquery INPUT [INPUT]..."
-hugoversion:
-deprecated: false
-workson: []
 relatedfuncs: []
-aliases: []
 ---
 
 

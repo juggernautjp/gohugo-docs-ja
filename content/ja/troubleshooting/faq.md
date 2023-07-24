@@ -12,18 +12,19 @@ linktitle: FAQ
 menu:
   docs:
     parent: troubleshooting
-title: よくある質問
+    weight: 20
+title: よくある質問 (FAQ)
 toc: true
-weight: 2
+weight: 20
 ---
 
-{{< note >}}
+{{% note %}}
 **注意:** 以下に紹介する回答/解決策は短いものであり、あなたの問題を解決するのに十分でない可能性があります。 [Hugo Discourse](https://discourse.gohugo.io/) にアクセスし、検索を使用してください。 それでも解決しない場合は、新しいトピックを立ち上げて質問してください。
-{{< /note >}}
+{{% /note %}}
 
 ## コンテンツが表示されません {#i-cant-see-my-content}
 
-Markdown ファイルは、 [ドラフトモード](https://gohugo.io/content-management/front-matter/#front-matter-variables) ですか? テストするときは、`-D` または `--buildDrafts` [スイッチ](https://gohugo.io/getting-started/usage/#draft-future-and-expired-content) を指定して `hugo server` を実行します。
+Markdown ファイルは、 [ドラフトモード](/content-management/front-matter/#front-matter-variables) ですか? テストするときは、`-D` または `--buildDrafts` [スイッチ](/getting-started/usage/#draft-future-and-expired-content) を指定して `hugo server` を実行します。
 
 Markdown ファイルは、 [リーフバンドル](/content-management/page-bundles/) の一部ですか? 同じディレクトリまたは任意の親ディレクトリに `index.md` ファイルがある場合、他の Markdown ファイルは個別のページとしてレンダリングされません。
 
@@ -47,7 +48,7 @@ Markdown ファイルは、 [リーフバンドル](/content-management/page-bun
 
 {{< tweet user="ChrisShort" id="962380712027590657" >}}
 
-[^date-hierarchy]: 明示的に設定されていない場合、異なる日付変数が互いに補完される順序については、 [「日付を設定する」](https://gohugo.io/getting-started/configuration/#configure-dates) を参照してください。
+[^date-hierarchy]: 明示的に設定されていない場合、異なる日付変数が互いに補完される順序については、 [「日付を設定する」](/getting-started/configuration/#configure-dates) を参照してください。
 
 ## Netlify で Hugo の最新版を使うことができますか? {#can-i-use-the-latest-hugo-version-on-netlify}
 

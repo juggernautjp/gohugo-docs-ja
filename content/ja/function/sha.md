@@ -3,19 +3,17 @@ aliases:
 - sha1
 - sha256
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された入力をハッシュし、SHA1 または SHA256 チェックサムを返します。
 draft: false
-hugoversion: null
 keywords:
 - sha
 - checksum
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - md5
@@ -23,7 +21,6 @@ signature:
 - sha1 INPUT
 - sha256 INPUT
 title: sha
-workson: []
 ---
 
 `sha1` は、指定された入力をハッシュし、その SHA1 チェックサムを返します。

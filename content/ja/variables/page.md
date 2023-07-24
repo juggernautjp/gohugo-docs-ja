@@ -1,7 +1,6 @@
 ---
-aliases: []
 categories:
-- variables and params
+- variables and parameters
 date: "2017-02-01"
 description: ページレベルの変数は、コンテンツファイルのフロントマターで定義されるか、コンテンツのファイルの場所から派生するか、コンテンツの本文自体から抽出されます。
 draft: false
@@ -11,20 +10,14 @@ linktitle: null
 menu:
   docs:
     parent: variables
-    title: ページで定義された変数
     weight: 20
 publishdate: "2017-02-01"
-sections_weight: 20
 title: ページ変数
 toc: true
 weight: 20
 ---
 
 以下は、ページレベル変数のリストです。 これらの多くは、フロントマターで定義されるか、ファイルの場所から派生するか、コンテンツ自体から抽出されます。
-
-{{% note "`.Scratch`" %}}
-ページスコープの書き込み可能な変数については、[`.Scratch`](/function/scratch/) を参照してください。
-{{< /note >}}
 
 ## ページ変数 {#page-variables}
 
@@ -33,6 +26,9 @@ weight: 20
 
 .Aliases
 : このページのエイリアスです。
+
+.Ancestors
+: 各ページの祖先を取得し、[パンくずナビゲーション](/content-management/sections#example-breadcrumb-navigation) 実装の複雑さを簡素化します。
 
 .BundleType
 : [バンドル][bundle] タイプを指定します。ページがバンドルでない場合は、 `leaf`、 `branch`、または空文字列を指定します。
@@ -57,6 +53,9 @@ weight: 20
 
 .File
 : このコンテンツファイルのファイルシステム関連データです。 [ファイル変数][File Variables] も参照してください。
+
+.Fragments
+: Fragments は、このページのフラグメントを返す。 [ページ フラグメント](#page-fragments) も参照してください。
 
 .FuzzyWordCount
 : コンテンツのおおよその単語数です。
@@ -83,7 +82,7 @@ weight: 20
 : ページの *種類* を返します。 可能な戻り値は、`page`、`home`、`section`、`taxonomy`、または `term` です。 `RSS`、`sitemap`、`robotsTXT`、および `404` の種類もありますが、これらはそれぞれの種類のページのレンダリング中にのみ使用可能であり、したがって、どの `Pages` コレクションでも使用 *できません*。
 
 .Language
-: サイト `config` 内の言語の定義を指す言語オブジェクトです。`.Language.Lang` は、言語コードを提供します。
+: サイト設定内の言語定義を指す言語オブジェクトです。 `.Language.Lang` は、言語コードを提供します。
 
 .Lastmod
 : コンテンツが最後に更新された日付です。`.Lastmod` はコンテンツのフロントマターにある `lastmod` フィールドから取得します。
@@ -97,16 +96,16 @@ weight: 20
 : コンテンツへのリンクを作成するときにアクセスします。 設定されている場合、Hugo は `title` の前に、フロントマターの `linktitle` を使用します。
 
 .Next
-: 次の [通常ページ](/variables/site/#site-pages) を指します。(Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます)。 たとえば、 `{with .Next}{{.Permalink}}{{end}}` です。 最初のページから `.Next` を呼び出すと、`nil` が返されます。
+: 次の [通常ページ](/variables/site/#site-pages) を指します。(Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます)。 たとえば、 `{{ with .Next }}{{ .Permalink }}{{ end }}` です。 最初のページから `.Next` を呼び出すと、`nil` が返されます。
 
 .NextInSection
-: 同じトップレベル セクション (たとえば、 `/blog`) の次の [通常ページ](/variables/site/#site-pages) までを指します。ページは Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます。 たとえば、 `{with .NextInSection}}{.Permalink}{{end}}` です。 最初のページから `.NextInSection` を呼び出すと、`nil` が返されます。
+: 同じトップレベル セクション (たとえば、 `/blog`) の次の [通常ページ](/variables/site/#site-pages) までを指します。ページは Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます。 たとえば、 `{{ with .NextInSection }}{{ .Permalink }}{{ end }}` です。 最初のページから `.NextInSection` を呼び出すと、`nil` が返されます。
 
 .OutputFormats
 : 指定されたページの現在の形式を含む、すべての形式を含みます。 特定の形式を取得するには、[`.Get`関数](/function/get/) と組み合わせることができます。([「出力形式」](/templates/output-formats/) を参照してください)。
 
 .Pages
-: 関連するページのコレクションです。この値は、通常のコンテンツページのコンテキスト内では `nil` になります。 [`.Pages`]({{< relref "page.md#pages" >}}) を参照してください。
+: 関連するページのコレクションです。この値は、通常のコンテンツページのコンテキスト内では `nil` になります。 [`.Pages`](#pages) を参照してください。
 
 .Permalink
 : このページへのパーマネント リンクです。 [「パーマリンク」](/content-management/urls/) を参照してください。
@@ -118,10 +117,10 @@ weight: 20
 : Go の [strings.Fields](https://golang.org/pkg/strings/#Fields) で定義されているように、.Plain を単語に分割した結果の文字列のスライスです。
 
 .Prev
-: 前の [通常ページ](/variables/site/#site-pages) を指します。(Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます)。 たとえば、 `{{if .Prev}}{{.Prev.Permalink}}{{end}}` です。 最後のページから `.Prev` を呼び出すと `nil` が返されます。
+: 前の [通常ページ](/variables/site/#site-pages) を指します。(Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます)。 たとえば、 `{{ if .Prev }}{{ .Prev.Permalink }}{{ end }}` です。 最後のページから `.Prev` を呼び出すと `nil` が返されます。
 
 .PrevInSection
-: 同じトップレベル セクション (たとえば、 `/blog`) の次の [通常ページ](/variables/site/#site-pages) までを指します。ページは Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます。 たとえば、  `{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}` です。 最後のページから `.Prev` を呼び出すと `nil` が返されます。
+: 同じトップレベル セクション (たとえば、 `/blog`) の次の [通常ページ](/variables/site/#site-pages) までを指します。ページは Hugo の [デフォルトのソート](/templates/lists#default-weight--date--linktitle--filepath) によってソートされます。 たとえば、  `{{ if .PrevInSection }}{{ .PrevInSection.Permalink }}{{ end }}` です。 最後のページから `.Prev` を呼び出すと `nil` が返されます。
 
 .PublishDate
 : コンテンツが公開された、または公開される予定の日付です。 `.Publishdate` はコンテンツのフロントマターの `publishdate` フィールドから取得されます。また、 `.ExpiryDate` 、`.Date` 、`.Lastmod` も参照してください。
@@ -180,6 +179,14 @@ weight: 20
 .WordCount
 : コンテンツに含まれる単語数です。
 
+## 書き込み可能なページスコープ変数 {#writable-pagescoped-variables}
+
+[.Scratch][scratch]
+: データを保存および操作するためのスクラッチを返します。 [`.Store`][store] メソッドとは対照的に、このスクラッチはサーバーの再構築時にリセットされます。
+
+[.Store][store]
+: データを保存および操作するためのスクラッチを返します。 [`.Scratch`][scratch] メソッドとは対照的に、このスクラッチはサーバーの再構築時にリセットされません。
+
 ## セクション変数とセクション メソッド {#section-variables-and-methods}
 
 [「コンテンツセクション」](/content-management/sections/) も参照してください。
@@ -194,57 +201,97 @@ weight: 20
 
 {{< getcontent path="readfiles/pages-vs-site-pages.md" >}}
 
+## Page fragments
+
+{{< new-in "0.111.0" >}}
+
+`.Fragments` メソッドは、現在のページのフラグメントのリストを返します。
+
+.Headings
+: 現在のページの見出しの再帰的なリスト。 目次を生成するために使用できます。
+
+{{< todo >}}.Headings toc の例を追加{{< /todo >}}
+
+.Identifiers
+: 現在のページの識別子のソートされたリスト。 ページに特定の識別子が含まれているかどうか、またはページに重複した識別子が含まれているかどうかを確認するために使用できます。
+
+```go-html-template
+{{ if .Fragments.Identifiers.Contains "my-identifier" }}
+    <p>Page contains identifier "my-identifier"</p>
+{{ end }}
+
+{{ if gt (.Fragments.Identifiers.Count "my-identifier")  1 }}
+    <p>Page contains duplicate "my-identifier" fragments</p>
+{{ end }}
+```
+
+.HeadingsMap
+: 現在のページの見出しのマップを保持します。 特定の見出しから目次を開始するために使用できます。
+
+戻り値の型については、[Go Doc](https://pkg.go.dev/github.com/gohugoio/hugo@v0.111.0/markup/tableofcontents#Fragments) も参照してください。
+
+### フックとショートコードのフラグメント {#fragments-in-hooks-and-shortcodes}
+
+`.Fragments` は、現在のページ (`.Page.Fragments`) 上であっても、レンダリング フックから安全に呼び出すことができます。 ショートコードの場合、すべての `.Fragments` の使用を `{{</* */>}}` ショートコード区切り文字の内側にネストすることをお勧めします (`{{%/* */%}}` は目次の作成に参加するため、尻尾を噛む状況に陥りやすくなります)。
+
+
+## グローバルページ関数 {#the-global-page-function}
+
+{{< new-in "0.111.1" >}}
+
+Hugo はほとんどの場合、データ コンテキストとして `Page` をトップレベルのテンプレート (たとえば、`single.html`) に渡します (唯一の例外はマルチホスト サイトマップ テンプレートです)。 これは、テンプレート内の `.` 変数を使用して、現在のページにアクセスできることを意味します。
+
+しかし、`.Render` やパーシャルなどの内部に深くネストしている場合、`Page` オブジェクトにアクセスすることは必ずしも現実的でないし、可能でもありません。
+
+このため、Hugo では、テンプレート内のどこからでも現在のページにアクセスできるグローバル `page` 関数を提供しています。
+
+```go-html-template
+{{ page.Title }}
+```
+
+これには1つ注意点があり、これは新しいことではありませんが、ここで言及する価値があります。
+それは、Hugo では、`partialCached` を使用したときやショートコードの中など、キャッシュされた値が表示される場合があることです。
+
 ## ページレベルのパラメータ {#pagelevel-params}
 
 タクソノミーを含む、コンテンツファイルのフロントマターで定義されたその他の値は、`.Params` 変数の一部として使用可能になります。
 
-```yml
----
-title: My First Post
-date: 2017-02-20T15:26:23-06:00
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
+title: Example
 categories: [one]
 tags: [two,three,four]
-```
+{{< /code-toggle >}}
 
 上記のフロントマターで、`tags` と `categories` タクソノミーにアクセスするには、以下のようにします。
 
 * `.Params.tags`
 * `.Params.categories`
 
-{{% note "Casing of Params" %}}
-ページレベルの `.Params` は、小文字で *のみ* アクセス可能です。
-{{< /note >}}
+.Params`変数は、特にコンテンツファイルにユーザー定義のフロントマターフィールドを導入するのに便利です。たとえば、書評に関する Hugo の Web サイトでは、以下のようなフロントマターを持つことができます。
 
-`.Params` 変数は、コンテンツファイルにユーザー定義のフロントマター フィールドを導入する際に特に便利です。たとえば、書評に関する Hugo の Web サイトでは、`/content/review/book01.md` に以下のフロントマターを含めることができます。
-
-```yml
----
-...
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
+title: Example
 affiliatelink: "http://www.my-book-link.here"
-recommendedby: "私の母"
-...
----
+recommendedby: "My Mother"
+{{< /code-toggle >}}
+
+これらのフィールドは、`.Params.affiliatelink` および `.Params.recommendedby` 経由でアクセスできるようになります。
+
+```go-html-template
+<h3><a href="{{ .Params.affiliatelink }}">Buy this book</a></h3>
+<p>It was recommended by {{ .Params.recommendedby }}.</p>
 ```
 
-上記のフィールドは、それぞれ `.Params.affiliatelink` と `.Params.recommendedby` を介して、 `/themes/yourtheme/layouts/review/single.html` テンプレートからアクセスできます。
+このテンプレートは、以下のようにレンダリングされます。
 
-このタイプのフロントマター フィールドが導入される 2 つの一般的な状況は、`href=""` のような特定の属性の値として、またはそれ自体で Web サイトの訪問者にテキストとして表示されることです。
+```html
+<h3><a href="http://www.my-book-link.here">Buy this book</a></h3>
+<p>It was recommended by my Mother.</p>
+```
 
-{{< code file="/themes/yourtheme/layouts/review/single.html" >}}
-<h3><a href={{ printf "%s" $.Params.affiliatelink }}>この本を購入する</a></h3>
-<p>{{ .Params.recommendedby }} に勧められました。</p>
-{{< /code >}}
-
-[サイト `config`](/getting-started/configuration/) で [`uglyURLs`](/content-management/urls/) を `false` に設定した場合、このテンプレートは以下のようにレンダリングされます。
-
-{{< output file="yourbaseurl/review/book01/index.html" >}}
-<h3><a href="http://www.my-book-link.here">この本を購入する</a></h3>
-<p>私の母に勧められました。</p>
-{{< /output >}}
-
-{{< note >}}
-コンテンツ間の `Params` の一貫性については、 [「アーキタイプ」](/content-management/archetypes/) を参照してください。
-{{< /note >}}
+{{% note %}}
+コンテンツ全体にわたる `Params` の一貫性については、[アーキタイプ](/content-management/archetypes/) を参照してください。
+{{% /note %}}
 
 ### `.Param` メソッド {#the-param-method}
 
@@ -254,20 +301,19 @@ Hugo では、個々のページでパラメータを宣言したり、Web サ�
 {{ $.Param "header_image" }}
 ```
 
-`.Param` メソッドは、ページパラメータ (つまり、コンテンツのフロントマター) またはサイトパラメータ (つまり、`config` 内) での定義に従って、単一の値を解決する方法を提供します。
+`.Param` メソッドは、ページパラメータ (つまり、コンテンツのフロントマター) またはサイトパラメータ (つまり、サイト設定内) での定義に従って、単一の値を解決する方法を提供します。
 
 ### フロントマターでネストしたフィールドにアクセスする {#access-nested-fields-in-front-matter}
 
 フロントマターが以下のようなネストしたフィールドを含む場合。
 
-```yml
----
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
+title: Example
 author:
   given_name: John
   family_name: Feminella
   display_name: John Feminella
----
-```
+{{< /code-toggle >}}
 
 `.Param` は、以下のようにフィールド名をドットで連結することにより、これらのフィールドにアクセスできます。
 
@@ -275,23 +321,8 @@ author:
 {{ $.Param "author.display_name" }}
 ```
 
-以下の場合のように、フロントマターにネストされたキーとあいまいなトップレベルのキーを含んでいる場合。
-
-```yml
----
-favorites.flavor: vanilla
-favorites:
-  flavor: chocolate
----
-```
-
-トップレベルのキーが優先されます。したがって、以下のメソッドを先ほどの例に適用すると、 `chocolate` ではなく `vanilla` と表示されます。
-
-```txt
-{{ $.Param "favorites.flavor" }}
-=> vanilla
-```
-
 [gitinfo]: /variables/git/
 [File Variables]: /variables/files/
-[bundle]: {{< relref "content-management/page-bundles" >}}
+[bundle]: /content-management/page-bundles
+[scratch]: /functions/scratch
+[store]: /functions/store

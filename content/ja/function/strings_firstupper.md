@@ -1,10 +1,10 @@
 ---
 title: strings.FirstUpper
 description: 指定された文字列の最初の文字を大文字にします。
-categories: [functions]
+categories: [function]
 menu:
   docs:
-    parent: "functions"
+    parent: function
 keywords: [strings capitalize uppercase first]
 signature: 
 - "strings.FirstUpper STRING"

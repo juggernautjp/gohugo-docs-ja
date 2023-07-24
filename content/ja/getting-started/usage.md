@@ -18,12 +18,11 @@ linktitle: 基本的な使用方法
 menu:
   docs:
     parent: getting-started
-    weight: 40
+    weight: 30
 publishdate: "2017-02-01"
-sections_weight: 40
 title: 基本的な使用方法
 toc: true
-weight: 40
+weight: 30
 ---
 
 ## インストールをテストする {#test-your-installation}

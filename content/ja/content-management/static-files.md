@@ -21,13 +21,13 @@ weight: 200
 デフォルトでは、サイトプロジェクト内の `static/` ディレクトリがすべての **静的ファイル** (たとえば、スタイルシート、JavaScript、画像) に使用されます。
 静的ファイルは、サイトのルートパスで提供されます (たとえば、ファイル `static/image.png` があれば、 `http://{server-url}/image.png` でアクセスでき、ドキュメントに含めるには、 `![Example image](/image.png) )` で可能です)。
 
-Hugo は、[サイト設定][site config] に `staticDir` パラメータを設定することで、そのような静的ファイルを別のディレクトリ、あるいは **複数のディレクトリ** を探すように設定することができます。 すべての静的ディレクトリ内のすべてのファイルは、ユニオン ファイルシステムを形成します。
+Hugo は、[サイト設定][site configuration] に `staticDir` パラメータを設定することで、そのような静的ファイルを別のディレクトリ、あるいは **複数のディレクトリ** を探すように設定することができます。 すべての静的ディレクトリ内のすべてのファイルは、ユニオン ファイルシステムを形成します。
 
 このユニオン ファイルシステムは、サイトのルートから提供されます。つまり、`<SITE PROJECT>/static/me.png` というファイルは `<MY_BASEURL>/me.png` としてアクセスすることができます。
 
 以下は、多言語サイトに `staticDir` と `staticDir2` を設定する例です。
 
-{{< code-toggle copy="false" file="config" >}}
+{{< code-toggle copy=false file="hugo" >}}
 staticDir = ["static1", "static2"]
 
 [languages]
@@ -56,5 +56,5 @@ title = "På norsk"
 注 2
 : 上記の例は [マルチホスト設定][multihost setup] です。 通常のセットアップでは、すべての静的ディレクトリがすべてのサイトで利用可能になります。
 
-[site config]: /getting-started/configuration/#all-configuration-settings
+[site configuration]: /getting-started/configuration/#all-configuration-settings
 [multihost setup]: /content-management/multilingual/#configure-multilingual-multihost

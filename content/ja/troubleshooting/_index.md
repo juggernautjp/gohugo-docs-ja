@@ -8,17 +8,13 @@ description: Hugo Discuss から抜粋した、よくある質問と既知の問
 draft: false
 hidesectioncontents: false
 lastmod: "2017-02-01"
-linktitle: トラブルシューティング
 menu:
   docs:
     parent: troubleshooting
-    weight: 1
-notesforauthors: null
+    weight: 10
 publishdate: "2017-02-01"
-slug: null
 title: トラブルシューティング
-toc: false
-weight: 1
+weight: 10
 ---
 
 トラブルシューティング セクションには、既知の問題、最近の回避策、[Hugo ディスカッション フォーラム][forum] から引っ張ってきた FAQ が含まれています。

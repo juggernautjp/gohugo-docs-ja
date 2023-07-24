@@ -13,23 +13,22 @@ keywords:
 - sections
 - partials
 lastmod: "2017-02-01"
-linktitle: パーシャル
 menu:
   docs:
     parent: templates
-    weight: 90
+    weight: 120
 publishdate: "2017-02-01"
-sections_weight: 90
 title: パーシャル
 toc: true
-weight: 90
+weight: 120
 ---
 
 {{< youtube pjS4pOLyB7c >}}
 
-## パーシャルの検索順序 {#partial-template-lookup-order}
+## パーシャル テンプレートの検索順序 {#partial-template-lookup-order}
 
-[シングルページ テンプレート][singletemps] および [リストページ テンプレート][listtemps] のような **パーシャル** には、特定の [検索順序][lookup order] があります。 ただし、パーシャルは、Hugo が 2 つの場所でのみチェックするという点で単純です。
+[シングルページ テンプレート][singletemps] および [リストページ テンプレート][listtemps] のような **パーシャル テンプレート** には、特定の [検索順序][lookup order] があります。 
+ただし、パーシャルは、Hugo が 2 つの場所でのみチェックするという点で単純です。
 
 1. `layouts/partials/*<PARTIALNAME>.html`
 2. `themes/<THEME>/layouts/partials/*<PARTIALNAME>.html`
@@ -167,7 +166,7 @@ Value: {{ partial "my-inline-partial.html" . }}
 
 以下の `header.html` パーシャルは、 [spf13.com](https://spf13.com/) のために使用されています。
 
-{{< code file="layouts/partials/header.html" download="header.html" >}}
+{{< code file="layouts/partials/header.html" >}}
 <!DOCTYPE html>
 <html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
@@ -192,7 +191,7 @@ Value: {{ partial "my-inline-partial.html" . }}
 
 以下の `footer.html` パーシャルは、 [spf13.com](https://spf13.com/) のために使用されています。
 
-{{< code file="layouts/partials/footer.html" download="footer.html" >}}
+{{< code file="layouts/partials/footer.html" >}}
 <footer>
   <div>
     <p>
@@ -204,10 +203,10 @@ Value: {{ partial "my-inline-partial.html" . }}
 </footer>
 {{< /code >}}
 
-[context]: /templates/introduction/ "Go テンプレートについて理解する上で最も見落としやすいコンセプトは、ドットが常に現在のコンテキストを参照する方法です。"
-[customize]: /themes/customizing/ "Hugo は、ユーザーが Hugo のテンプレート検索順序に慣れている限り、テーマをカスタマイズする簡単な手段を提供します。"
-[listtemps]: /templates/lists/ "Hugo のシステムを効果的に活用するには、セクション、タクソノミー、ホームページのコンテンツをリスト化し、順序付けるリストページの処理方法を確認してください。"
-[lookup order]: /templates/lookup-order/ "テンプレートをドライに保つには、Hugo の検索順序に関するドキュメントを読んでください。"
-[partialcached]: /function/partialcached/ "Hugo がすべてのページでレンダリングする必要のないパーシャルをキャッシュできる場合は、パーシャル キャッシュ関数を使用してビルド時間を改善します。"
-[singletemps]: /templates/single-page-templates/ "Hugo のテンプレートの最も一般的な形式は、シングルコンテンツ テンプレートです。 個々のページのためのテンプレートを作成する方法については、ドキュメントを参照してください。"
+[context]: /templates/introduction/
+[customize]: /hugo-modules/theme-components/
+[listtemps]: /templates/lists/
+[lookup order]: /templates/lookup-order/
+[partialcached]: /function/partialcached/
+[singletemps]: /templates/single-page-templates/
 [themes]: /themes/

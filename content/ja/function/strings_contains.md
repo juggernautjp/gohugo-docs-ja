@@ -1,10 +1,10 @@
 ---
 title: strings.Contains
 description: 文字列が部分文字列を含んでいるかどうかを報告します。
-categories: [functions]
+categories: [function]
 menu:
   docs:
-    parent: "functions"
+    parent: function
 keywords: [string strings substring contains]
 signature: 
 - "strings.Contains STRING SUBSTRING"

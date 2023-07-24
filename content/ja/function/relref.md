@@ -1,9 +1,7 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: ページへの相対パーマリンクを返します。
 draft: false
 hugoversion: null
@@ -11,17 +9,15 @@ keywords:
 - cross references
 - anchors
 lastmod: "2020-09-05"
-linktitle: relref
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - ref
 signature:
 - relref . PAGE
 title: relref
-workson: []
 ---
 
 この関数は、以下の 2 つのパラメータを受け取ります。

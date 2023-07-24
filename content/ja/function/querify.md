@@ -1,26 +1,21 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: キーと値のペアのセットまたはスライスを受け取り、URL に追加するクエリ文字列を返します。
 draft: false
-hugoversion: null
 keywords:
 - urls
 lastmod: "2017-02-01"
-linktitle: querify
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - querify KEY VALUE [KEY VALUE]...
 - querify COLLECTION
 title: querify
-workson: []
 ---
 
 `querify` は、キーと値のペアのセットまたはスライスを受け取り、URL に追加できる [クエリ文字列](https://en.wikipedia.org/wiki/Query_string) を返します。

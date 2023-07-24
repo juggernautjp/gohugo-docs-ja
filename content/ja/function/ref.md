@@ -1,27 +1,22 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: ページへの絶対パーマリンクを返します。
 draft: false
-hugoversion: null
 keywords:
 - cross references
 - anchors
 lastmod: "2020-09-05"
-linktitle: ref
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - relref
 signature:
 - ref . PAGE
 title: ref
-workson: []
 ---
 
 この関数は、以下の 2 つのパラメータを受け取ります。

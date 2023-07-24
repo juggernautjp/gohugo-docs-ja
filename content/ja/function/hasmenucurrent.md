@@ -1,27 +1,22 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
-description: null
+description: メニューエントリを持つかどうかのブール値を返します。
 draft: false
-hugoversion: null
 keywords:
 - menus
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - "IsMenuCurrent"
 signature:
 - "PAGE.HasMenuCurrent MENU MENUENTRY"
 title: .HasMenuCurrent
-toc: false
-workson:
-- menus
 ---
 
 `.HasMenuCurrent` は `Page` オブジェクトのメソッドで、_ブール_ 値を返します。もし、**ページ** が、指定された **メニュー** の **メニューエントリ** の下にある **子メニューエントリ** の 1 つの `.Page` と同じオブジェクトであれば、 `true` を返します。

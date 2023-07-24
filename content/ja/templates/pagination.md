@@ -11,20 +11,18 @@ keywords:
 - lists
 - sections
 - pagination
-linktitle: ページ付け
 menu:
   docs:
     parent: templates
     weight: 140
 publishdate: "2017-02-01"
-sections_weight: 140
 title: ページ付け
 toc: true
 weight: 140
 ---
 
- 
-Hugo の [ページ付け (ページネーション)](https://developer.mozilla.org/ja/docs/Web/CSS/Layout_cookbook/Pagination) は、[`where`関数][where] や [`first`][]、[`last`][]、[`after`][] といった SQL ライクな演算子と組み合わせたときに、その真価を発揮します。 Hugo で慣れ親しんだ方法で、[コンテンツを順序付けする][lists] こともできます。
+Hugo の [ページ付け (ページネーション)](https://developer.mozilla.org/ja/docs/Web/CSS/Layout_cookbook/Pagination) は、[`where`関数][where] や [`first`]、[`last`]、[`after`] といった SQL ライクな演算子と組み合わせたときに、その真価を発揮します。 
+Hugo で慣れ親しんだ方法で、[コンテンツを順序付けする][lists] こともできます。
 
 ## ページ付けを設定する {#configure-pagination}
 
@@ -42,9 +40,9 @@ Hugo の [ページ付け (ページネーション)](https://developer.mozilla.
 
 ## ページネーターのページを一覧表示する {#list-paginator-pages}
 
-{{< warning >}}
+{{% note %}}
 `.Paginator` は、ページャー メニューのビルドを支援するために提供されています。 この機能は現在、ホームページとリストページ (つまり、タクソノミーとセクションリスト) でのみサポートされています。
-{{< /warning >}}
+{{% /note %}}
 
 `.Paginator` を設定し、使用するには以下の 2 つの方法があります。
 
@@ -67,7 +65,7 @@ Hugo の [ページ付け (ページネーション)](https://developer.mozilla.
 また、以下のように、`GroupBy` 関数をページ付けと組み合わせて使用することも可能です。
 
 ```go-html-template
-{{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups  }}
+{{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
 ```
 
 ## ナビゲーションを構築する {#build-the-navigation}
@@ -80,9 +78,9 @@ Hugo の [ページ付け (ページネーション)](https://developer.mozilla.
 {{ template "_internal/pagination.html" . }}
 ```
 
-{{% note "When to Create `.Paginator`" %}}
+{{% note %}}
 フィルターまたは順序付け関数を使用して `.Paginator` を作成し、**かつ**、ページリストの前にナビゲーション ボタンを表示したい場合は、使用する前に `.Paginator` を作成する必要があります。
-{{< /note >}}
+{{% /note %}}
 
 以下の例では、使用する前に `.Paginator` を作成する方法を示しています。
 

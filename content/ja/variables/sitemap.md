@@ -1,21 +1,17 @@
 ---
-aliases: []
 categories:
-- variables and params
+- variables and parameters
 date: "2017-03-12"
 description: null
 draft: false
 keywords:
 - sitemap
-linktitle: サイトマップ変数
 menu:
   docs:
     parent: variables
     weight: 80
 publishdate: "2017-03-12"
-sections_weight: 80
 title: サイトマップ変数
-toc: false
 weight: 80
 ---
 

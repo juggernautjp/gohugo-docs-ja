@@ -2,109 +2,98 @@
 aliases:
 - /variables/menu/
 categories:
-- variables and params
+- variables and parameters
 date: "2017-03-12"
-description: メニュー テンプレートのメニューエントリには、メニュー管理を容易にする特定の変数と関数があります。
+description: これらの変数とメソッドをメニュー テンプレートで使用します。
 draft: false
 keywords:
 - menus
 lastmod: "2017-03-12"
-linktitle: メニューエントリ プロパティ
 menu:
   docs:
     parent: variables
-    title: メニューエントリによって定義された変数
     weight: 50
 publishdate: "2017-03-12"
-sections_weight: 50
-title: メニューエントリ プロパティ
-toc: false
+title: メニュー変数
 weight: 50
 ---
 
-**メニュー エントリ** には、[メニュー テンプレート][menu-template] で使用できる以下のプロパティがあります。
+## 変数 {#variables}
 
-## メニューエントリ変数 {#menu-entry-variables}
-
-.Menu
-: _string_  
-この **メニューエントリ** を含む **メニュー** の名前です。
-
-.URL
-: _string_  
-メニューエントリが指し示す URL です。メニューエントリに `url` キーが設定されている場合、この値が設定されます。このキーが設定されていない場合、かつ、メニューエントリがページのフロントマターに設定されている場合、この値のデフォルトはそのページの `.RelPermalink` になります。
-
-.Page
-: _\*Page_  
-メニューエントリに関連付けられた [ページオブジェクト][page-object] への参照です。メニューエントリがページのフロントマターを通して設定され、かつ、サイト設定を通して設定されない場合、これは非 NIL になります。
-
-.PageRef
-: _string_   
-サイト設定で定義されていて、メニューエントリがページを参照している場合に設定できます。 [site.GetPage](/function/getpage/) は、ページ検索を行うために使用されます。 これが設定されている場合、`URL` を設定する必要はありません。
-
-.Name
-: _string_  
-メニューエントリの名前です。メニューエントリに `name` キーが設定されている場合、この値が設定されます。このキーが設定されていない場合、そしてメニューエントリがページのフロントマターで設定されている場合、この値はデフォルトでページの `.LinkTitle` に設定されます。
-
-.Identifier
-: _string_  
-メニューエントリに設定されている場合は、`identifier` キーの値です。この値は、メニューエントリごとに一意である必要があります。**同じ `.Name` を持つメニューエントリが複数ある場合は、一意の識別子を手動で設定する必要があります**。
-
-.Pre
-: _template.HTML_  
-メニューエントリに設定されている場合の `pre` キーの値です。 通常、この値には HTML を表す文字列が含まれます。
-
-.Post
-: _template.HTML_  
-メニュー エントリに設定されている場合の `post` キーの値です。 通常、この値には HTML を表す文字列が含まれます。
-
-.Weight
-: _int_  
-メニュー ントリに設定されている場合の `weight` キーの値です。 デフォルトでは、メニューのエントリは `weight` で昇順にソートされます。 このキーが設定されておらず、メニューエントリがページのフロントマターに設定されている場合、この値はデフォルトでページの `.Weight` になります。
-
-.Parent
-: _string_  
-このメニューエントリの親の **メニューエントリ** の名前 (存在する場合は識別子) です。メニューエントリに `parent` キーが設定されている場合、この値が設定されます。このキーが設定されている場合、このメニューエントリはその親エントリの下にネストされ、それ以外の場合は、`.Menu` の下に直接ネストされます。
+[メニューエントリーを定義] した後、これらの変数を使用して [メニューテンプレート] のプロパティにアクセスします。
 
 .Children
-: _Menu_  
-この値は、Hugo によって自動入力されます。これは、もしあれば、現在のメニューエントリの下にある子エントリのコレクションです。
+: (`menu`) もしあれば、現在のメニューエントリの下にある子メニューエントリのコレクション。
 
-## メニューエントリ関数 {#menu-entry-functions}
-
-メニューには、以下の関数も用意されています。
-
-.HasChildren
-: _boolean_  
-`.Children` が非 nil の場合、`true` を返します。
+.Identifier
+: (`string`) メニューエントリの `identifier` プロパティ。メニューエントリを [自動的に] 定義した場合、ページの `.Section`。
 
 .KeyName
-: _string_  
-存在する場合は `.Identifier` を返し、存在しない場合は `.Name` を返します。
+: (`string`) メニューエントリの `identifier` プロパティ、それ以外の場合は `name` プロパティ。
 
-.IsEqual
-: _boolean_  
-比較された 2 つのメニューエントリが同じメニューエントリを表している場合は、`true` を返します。
+.Menu
+: (`string`) メニューエントリを含むメニューの識別子。
 
-.IsSameResource
-: _boolean_  
-比較された 2 つのメニューエントリが同じ `.URL` を持つ場合、`true` を返します。
+.Name
+: (`string`) メニューエントリの `name` プロパティ。
+
+- メニューエントリを [自動的に][automatically] 定義する場合はページの `.LinkTitle` を、そうでない場合はページの `.Title` を指定します。
+- メニューを [フロントマターで][in front matter] または [サイト設定で][in site configuration] 定義すると、ページの `.LinkTitle` にフォールバックし、次にページの `.Title` にフォールバックします。
+
+.Page
+: (`page`) メニューエントリに関連付けられたページへの参照。
+
+<!-- これは、メニューをレンダリングするときに値を提供しません。 混乱を避けるため省略しています。
+.PageRef
+: (`string`) メニューエントリの `pageRef` プロパティ。
+-->
+
+.Params
+: (`map`) メニューエントリの `params` プロパティ。
+
+.Parent
+: (`string`) メニューエントリの `parent` プロパティ。
+
+.Post
+: (`template.HTML`) メニューエントリの `post` プロパティ。
+
+.Pre
+: (`template.HTML`) メニューエントリの `pre` プロパティ。
 
 .Title
-: _string_  
-メニューエントリの `<a>` タグの `title` 属性で使用するためのリンクタイトルです。 メニューエントリの `title` キーが設定されていれば、それを返します。そうでなく、メニューエントリがページのフロントマターから作成された場合は、そのページの `.LinkTitle` を返します。それ以外の場合は、単に空文字列を返します。
+: (`string`) メニューエントリの `title` プロパティ。
 
-## その他のメニュー関連関数 {#other-menurelated-functions}
+- メニューエントリを [自動的に][automatically] 定義する場合は、ページの `.LinkTitle`、それ以外の場合はページの `.Title` を指定します。
+- メニューを [フロントマターで][in front matter] または [サイト設定で][in site configuration] 定義すると、ページの`.LinkTitle`にフォールバックし、次にページの`.Title`にフォールバックします。
 
-Aさらに、ページのメニューで使用できるいくつかの関連するメソッドを以下に示します。
+.URL
+: (`string`) メニューエントリに関連付けられたページの `.RelPermalink` プロパティ。外部リソースを指すメニューエントリの場合は、メニューエントリの `url` プロパティ。
 
-.IsMenuCurrent
-: _(menu string, menuEntry *MenuEntry ) boolean_  
-[`.IsMenuCurrent` メソッド](/function/ismenucurrent/) を参照してください。
+.Weight
+: (`int`) メニューエントリの `weight` プロパティ。
 
-.HasMenuCurrent
-: _(menu string, menuEntry *MenuEntry) boolean_  
-[`.HasMenuCurrent` メソッド](/function/hasmenucurrent/) を参照してください。
+- メニューエントリを [自動的に][automatically] 定義すると、ページの `.Weight` が決まります。
+- [フロントマターで][in front matter] または [サイト設定で][in site configuration] メニューを定義した場合、ページの `.Weight` にフォールバックします。
 
-[menu-template]: /templates/menu-templates/
-[page-object]: /variables/page/
+## メソッド {#methods}
+
+.HasChildren
+: (`bool`) `.Children` が `nil` でない場合に `true` を返します。
+
+.IsEqual
+: (`bool`) 比較されたメニューエントリが同じメニューエントリを表していれば、 `true` を返します。
+
+.IsSameResource
+: (`bool`) 比較したメニューエントリが同じリソースを指していれば、 `true` を返します。
+
+.Page.HasMenuCurrent
+: (`bool`) アクティブなメニューエントリの祖先を決定するには、このメソッドを使います。 [詳細](/functions/hasmenucurrent/) を参照してください。
+
+.Page.IsMenuCurrent
+: (`bool`) アクティブなメニューエントリを決定するには、このメソッドを使用します。 [詳細](/functions/ismenucurrent/) を参照してください。
+
+[automatically]: /content-management/menus/#define-automatically
+[defining menu entries]: /content-management/menus/#overview
+[in front matter]: /content-management/menus/#define-in-front-matter
+[in site configuration]: /content-management/menus/#define-in-site-configuration
+[menu templates]: /templates/menu-templates/

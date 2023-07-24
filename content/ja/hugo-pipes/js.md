@@ -7,13 +7,15 @@ draft: false
 keywords: []
 menu:
   docs:
-    parent: pipes
-    weight: 45
+    parent: hugo-pipes
+    weight: 60
 publishdate: "2020-07-20"
-sections_weight: 45
-title: JavaScript のビルド
-weight: 45
+title: js.Build
+linkTitle: JavaScript のビルド
+weight: 60
 ---
+
+## 使用方法 {#usage}
 
 任意の JavaScript リソース ファイルは、ファイルパスの文字列または以下にリストされているオプションの dict のいずれかを引数として取る `js.Build` を使用して、トランスパイルおよび[「Tree shaking」](https://developer.mozilla.org/ja/docs/Glossary/Tree_shaking) できます。
 
@@ -43,7 +45,7 @@ minify [bool]
 inject [slice]
 : このオプションは、グローバル変数を他のファイルからインポートして自動的に置き換えることができます。パス名は `assets` からの相対パスである必要があります。詳細は、 https://esbuild.github.io/api/#inject を参照してください。
 
-shims
+shims [map]
 : このオプションは、コンポーネントを別のものと交換することができます。一般的な使用例は、本番環境では React などの依存関係を CDN から (_shims_ を使用して) ロードすることですが、開発時には完全にバンドルされた `node_modules` 依存関係で実行します。
 
 ```go-html-template
@@ -91,8 +93,8 @@ format [string]
   値は、`iife`、`cjs`、`esm` のいずれかです。
   デフォルトは `iife` で、自己実行型の関数であり、<script> タグとして含めるのに適しています。
 
-sourceMap
-: esbuild から `inline` または `external` のソースマップを生成するかどうかを指定します。 外部ソースマップは、出力ファイル名 + ".map" でターゲットに書き込まれます。 入力ソースマップは js.Build や node モジュールから読み込み、出力ソースマップに結合できます。
+sourceMap [string]
+: esbuild から `inline` または `external` のソースマップを生成するかどうかを指定します。 外部ソースマップは、出力ファイル名 + ".map" でターゲットに書き込まれます。 入力ソースマップは js.Build や node モジュールから読み込み、出力ソースマップに結合できます。 デフォルトでは、ソースマップは作成されません。
 
 ### /assets から JS コードをインポートする {"import-js-code-from-assets}
 

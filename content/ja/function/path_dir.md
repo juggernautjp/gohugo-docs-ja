@@ -1,18 +1,16 @@
 ---
 categories:
-- functions
+- function
 date: "2018-11-28"
-deprecated: false
 description: Dir は、パスの最後の要素を除くすべてを返します。
 draft: false
-hugoversion: "0.40"
 keywords:
 - path
 - dir
 lastmod: "2018-11-28"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2018-11-28"
 relatedfuncs:
 - path.Base
@@ -24,7 +22,6 @@ relatedfuncs:
 signature:
 - path.Dir PATH
 title: path.Dir
-workson: []
 ---
 
 `path.Dir` は、 `PATH` の最後の要素を除くすべての要素、通常は `PATH` のディレクトリを返します。

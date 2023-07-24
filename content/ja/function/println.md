@@ -1,24 +1,21 @@
 ---
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 標準の `fmt.Print` 関数を使用して、指定された引数のデフォルト表現を出力し、改行を強制します。
 draft: false
 hugoversion: null
 keywords:
 - strings
 lastmod: "2017-02-01"
-linktitle: println
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - println INPUT
 title: println
-workson: []
 ---
 
 詳細については、[go ドキュメント](https://golang.org/pkg/fmt/) を参照してください。

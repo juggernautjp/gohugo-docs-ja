@@ -3,24 +3,21 @@ aliases:
 - /extras/scratch/
 - /doc/scratch/
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: データを保存および操作するための「スクラッチパッド」として機能します。
 draft: false
-hugoversion: null
 keywords:
 - iteration
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature: []
 title: .Scratch
-toc: null
-workson: []
+toc: 
 ---
 
 Scratch は、Go テンプレートの世界でデータを便利に操作するために設計された Hugo の機能です。ページやショートコードのメソッドで、結果のデータが指定されたコンテキストに添付されるか、変数に格納された一意のインスタンスとして存在できます。

@@ -2,7 +2,7 @@
 aliases:
 - /templates/variables/
 categories:
-- variables and params
+- variables and parameters
 date: "2017-02-01"
 description: ページ、ファイル、タクソノミー、サイトレベルの変数とパラメータをテンプレートで利用できます。
 draft: false
@@ -15,6 +15,7 @@ lastmod: "2017-02-01"
 linktitle: 変数の概要
 menu:
   docs:
+    identifier: variables-overview
     parent: variables
     weight: 1
 publishdate: "2017-02-01"

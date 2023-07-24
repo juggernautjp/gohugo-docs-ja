@@ -1,5 +1,4 @@
 ---
-aliases: []
 categories:
 - developer tools
 date: "2017-02-01"
@@ -12,12 +11,11 @@ linktitle: その他のプロジェクト
 menu:
   docs:
     parent: tools
-    weight: 70
+    weight: 60
 publishdate: "2017-02-01"
-sections_weight: 70
 title: その他の Hugo コミュニティ プロジェクト
 toc: false
-weight: 70
+weight: 60
 ---
 
 Hugo に関する他のすべての小さなことについては、以下のとおりです。

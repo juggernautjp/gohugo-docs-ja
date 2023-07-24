@@ -7,9 +7,10 @@ categories: [installation]
 keywords: [installation]
 menu:
   docs:
+    identifier: installation-overview
     parent: installation
     weight: 10
-toc: false
+weight: 10
 ---
 
 {{% param "description" %}}

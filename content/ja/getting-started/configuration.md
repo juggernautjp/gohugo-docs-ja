@@ -17,17 +17,16 @@ linktitle: 設定
 menu:
   docs:
     parent: getting-started
-    weight: 60
+    weight: 40
 publishdate: "2017-01-02"
-sections_weight: 60
 title: Hugo の設定
 toc: true
-weight: 60
+weight: 40
 ---
 
 ## 設定ファイル {#configuration-file}
 
-Hugo は  (サイトルートにある場合) `config.toml`、`config.yaml`、または `config.json` をデフォルトのサイト設定ファイルとして使用します。
+Hugo は  (サイトルートにある場合) `hugo.toml`、`hugo.yaml`、または `hugo.json` をデフォルトのサイト設定ファイルとして使用します。
 
 ユーザーは、コマンドラインの `--config` スイッチを使用して、1 つまたは複数のサイト設定ファイルでそのデフォルトをオーバーライドすることを選択できます。
 
@@ -42,7 +41,12 @@ hugo --config a.toml,b.toml,c.toml
 複数のサイト設定ファイルをカンマ区切りの文字列として `--config` スイッチに指定できます。
 {{< /note >}}
 
-{{< todo >}}TODO: 個別の config.toml など (ルートオブジェクトファイル){{< /todo >}}
+## hugo.toml vs config.toml
+
+Hugo 0.110.0 では、デフォルトの設定ベースファイル名を `hugo` に変更しました (たとえば、 `hugo.toml`)。
+私たちはまだ `config.toml` などを探しますが、最終的には名前を変更することをお勧めします (ただし、古いバージョンの Hugo をサポートしたい場合は待つ必要があります)。
+
+{{< new-in "0.110.0" >}}
 
 ## 設定ディレクトリ {#configuration-directory}
 
@@ -51,7 +55,7 @@ hugo --config a.toml,b.toml,c.toml
 - 各ファイルは、`[Params]` には `params.toml`、`[Menu]` には `menu(s).toml`、`[Languages]` には `languages.toml` など、設定のルートオブジェクトを表します。
 - 各ファイルの内容は、たとえば以下のように、トップレベルでなければなりません。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [Params]
   foo = "bar"
 {{< /code-toggle >}}
@@ -67,35 +71,35 @@ foo = "bar"
 ```txt
 ├── config
 │   ├── _default
-│   │   ├── config.toml
+│   │   ├── hugo.toml
 │   │   ├── languages.toml
 │   │   ├── menus.en.toml
 │   │   ├── menus.zh.toml
 │   │   └── params.toml
 │   ├── production
-│   │   ├── config.toml
+│   │   ├── hugo.toml
 │   │   └── params.toml
 │   └── staging
 │       ├── config.toml
-│       └── params.toml
+│       └── hugo.toml
 ```
 
 上記の構造を考えると、`hugo --environment staging` を実行すると、Hugo は `config/_default` のすべての設定を使用し、その上に `staging` の設定をマージします。
 
-これをよりよく理解するために、例を挙げてみましょう。たとえば、あなたの Web サイトに Google アナリティクスを利用しているとします。この場合、`googleAnalytics = "G-XXXXXXXX"` を `config.toml` で指定する必要があります。ここで、次のようなシナリオを考えてみましょう。
+これをよりよく理解するために、例を挙げてみましょう。たとえば、あなたの Web サイトに Google アナリティクスを利用しているとします。この場合、`googleAnalytics = "G-XXXXXXXX"` を `hugo.toml` で指定する必要があります。ここで、次のようなシナリオを考えてみましょう。
 - Analytics コードを開発中に、つまり `localhost` にロードしたくない場合
 - 本番環境とステージング環境に別々の Google アナリティクス ID を使用したい (たとえば、以下のような)
   - 本番環境に `G-PPPPPPPP`
   - ステージング環境に `G-SSSSSSSS`
 
-上記のシナリオを考慮して、`config.toml` ファイルを以下のように設定する必要があります。
-1. `default/config.toml` では、`googleAnalytics` パラメータを記述する必要は全くありません。これにより、開発用サーバ、つまり `hugo serve` を実行したときに、Google アナリティクスのコードがロードされないようになります。デフォルトでは、Hugo は `hugo serve` を実行するときに `Environment=development` を設定し、 `_default` フォルダーにある設定ファイルを使用するので、これはうまくいきます。
-2. `production/config.toml` には、以下の 1 行が必要です。
+上記のシナリオを考慮して、`hugo.toml` ファイルを以下のように設定する必要があります。
+1. `default/hugo.toml` では、`googleAnalytics` パラメータを記述する必要は全くありません。これにより、開発用サーバ、つまり `hugo server` を実行したときに、Google アナリティクスのコードがロードされないようになります。デフォルトでは、Hugo は `hugo server` を実行するときに `Environment=development` を設定し、 `_default` フォルダーにある設定ファイルを使用するので、これはうまくいきます。
+2. `production/hugo.toml` には、以下の 1 行が必要です。
 
     ```googleAnalytics = "G-PPPPPPPP"```
 
-    この設定ファイルでは、`title`、`baseURL`、`theme` などの他のすべてのパラメータを改めて記述する必要はありません。本番環境では異なる、あるいは新しいパラメータのみを記述する必要があります。これは、Hugo が `_default/config.toml` の上に __マージ__ するためです。これで `hugo` (ビルドコマンド) を実行すると、デフォルトで `Environment=production` が設定されます。したがって、 `G-PPPPPPP` の解析コードが本番環境の Web サイトに存在することになります。
-3. 同様に `staging/config.toml` にも、以下の 1行だけ記述すればよいです。
+    この設定ファイルでは、`title`、`baseURL`、`theme` などの他のすべてのパラメータを改めて記述する必要はありません。本番環境では異なる、あるいは新しいパラメータのみを記述する必要があります。これは、Hugo が `_default/hugo.toml` の上に __マージ__ するためです。これで `hugo` (ビルドコマンド) を実行すると、デフォルトで `Environment=production` が設定されます。したがって、 `G-PPPPPPP` の解析コードが本番環境の Web サイトに存在することになります。
+3. 同様に `staging/hugo.toml` にも、以下の 1行だけ記述すればよいです。
 
     ```googleAnalytics = "G-SSSSSSSS"```
 
@@ -124,7 +128,7 @@ deep
 
 ## すべてのコンフィギュレーション設定 {#all-configuration-settings}
 
-以下は Hugo で定義された変数の完全なリストで、括弧内にデフォルト値が示されています。 ユーザーは、サイト設定ファイルでこれらの値をオーバーライドすることができます。
+以下は Hugo で定義された変数の完全なリストです。 ユーザーは、サイト設定ファイルでこれらの値をオーバーライドすることができます。
 
 ### archetypeDir
 
@@ -140,7 +144,7 @@ Hugo が [Hugo パイプ](/hugo-pipes/) で使用するアセットファイル�
 
 ### baseURL
 
-ルートへのホスト名 (およびパス)、たとえば、https://bep.is/
+公開サイトの絶対 URL (プロトコル、ホスト、パス、末尾のスラッシュ) (たとえば、 `https://www.example.org/docs/`)。
 
 ### build
 
@@ -177,6 +181,12 @@ publishdate (公開日) が将来のコンテンツを含めます。
 **デフォルト値:** false
 
 相対 URL を絶対 URL に変換できるようにします。
+
+### cleanDestinationDir
+
+**デフォルト値:** false
+
+ビルド時に、静的ディレクトリにないファイルをビルド先から削除します。
 
 ### contentDir
 
@@ -236,7 +246,7 @@ Hugo がデータ ファイルを読み取るディレクトリ。 {{% module-mo
 
 **デフォルト値:**  false
 
-: URL/パスを小文字に変換しないようにします。
+URL/ パスを小文字に変換しないようにします。
 
 ### enableEmoji
 
@@ -316,7 +326,7 @@ true の場合、コンテンツ内の中国語/日本語/韓国語の自動検�
 
 ### menus
 
-[「メニューにコンテンツ以外のエントリを追加する」](/content-management/menus/#add-non-content-entries-to-a-menu) を参照してください。
+[「メニュー」](/content-management/menus/#define-in-site-configuration) を参照してください。
 
 ### minify
 
@@ -378,7 +388,7 @@ Hugo が最終的な静的サイト (HTML ファイルなど) を書き込むデ
 
 ### related
 
-: [「関連コンテンツ」](/content-management/related/#configure-related-content) を参照してください。{{< new-in "0.27" >}}
+[「関連コンテンツ」](/content-management/related/#configure-related-content) を参照してください。{{< new-in "0.27" >}}
 
 ### relativeURLs
 
@@ -414,7 +424,7 @@ RSS フィードの最大アイテム数。
 
 ### sectionPagesMenu
 
-[「怠惰なブロガーのためのセクションメニュー」](/templates/menu-templates/#section-menu-for-lazy-bloggers) を参照してください。
+[「メニュー」](/content-management/menus/#define-in-site-configuration) を参照してください。
 
 ### security
 
@@ -436,7 +446,7 @@ RSS フィードの最大アイテム数。
 
 ### theme
 
-: テーマをインポートする方法については、[「モジュール設定」](/hugo-modules/configuration/#module-config-imports) を参照してください。
+テーマをインポートする方法については、[「モジュール設定」](/hugo-modules/configuration/#module-configuration-imports) を参照してください。
 
 ### themesDir
 
@@ -448,7 +458,8 @@ Hugo がテーマを読み込むディレクトリ。
 
 **デフォルト値:** "30s"
 
-[duration](https://pkg.go.dev/time#Duration) またはミリ秒単位で指定される、ページコンテンツ生成のためのタイムアウト。*注意:* &nbsp;これは再帰的なコンテンツ生成から抜け出すために使用されます。ページの生成に時間がかかる場合、この制限を上げる必要があるかもしれません (例えば、大きな画像処理を必要としたり、リモートコンテンツに依存するため)。
+[duration](https://pkg.go.dev/time#Duration) または秒単位で指定される、ページコンテンツ生成のためのタイムアウト。
+*注意:* &nbsp;これは再帰的なコンテンツ生成から抜け出すために使用されます。ページの生成に時間がかかる場合、この制限を上げる必要があるかもしれません (たとえば、大きな画像処理を必要としたり、リモートコンテンツに依存する場合など)。
 
 ### timeZone
 
@@ -495,31 +506,101 @@ enableemoji: true
 
 `build` 設定セクションには、ビルドに関連するグローバルな設定オプションが含まれています。
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo" >}}
 [build]
-useResourceCacheWhen="fallback"
-writeStats = false
-noJSConfigInAssets = false
+  noJSConfigInAssets = false
+  useResourceCacheWhen = 'fallback'
+  [build.buildStats]
+    disableClasses = false
+    disableIDs = false
+    disableTags = false
+    enable = false
+[[build.cachebusters]]
+  source = 'assets/.*\.(js|ts|jsx|tsx)'
+  target = '(js|scripts|javascript)'
+[[build.cachebusters]]
+  source = 'assets/.*\.(css|sass|scss)$'
+  target = '(css|styles|scss|sass)'
+[[build.cachebusters]]
+  source = '(postcss|tailwind)\.config\.js'
+  target = '(css|styles|scss|sass)'
+[[build.cachebusters]]
+  source = 'assets/.*\.(.*)$'
+  target = '$1'
 {{< /code-toggle >}}
 
+buildStats {{< new-in "0.115.1" >}}
+: 有効にすると、プロジェクトのルートに `hugo_stats.json` ファイルが作成されます。このファイルには、公開されているサイト内のすべての HTML 要素の `class` 属性、`id` 属性、タグの配列が含まれています。このファイルは、サイトから [未使用の CSS を削除する][removing unused CSS] 際のデータソースとして使用します。このプロセスは、枝刈り (pruning)、パージ (purging)、ツリーシェイク (tree shaking) としても知られています。
+
+[removing unused CSS]: http://localhost:1313/hugo-pipes/postprocess/#css-purging-with-postcss
+
+`disableClasses`、`disableIDs`、`disableTags` キーを使用して、`hugo_stats.json` から `class` 属性、`id` 属性、またはタグを除外します。
+
+{{% note %}}
+v0.115.0 以前では、この機能は `writeStats` を `true` に設定することで有効になっていました。`writeStats` キーはまだ機能していますが、将来のリリースでは廃止される予定です。
+
+CSS のパージは通常プロダクションビルドに限定されるので、`buildStats` オブジェクトを [config/production] の下に配置します。
+
+[config/production]: /getting-started/configuration/#configuration-directory
+
+高速化のために構築されたため、公開されたサイトの解析中に「誤検知 (falsse positive)」 (HTML 要素ではない HTML 要素など) が発生することがあります。このような「誤検知」はまれであり、取るに足らないものです。
+{{% /note %}}
+
+サーバーの部分的なビルドの性質上、新しい HTML エンティティはサーバーの実行中に追加されますが、古い値はサーバーを再起動するか、通常の `hugo` ビルドを実行するまで削除されません。
+
+cachebusters
+: See [キャッシュバスターを設定する](#configure-cache-busters)
+
+noJSConfigInAssets
+: [js.Build](/hugo-pipes/js) の実行からのインポートのマッピングを含む `jsconfig.json` を `/assets` フォルダーに書き込むことをオフにします。このファイルは [VS Code](https://code.visualstudio.com/) のようなコードエディタでのインテリセンスやナビゲーションを助けるためのものです。なお、`js.Build` を使用しない場合、ファイルは書き込まれないことに注意してください。
 
 useResourceCacheWhen
 : PostCSS と ToCSS で、`/resources/_gen` にあるキャッシュされたリソースをいつ使用するかを指定します。有効な値は `never`、`always` および `fallback` です。最後の値は、PostCSS/拡張版が利用できない場合に、キャッシュを試行することを意味します。
 
-writeStats
-: 有効にすると、`hugo_stats.json` という名前のファイルがプロジェクト ルートに書き込まれ、ビルドに関する集計データが含まれます。たとえば、[CSS プルーニング](/hugo-pipes/postprocess/#css-purging-with-postcss) に使用する、公開された HTML エンティティのリストなどです。本番ビルドにしか使わないのであれば、[config/production](/getting-started/configuration/#configuration-directory) の下に置くことを検討する必要があります。また、部分的なサーバービルドの性質上、サーバーの実行中に HTML エンティティを追加・変更すると新しいものが追加されますが、古い値はサーバーを再起動するか、通常の `hugo` ビルドを実行するまで削除されないことにも注意してください。
+## キャッシュバスターを設定する {#configure-cache-busters}
 
-**注意** これの主な使用例は、未使用の CSS の削除です。 これは速度を重視して構築されており、誤検知が発生する可能性があります (たとえば、HTML 要素ではない HTML 要素の検出など)。
+{{< new-in "0.112.0" >}}
 
-noJSConfigInAssets
-: [js.Build](https://gohugo.io/hugo-pipes/js) を実行すると、インポートのマッピングを含む `jsconfig.json` を `/assets` フォルダーに書き込まないようにします。このファイルは、[VS Code](https://code.visualstudio.com/) のようなコードエディターでのインテリセンスやナビゲーションを支援するためのものです。なお、`js.Build` を使用しない場合は、このファイルは書き込まれません。
+Tailwind 3.x の JIT コンパイラを使用した開発をサポートするために、`build.cachebusters` 設定オプションが追加されました。 `build` 設定は以下のようになります。
+
+<!-- TODO (jmm) writeStats => build.buildStats -->
+
+{{< code-toggle file="hugo" >}}
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = "assets/watching/hugo_stats\\.json"
+    target = "styles\\.css"
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js|ts|jsx|tsx)"
+    target = "js"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"
+{{< /code-toggle >}}
+
+上記のいくつかの重要なポイントは、`writeStats = true` です。
+これは、レンダリングされた出力で使用される HTML クラスなどを使用して、ビルドごとに `hugo_stats.json` ファイルを書き込みます。
+このファイルを変更すると、`styles.css` ファイルの再構築がトリガーされます。 
+また、Hugo のサーバーウォッチャーに `hugo_stats.json` を追加する必要があります。
+実行例は、 [Hugo Starter Tailwind Basic](https://github.com/bep/hugo-starter-tailwind-basic) を参照してください。
+
+source
+: Hugo の仮想コンポーネント ディレクトリの 1 つに対する正規表現一致ファイル (通常は `assets/...`)。
+
+target
+: `source` が変更されたときに期限切れになる必要があるリソース キャッシュ内のキーに一致する正規表現。 `$1` のように、`source` に一致する正規表現グループを式に使用できます。
 
 ## サーバーを設定する {#configure-server}
 
 これは `hugo server` を実行するときにのみ関係し、開発中に HTTP ヘッダーを設定することができるので、コンテンツ セキュリティ ポリシーなどをテストすることができます。設定形式は、[Netlify の](https://docs.netlify.com/routing/headers/#syntax-for-the-netlify-configuration-file) と少し強力な [glob マッチング](https://github.com/gobwas/glob) にマッチしています。
 
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 [server]
 [[server.headers]]
 for = "/**"
@@ -561,22 +642,34 @@ force = false
 
 `force=true` を設定すると、パスに既存のコンテンツがある場合でもリダイレクトを行います。Hugo 0.76 以前は `force` がデフォルトの動作でしたが、これはNetlify が行う方法と一致していることに注意してください。
 
-## 404 サーバーエラーページ {#404-server-error-page}
+## 404 サーバーエラーページ {#_404-server-error-page}
 
 {{< new-in "0.103.0" >}}
 
-Hugo は、`404.html` テンプレートで `hugo server` を実行すると、デフォルトですべての 404 エラーをレンダリングします。 [サーバー設定](#configure-server) に 1 つ以上のリダイレクトを既に追加している場合は、404 リダイレクトを明示的に追加する必要があることに注意してください。たとえば、以下のようにします。
+デフォルトでは、`404.html` テンプレートで `hugo server` を実行すると、Hugo はすべての 404 エラーをレンダリングします。[サーバーの設定](#configure-server) に 1 つ以上のリダイレクトを追加している場合は、404リダイレクトを明示的に追加する必要があることに注意してください。
 
-```toml
+{{< code-toggle file="config/development/server" copy=false >}}
 [[redirects]]
-    from   = "/**"
-    to     = "/404.html"
-    status = 404
-```
+from   = "/**"
+to     = "/404.html"
+status = 404
+{{< /code-toggle >}}
 
 ## タイトルケースを設定する {#configure-title-case}
 
-[title](/function/title/) テンプレート関数と Hugo の自動セクションタイトルで使用されるタイトルスタイルを指定するには、`titleCaseStyle` を設定します。タイトルケースのデフォルトは [AP Stylebook](https://www.apstylebook.com/) ですが、`Chicago` や `Go` (すべての単語を大文字で始める) に設定することもできます。
+[title](/function/title/) テンプレート関数と Hugo の自動セクションタイトルで使用されるタイトルスタイルを指定するには、`titleCaseStyle` を設定します。
+
+値は、以下のいずれかになります。
+
+* `ap` (デフォルト): [Associated Press (AP) スタイルブック][Associated Press (AP) Stylebook] の大文字と小文字のルール 
+* `chicago`:  [シカゴ・マニュアル・オブ・スタイル][Chicago Manual of Style]
+* `go`:  すべての単語を大文字にするという Go の慣例。
+* `firstupper`:  最初の単語の最初の文字を大文字にします。
+* `none`:  大文字は使用しません。
+
+[Associated Press (AP) Stylebook]: https://www.apstylebook.com/
+[Chicago Manual of Style]: https://www.chicagomanualofstyle.org/home.html
+[site configuration]: /getting-started/configuration/#configure-title-case
 
 ## コンフィギュレーション環境変数 {#configuration-environment-variables}
 
@@ -587,18 +680,18 @@ HUGO_NUMWORKERMULTIPLIER
 
 テンプレート [検索順序][lookup order] と同様に、Hugo にはデフォルトの動作として、Web サイトのソースディレクトリのルートにある設定ファイルを検索するためのデフォルトのルールセットが用意されています。
 
-1. `./config.toml`
-2. `./config.yaml`
-3. `./config.json`
+1. `./hugo.toml`
+2. `./hugo.yaml`
+3. `./hugo.json`
 
-`config` ファイルでは、Hugo に Web サイトのレンダリング方法を指示したり、Web サイトのメニューを制御したり、プロジェクトに特有のサイト全体のパラメータを任意に定義したりすることが可能です。
+設定ファイルでは、Hugo に Web サイトのレンダリング方法を指示したり、Web サイトのメニューを制御したり、プロジェクトに特有のサイト全体のパラメータを任意に定義したりすることが可能です。
 
 
 ## 設定例 {#example-configuration}
 
-以下は、設定ファイルの典型的な例です。 `params:` の下にネストされた値は、[テンプレート][templates] で使用するために [`.Site.Params`][] 変数に格納されます。
+以下は、設定ファイルの典型的な例です。 `params:` の下にネストされた値は、[テンプレート][templates] で使用するために [`.Site.Params`] 変数に格納されます。
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 baseURL: "https://yoursite.example.com/"
 title: "My Hugo Site"
 permalinks:
@@ -625,11 +718,11 @@ $ env HUGO_TITLE="Some Title" hugo
 
 これは Netlify のようなサービスを利用してサイトをデプロイする場合にとても便利です。Hugo のドキュメント [Netlify 設定ファイル](https://github.com/gohugoio/hugoDocs/blob/master/netlify.toml) に例があります。
 
-{{% note "Setting Environment Variables" %}}
+{{% note %}}
 OS の環境変数を設定する際には、名前の前に `HUGO_` を付け、設定キーを大文字で設定する必要があります。
 
 設定パラメータを設定するには、名前のプレフィックスに `HUGO_PARAMS_` を付けます。
-{{< /note >}}
+{{% /note %}}
 
 スネークケース [^1] の変数名を使っている場合、上記は動作しません。Hugo は `HUGO` の後の最初の文字で、使用する区切り文字を決定します。これにより、任意の [有効な (allowed)](https://stackoverflow.com/questions/2821043/allowed-characters-in-linux-environment-variable-names#:~:text=So%20names%20may%20contain%20any,not%20begin%20with%20a%20digit.) 区切り文字を使用して、`HUGOxPARAMSxAPI_KEY=abcdefgh` という形式の環境変数を定義することができるようになっています。
 
@@ -641,17 +734,17 @@ Test and document setting params via JSON env var.
 
 **注意:** これは動作しますが、より新しく強力な [includeFiles および excludeFiles](https://gohugo.io/hugo-modules/configuration/#module-config-mounts) マウント オプションを使用することをお勧めします。
 
-サイトのレンダリング時に `content` と `data` ディレクトリから特定のファイルを除外するには、 `ignoreFiles` に一つ以上の正規表現を設定して、ファイルの絶対パスに対してマッチングさせます。
+サイトをレンダリングするときに `content`、`data`、`i18n` ディレクトリから特定のファイルを除外するには、`ignoreFiles` に絶対ファイルパスに対してマッチする 1 つ以上の正規表現を設定します。
 
 `.foo` や `.boo` で終わるファイルを無視するには、以下のようにします。
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle copy=false file="hugo" >}}
 ignoreFiles = ['\.foo$', '\.boo$']
 {{< /code-toggle >}}
 
 絶対ファイルパスを使ってファイルを無視するには、以下のようにします。
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle copy=false file="hugo" >}}
 ignoreFiles = ['^/home/user/project/content/test\.md$']
 {{< /code-toggle >}}
 
@@ -659,11 +752,11 @@ ignoreFiles = ['^/home/user/project/content/test\.md$']
 
 ### 日付を設定する {#configure-dates}
 
-Hugo では日付が重要であり、Hugo がコンテンツページにどのように日付を割り当てるか設定できます。これは、`config.toml` に `frontmatter` セクションを追加することで行います。
+Hugo では日付が重要であり、Hugo がコンテンツページにどのように日付を割り当てるか設定できます。これは、`hugo.toml` に `frontmatter` セクションを追加することで行います。
 
 デフォルトの設定は以下のとおりです。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [frontmatter]
 date = ["date", "publishDate", "lastmod"]
 lastmod = [":git", "lastmod", "date", "publishDate"]
@@ -673,7 +766,7 @@ expiryDate = ["expiryDate"]
 
 たとえば、コンテンツの一部に非標準の日付パラメータがある場合、 `date` の設定をオーバーライドできます。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [frontmatter]
 date = ["myDate", ":default"]
 {{< /code-toggle >}}
@@ -690,7 +783,7 @@ date = ["myDate", ":default"]
 
 例:
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [frontmatter]
 lastmod = ["lastmod", ":fileModTime", ":default"]
 {{< /code-toggle >}}
@@ -704,7 +797,7 @@ lastmod = ["lastmod", ":fileModTime", ":default"]
 
 例:
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [frontmatter]
 date  = [":filename", ":default"]
 {{< /code-toggle >}}
@@ -721,8 +814,6 @@ Hugo v0.20 では、コンテンツを複数の出力形式 (JSON、AMP html、C
 
 ## ミニファイを設定する {#configure-minify}
 
-{{< new-in "0.68.0" >}}
-
 デフォルト設定:
 
 {{< code-toggle config="minify" />}}
@@ -731,7 +822,7 @@ Hugo v0.20 では、コンテンツを複数の出力形式 (JSON、AMP html、C
 
 Hugo 0.52 以降では、`cacheDir` 以外も設定することができます。以下はデフォルトの設定です。
 
-{{< code-toggle >}}
+{{< code-toggle file="hugo" >}}
 [caches]
 [caches.getjson]
 dir = ":cacheDir/:project"
@@ -753,12 +844,12 @@ dir = ":cacheDir/modules"
 maxAge = -1
 {{< /code-toggle >}}
 
-これらのキャッシュ設定は、あなた自身の `config.toml` でオーバーライドすることができます。
+これらのキャッシュ設定は、あなた自身の `hugo.toml` でオーバーライドすることができます。
 
 ### キーワードの説明 {#the-keywords-explained}
 
 `:cacheDir`
-: これは `cacheDir` 設定オプションが設定されている場合の値です (OS 環境変数 `HUGO_CACHEDIR` からも設定できます)。Netlify では `/opt/build/cache/hugo_cache/` に、それ以外では OS の一時ディレクトリの下にある `hugo_cache` ディレクトリにフォールバックします。つまり、Netlify 上でビルドを実行すると、`:cacheDir` で設定されたすべてのキャッシュが保存され、次のビルドでリストアされます。他の CI ベンダーについては、それぞれのドキュメントを読んでください。CircleCI の例としては、[この設定](https://github.com/bep/hugo-sass-test/blob/6c3960a8f4b90e8938228688bc49bdcdd6b2d99e/.circleci/config.yml) を参照してください。
+: これは `cacheDir` 設定オプションが設定されている場合の値です (OS 環境変数 `HUGO_CACHEDIR` からも設定できます)。Netlify では `/opt/build/cache/hugo_cache/` に、それ以外では OS の一時ディレクトリの下にある `hugo_cache_$USER` ディレクトリにフォールバックします。つまり、Netlify 上でビルドを実行すると、`:cacheDir` で設定されたすべてのキャッシュが保存され、次のビルドでリストアされます。他の CI ベンダーについては、それぞれのドキュメントを読んでください。CircleCI の例としては、[この設定](https://github.com/bep/hugo-sass-test/blob/6c3960a8f4b90e8938228688bc49bdcdd6b2d99e/.circleci/config.yml) を参照してください。
 
 `:project`
 : 現在の Hugo プロジェクトのベースディレクトリ名です。これは、デフォルトの設定では、すべてのプロジェクトでファイルキャッシュが分離され、`hugo --gc` を実行したときに、同じ PC で動作している他の Hugo プロジェクトに関連するファイルに触れないことを意味します。
@@ -790,6 +881,6 @@ dir
 [lookup order]: /templates/lookup-order/
 [Output Formats]: /templates/output-formats/
 [templates]: /templates/
-[toml]: https://github.com/toml-lang/toml
+[toml]: https://toml.io/en/
 [yaml]: https://yaml.org/spec/
 [static-files]: /content-management/static-files/

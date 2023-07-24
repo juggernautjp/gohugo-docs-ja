@@ -1,22 +1,12 @@
 ---
-title: Host on GitLab
-linktitle: Host on GitLab
+title: Host on GitLab Pages
 description: GitLab makes it easy to build, deploy, and host your Hugo website via their free GitLab Pages service, which provides native support for Hugo.
-date: 2016-06-23
-publishdate: 2016-06-23
-lastmod: 2017-11-16
 categories: [hosting and deployment]
 keywords: [hosting,deployment,git,gitlab]
-authors: [Riku-Pekka Silvola]
 menu:
   docs:
-    parent: "hosting-and-deployment"
-    weight: 40
-weight: 40
-sections_weight: 40
-draft: false
+    parent: hosting-and-deployment
 toc: true
-wip: false
 aliases: [/tutorials/hosting-on-gitlab/]
 ---
 
@@ -51,9 +41,9 @@ pages:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 {{< /code >}}
 
-{{< note >}}
+{{% note %}}
 See [this list](https://gitlab.com/pages/hugo/container_registry) if you wish to use a particular Hugo version to build your site.
-{{< /note >}}
+{{% /note %}}
 
 ## Push your Hugo website to GitLab
 

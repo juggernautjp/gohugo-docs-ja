@@ -10,16 +10,12 @@ draft: false
 keywords:
 - hosting
 - firebase
-linktitle: Firebase でのホスト
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 20
 publishdate: "2017-03-12"
-sections_weight: 20
 title: Firebase でのホスト
 toc: true
-weight: 20
 ---
 
 ## 前提条件 {#assumptions}
@@ -55,7 +51,7 @@ firebase init
 4. 公開ディレクトリのデフォルトである `public` を受け入れます
 5. シングルページ アプリをデプロイする場合は、質問で [いいえ] を選択します
 
-## Firebase と Github CI/CD の使用 {#using-firebase-github-cicd}
+## Firebase と GitHub CI/CD の使用 {#using-firebase-github-cicd}
 
 Firebase の新しいバージョンでは、以下のように、他にもいくつかの質問が適用されます。
 
@@ -66,7 +62,7 @@ Firebase の新しいバージョンでは、以下のように、他にもい�
 7. どの GitHub リポジトリに対して GitHub ワークフローを設定しますか? (形式: ユーザー/リポジトリ) 
 
 上記の形式で使用するリポジトリを含めます (アカウント/リポジトリ)。
-資格情報を取得する Firebase スクリプトを使用して、後で github 設定で管理できるサービス アカウントを作成します。
+資格情報を取得する Firebase スクリプトを使用して、後で GitHub 設定で管理できるサービス アカウントを作成します。
 
 8. 毎回デプロイする前にビルドスクリプトを実行するようにワークフローを設定しますか?
 
@@ -82,7 +78,7 @@ Firebase の新しいバージョンでは、以下のように、他にもい�
 hugo && firebase deploy
 ```
 
-これにより、アプリを手動で初期化できます。 その後、https://github.com/your-account/yout-repo/actions から github ワークフローを管理および修正できます。
+これにより、アプリを手動で初期化できます。 その後、https://github.com/your-account/yout-repo/actions から GitHub ワークフローを管理および修正できます。
 
 プッシュする前に、静的ページを更新することを忘れないでください。
 

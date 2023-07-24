@@ -1,12 +1,10 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 言語プレフィックスがある場合、それを付けた相対 URL を返します。
 draft: false
-hugoversion: null
 keywords:
 - multilingual
 - i18n
@@ -14,13 +12,12 @@ keywords:
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - "relLangURL INPUT"
 title: relLangURL
-workson: []
 ---
 
 この機能は、単一言語構成と多言語構成の両方で使用してください。 この関数によって返される URL は、以下によって異なります。

@@ -1,7 +1,6 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2018-11-07"
 description: '`collections.SymDiff` (別名 `symdiff`) は、2 つのコレクションの対称差を返します。'
 draft: false
@@ -13,7 +12,7 @@ keywords:
 - complement
 menu:
   docs:
-    parent: functions
+    parent: function
 signature:
 - COLLECTION | symdiff COLLECTION
 title: symdiff

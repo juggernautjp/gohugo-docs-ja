@@ -1,24 +1,19 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 comments: null
 date: "2018-03-16"
-deprecated: false
 description: 他の言語から不足している翻訳をマージします。
 draft: false
-hugoversion: null
 keywords:
 - multilingual
 menu:
   docs:
-    parent: functions
+    parent: function
 relatedfuncs: []
 signature:
 - lang.Merge FROM TO
 title: lang.Merge
-toc: false
-workson: []
 ---
 
 一例として、

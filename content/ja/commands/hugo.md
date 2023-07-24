@@ -39,10 +39,10 @@ hugo [flags]
   -D, --buildDrafts                下書きとしてマークされたコンテンツを含めます
   -E, --buildExpired               期限切れのコンテンツを含めます
   -F, --buildFuture                公開日が将来のコンテンツを含めます
-      --cacheDir string            キャッシュ ディレクトリへのファイルシステム パスで、デフォルトは $TMPDIR/hugo_cache/ です。
+      --cacheDir string            キャッシュ ディレクトリへのファイルシステム パスで、デフォルトは $TMPDIR/hugo_cache_$USER/ です。
       --cleanDestinationDir        静的ディレクトリに見つからない宛先からファイルを削除します
       --clock string               Hugo が使用する時計を設定します。たとえば、 --clock 2021-11-06T22:30:00.00+09:00
-      --config string              設定ファイル (デフォルトは、 path/config.yaml|json|toml)
+      --config string              設定ファイル (デフォルトは、hugo.yaml|json|toml)
       --configDir string           設定ディレクトリ (デフォルトは、 "config")
   -c, --contentDir string          コンテンツディレクトリへのファイルシステムのパス
       --debug                      デバッグ出力
@@ -73,7 +73,7 @@ hugo [flags]
   -s, --source string              ファイルの相対パスを読み取るファイルシステムのパス
       --templateMetrics            テンプレート実行に関する指標 (メトリクス) を表示します
       --templateMetricsHints       --templateMetrics と組み合わせると、いくつかの改善のヒントが計算されます
-  -t, --theme strings              (/themes/THEMENAME/ にある) 使用するテーマ 
+  -t, --theme strings              使用するテーマ (/themes/THEMENAME/ に置かれた) 
       --themesDir string           テーマディレクトリへのファイルシステムのパス
       --trace file                 トレースをファイルに書き込みます (一般的には役に立ちません)
   -v, --verbose                    詳細出力 (冗長表示)
@@ -94,5 +94,4 @@ hugo [flags]
 * [hugo mod](/commands/hugo_mod/)	 - Hugo モジュールの各種ヘルパーです
 * [hugo new](/commands/hugo_new/)	 - サイトの新しいコンテンツを作成します
 * [hugo server](/commands/hugo_server/)	 - 高性能な Web サーバーを起動します
-* [hugo version](/commands/hugo_version/)	 - Hugo のバージョン番号を表示します
-
+* [hugo version](/commands/hugo_version/)	 - Hugo のバージョンと環境の情報を表示します

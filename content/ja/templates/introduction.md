@@ -16,12 +16,11 @@ linktitle: テンプレート入門
 menu:
   docs:
     parent: templates
-    weight: 10
+    weight: 20
 publishdate: "2017-02-01"
-sections_weight: 10
 title: Hugo テンプレート入門
 toc: true
-weight: 10
+weight: 20
 ---
 
 {{< note >}}
@@ -36,7 +35,7 @@ Go テンプレートは、[変数][variables] と [関数][functions] が追加
 
 ### 定義済み変数にアクセスする {#access-a-predefined-variable}
 
-_定義済み変数_ とは、現在のスコープに既に存在する変数 (以下の [変数]({{< relref "#variables" >}}) セクションの `.Title` の例のように)、またはカスタム変数 (同じセクションの `$address` の例のように) である可能性があります。
+_定義済み変数_ とは、現在のスコープに既に存在する変数 (以下の [変数]("#variables) セクションの `.Title` の例のように)、またはカスタム変数 (同じセクションの `$address` の例のように) である可能性があります。
 
 ```go-html-template
 {{ .Title }}
@@ -138,9 +137,9 @@ Go テンプレートはいくつかの基本的な関数を備えているだ�
 
 どちらの例も、Go テンプレートの [math][math] 関数を使用していることに注意してください。
 
-{{% note "Additional Boolean Operators" %}}
+{{% note %}}
 [Go テンプレートのドキュメント](https://golang.org/pkg/text/template/#hdr-Functions) には、Hugo のドキュメントに掲載されている以外にも多くのブール演算子があります。
-{{< /note >}}
+{{% /note %}}
 
 ## インクルードする (含める) {#includes}
 
@@ -227,7 +226,7 @@ Go テンプレートは、`range` を多用して _map_、_array_、または _
 ```go-html-template
 {{ range $array }}
     {{ . }}
-{{else}}
+{{ else }}
     <!-- This is only evaluated if $array is empty -->
 {{ end }}
 ```
@@ -386,7 +385,7 @@ Go テンプレートについて理解する上で最も見落としやすい�
 {{< /code >}}
 
 {{< note >}}
-ループ (つまり `range`) に入った時点で、 `{{ . }}` の値が変化していることに注意してください。 ループの外側で変数 (`{$title}}`) を定義して値を代入しているので、ループの内側からもその値にアクセスできます。
+ループ (つまり `range`) に入った時点で、 `{{ . }}` の値が変化していることに注意してください。 ループの外側で変数 (`{{ $title }}`) を定義して値を代入しているので、ループの内側からもその値にアクセスできます。
 {{< /note >}}
 
 ### 2. `$.` を使用してグローバル コンテキストにアクセスする {#2-use-to-access-the-global-context}
@@ -406,7 +405,7 @@ Go テンプレートについて理解する上で最も見落としやすい�
 
 {{% warning "Don't Redefine the Dot" %}}
 たとえば、 `{{ $ := .Site }}` のように、誰かがいたずらで特殊文字を再定義してしまうと、 `$` の組み込みマジックは動作しなくなります。*やらないでください。* もちろん、グローバルコンテキストで `{{ $ := . }}` を使って `$` をデフォルト値に戻すことで、このいたずらから回復できます。
-{{< /warning >}}
+{{% /warning %}}
 
 ## 空白文字 {#whitespace}
 
@@ -467,7 +466,17 @@ Bonsoir, {{/* {{ add 0 + 2 }} */}}Eliott.
 
 ### HTML のコメント {#html-comments}
 
-テンプレートから HTML コメントを生成する必要があるなら、[Internet Explorer の条件付きコメント]({{< relref "introduction.md#ie-conditional-comments" >}}) の例を見てみてください。このような HTML コメントを作成するために変数が必要な場合は、 `printf` を `safeHTML` にパイプするだけです。たとえば、以下のコードです。
+HTML コメントを追加するには、文字列 HTML コード コメントを `safeHTML` にパイプします。
+
+たとえば、以下のコードです。
+
+```go-html-template
+{{ "<!-- これは、HTML コメントです -->" | safeHTML }}
+```
+
+このような HTML コメントを構築するために変数が必要な場合は、`printf` を `safeHTML` にパイプするだけです。
+
+たとえば、以下のようになります。
 
 ```go-html-template
 {{ printf "<!-- Our website is named: %s -->" .Site.Title | safeHTML }}
@@ -490,7 +499,7 @@ HTML コメントを使用して Go テンプレートコードをコメント�
 
 ## Hugo パラメータ {#hugo-parameters}
 
-Hugo は、[サイト設定][config] (つまり、サイト全体の値) または特定のコンテンツの各部分のメタデータ (つまり、[フロントマター][front matter]) を介してテンプレート レイヤーに値を渡すオプションを提供します。 [フロントマターのフォーマット]({{< ref "front-matter.md#front-matter-formats" >}}) がサポートしている値であれば、どのようなタイプの値でも定義して、テンプレートで好きなように使用できます。
+Hugo は、[サイト設定][config] (つまり、サイト全体の値) または特定のコンテンツの各部分のメタデータ (つまり、[フロントマター][front matter]) を介してテンプレート レイヤーに値を渡すオプションを提供します。 [フロントマターのフォーマット](/content-management/front-matter#front-matter-formats) がサポートしている値であれば、どのようなタイプの値でも定義して、テンプレートで好きなように使用できます。
 
 ## コンテンツ (`Page`) パラメータを使用する {#use-content-page-parameters}
 
@@ -498,28 +507,24 @@ Hugo は、[サイト設定][config] (つまり、サイト全体の値) また�
 
 この例は、Hugo ドキュメントで使用されています。 ほとんどのページでは、目次を提供することでメリットが得られますが、目次があまり意味をなさない場合もあります。 フロントマターで `notoc` 変数を定義し、特に `true` に設定されている場合、目次がレンダリングされないようにします。
 
-以下は、（YAML）フロントマターの例です。
+以下は、フロントマターの例です。
 
-```yml
----
-title: Roadmap
-lastmod: 2017-03-05
-date: 2013-11-18
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
+title: Example
 notoc: true
----
-```
+{{< /code-toggle >}}
 
 以下は、`toc.html` [パーシャル][partials] の内部で使用できる対応するコードの例です。
 
-{{< code file="layouts/partials/toc.html" download="toc.html" >}}
+{{< code file="layouts/partials/toc.html" >}}
 {{ if not .Params.notoc }}
 <aside>
   <header>
-    <a href="#{{.Title | urlize}}">
-    <h3>{{.Title}}</h3>
+    <a href="#{{ .Title | urlize }}">
+    <h3>{{ .Title }}</h3>
     </a>
   </header>
-  {{.TableOfContents}}
+  {{ .TableOfContents }}
 </aside>
 <a href="#" id="toc-toggle"></a>
 {{ end }}
@@ -533,7 +538,7 @@ notoc: true
 
 たとえば、以下のように宣言します。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 params:
   copyrighthtml: "Copyright &#xA9; 2017 John Doe. All Rights Reserved."
   twitteruser: "spf13"
@@ -545,7 +550,7 @@ params:
 ```go-html-template
 {{ if .Site.Params.copyrighthtml }}
     <footer>
-        <div class="text-center">{{.Site.Params.CopyrightHTML | safeHTML}}</div>
+        <div class="text-center">{{ .Site.Params.CopyrightHTML | safeHTML }}</div>
     </footer>
 {{ end }}
 ```
@@ -555,8 +560,8 @@ params:
 {{< code file="layouts/partials/twitter.html" >}}
 {{ with .Site.Params.twitteruser }}
     <div>
-        <a href="https://twitter.com/{{.}}" rel="author">
-        <img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}" alt="Twitter"></a>
+        <a href="https://twitter.com/{{ . }}" rel="author">
+        <img src="/images/twitter.png" width="48" height="48" title="Twitter: {{ . }}" alt="Twitter"></a>
     </div>
 {{ end }}
 {{< /code >}}
@@ -568,7 +573,7 @@ params:
   <h1>Recent Posts</h1>
   <ul>
   {{- range first .Site.Params.SidebarRecentLimit .Site.Pages -}}
-      <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
   {{- end -}}
   </ul>
 </nav>
@@ -586,7 +591,7 @@ content/
     └── event-3.md
 ```
 
-{{< code-toggle file="content/events/event-1.md" copy="false" >}}
+{{< code-toggle file="content/events/event-1.md" copy=false >}}
 title = 'Event 1'
 date = 2021-12-06T10:37:16-08:00
 draft = false
@@ -624,19 +629,19 @@ end_date = 2021-12-05T11:00:00-08:00
 </ul>
 {{< /code >}}
 
-[config]: {{< relref "getting-started/configuration" >}}
 [dotdoc]: https://golang.org/pkg/text/template/#hdr-Variables
-[first]: {{< relref "function/first" >}}
-[front matter]: {{< relref "content-management/front-matter" >}}
-[functions]: {{< relref "function" >}}
-[internal templates]: {{< relref "templates/internal" >}}
-[isset]: {{< relref "function/isset" >}}
-[math]: {{< relref "function/math" >}}
-[pagevars]: {{< relref "variables/page" >}}
-[param]: {{< relref "function/param" >}}
-[partials]: {{< relref "templates/partials" >}}
-[relpermalink]: {{< relref "variables/page#page-variables" >}}
-[safehtml]: {{< relref "function/safehtml" >}}
-[sitevars]: {{< relref "variables/site" >}}
-[variables]: {{< relref "variables" >}}
-[with]: {{< relref "function/with" >}}
+[config]: /getting-started/configuration
+[first]: /function/first
+[front matter]: /content-management/front-matter
+[functions]: /function
+[internal templates]: /templates/internal
+[isset]: /function/isset
+[math]: /function/math
+[pagevars]: /variables/page
+[param]: /function/param
+[partials]: /templates/partials
+[relpermalink]: /variables/page#page-variables
+[safehtml]: /function/safehtml
+[sitevars]: /variable/site
+[variables]: /variables
+[with]: /function/with

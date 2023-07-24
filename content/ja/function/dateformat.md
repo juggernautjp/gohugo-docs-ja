@@ -1,11 +1,9 @@
 ---
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 日付/時刻をローカライズされた文字列に変換します。
 draft: false
-hugoversion: null
 keywords:
 - dates
 - time
@@ -13,7 +11,7 @@ keywords:
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - Format
@@ -24,7 +22,6 @@ signature:
 - "time.Format LAYOUT INPUT"
 - "dateFormat LAYOUT INPUT"
 title: time.Format
-workson: []
 ---
 
 `time.Format` (別名 `dateFormat`) は、 `time.Time` オブジェクト (たとえば、 `.Date`) またはタイムスタンプ文字列 `INPUT` を `LAYOUT` 文字列で指定された形式に変換します。

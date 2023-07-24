@@ -15,39 +15,86 @@ title: PostCSS
 weight: 40
 ---
 
-任意のアセットファイルは、`resources.PostCSS` を使用して処理できます。これは、リソースオブジェクトと以下にリストされているオプションのスライスを引数に取ります。
+## セットアップ {#setup}
 
-リソースはプロジェクトやテーマ独自の `postcss.config.js` や `config` オプションで設定された任意のファイルを使用して処理されます。
+[利用可能な PostCSS プラグイン](https://www.postcss.parts/) のいずれかを使用して CSS を変換するには、以下の手順に従ってください。
 
-```go-html-template
-{{ $css := resources.Get "css/main.css" }}
-{{ $style := $css | resources.PostCSS }}
-```
+ステップ 1
+: [Node.js](https://nodejs.org/ja/download) をインストールします。
 
-PostCSS 機能を使用するには、必要な Node.js パッケージをインストールする必要があります。 たとえば、`autoprefixer` パッケージを使用するには、プロジェクトのルートから以下のコマンドを実行します。
+ステップ 2
+: 必要な Node.js パッケージをプロジェクトのルートにインストールします。 たとえば、CSS ルールにベンダー プレフィックスを追加するには、以下のようにします。
 
 ```bash
 npm install postcss postcss-cli autoprefixer
 ```
 
+ステップ 3
+: プロジェクトのルートに PostCSS 設定ファイルを作成します。 このファイルの名前は、`postcss.config.js` またはその他の [サポートされているファイル名] のいずれかにする必要があります。たとえば、以下のようにします。
+
+[supported file names]: https://github.com/postcss/postcss-load-config#usage
+
+{{< code file="postcss.config.js" >}}
+module.exports = {
+  plugins: [
+    require('autoprefixer')
+  ]
+};
+{{< /code >}}
+
+{{% note %}}
+Windows ユーザーで、プロジェクトのパスにスペースが含まれている場合、package.json ファイル内に PostCSS 設定を配置する必要があります。 [この例](https://github.com/postcss/postcss-load-config#packagejson) と issue [#7333](https://github.com/gohugoio/hugo/issues/7333) を参照してください。
+{{% /note %}}
+
+ステップ 4
+: CSS ファイルを `assets` ディレクトリに置きます。
+
+ステップ 5
+: CSS ファイルをリソースとしてキャプチャし、`resources.PostCSS` (別名 `postCSS`) を通して以下のようにパイプします。
+
+{{< code file="layouts/partials/css.html" >}}
+{{ with resources.Get "css/main.css" | postCSS }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+{{< /code >}}
+
+`assets` ディレクトリ内の Sass ファイルから始める場合は、以下のようにします。
+
+{{< code file="layouts/partials/css.html" >}}
+{{ with resources.Get "sass/main.scss" | toCSS | postCSS }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+{{< /code >}}
+
 ### オプション {#options}
 
-config [string]
-: 設定ファイルを探すためのカスタムディレクトリを設定します
+`resources.PostCSS` メソッドは、オプションのオプションのマップを受け取ります。
 
-noMap [bool]
-: デフォルトは `false` です。デフォルトのインライン ソースマップを無効にします
+config
+: (`string`) PostCSS 設定ファイルが含まれるディレクトリ。 デフォルトはプロジェクト ディレクトリのルートです。
 
-inlineImports [bool]
-: デフォルトは `false` です。 @import 文のインライン化を有効にします。これは再帰的に実行されますが、ファイルのインポートは一度だけです。
+noMap
+: (`bool`) デフォルトは `false` です。 `true`の場合、デフォルトのインライン ソースマップを無効にします
+
+inlineImports
+: (`bool`) デフォルトは `false` です。 @import 文のインライン化を有効にします。これは再帰的に実行されますが、ファイルのインポートは一度だけです。
 URL インポート (たとえば、`@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');`) とメディアクエリを含むインポートは無視されます。
 このインポート ルーチンは CSS 仕様を考慮しないことに注意してください。そのため、ファイル内のどこにでも @import を含めることができます。
 Hugo はモジュールのマウントから相対的にインポートを探し、テーマのオーバーライドを尊重します。
 
-skipInlineImportsNotFound [bool] {{< new-in "0.99.0" >}}
-: デフォルトは `false` です。 Hugo 0.99.0 以前では、`inlineImports` が有効で、インポートの解決に失敗すると、警告としてログに記録していました。現在はビルドに失敗するようになりました。 CSS に通常の CSS インポートがあり、それを保持したい場合は、URL やメディアクエリでインポートを使用するか (Hugo はそれらを解決しようとしません)、`skipInlineImportsNotFound` を true に設定します。
+skipInlineImportsNotFound {{< new-in "0.99.0" >}}
+: (`bool`) デフォルトは `false` です。 Hugo 0.99.0 以前では、`inlineImports` が有効で、インポートの解決に失敗すると、警告としてログに記録していました。現在はビルドに失敗するようになりました。 CSS に通常の CSS インポートがあり、それを保持したい場合は、URL やメディアクエリでインポートを使用するか (Hugo はそれらを解決しようとしません)、`skipInlineImportsNotFound` を true に設定します。
 
-_設定ファイルを使用しない場合_ は、以下のように指定します。
+{{< code file="layouts/partials/css.html" >}}
+{{ $opts := dict "config" "config-directory" "noMap" true }}
+{{ with resources.Get "css/main.css" | postCSS $opts }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+{{< /code >}}
+
+## 設定ファイルがない場合 {#no-configuration-file}
+
+PostCSS 設定ファイルを使用しないようにするには、オプションマップを使用して最小限の設定を指定できます。
 
 use [string]
 : 使用する PostCSS プラグインをスペースで区切ったリスト
@@ -61,19 +108,18 @@ stringifier [string]
 syntax [string]
 : カスタム PostCSS 構文
 
-```go-html-template
-{{ $options := dict "config" "/path/to/custom-config-directory" "noMap" true }}
-{{ $style := resources.Get "css/main.css" | resources.PostCSS $options }}
+{{< code file="layouts/partials/css.html" >}}
+{{ $opts := dict "use" "autoprefixer postcss-color-alpha" }}
+{{ with resources.Get "css/main.css" | postCSS $opts }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+{{< /code >}}
 
-{{ $options := dict "use" "autoprefixer postcss-color-alpha" }}
-{{ $style := resources.Get "css/main.css" | resources.PostCSS $options }}
-```
+## Hugo の環境を確認する {#check-hugo-environment}
 
-## postcss.config.js から Hugo の環境を確認する {#check-hugo-environment-from-postcssconfigjs}
+現在の Hugo 環境名 (`--environment` やコンフィグ設定や OS 環境で設定されたもの) は、 Node コンテキストで利用可能であり、以下のような構成をとることができます。
 
-現在の Hugo 環境名 (`--environment` や config や OS 環境で設定されたもの) は Node コンテキストで利用可能であり、以下のような構成をとることができます。
-
-```js
+{{< code file="postcss.config.js" >}}
 module.exports = {
   plugins: [
     require('autoprefixer'),
@@ -82,4 +128,4 @@ module.exports = {
       : []
   ]
 }
-```
+{{< /code >}}

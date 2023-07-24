@@ -14,6 +14,7 @@ lastmod: "2017-02-01"
 linktitle: コンテンツ管理の概要
 menu:
   docs:
+    identifier: content-management-overview
     parent: content-management
     weight: 10
 publishdate: "2017-02-01"

@@ -1,12 +1,9 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された `path` の `Page` を取得します。
 draft: false
-hugoversion: null
 keywords:
 - sections
 - lists
@@ -14,13 +11,12 @@ keywords:
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - .GetPage PATH
 title: .GetPage
-workson: []
 ---
 
 `.GetPage` は指定された `path` のページを返します。 `Site` と `Page` の両方がこのメソッドを実装しています。 `Page` バリアントは、相対パス (つまり、先頭に `/` がないパス) が指定された場合、現在のページからの相対パスを探します。
@@ -60,7 +56,7 @@ workson: []
 
 ## .GetPage の例 {#getpage-example}
 
-このコード スニペットは --- [パーシャル][partials]の形式で --- 以下のことが実行できます。
+このコード スニペットは --- [パーシャル][partials] の形式で --- 以下のことが実行できます。
 
 1. `tags` [タクソノミー][taxonomy] のインデックス オブジェクトを取得します。
 2. このオブジェクトを変数 `$t` に代入します。

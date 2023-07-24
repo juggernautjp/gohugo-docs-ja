@@ -12,12 +12,11 @@ linktitle: エディター プラグイン
 menu:
   docs:
     parent: tools
-    weight: 50
+    weight: 20
 publishdate: "2017-02-01"
-sections_weight: 50
 title: Hugo 用エディター プラグイン
 toc: false
-weight: 50
+weight: 20
 ---
 
 <!-- Description と全く同じ文章なので、コメントアウトした。by juggernautjp.
@@ -45,6 +44,7 @@ Hugo コミュニティでは、さまざまな好みのツールを使用して
 ## Vim
 
 * [Vim Hugo Helper](https://github.com/robertbasic/vim-hugo-helper). Hugo で記事を書くのに役立つ、小さな Vim プラグイン。
+* [vim-hugo](https://github.com/phelipetls/vim-hugo). テンプレートのシンタックスハイライトと、その他いくつかの機能を備えた Vim プラグイン。
 
 ## Atom
 

@@ -1,6 +1,5 @@
 ---
 title: Linux
-linkTitle: Linux
 description: Linux に Hugo をインストールします。
 categories: [installation]
 menu:
@@ -20,16 +19,35 @@ weight: 30
 
 ### Snap
 
-[Snap] は、 Linux 用の無料でオープンソースのパッケージ マネージャーです。 [ほとんどのディストリビューション][most distributions] で利用できる Snap パッケージは、インストールが簡単で、自動的に更新されます。 以下のコマンドにより、Hugo の拡張版がインストールされます。
+[Snap] は、フリーでオープンソースの Linux 用パッケージ マネージャです。
+[ほとんどのディストリビューション][most distributions] で利用可能な Snap パッケージはインストールが簡単で、自動的にアップデートされます。
+
+Hugo の Snap パッケージは、[strictly confined] です。 厳格に限定された Snap は、常に安全とみなされる最小限のアクセスレベルまで、完全に隔離された状態で実行されます。
+作成・構築するサイトは、ホームディレクトリ内か、リムーバブルメディアに置く必要があります。
+
+以下のコマンドにより、Hugo の拡張版がインストールされます。
 
 ```sh
 sudo snap install hugo
 ```
 
+リムーバブルメディアへのアクセスを有効にするには、以下の手順を実行します。
+
+```sh
+sudo snap connect hugo:removable-media
+```
+
+リムーバブル メディアへのアクセスを取り消すには、以下の手順を実行します。
+
+```sh
+sudo snap disconnect hugo:removable-media
+```
+
 [most distributions]: https://snapcraft.io/docs/installing-snapd
+[strictly confined]: https://snapcraft.io/docs/snap-confinement
 [Snap]: https://snapcraft.io/
 
-{{% readfile file="/content/ja/installation/common/homebrew.md" %}}
+{{% readfile file="/installation/common/homebrew.md" %}}
 
 ## リポジトリ パッケージ {#repository-packages}
 
@@ -104,7 +122,7 @@ Linux の [Solus] ディストリビューションには、パッケージ リ�
 sudo eopkg install hugo
 ```
 
-[Solus]: https://getsol.us/home/
+[Solus]: https://getsol.us/
 
 {{% readfile file="/content/ja/installation/common/04-docker.md" %}}
 

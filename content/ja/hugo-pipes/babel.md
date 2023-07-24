@@ -7,24 +7,26 @@ draft: false
 keywords: []
 menu:
   docs:
-    parent: pipes
-    weight: 48
+    parent: hugo-pipes
+    weight: 70
 publishdate: "2019-03-21"
-sections_weight: 48
 title: Babel
-weight: 48
+weight: 70
+signature: ["resources.Babel RESOURCE [OPTIONS]", "babel RESOURCE [OPTIONS]"]
 ---
+
+## 使用方法 {#usage}
 
 どのような JavaScript リソースファイルでも、 `resources.Babel` を使って別の JavaScript バージョンにトランスパイルできます。この引数はリソースオブジェクトと、オプションとして以下に挙げるオプションのディクテーションを取ります。 Babel は、 [babel cli](https://babeljs.io/docs/en/babel-cli) を使用します。
 
 
-{{< note >}}
+{{% note %}}
 Hugo パイプの Babel は、`@babel/cli` と `@babel/core` JavaScript パッケージを、プロジェクトまたはグローバルにインストールする必要があります (`npm install -g @babel/cli @babel/core`)。同時に、使用する Babel プラグインや preset と一緒にインストールする必要があります (たとえば、`npm install @babel/preset-env --save-dev`)。
 
 Hugo Snap パッケージを使用している場合、Babel とプラグインは Hugo サイトのディレクトリ内にローカルにインストールする必要があります。 たとえば、`g` フラグなしの `npm install @babel/cli @babel/core --save-dev` でインストールします。
-{{< /note >}}
+{{% /note %}}
 
-### 設定 {#config}
+### 設定 {#configuration}
 
 Babel や同様のツールを実行する際に、メインプロジェクトの `node_modules` を `NODE_PATH` に追加しています。この領域では Babel との間で既知の [問題](https://github.com/babel/babel/issues/5618) があるので、(プロジェクト自体ではなく) Hugo モジュールに `babel.config.js` を作成している場合は、プリセット/プラグインをロードするために `require` を使うことをお勧めします。たとえば、以下のように指定します。
 
@@ -61,7 +63,7 @@ verbose [bool]
 : すべてをログに記録します
 
 sourceMap [string]
-: Babel のコンパイルで得られた `inline` または `external` のソースマップを出力します。外部ソースマップは、出力ファイル名+".map" でターゲットに書き込まれます。入力ソースマップは、js.Build と node モジュールから読み込んで、出力ソースマップに結合できます。
+: Babel のコンパイルで得られた `inline` または `external` のソースマップを出力します。外部ソースマップは、出力ファイル名 + ".map" でターゲットに書き込まれます。入力ソースマップは、js.Build と node モジュールから読み込んで、出力ソースマップに結合できます。
 
 
 ### 例 {#examples}

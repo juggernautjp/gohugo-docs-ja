@@ -13,17 +13,13 @@ keywords:
 - sftp
 - deployment
 lastmod: "2021-08-09"
-linktitle: Rclone を使ったデプロイメント
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 80
 notesforauthors: null
 publishdate: "2021-08-09"
-sections_weight: 80
 title: Rclone を使ったデプロイメント
 toc: true
-weight: 80
 ---
 
 ## 前提条件 {#assumptions}

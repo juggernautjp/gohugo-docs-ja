@@ -1,18 +1,15 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2018-08-07"
-deprecated: false
 description: ファイルまたはディレクトリを記述する FileInfo 構造体を返します。
 draft: false
-hugoversion: null
 keywords:
 - files
 lastmod: "2021-11-26"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2018-08-07"
 relatedfuncs:
 - os.FileExists
@@ -21,9 +18,8 @@ relatedfuncs:
 signature:
 - os.Stat PATH
 title: os.Stat
-workson: []
 ---
-`o.Stat` 関数は、プロジェクト ディレクトリのルートからの相対パスを解決しようとします。 一致するファイルまたはディレクトリが見つからない場合は、[`contentDir`]({{< relref "getting-started/configuration#contentdir">}}) からの相対パスで解決しようとします。 先頭のパス区切り文字 (`/`) は省略可能です。
+`os.Stat` 関数は、プロジェクト ディレクトリのルートからの相対パスを解決しようとします。 一致するファイルまたはディレクトリが見つからない場合は、[`contentDir`](/getting-started/configuration#contentdir) からの相対パスで解決しようとします。 先頭のパス区切り文字 (`/`) は省略可能です。
 
 ```go-html-template
 {{ $f := os.Stat "README.md" }}

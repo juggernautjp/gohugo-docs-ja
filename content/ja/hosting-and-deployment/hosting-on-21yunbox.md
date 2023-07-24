@@ -11,16 +11,12 @@ keywords:
 - 21yunbox
 - hosting
 - deployment
-linktitle: 21YunBox でのホスト
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 10
 publishdate: "2021-01-06"
-sections_weight: 10
-title: 21YunBox  でのホスト
+title: 21YunBox でのホスト
 toc: true
-weight: 10
 ---
 
 [21YunBox](https://www.21yunbox.com) は、静的サイト、バックエンド API、データベース、cron ジョブ、その他すべてのアプリケーションを一箇所でホストできる、中国のグレート ファイアウォール内での Web デプロイを容易にするためのフルマネージドのクラウドプラットフォームです。高速な中国の CDN、継続的デプロイ、ワンクリック HTTPS、[マネージド データベースやバックエンド Web サービスなどのその他のサービス](https://www.21yunbox.com/docs/) を提供し、中国での Web プロジェクトを立ち上げるための手段を提供しています。

@@ -14,17 +14,16 @@ linktitle: Robots.txt
 menu:
   docs:
     parent: templates
-    weight: 165
+    weight: 230
 publishdate: "2017-02-01"
-sections_weight: 165
 title: Robots.txt ファイル
 toc: false
-weight: 165
+weight: 230
 ---
 
-テンプレートから robots.txt ファイルを生成するには、以下のように [サイト設定][config] を変更します。
+テンプレートから robots.txt ファイルを生成するには、以下のように [サイト設定][site configuration] を変更します。
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 enableRobotsTXT = true
 {{< /code-toggle >}}
 
@@ -45,7 +44,7 @@ User-agent: *
 
 ## Robots.txt テンプレートの例 {#robotstxt-template-example}
 
-{{< code file="layouts/robots.txt" download="robots.txt" >}}
+{{< code file="layouts/robots.txt" >}}
 User-agent: *
 {{ range .Pages }}
 Disallow: {{ .RelPermalink }}
@@ -57,14 +56,13 @@ Disallow: {{ .RelPermalink }}
 {{< note >}}
 テンプレートを使用せずに robots.txt ファイルを作成するには、以下を実行します。
 
-1. [サイト設定][config] で `enableRobotsTXT` を `false` に設定します。
+1. [サイト設定][site configuration] で `enableRobotsTXT` を `false` に設定します。
 2. `static` ディレクトリに robots.txt ファイルを作成します。
 
 Hugo は、サイトをビルドするときに、[static ディレクトリ][static] にあるすべてのものを `publishDir` のルート (通常は `public`) にコピーすることを覚えておいてください。
 
-[config]: /getting-started/configuration/
 [static]: /getting-started/directory-structure/
 {{< /note >}}
 
-[config]: /getting-started/configuration/
+[site configuration]: /getting-started/configuration/
 [internal]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/robots.txt

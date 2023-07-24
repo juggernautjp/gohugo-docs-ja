@@ -8,7 +8,6 @@ keywords:
 - bundle
 - content
 - resources
-linktitle: ページリソース
 menu:
   docs:
     parent: content-management
@@ -17,7 +16,7 @@ title: ページリソース
 toc: true
 weight: 80
 ---
-ページリソースは [ページバンドル]({{< relref "/content-management/page-bundles" >}}) からしかアクセスできません。
+ページリソースは [ページバンドル](/content-management/page-bundles) からしかアクセスできません。
 `index.md` または `_index.md` ファイルをルートに持つディレクトリからしかアクセスできません。ページリソースは、それがバンドルされているページでのみ利用可能です。
 
 この例では、`first-post` は音声、データ、ドキュメント、画像、動画を含む 10 のページリソースにアクセスするページバンドルです。
@@ -73,21 +72,21 @@ Content
 {{ end }}
 
 {{ with .Resources.GetMatch "img.png" }}
-  <img src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+  <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}">
 {{ end }}
 ```
 
-MediaType
-: `image/jpeg` のようなリソースの MIME タイプを指定します。
+MediaType.Type
+: リソースのメディアタイプ (以前は MIME タイプとして知られていた) です (たとえば、`image/jpeg`)。
 
 MediaType.MainType
-: リソースの MIME タイプのメインタイプです。たとえば、MIME タイプが `application/pdf` のファイルは、MainType が `application` です。
+: リソースの MIME タイプのメインタイプです (たとえば、`image`)
 
 MediaType.SubType
-: リソースの MIME タイプのサブタイプです。たとえば、MIME タイプが `application/pdf` のファイルは、SubType が `pdf` です。 これはファイル拡張子と同じではないことに注意してください。たとえば、PowerPoint ファイルのサブタイプは `vnd.mspowerpoint` です。
+: リソースのタイプのサブタイプです (たとえば、`jpeg`)。 これは、ファイルサフィックスに対応する場合とそうでない場合があります。
 
 MediaType.Suffixes
-: リソースの MIME タイプに指定できるサフィックスのスライスです。
+:  リソースのメディアタイプに対応するファイルサフィックスのスライスです (たとえば、`[jpg jpeg jpe jif jfif]`)。
 
 ## メソッド {#methods}
 
@@ -125,16 +124,16 @@ GetMatch
 
 ページリソースのメタデータは、対応するページのフロントマターから `resources` という名前の配列/テーブル パラメータで管理されます。 [ワイルドカード](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm) を使って、値をバッチで割り当てることができます。
 
-{{< note >}}
+{{% note %}}
 `page` タイプのリソースは、フロントマターから `Title` などを取得します。
-{{< /note >}}
+{{% /note %}}
 
 name
 : `Name` で返される値を設定します。
 
-{{< warning >}}
+{{% note %}}
 メソッド `Match`、`Get` および `GetMatch` は、リソースのマッチングに `Name` を使用します。
-{{%/ warning %}}
+{{% /note %}}
 
 title
 : `Title` で返される値を設定します。
@@ -178,9 +177,9 @@ resources :
 - すべての `PDF` ファイルに、新しい `Name` が付けられます。 `name` パラメータは特別なプレースホルダ [`:counter`](#the-counter-placeholder-in-name-and-title) を含んでいるので、 `Name` は `pdf-file-1`、`pdf-file-2`、`pdf-file-3` のようになります。
 - バンドル内のすべての docx は、`word` アイコンが表示されます。
 
-{{< warning >}}
+{{% note %}}
 __順序が重要です__ --- `title`、`name`、`params`-**keys** の **最初の設定** 値のみが使用されます。連続したパラメータは、まだ設定されていないパラメータに対してのみ設定されます。上記の例では、`src = "documents/photo_specs.pdf"` の `.Params.icon` に、まず `"photo"` が設定されます。そのため、後で設定された `src = "**.pdf"` というルールによって、`"pdf"` にオーバーライドされることはありません。
-{{%/ warning %}}
+{{% /note %}}
 
 ### `name` と `title` の `:counter` プレースホルダー {#the-counter-placeholder-in-name-and-title}
 
@@ -190,7 +189,7 @@ __順序が重要です__ --- `title`、`name`、`params`-**keys** の **最初�
 
 たとえば、バンドルに `photo_specs.pdf`、`other_specs.pdf`、`guide.pdf`、`checklist.pdf` というリソースがあり、フロントマターに `resources` を指定した場合、以下のようになります。
 
-{{< code-toggle copy="false">}}
+{{< code-toggle copy=false >}}
 [[resources]]
   src = "*specs.pdf"
   title = "Specification #:counter"

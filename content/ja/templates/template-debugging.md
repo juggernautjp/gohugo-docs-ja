@@ -12,12 +12,11 @@ keywords:
 menu:
   docs:
     parent: templates
-    weight: 180
+    weight: 240
 publishdate: "2017-02-01"
-sections_weight: 180
 title: テンプレートのデバッグ
 toc: false
-weight: 180
+weight: 240
 ---
 
 ここでは、よくある質問に答えるために、テンプレートに追加できるスニペットをいくつか紹介します。
@@ -52,6 +51,14 @@ weight: 180
     {{ printf "%#v" . }}
 {{ end }}
 ```
+
+場合によっては、現在のコンテキストで以下のスニペットを使用して、操作できる内容をわかりやすく表示する方が便利な場合があります。
+
+```go-html-template
+<pre>{{ . | jsonify (dict "indent" " ") }}</pre>
+```
+
+ページ コレクション (ホーム、セクション、分類、用語テンプレートに渡されるコンテキストなど) を含むコンテキストを表示するためにこの構造を使用しようとすると、Hugo はエラーをスローすることに注意してください。
 
 ## 定義済みの変数が表示されないのはなぜですか? {#why-am-i-showing-no-defined-variables}
 

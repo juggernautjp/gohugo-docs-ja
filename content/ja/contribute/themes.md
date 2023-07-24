@@ -16,12 +16,11 @@ linktitle: テーマ
 menu:
   docs:
     parent: contribute
-    weight: 30
+    weight: 40
 publishdate: "2017-02-01"
-sections_weight: 30
 title: Hugo テーマをショーケースに追加する
 toc: true
-weight: 30
+weight: 40
 wip: true
 ---
 

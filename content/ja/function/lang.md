@@ -2,7 +2,7 @@
 aliases:
 - /function/numfmt/
 categories:
-- functions
+- function
 date: "2021-07-28"
 description: "lang.FormatAccounting, lang.FormatCurrency, lang.FormatNumber, lang.FormatNumberCustom, lang.FormatPercent, lang.Translate 関数の説明です。"
 draft: false
@@ -10,8 +10,8 @@ keywords:
 - numbers
 menu:
   docs:
-    parent: functions
-package: lang
+    parent: function
+# package: lang
 signature:
 - lang.FormatAccounting PRECISION, CURRENCY, NUMBER
 - lang.FormatCurrency PRECISION, CURRENCY, NUMBER
@@ -21,7 +21,7 @@ signature:
 - lang.Translate ID, ARGS
 # - lang.NumFmt PRECISION NUMBER [OPTIONS [DELIMITER]]
 title: lang
-type: template-func-ja
+# type: template-func-ja
 ---
 
 ## lang.FormatAccounting

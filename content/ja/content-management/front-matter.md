@@ -124,7 +124,7 @@ series
 : このページが属するシリーズの配列です。`series` [タクソノミー](/content-management/taxonomies/) のサブセットで、 `opengraph` [内部テンプレート](/templates/internal) が `og:see_also` に入力するために使用されます。
 
 slug
-: 出力 URL の末尾に表示されます。 フロントマターで指定された値は、ファイル名に基づいて URL のセグメントをオーバーライドします。
+: URL パスの最後のセグメントを上書きする。セクションページには適用されません。詳細は、[URL 管理](/content-management/urls/#slug) を参照してください。
 
 summary
 : ページ変数 `.Summary` で記事の要約を提供するときに使われるテキストです。 詳細は、[コンテンツサマリー](/content-management/summaries/) セクションで確認できます。
@@ -136,7 +136,7 @@ type
 : コンテンツのタイプです。 この値は、フロントマターで指定されていない場合、ディレクトリ (すなわち、[セクション][section]) から自動的に導き出されます。
 
 url
-: Web ルートからのコンテンツへのフルパスです。 コンテンツファイルのパスについては想定していません。 詳細は、[URL 管理](/content-management/urls/#set-url-in-front-matter) を参照してください。
+: URL パス全体を上書きします。通常ページとセクションページに適用できます。詳細は、[URL 管理](/content-management/urls/#url) を参照してください。
 
 videos
 : ページに関連する動画へのパスの配列です。 `opengraph` [内部テンプレート](/templates/internal) によって `og:video` に入力するために使用されます。
@@ -147,8 +147,8 @@ weight
 \<taxonomies\>
 : インデックスの *複数* 形式のフィールド名です。 上記のフロントマターの例の `tags` と `categories` を参照してください。 *ユーザー定義のタクソノミーの複数形は、定義済みのフロントマター変数のいずれとも同じにはできないことに注意してください。*
 
-{{% note "Hugo's Default URL Destinations" %}}
-`slug` と `url` のどちらも存在せず、[サイトの `config` ファイルでパーマリンクが設定されていない場合](/content-management/urls/#permalinks)、Hugo はコンテンツのファイル名を使って出力 URL を作成します。 Hugo のパスについての説明は、[コンテンツ構成](/content-management/organization) を、Hugo のデフォルトの挙動をカスタマイズする方法は、 [「URL 管理」](/content-management/urls/) を参照してください。
+{{% note %}}
+`slug` と `url` のどちらも存在せず、[パーマリンクがサイト設定ファイルで他に設定されていない場合](/content-management/urls/#permalinks)、Hugo はコンテンツのファイル名を使って出力 URL を作成します。 Hugo のデフォルトの動作をカスタマイズする方法については、[コンテンツ構成](/content-management/organization) と [「URL 管理」](/content-management/urls/) を参照してください。
 {{< /note >}}
 
 ### ユーザー定義 {#user-defined}
@@ -157,7 +157,7 @@ weight
 
 以下のフィールドはそれぞれ `.Params.include_toc` と `.Params.show_comments` によってアクセスすることができます。 [変数][variables] セクションでは、Hugo のページレベルおよびサイトレベルの変数をテンプレートで使用するための詳細な情報を提供しています。
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle copy=false >}}
 include_toc: true
 show_comments: false
 {{</ code-toggle >}}
@@ -170,7 +170,7 @@ show_comments: false
 
 `cascade` ブロックは、オプションの `_target` キーワードを持つスライスで、異なるページセットを対象とした複数の `cascade` 値を使用できます。
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle copy=false >}}
 title ="Blog"
 [[cascade]]
 background = "yosemite.jpg"
@@ -204,7 +204,7 @@ environment
 
 `content/blog/_index.md` ファイルには、
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle copy=false >}}
 title: Blog
 cascade:
   banner: images/typewriter.jpg
@@ -215,7 +215,7 @@ cascade:
 - その子孫は独自の `banner` 値が設定されている。
 - あるいは、より近い祖先ノードに独自の `cascade.banner` 値が設定されている場合。
 
-## フロントマターからコンテンツを注文する {#order-content-through-front-matter}
+## フロントマターを通してコンテンツを順序付けする {#order-content-through-front-matter}
 
 コンテンツのフロントマターで、コンテンツ固有の `weight` を割り当てることができます。これらの値は、特にリストビューでの [順序付け][ordering] に便利です。
 コンテンツの順序付けには `weight` を、タクソノミーの中でのコンテンツの順序付けには [`<TAXONOMY>_weight`][taxweight] という規則を使用することができます。
@@ -235,20 +235,20 @@ cascade:
 [aliases]: /content-management/urls/#aliases
 [archetype]: /content-management/archetypes/
 [bylinktitle]: /templates/lists/#by-link-title
-[config]: /getting-started/configuration/ "サイト設定に関する Hugo ドキュメント"
+[config]: /getting-started/configuration/
 [content type]: /content-management/types/
 [contentorg]: /content-management/organization/
 [headless-bundle]: /content-management/page-bundles/#headless-bundle
-[json]: https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf "JSON (JavaScript Object Notation) の仕様"
-[lists]: /templates/lists/#order-content "リストページでのコンテンツを並べ替える方法を参照してください。たとえば、コンテンツとフロントマターのために特定の _index.md を参照するテンプレートがあります。"
-[lookup]: /templates/lookup-order/ "Hugo は、コンテンツをレンダリングする際に、テンプレートを特定の順序でトラバースし、より DRY なテンプレート作成を可能にします。"
-[ordering]: /templates/lists/ "Hugo では、リストテンプレートでコンテンツをソートしたり、順序付けする方法が複数あります。"
-[outputs]: /templates/output-formats/ "v22 のリリースにより、Hugo の使い慣れたテンプレートを使って、コンテンツを任意のテキスト形式で出力することができるようになりました。"
+[json]: https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf
+[lists]: /templates/lists/#order-content
+[lookup]: /templates/lookup-order/
+[ordering]: /templates/lists/
+[outputs]: /templates/output-formats/
 [page-resources]: /content-management/page-resources/
 [pagevars]: /variables/page/
 [section]: /content-management/sections/
 [taxweight]: /content-management/taxonomies/
-[toml]: https://github.com/toml-lang/toml "TOML (Tom's Obvious Minimal Language) の仕様"
+[toml]: https://toml.io/
 [urls]: /content-management/urls/
 [variables]: /variables/
-[yaml]: https://yaml.org/spec/ "YAML (YAML Ain't Markup Language) の仕様"
+[yaml]: https://yaml.org/spec/

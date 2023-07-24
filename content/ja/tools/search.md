@@ -4,7 +4,7 @@ categories:
 - developer tools
 date: "2017-02-01"
 description: 新しく作成した Hugo の Web サイトで、オープンソースおよび商用の検索オプションの一部を参照してください。
-draft: false
+draft: true
 keywords:
 - search
 - tools
@@ -12,12 +12,11 @@ linktitle: 検索
 menu:
   docs:
     parent: tools
-    weight: 60
+    weight: 40
 publishdate: "2017-02-01"
-sections_weight: 60
 title: Hugo の Web サイトを検索する
 toc: true
-weight: 60
+weight: 40
 ---
 
 動的検索機能を備えた静的な Web サイトですか? はい、Hugo は、静的なウェブサイトに対して、Google やその他の検索エンジンの埋め込み可能なスクリプトの代わりとなる機能を提供します。 Hugo では、コンテンツファイルを直接インデックス化することで、訪問者にカスタム検索機能を提供できます。
@@ -31,9 +30,11 @@ weight: 60
 * [hugofastsearch](https://gist.github.com/cmod/5410eae147e4318164258742dd053993). 「Fuse.js 統合のための GitHub Gist」のユーザビリティとスピードアップ - グローバルでキーボードに最適化された検索を実現。
 * [JS & Fuse.js tutorial](https://makewithhugo.com/add-search-to-a-hugo-site/) FuseJS を使った、シンプルなクライアントサイドの検索ソリューションです (jQuery は不要です)。
 * [Pagefind](https://github.com/cloudcannon/pagefind). ユーザーの帯域幅をできるだけ使用せずに、大規模なサイトで優れたパフォーマンスを発揮することを目的とした、完全に静的な検索ライブラリです。
+* [Hugo Lyra](https://github.com/paolomainardi/hugo-lyra). Hugo-Lyra は、[Lyra](https://github.com/LyraSearch/lyra) を Hugo の Web サイトに統合するための JavaScript モジュールです。 インデックスを生成するためのサーバサイド部分と、検索エンジンを簡単に起動するためのクライアントサイドライブラリ (オプション) が含まれています。
+
 
 ## 商用の検索サービス {#commercial-search-services}
 
 * [Algolia](https://www.algolia.com/) の Search API は、アプリや Web サイトで優れた検索体験を簡単に提供できるようにします。 Algolia Search は、ホストされた全文検索、数値検索、ファセット検索、ジオローカライズ検索を提供します。
-* [Bonsai](https://www.bonsai.io) は、高速で信頼性が高く、セットアップが簡単な、フルマネージド型のホスト型 Elasticsearch サービスです。Hugo のドキュメントを Elasticsearch に簡単に取り込むには、[ドキュメントからのこのガイド](https://docs.bonsai.io/docs/hugo) に従ってください。
+* [Bonsai](https://www.bonsai.io) は、高速で信頼性が高く、セットアップが簡単な、フルマネージド型のホスト型 Elasticsearch サービスです。Hugo のドキュメントを Elasticsearch に簡単に取り込むには、[ドキュメントからのこのガイド](https://docs.bonsai.io/hc/en-us/articles/13929190788756-Hugo) に従ってください。
 * [ExpertRec](https://www.expertrec.com/) は、高速でスケーラブルなホスト型の search-as-a-service (サービスとしての検索) ソリューションです。 セットアップと統合は非常に簡単で、数分しかかかりません。 検索設定は、ダッシュボードを使用して、コーディングなしで変更できます。

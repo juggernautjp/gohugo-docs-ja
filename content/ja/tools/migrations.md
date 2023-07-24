@@ -13,16 +13,14 @@ keywords:
 - ghost
 - contentful
 lastmod: "2022-03-26"
-linktitle: Hugo への移行
 menu:
   docs:
     parent: tools
-    weight: 10
+    weight: 50
 publishdate: "2017-02-01"
-sections_weight: 10
 title: Hugo への移行
 toc: true
-weight: 10
+weight: 50
 ---
 
 このセクションでは、独自に開発された Hugo に関するいくつかのプロジェクトを取り上げます。 これらのツールは、静的サイトジェネレーターの機能を拡張したり、開始するのに役立ちます。
@@ -86,7 +84,7 @@ weight: 10
 
 ## Contentful
 
-- [contentful2hugo](https://github.com/ArnoNuyts/contentful2hugo) - [Contentful](https://www.contentful.com/) のコンテンツから Hugo 用のコンテンツファイルを作成するツールです。
+- [contentful-hugo](https://github.com/ModiiMedia/contentful-hugo) - [Contentful](https://www.contentful.com/) のコンテンツから Hugo 用のコンテンツ ファイルを作成するツール。
 
 ## BlogML
 

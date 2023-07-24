@@ -1,12 +1,9 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 2 つの配列またはスライスを指定すると、配列/スライスのいずれかまたは両方に属する要素またはオブジェクトを含む新しい配列を返します。
 draft: false
-hugoversion: 0.2
 keywords:
 - collections
 - intersect
@@ -15,7 +12,7 @@ keywords:
 lastmod: "2017-03-12"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - intersect
@@ -23,7 +20,6 @@ relatedfuncs:
 signature:
 - union SET1 SET2
 title: union
-workson: []
 ---
 
 2 つの配列 (またはスライス) A と B を指定すると、この関数は、A または B のいずれか、または両方に属する要素またはオブジェクトを含む新しい配列を返します。 サポートされている要素は、文字列、整数、浮動小数点数 (float64 のみ) です。

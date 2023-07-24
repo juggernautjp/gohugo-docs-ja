@@ -1,19 +1,17 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 組み込みの Hugo の日付 (`Date`、`.PublishDate`、`.Lastmod`) を、Go のレイアウト文字列に従ってフォーマットします。
 draft: false
-hugoversion: null
 keywords:
 - dates
 - time
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - dateFormat
@@ -24,8 +22,6 @@ signature:
 - .Format FORMAT
 title: .Format
 toc: true
-workson:
-- times
 ---
 
 `.Format` はフロントマターで定義された日付の値をフォーマットし、以下の [ページ変数][pagevars] のプロパティとして使用できます。
@@ -63,7 +59,7 @@ Mon Jan 2 15:04:05 MST 2006
 
 以下の例では、レイアウト文字列とそのレンダリングされた出力が表示されています。
 
-この例は、[CST][] でレンダリングとテストを行い、以下のような、すべてコンテンツファイルのフロントマターの同じフィールドを指しています。
+この例は、[CST] でレンダリングとテストを行い、以下のような、すべてコンテンツファイルのフロントマターの同じフィールドを指しています。
 
 ```
 date: 2017-03-03T14:15:59-06:00
@@ -101,14 +97,14 @@ date: 2017-03-03T14:15:59-06:00
 
 その他の例は、Go の [time パッケージのドキュメント][timeconst] で見つけることができます。
 
-### 基数と序数の略語 {#cardinal-numbers-and-ordinal-abbreviations}
+### 基数 {#cardinal-s}
 
 スペルアウトされた (略すことなく字をつづった) 基数 (たとえば、"one"、"two"、"three") には、現在対応していません。
 
-序数の略語 (つまり、"1st"、"2nd"、"3rd" といった短縮形のサフィックス) は、現在のところ直接的にはサポートされていません。 `{{.Date.Format "Jan 2nd 2006"}}` を使用すると、Hugo は月の日に文字列として `nd` を追加することを想定しています。 ただし、関数を連結して、以下のようなものを作成できます。
+以下のように、[`humanize`](/functions/humanize) 関数を使用して、日付を序数としてレンダリングします。
 
 ```go-html-template
-{{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} of {{ .Date.Format "January 2006" }}
+{{ humanize .Date.Day }} of {{ .Date.Format "January 2006" }}
 ```
 
 上記のコードは、以下が出力されます。

@@ -1,19 +1,15 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 配列を最初の _N_ 個の要素だけにスライスします。
 draft: false
-hugoversion: null
 keywords:
 - iteration
 lastmod: "2017-02-01"
-linktitle: first
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs:
 - after
@@ -21,11 +17,6 @@ relatedfuncs:
 signature:
 - first LIMIT COLLECTION
 title: first
-workson:
-- lists
-- taxonomies
-- terms
-- groups
 ---
 
 `first` は， [SQL の `limit` キーワード][limitkeyword] と似たような働きをします。 これは、配列を `先頭の N` 個の要素だけにします。 入力として、配列と要素数を受け取ります。
@@ -48,7 +39,7 @@ workson:
 
 {{< code file="first-and-where-together.html" >}}
 {{ range first 5 (where site.RegularPages "Type" "in" site.Params.mainSections).ByTitle }}
-   {{ .Content }}
+  {{ .Content }}
 {{ end }}
 {{< /code >}}
 

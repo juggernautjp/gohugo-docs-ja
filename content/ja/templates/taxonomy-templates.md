@@ -22,12 +22,11 @@ lastmod: "2017-02-01"
 menu:
   docs:
     parent: templates
-    weight: 50
+    weight: 90
 publishdate: "2017-02-01"
-sections_weight: 50
 title: タクソノミー テンプレート
 toc: true
-weight: 50
+weight: 90
 ---
 
 <!-- NOTE! Check on https://github.com/gohugoio/hugo/issues/2826 for shifting of terms' pages to .Data.Pages AND
@@ -119,12 +118,12 @@ type WeightedPages []WeightedPage
 
 ```go-html-template
 <ul>
-    {{ range .Pages }}
-        <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            {{ .Params.wikipedia }}
-        </li>
-    {{ end }}
+  {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ .Params.wikipedia }}
+    </li>
+  {{ end }}
 </ul>
 ```
 
@@ -138,9 +137,9 @@ type WeightedPages []WeightedPage
 
 ```go-html-template
 <ul>
-    {{ range .Data.Terms.Alphabetical }}
-            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
-    {{ end }}
+  {{ range .Data.Terms.Alphabetical }}
+    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+  {{ end }}
 </ul>
 ```
 
@@ -162,16 +161,13 @@ Hugo の各コンテンツには、オプションで日付を割り当てるこ
 
 コンテンツは、割り当てられたタクソノミーごとに重み付けをすることができます。
 
-```ini
-+++
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
 tags = [ "a", "b", "c" ]
 tags_weight = 22
 categories = ["d"]
-title = "foo"
+title = "Example"
 categories_weight = 44
-+++
-Front Matter with weighted tags and categories
-```
+{{< /code-toggle >}}
 
 慣例では、 `taxonomyname_weight` とします。
 
@@ -189,55 +185,51 @@ Front Matter with weighted tags and categories
 
 どちらのテンプレートも、テンプレート セクションで詳しく説明されています。　
 
-[リストテンプレート](/templates/list/) は、1 つの html ページで複数のコンテンツをレンダリングするために使用される、任意のテンプレートです。このテンプレートは、自動的に作成されるすべてのタクソノミーページを生成するために使用されます。
+[リストテンプレート](/templates/lists/) は、1 つの html ページで複数のコンテンツをレンダリングするために使用される、任意のテンプレートです。このテンプレートは、自動的に作成されるすべてのタクソノミーページを生成するために使用されます。
 
-[タクソノミー用語テンプレート](/templates/terms/) は、指定されたテンプレートの用語のリストを生成するために使用されるテンプレートです。
+[タクソノミー テンプレート](/templates/taxonomy-templates/) は、指定されたテンプレートの用語のリストを生成するために使用されるテンプレートです。
 
 <!-- Begin /taxonomies/displaying/ -->
 
-[リストテンプレート](/templates/list/) を使用して Hugo によって作成される自動タクソノミーページに加えて、タクソノミーでデータを表示する一般的な方法が以下の 4 つあります。
+[リストテンプレート](/templates/lists/) を使用して Hugo によって作成される自動タクソノミーページに加えて、タクソノミーでデータを表示する一般的な方法が以下の 4 つあります。
 
 1. 指定されたコンテンツについて、添付された用語を一覧表示できます
 2. 指定されたコンテンツについて、同じ用語を含む他のコンテンツを一覧表示できます。
 3. タクソノミーのすべての用語を一覧表示できます
 4. すべてのタクソノミーを (用語付きで) 一覧表示できます
 
-## コンテンツのタクソノミーを 1 つだけ表示する {#display-a-single-piece-of-contents-taxonomies}
+## ページに割り当てられた用語をリストする {#list-terms-assigned-to-a-page}
 
-コンテンツ テンプレート内に、コンテンツの一部が割り当てられているタクソノミーを表示したい場合があります。
+`.Page.GetTerms` メソッドを使用して、ページに割り当てられた用語を一覧表示します。
 
-フロントマター システムを利用してコンテンツのタクソノミーを定義しているため、各コンテンツに割り当てられたタクソノミーは通常の場所 (つまり、`.Params.<TAXONOMYPLURAL>`) に配置されます。
-
-### 例: シングルページ テンプレートでタグを一覧表示する {#example-list-tags-in-a-single-page-template}
+順序なしリストをレンダリングするには、以下のようにします。
 
 ```go-html-template
-<ul>
-    {{ range (.GetTerms "tags") }}
-        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+{{ $taxonomy := "tags" }}
+{{ with .GetTerms $taxonomy }}
+  <p>{{ (site.GetPage $taxonomy).LinkTitle }}:</p>
+  <ul>
+    {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
     {{ end }}
-</ul>
-```
-
-タクソノミーをインラインで一覧表示する場合、カンマだけでなく、(複数のタクソノミーの場合) オプションでタイトルに複数形の語尾を付けるなどの配慮が必要になります。たとえば、TOML 形式のフロントマターに `directors: [ "Joel Coen", "Ethan Coen" ]` のような "directors" というタクソノミーがあるとします。
-
-このようなタクソノミーを一覧表示するには、以下のような方法を使用します。
-
-### 例: シングルページ テンプレートでカンマ区切りのタグを使用する {#example-commadelimit-tags-in-a-single-page-template}
-
-```go-html-template
-{{ $taxo := "directors" }} <!-- Use the plural form here -->
-{{ with .Param $taxo }}
-    <strong>Director{{ if gt (len .) 1 }}s{{ end }}:</strong>
-    {{ range $index, $director := . }}
-        {{- if gt $index 0 }}, {{ end -}}
-        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $director) -}}
-            <a href="{{ .Permalink }}">{{ $director }}</a>
-        {{- end -}}
-    {{- end -}}
+  </ul>
 {{ end }}
 ```
 
-別の方法として、タクソノミーを区切り文字でリストする必要がある場合は、[delimit テンプレート関数][delimit] をショートカットとして使用することもできます。 議論については、GitHub の {{< gh 2143 >}} を参照してください。
+カンマ区切りのリストを表示するには、以下のようにします。
+
+```go-html-template
+{{ $taxonomy := "tags" }}
+{{ with .GetTerms $taxonomy }}
+  <p>
+    {{ (site.GetPage $taxonomy).LinkTitle }}:
+    {{ range $k, $_ := . -}}
+      {{ if $k }}, {{ end }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{- end }}
+  </p>
+{{ end }}
+```
 
 ## タクソノミー用語が同じコンテンツを一覧表示する {#list-content-with-the-same-taxonomy-term}
 
@@ -247,9 +239,9 @@ Front Matter with weighted tags and categories
 
 ```go-html-template
 <ul>
-    {{ range .Site.Taxonomies.series.golang }}
-        <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
-    {{ end }}
+  {{ range .Site.Taxonomies.series.golang }}
+    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+  {{ end }}
 </ul>
 ```
 
@@ -261,16 +253,16 @@ Front Matter with weighted tags and categories
 
 ```go-html-template
 <section id="menu">
-    <ul>
-        {{ range $key, $taxonomy := .Site.Taxonomies.featured }}
-        <li>{{ $key }}</li>
-        <ul>
-            {{ range $taxonomy.Pages }}
-            <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
-            {{ end }}
-        </ul>
+  <ul>
+    {{ range $key, $taxonomy := .Site.Taxonomies.featured }}
+      <li>{{ $key }}</li>
+      <ul>
+        {{ range $taxonomy.Pages }}
+          <li hugo-nav="{{ .RelPermalink }}"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
         {{ end }}
-    </ul>
+      </ul>
+    {{ end }}
+  </ul>
 </section>
 ```
 
@@ -286,9 +278,9 @@ Front Matter with weighted tags and categories
 
 ```go-html-template
 <ul>
-    {{ range .Site.Taxonomies.tags }}
-            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
-    {{ end }}
+  {{ range .Site.Taxonomies.tags }}
+    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+  {{ end }}
 </ul>
 ```
 
@@ -296,29 +288,28 @@ Front Matter with weighted tags and categories
 
 この例では、すべてのタクソノミーとその用語、および各用語に割り当てられたすべてのコンテンツが一覧表示されます。
 
-{{< code file="layouts/partials/all-taxonomies.html" download="all-taxonomies.html" download="all-taxonomies.html" >}}
-<section>
-    <ul id="all-taxonomies">
-        {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
-            {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
-                <li><a href="{{ .Permalink }}">{{ $taxonomy_term }}</a>
-                    <ul>
-                        {{ range $key, $value := $taxonomy }}
-                            <li>{{ $key }}</li>
-                            <ul>
-                                {{ range $value.Pages }}
-                                    <li hugo-nav="{{ .RelPermalink}}">
-                                        <a href="{{ .Permalink}}">{{ .LinkTitle }}</a>
-                                    </li>
-                                {{ end }}
-                            </ul>
-                        {{ end }}
-                    </ul>
-                </li>
-            {{ end }}
+{{< code file="layouts/partials/all-taxonomies.html" >}}
+<ul>
+  {{ range $taxonomy, $terms := site.Taxonomies }}
+    <li>
+      {{ with site.GetPage $taxonomy }}
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{ end }}
+      <ul>
+        {{ range $term, $weightedPages := $terms }}
+          <li>
+            <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+            <ul>
+              {{ range $weightedPages }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ end }}
+            </ul>
+          </li>
         {{ end }}
-    </ul>
-</section>
+      </ul>
+    </li>
+  {{ end }}
+</ul>
 {{< /code >}}
 
 ## タクソノミーのための `.Site.GetPage` {#sitegetpage-for-taxonomies}
@@ -328,11 +319,11 @@ Front Matter with weighted tags and categories
 {{< code file="links-to-all-tags.html" >}}
 {{ $taxo := "tags" }}
 <ul class="{{ $taxo }}">
-    {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
-        {{ range .Pages }}
-            <li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
-        {{ end }}
+  {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
+    {{ range .Pages }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
+  {{ end }}
 </ul>
 {{< /code >}}
 

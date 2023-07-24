@@ -13,23 +13,22 @@ linktitle: モジュールを設定する
 menu:
   docs:
     parent: modules
-    weight: 10
-sections_weight: 10
+    weight: 20
 title: モジュールを設定する
 toc: true
-weight: 10
+weight: 20
 ---
 
 ## モジュールの設定: トップレベル {#module-config-top-level}
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 [module]
 noVendor = ""
 proxy = "direct"
 noProxy = "none"
 private = "*.*"
 replacements = ""
-workspace = ""
+workspace = "off"
 {{< /code-toggle >}}
 
 noVendor
@@ -48,10 +47,10 @@ private
 : プライベートとして扱うべきパスと一致するカンマ区切りの glob リスト。
 
 workspace
-: 使用するワークスペース ファイル。 これにより、Go ワークスペース モードが有効になります。 これは OS env 経由 (たとえば、`export HUGO_MODULE_WORKSPACE=/my/hugo.work`) でも設定できることに注意してください。この指定は、 Go 1.18 以降でのみ動作します。
+: 使用するワークスペース ファイル。 これにより、Go ワークスペース モードが有効になります。 これは OS 環境経由でも設定できることに注意してください。 `export HUGO_MODULE_WORKSPACE=/my/hugo.work` これは Go 1.18 以降でのみ機能します。 Hugo `v0.109.0` では、デフォルトを `off` に変更し、作業ディレクトリを基準とした相対的な作業ファイル名を解決するようになりました。
 
 replacements
-: 例えば、`github.com/bep/my-theme -> ../..,github.com/bep/shortcodes -> /some/path` といった、モジュールパスとディレクトリ置換マッピングのカンマ区切り (またはスライス) のリストです。これは一時的にローカルでモジュールを開発するのに便利で、OS の環境変数として設定することができます。 相対パスは [themesDir](https://gohugo.io/getting-started/configuration/#all-configuration-settings) に関連しており、絶対パスが許可されています。
+: モジュールパスからディレクトリへのマッピングをカンマで区切ったリスト、例えば `github.com/bep/my-theme -> ../..,github.com/bep/shortcodes -> /some/path`。これは主にモジュールの一時的なローカル開発に便利で、その場合は環境変数として保存するとよいでしょう。相対パスは [themesDir](/getting-started/configuration/#all-configuration-settings) からの相対パスです。絶対パスは許可されています。
 
 上記の用語は、Go モジュールの対応する用語に直接対応していることに注意してください。これらの設定のいくつかは、OS の環境変数として設定するのが自然でしょう。例として、使用するプロキシサーバーを設定する場合は、以下のようにします。
 
@@ -65,7 +64,7 @@ env HUGO_MODULE_PROXY=https://proxy.example.org hugo
 
 もし、モジュールが動作するために特定のバージョンの Hugo を必要とする場合、 `module` セクションでそのことを指定することができ、古すぎたり新しすぎたりするバージョンを使っている場合は警告されます。
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 [module]
 [module.hugoVersion]
   min = ""
@@ -87,7 +86,7 @@ extended
 
 ## モジュールの設定: imports {#module-config-imports}
 
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo">}}
 [module]
 [[module.imports]]
   path = "github.com/gohugoio/hugoTestModules1_linux/modh1_2_1v"
@@ -102,7 +101,7 @@ path
 : 有効な Go モジュールのモジュールパス (たとえば、`github.com/gohugoio/myShortcodes`) か、テーマ フォルダーに保存されているモジュールのディレクトリ名のどちらかを使用します。
 
 ignoreConfig
-: 有効にすると、モジュール設定ファイル (たとえば、`config.toml`) はロードされません。また、依存関係にあるモジュールのロードも停止することに注意してください。
+: 有効にすると、モジュール設定ファイル (たとえば、`hugo.toml`) はロードされません。また、依存関係にあるモジュールのロードも停止することに注意してください。
 
 ignoreImports
 : 有効にすると、モジュールのインポートに従わなくなります。
@@ -120,16 +119,16 @@ noVendor
 
 ## モジュールの設定: mounts {#module-config-mounts}
 
-{{< note >}}
+{{% note %}}
 Hugo 0.56.0 で `mounts` 設定が導入されたとき、既存の `contentDir` や `staticDir` などの設定を保存して、既存のすべてのサイトがそのまま動作するように気をつけました。しかし、両方があってはいけません。`mounts` セクションを追加したら、古い `contentDir`、`staticDir` などの設定を削除してください。
-{{< /note >}}
+{{% /note %}}
 
-{{< warning >}}
+{{% note %}}
 マウントを追加すると、当該ターゲット ルートのデフォルト マウントは無視されます。このため、必ず明示的に追加してください。
-{{< /warning >}}
+{{% /note %}}
 
 **デフォルト マウント**
-{{< code-toggle file="config">}}
+{{< code-toggle file="hugo" >}}
 [module]
 [[module.mounts]]
     source="content"
@@ -172,3 +171,18 @@ glob パターンは `source` ルートから始まるファイル名にマッ�
 
 excludeFiles (string または slice)
 : 除外するファイルに一致する 1 つ以上の glob パターンです。
+
+**例**
+{{< code-toggle file="hugo" >}}
+[module]
+[[module.mounts]]
+    source="content"
+    target="content"
+    excludeFiles="docs/*"
+[[module.mounts]]
+    source="node_modules"
+    target="assets"
+[[module.mounts]]
+    source="assets"
+    target="assets"
+{{< /code-toggle >}}

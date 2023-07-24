@@ -1,21 +1,17 @@
 ---
-aliases: []
 categories:
-- functions
+- function
 date: "2018-11-01"
-deprecated: false
 description: テンプレート ファイルが `layouts` ディレクトリからの相対パスで指定された場所に存在するかどうかをチェックします。
 draft: false
-hugoversion: "0.46"
 keywords:
 - templates
 - template
 - layouts
 lastmod: "2018-11-01"
-linktitle: ""
 menu:
   docs:
-    parent: functions
+    parent: function
 ns: ""
 publishdate: "2018-11-01"
 relatedfuncs: []
@@ -24,7 +20,6 @@ signature:
 tags: []
 title: templates.Exists
 toc: false
-workson: []
 ---
 
 テンプレート ファイルは、プロジェクト、またはパーシャルやショートコードを含むテーマ コンポーネントのいずれかの、 `layouts` ディレクトリの下にあるファイルです。

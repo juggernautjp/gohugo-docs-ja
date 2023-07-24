@@ -126,6 +126,9 @@ height
 width
 : 画像の `width` 属性を指定します。
 
+loading
+: 画像の `loading` 属性を指定します。
+
 attr
 : 画像の属性テキスト。 `attr` の値内の Markdown がレンダリングされます。
 
@@ -135,129 +138,130 @@ attrlink
 #### `figure` 入力の例 {#example-figure-input}
 
 {{< code file="figure-input-example.md" >}}
-{{</* figure src="/media/spf13.jpg" title="Steve Francia" */>}}
+{{</* figure src="elephant.jpg" title="An elephant at sunset" */>}}
 {{< /code >}}
 
 #### `figure` 出力の例 {#example-figure-output}
 
-{{< output file="figure-output-example.html" >}}
+```html
 <figure>
-  <img src="/media/spf13.jpg"  />
-  <figcaption>
-      <h4>Steve Francia</h4>
-  </figcaption>
+ <img src="elephant.jpg">
+  <figcaption>An elephant at sunset</figcaption>
 </figure>
-{{< /output >}}
+```
 
 ### `gist`
 
-ブロガーは、記事を書くときに GitHub の gist を含めたいと思うことがよくあります。たとえば、[以下の URL の gist][examplegist] を使いたいとします。
+この URL で GitHub [gist] を表示するには、以下のようにします。
 
-```txt
-https://gist.github.com/spf13/7896402
+[gist]: https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists
+
+```text
+https://gist.github.com/user/50a7482715eac222e230d1e64dd9a89b
 ```
 
-以下のように、URL から取得したユーザー名と gist ID を介して、コンテンツに gist を埋め込むことができます。
+以下のコードをマークダウンに含めます。
 
-```go-html-template
-{{</* gist spf13 7896402 */>}}
+```text
+{{</* gist user 50a7482715eac222e230d1e64dd9a89b */>}}
 ```
 
-#### `gist` 入力の例 {#example-gist-input}
+これにより、gist 内のすべてのファイルがファイル名のアルファベット順に表示されます。
 
-If the gist contains several files and you want to quote just one of them, you can pass the filename (quoted) as an optional third argument:
+{{< gist jmooring 50a7482715eac222e230d1e64dd9a89b >}}
 
-{{< code file="gist-input.md" >}}
-{{</* gist spf13 7896402 "img.html" */>}}
-{{< /code >}}
+gist 内の特定のファイルを表示するには、以下のようにします。
 
-#### `gist` 出力の例 {#example-gist-output}
+```text
+{{</* gist user 50a7482715eac222e230d1e64dd9a89b 1-template.html */>}}
+```
 
-{{< output file="gist-output.html" >}}
-{{< gist spf13 7896402 >}}
-{{< /output >}}
+上記のコードは、以下のようにレンダリングされます。
 
-#### `gist` 表示の例 {#example-gist-display}
-
-Hugo のショートコード機能の顕著な効率性を示すために、このページでは `spf13` の `gist` の例を埋め込んでいます。 以下は、あなたの Web サイトを訪れた人が体験することをシミュレートしたものです。当然ながら、最終的な表示はスタイルシートや周辺のマークアップに依存します。
-
-{{< gist spf13 7896402 >}}
+{{< gist jmooring 50a7482715eac222e230d1e64dd9a89b 1-template.html >}}
 
 ### `highlight`
 
-このショートコードは、提供されたソースコードをシンタックスハイライトされた HTML に変換します。詳細は、 [「ハイライト」](/content-management/syntax-highlighting/) を参照してください。 `highlight` は 1 つの必須パラメータ `language` を受け取り、終了ショートコードを必要とします。
+ハイライトされたコードサンプルを表示するには、以下のようにします。
 
-#### `highlight` 入力の例 {#example-highlight-input}
-
-{{< code file="content/tutorials/learn-html.md" >}}
-{{</* highlight html */>}}
-<section id="main">
-  <div>
-   <h1 id="title">{{ .Title }}</h1>
-    {{ range .Pages }}
-        {{ .Render "summary"}}
-    {{ end }}
-  </div>
-</section>
+```text
+{{</* highlight go-html-template */>}}
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
 {{</* /highlight */>}}
-{{< /code >}}
+```
 
-#### `highlight` 出力の例 {#example-highlight-output}
+上記のコードは、以下のようにレンダリングされます。
 
-上記の `highlight` ショートコードの例では、サイトがレンダリングされる際に以下の HTML が生成されます。
+{{< highlight go-html-template >}}
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+{{< /highlight >}}
 
-{{< output file="tutorials/learn-html/index.html" >}}
-<span style="color: #f92672">&lt;section</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;main&quot;</span><span style="color: #f92672">&gt;</span>
-  <span style="color: #f92672">&lt;div&gt;</span>
-   <span style="color: #f92672">&lt;h1</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;title&quot;</span><span style="color: #f92672">&gt;</span>{{ .Title }}<span style="color: #f92672">&lt;/h1&gt;</span>
-    {{ range .Pages }}
-        {{ .Render &quot;summary&quot;}}
-    {{ end }}
-  <span style="color: #f92672">&lt;/div&gt;</span>
-<span style="color: #f92672">&lt;/section&gt;</span>
-{{< /output >}}
+1つ以上の [ハイライト表示オプション][highlighting options] を指定するには、引用符で囲んだカンマ区切りのリストを以下のように含めます。
 
-{{% note "More on Syntax Highlighting" %}}
-シンタックスハイライトされたコードブロックを Web サイトに追加するためのさらなるオプションについては、[「デベロッパーツールのシンタックスハイライト」](/tools/syntax-highlighting/)  を参照してください。
-{{< /note >}}
+[highlighting options]: /functions/highlight/
+
+```text
+{{</* highlight go-html-template "lineNos=inline, lineNoStart=42" */>}}
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+{{</* /highlight */>}}
+```
+
+上記のコードは、以下のようにレンダリングされます。
+
+{{< highlight go-html-template "lineNos=inline, lineNoStart=42" >}}
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+{{< /highlight >}}
 
 ### `instagram`
 
-[Instagram][] の写真を埋め込む場合は、写真の ID だけが必要です。 URL から Instagram の写真 ID を識別できます。
+`instagram` ショートコードは Facebook の **oEmbed Read** 機能を使用しています。
+Facebook の [開発者向けドキュメント][developer documentation] には、以下のように書かれています。
 
-```txt
+- この許可または機能は、アプリがライブデータにアクセスできるようになる前に、App Review プロセスを正常に完了する必要があります。 [もっと詳しく知る][Learn More]
+- この権限または機能は、ビジネス認証を行った場合にのみ利用可能です。 アプリがデータにアクセスできるようになる前に、追加の契約に署名する必要がある場合もあります。 [詳細はこちら][Learn More Here]
+
+[developer documentation]: https://developers.facebook.com/docs/features-reference/oembed-read
+[Learn More]: https://developers.facebook.com/docs/app-review
+[Learn More Here]: https://developers.facebook.com/docs/development/release/business-verification
+
+`instagram` ショートコードを使用するには、アクセストークンを取得する必要があります。
+
+サイト構成がプライベートの場合は、以下のようにします。
+
+{{< code-toggle file="hugo" copy=false >}}
+[services.instagram]
+accessToken = 'xxx'
+{{< /code-toggle >}}
+
+サイト構成が非公開 _でない_ 場合は、以下のように環境変数でアクセストークンを設定します。
+
+```text
+HUGO_SERVICES_INSTAGRAM_ACCESSTOKEN=xxx hugo --gc --minify
+```
+
+{{% note %}}
+クライアント アクセストークンを使用している場合は、パイプ記号 (`APPID|ACCESSTOKEN`) を使用して、アクセストークンとアプリ ID を結合する必要があります。
+{{% /note %}}
+
+以下の URL のインスタグラム投稿を表示するには、
+
+```text
 https://www.instagram.com/p/BWNjjyYFxVx/
 ```
 
-#### `instagram` 入力の例 {#example-instagram-input}
+以下のコードを Markdown に含めます。
 
-{{< code file="instagram-input.md" >}}
+```text
 {{</* instagram BWNjjyYFxVx */>}}
-{{< /code >}}
-
-以下のように、キャプションを非表示にするオプションもあります。
-
-{{< code file="instagram-input-hide-caption.md" >}}
-{{</* instagram BWNjjyYFxVx hidecaption */>}}
-{{< /code >}}
-
-#### `instagram` 出力の例 {#example-instagram-output}
-
-先の `hidecaption` の例を追加すると、レンダリングされた Web サイトのマークアップに以下の HTML が追加されます。
-
-{{< output file="instagram-hide-caption-output.html" >}}
-{{< instagram BWNjjyYFxVx hidecaption >}}
-{{< /output >}}
-
-#### `instagram` 表示の例 {#example-instagram-display}
-
-上記の `hidecaption` 付き `instagram` の例を用いて、以下はあなたの Web サイトへの訪問者のために表示される経験をシミュレートします。もちろん、最終的な表示は、スタイルシートや周辺のマークアップに依存します。
-
-{{< instagram BWNjjyYFxVx hidecaption >}}
-
-{{< note >}}
-`instagram` ショートコードは Instagram の API のエンドポイントを参照していますが、これは 2020年10月24日から非推奨となっています。そのため、この API エンドポイントから画像を取得することができず、結果として `instagram` ショートコードが使用されるとエラーになります。詳細については、GitHub issue [#7879](https://github.com/gohugoio/hugo/issues/7879) を参照してください。
-{{< /note >}}
+```
 
 ### `param`
 
@@ -283,9 +287,9 @@ https://www.instagram.com/p/BWNjjyYFxVx/
 
 また、`ref` と `relref` は、Hugo によって生成されたヘッダーリンクに対して機能する断片的なリンクを作成することも可能にします。
 
-{{% note "More on Cross References" %}}
+{{% note %}}
 [クロスリファレンス](/content-management/cross-references/) のドキュメントで、 `ref` と `relref` のより詳細な説明を読むことができます。
-{{< /note >}}
+{{% /note %}}
 
 `ref` と `relref` は、引用符で囲まれた `0` 位置にある _reference_ のパラメータを正確に 1 つだけ受け取ります。
 
@@ -307,73 +311,49 @@ https://www.instagram.com/p/BWNjjyYFxVx/
 
 ### `tweet`
 
-ブログ投稿に単一のツイートを含めたいですか? 必要なのは、そのツイートの URL だけです。
+以下の URL の Twitter 投稿を表示するには、
 
 ```txt
 https://twitter.com/SanDiegoZoo/status/1453110110599868418
 ```
 
-#### `tweet` 入力の例 {#example-tweet-input}
+以下のコードを Markdown に含めます。
 
-URL にあるツイートのユーザー名 (大文字小文字を区別) と ID を `tweet` ショートコードにパラメータとして渡します。
-
-{{< code file="example-tweet-input.md" >}}
+```text
 {{</* tweet user="SanDiegoZoo" id="1453110110599868418" */>}}
-{{< /code >}}
+```
 
-#### `tweet` 出力の例 {#example-tweet-output}
-
-先ほどの `tweet` の例では、レンダリングした Web サイトのマークアップに以下の HTML が追加されます。
-
-{{< output file="example-tweet-output.html" >}}
-{{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
-{{< /output >}}
-
-#### `tweet` 表示の例 {#example-tweet-display}
-
-先ほどの `tweet` の例で、あなたの Web サイトへの訪問者に表示される体験をシミュレートすると、以下のようになります。もちろん、最終的な表示はスタイルシートとその周辺のマークアップに依存します。
+上記のコードは、以下のようにレンダリングされます。
 
 {{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
 
 ### `vimeo`
 
-[Vimeo][] からの動画の追加は、[YouTube 入力ショートコード][YouTube Input shortcode] と同等です。
+以下の URL の [Vimeo] ビデオを表示するには、
 
-```txt
-https://vimeo.com/channels/staffpicks/146022717
+```text
+https://vimeo.com/channels/staffpicks/55073825
 ```
 
-#### `vimeo` 入力の例 {#example-vimeo-input}
+以下のコードを Markdown に含めます。
 
-動画の URL から ID を抽出し、それを `vimeo` ショートコードに渡します。
+```text
+{{</* vimeo 55073825 */>}}
+```
 
-{{< code file="example-vimeo-input.md" >}}
-{{</* vimeo 146022717 */>}}
-{{< /code >}}
+上記のコードは、以下のようにレンダリングされます。
 
-#### `vimeo` 出力の例 {#example-vimeop-output}
+{{< vimeo 55073825 >}}
 
-前述の `vimeo` の例では、レンダリングされた Web サイトのマークアップに以下の HTML が追加されます。
-
-{{< output file="example-vimeo-output.html" >}}
-{{< vimeo 146022717 >}}
-{{< /output >}}
-
-{{< tip >}}
-YouTube や Vimeo 出力のビジュアル スタイルをさらにカスタマイズしたい場合は、ショートコードを呼び出す際に `class` という名前のパラメータを追加します。
-新しい `class` は `<iframe>` をラップする `<div>` に追加され、 **かつ** インラインスタイルが削除されます。
-`id` を名前付きパラメータとして呼び出す必要があることに注意してください。また、`title` を使用すると、vimeo 動画にわかりやすいタイトルを付けることができます。
+{{% note %}}
+YouTube や Vimeo 出力のビジュアルスタイルをさらにカスタマイズしたい場合は、ショートコードを呼び出す際に `class` という名前のパラメータを追加してください。
+新しい `class` は `<iframe>` をラップする `<div>` に追加され、*かつ* インラインスタイルを削除します。 `id` も名前付きパラメータとして呼び出す必要があることに注意してください。
+また、`title` で Vsimeo 動画に説明的なタイトルを付けることができます。
 
 ```go
 {{</* vimeo id="146022717" class="my-vimeo-wrapper-class" title="My vimeo video" */>}}
 ```
-{{< /tip >}}
-
-#### `vimeo` 表示の例 {#example-vimeo-display}
-
-先ほどの `vimeo` の例を使って、あなたの Web サイトへの訪問者に表示される体験をシミュレートすると、以下のようになります。もちろん、最終的な表示はスタイルシートとその周辺のマークアップに依存することになります。
-
-{{< vimeo 146022717 >}}
+{{% /note %}}
 
 ### `youtube`
 
@@ -391,7 +371,8 @@ https://www.youtube.com/watch?v=w7Ft2ymGmfc
 {{</* youtube w7Ft2ymGmfc */>}}
 {{< /code >}}
 
-さらに、`autoplay` パラメータを `true` に設定することで、埋め込まれた動画の再生を自動的に開始させることができます。名前付きのパラメータと名前なしのパラメータを混在させることはできないので、まだ名前のない動画 ID をパラメータ `id` に代入する必要があることを覚えておいてください。
+さらに、`autoplay` パラメータを `true` に設定することで、埋め込まれた動画の再生を自動的に開始させることができます。
+名前付きのパラメータと名前なしのパラメータを混在させることはできないので、まだ名前のない動画 ID をパラメータ `id` に代入する必要があることを覚えておいてください。
 
 
 {{< code file="example-youtube-input-with-autoplay.md" >}}

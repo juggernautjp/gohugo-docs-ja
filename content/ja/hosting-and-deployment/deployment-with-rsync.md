@@ -11,17 +11,13 @@ draft: false
 keywords:
 - rsync
 - deployment
-linktitle: Rsync を使ったデプロイメント
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 70
 notesforauthors: null
 publishdate: "2017-02-01"
-sections_weight: 70
 title: Rsync を使ったデプロイメント
 toc: true
-weight: 70
 ---
 
 ## 前提条件 {#assumptions}
@@ -42,7 +38,7 @@ hugo && rsync -avz --delete public/ www-data@ftp.topologix.fr:~/www/
 
 サーバーへのログインをより安全に、対話を少なくするために、SSH キーをアップロードできます。 すでに SSH キーをサーバーにインストールしている場合は、次のセクションに進むことができます。
 
-まず、ssh クライアントをインストールします。 Debian/Ubuntu/derivates の場合は、以下のコマンドを使用します。
+まず、ssh クライアントをインストールします。 Debian の場合は、以下のコマンドを使用します。
 
 {{< code file="install-openssh.sh" >}}
 sudo apt-get install openssh-client

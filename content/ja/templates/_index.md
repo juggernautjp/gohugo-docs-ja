@@ -12,11 +12,10 @@ lastmod: "2017-02-01"
 linktitle: テンプレートの概要
 menu:
   docs:
+    identifier: templates-overview
     parent: templates
-    weight: 1
-notesforauthors: null
+    weight: 10
 publishdate: "2017-02-01"
 title: テンプレート
-toc: false
-weight: 1
+weight: 10
 ---

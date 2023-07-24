@@ -2,31 +2,31 @@
 date: "2017-02-01"
 description: Hugo は、圧倒的なスピード、堅牢なコンテンツ管理、強力なテンプレート言語が特徴で、あらゆる種類の静的な Web サイトに最適なソフトウェアです。
 draft: false
-lastmod: "2017-02-01"
+lastmod: "2023-07-15"
 linktitle: Hugo の機能
 menu:
   docs:
     parent: about
-    weight: 20
+    weight: 30
 publishdate: "2017-02-01"
-sections_weight: 20
+sections_weight: 30
 title: Hugo の機能
 toc: true
-weight: 20
+weight: 30
 ---
 
 ## 一般 {#general}
 
 * [非常に高速な][Extremely fast] ビルド時間 (1 ページあたり 1 ミリ秒未満)
 * 完全なクロスプラットフォームで、macOS、Linux、Windows などに [簡単にインストール][install] が可能 
-* [LiveReload][] を利用して開発中の変更をその場でレンダリング
+* [LiveReload] を利用して開発中の変更をその場でレンダリング
 * [強力なテーマ][Powerful theming]
 * [どこでもホスティング可能][hostanywhere]
 
 ## 構成 {#organization}
 
 * Web サイトのセクションを含む、わかりやすい [プロジェクトの構成][organization for your projects]
-* カスタマイズ可能な [URLs][]
+* カスタマイズ可能な [URLs]
 * カテゴリーやタグなど、設定可能な [タクソノミー (分類法)][taxonomies] に対応
 * 強力なテンプレート [関数][functions] で、思い通りの [コンテンツの並べ替え][Sort content]
 * [目次][table of contents] の自動生成
@@ -48,11 +48,11 @@ weight: 20
 
 ## その他の機能 {#additional-features}
 
-* 統合された [Disqus][] コメントのサポート
+* 統合された [Disqus] コメントのサポート
 * 統合された [Google アナリティクス][Google Analytics] のサポート
-* [RSS][] の自動作成
-* [Go][] HTML テンプレートのサポート
-* [Chroma][] による [シンタックスハイライト][Syntax highlighting]
+* [RSS] の自動作成
+* [Go] HTML テンプレートのサポート
+* [Chroma] による [シンタックスハイライト][Syntax highlighting]
 
 [aliases]: /content-management/urls/#aliases
 [Chroma]: https://github.com/alecthomas/chroma

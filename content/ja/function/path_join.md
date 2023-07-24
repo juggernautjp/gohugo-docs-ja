@@ -1,18 +1,16 @@
 ---
 categories:
-- functions
+- function
 date: "2018-11-28"
-deprecated: false
 description: パス要素を 1 つのパスに結合します。
 draft: false
-hugoversion: "0.39"
 keywords:
 - path
 - join
 lastmod: "2018-11-28"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2018-11-28"
 relatedfuncs:
 - path.Base
@@ -22,9 +20,8 @@ relatedfuncs:
 - path.Ext
 - path.Split
 signature:
-- path.Join ELEMENT...
+- "path.Join ELEMENT..."
 title: path.Join
-workson: []
 ---
 
 `path.Join` は、必要に応じて区切りのスラッシュを追加して、パス要素を 1 つのパスに結合します。

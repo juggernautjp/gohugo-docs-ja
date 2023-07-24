@@ -13,16 +13,14 @@ keywords:
 - outputs
 - rss
 lastmod: "2019-12-11"
-linktitle: カスタム出力形式
 menu:
   docs:
     parent: templates
-    weight: 18
+    weight: 210
 publishdate: "2017-03-22"
-sections_weight: 18
 title: カスタム出力形式
 toc: true
-weight: 18
+weight: 210
 ---
 
 このページでは、メディアタイプと出力形式を使用してサイトを適切に設定する方法と、カスタム出力用のテンプレートを作成する場所について説明します。
@@ -44,7 +42,7 @@ weight: 18
 
 メディアタイプを追加または変更するには、[サイト設定][config] の `mediaTypes` セクションで、すべてのサイトまたは特定の言語に対して定義します。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [mediaTypes]
   [mediaTypes."text/enriched"]
   suffixes = ["enr"]
@@ -56,16 +54,15 @@ weight: 18
 
 **注意:** これらのメディアタイプは **出力形式** 用に設定されています。Hugo のデフォルトの出力形式 (たとえば `HTML`) の一つを再定義したい場合、メディアタイプも再定義する必要があります。つまり、`HTML` 出力形式のサフィックスを `html` (デフォルト) から `htm` に変更したい場合は、メディアタイプを再定義する必要があります。
 
-```ini
+{{< code-toggle file="hugo" >}}
 [mediaTypes]
 [mediaTypes."text/html"]
 suffixes = ["htm"]
 
-# Redefine HTML to update its media type.
 [outputFormats]
 [outputFormats.HTML]
 mediaType = "text/html"
-```
+{{</ code-toggle >}}
 
 **注意** 上記を機能させるには、サイト設定に `outputs` 定義も追加する必要があります。
 
@@ -155,7 +152,7 @@ Hugo の `Page` は、ファイルシステム上で複数の _出力形式_ に
 
 サイト設定ファイルの例: 
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 [outputs]
   home = ["HTML", "AMP", "RSS"]
   page = ["HTML"]
@@ -172,15 +169,13 @@ Hugo の `Page` は、ファイルシステム上で複数の _出力形式_ に
 
 以下は、レンダリングされた `Page` の出力形式を定義するコンテンツファイルの `YAML` フロントマターの例です。
 
-```yaml
----
-date: "2016-03-19"
+{{< code-toggle file="content/example.md" fm=true copy=false >}}
+title: Example
 outputs:
 - html
 - amp
 - json
----
-```
+{{< /code-toggle >}}
 
 ## 出力形式を一覧表示する {#list-output-formats}
 
@@ -252,8 +247,8 @@ Hugo は指定された名前を探すので、好きな名前を付けること
 ```
 
 [base]: /templates/base/
-[config]: /getting-started/configuration/
-[lookup order]: /templates/lookup/
+[site configuration]: /getting-started/configuration/
+[lookup order]: /templates/lookup-order/
 [media type]: https://en.wikipedia.org/wiki/Media_type
 [partials]: /templates/partials/
 [page_kinds]: /templates/section-templates/#page-kinds

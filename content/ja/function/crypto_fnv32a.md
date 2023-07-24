@@ -1,10 +1,10 @@
 ---
 title: crypto.FNV32a
 description: 指定された文字列の FNV (Fowler-Noll-Vo) 32 ビット ハッシュを返します。
-categories: [functions]
+categories: [function]
 menu:
   docs:
-    parent: "functions"
+    parent: function
 keywords: [crypto hash FNV32 Fowler-Noll-Vo]
 signature: ["crypto.FNV32a STRING"]
 aliases: []

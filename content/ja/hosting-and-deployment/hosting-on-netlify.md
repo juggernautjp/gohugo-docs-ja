@@ -1,5 +1,4 @@
 ---
-aliases: []
 authors:
 - Ryan Watters
 - Seth MacLeod
@@ -12,16 +11,12 @@ keywords:
 - netlify
 - hosting
 - deployment
-linktitle: Netlify でのホスト
 menu:
   docs:
     parent: hosting-and-deployment
-    weight: 10
 publishdate: "2017-02-01"
-sections_weight: 10
 title: Netlify でのホスト
 toc: true
-weight: 10
 ---
 
 [Netlify][netlify] は、継続的デプロイ サービス、グローバル CDN、超高速 DNS、アトミック デプロイ、インスタント キャッシュ無効化、ワンクリック SSL、ブラウザベースのインターフェイス、CLI、および Hugo の Web サイトを管理するためのその他多くの機能を提供します。
@@ -34,7 +29,7 @@ weight: 10
 
 ## Netlify アカウントを作成する {#create-a-netlify-account}
 
-[app.netlify.com][] にアクセスして、希望のサインアップ方法を選択します。 これは、メールアドレスでサインアップするオプションもありますが、ホストされた Git プロバイダーにするでしょう。
+[app.netlify.com] にアクセスして、希望のサインアップ方法を選択します。 これは、メールアドレスでサインアップするオプションもありますが、ホストされた Git プロバイダーにするでしょう。
 
 以下の例では GitHub を使用していますが、他の Git プロバイダーでも同様の手順となります。
 
@@ -62,7 +57,7 @@ Netlify は、継続的デプロイに必要なステップを説明し始めま
 
 ![Screenshot of step 1 of create a new site for Netlify: selecting the git provider](/images/hosting-and-deployment/hosting-on-netlify/netlify-create-new-site-step-2.jpg)
 
-選択すると、基本設定の画面が表示されます。 ここで、公開するブランチ、[ビルド コマンド][build command]、および公開 (つまり、デプロイ) ディレクトリを選択できます。 公開ディレクトリは、[サイト設定][config] で設定したものと同じである必要があり、デフォルトは `public` です。 以下の手順では、`master` ブランチから公開していることを前提としています。
+選択すると、基本設定の画面が表示されます。 ここで、公開するブランチ、[ビルド コマンド][build command]、および公開 (つまり、デプロイ) ディレクトリを選択できます。 公開ディレクトリは、[サイト設定][site configuration] で設定したものと同じである必要があり、デフォルトは `public` です。 以下の手順では、`master` ブランチから公開していることを前提としています。
 
 ## Netlify で Hugo のバージョンを設定する {#configure-hugo-version-in-netlify}
 
@@ -70,23 +65,21 @@ Netlify は、継続的デプロイに必要なステップを説明し始めま
 
 本番環境の場合:
 
-{{< code file="netlify.toml" codeLang="toml" >}}
+{{< code file="netlify.toml" >}}
 [context.production.environment]
   HUGO_VERSION = "0.99.1"
 {{< /code >}}
 
 テスト環境の場合:
 
-{{< code file="netlify.toml" codeLang="toml" >}}
+{{< code file="netlify.toml" >}}
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.99.1"
 {{< /code >}}
 
 Netlify の設定ファイルは、異なる環境に対して正しく理解するのが少し難しいかもしれません。このサイトの `netlify.toml` から、いくつかのインスピレーションやヒントを得ることができるかもしれません。
 
-{{< code file="netlify.toml" nocode="true" >}}
 {{< readfile file="netlify.toml" highlight="toml" >}}
-{{< /code >}}
 
 ## サイトのビルドとデプロイ {#build-and-deploy-site}
 
@@ -108,7 +101,7 @@ Netlify が Hugo バージョンを処理する方法の詳細については、
 
 ## Netlify で Hugo テーマを使用する {#use-hugo-themes-with-netlify}
 
-[`git clone` によるテーマのインストール方法][installthemes] は、Netlify ではサポートされていません。 `git clone` を使用する場合、`.git` サブディレクトリをテーマ フォルダーから再帰的に削除する必要があるため、その結果、テーマの将来のバージョンとの互換性を保つことができなくなります。
+`git clone` によるテーマのインストール方法 は、Netlify ではサポートされていません。 `git clone` を使用する場合、`.git` サブディレクトリをテーマ フォルダーから再帰的に削除する必要があるため、その結果、テーマの将来のバージョンとの互換性を保つことができなくなります。
 
 *より良い* アプローチは、適切な git サブモジュールとしてテーマをインストールすることです。 詳細については、[サブモジュールの GitHub ドキュメントを読む][ghsm] または [Git の Web サイト][gitsm] で見つけることができますが、コマンドは `git clone` のコマンドに似ています。
 
@@ -148,13 +141,12 @@ git submodule update --rebase --remote
 3. [Redirects and Rewrite Rules (リダイレクト ルールとリライト ルール)][Redirects and Rewrite Rules]
 
 [app.netlify.com]: https://app.netlify.com
-[build command]: /getting-started/usage/#the-hugo-command
-[config]: /getting-started/configuration/
+[build command]: /getting-started/usage/#build-your-site
+[site configuration]: /getting-started/configuration/
 [ghsm]: https://github.com/blog/2104-working-with-submodules
 [gitsm]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [httpscustom]: https://www.netlify.com/docs/ssl/
 [hugoversions]: https://github.com/netlify/build-image/blob/master/Dockerfile#L216
-[installthemes]: /themes/installing/
 [netlify]: https://www.netlify.com/
 [netlifysignup]: https://app.netlify.com/signup
 [Quick Start]: /getting-started/quick-start/

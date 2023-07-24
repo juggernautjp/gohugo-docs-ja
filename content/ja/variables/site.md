@@ -2,7 +2,7 @@
 aliases:
 - /variables/site-variables/
 categories:
-- variables and params
+- variables and parameters
 date: "2017-02-01"
 description: すべてではありませんが、多くのサイト全体の変数がサイト設定で定義されます。
   ただし、Hugo には、テンプレート内のグローバル値に簡単にアクセスできるように、多数の組み込み変数が用意されています。
@@ -11,13 +11,11 @@ keywords:
 - global
 - site
 lastmod: "2017-02-01"
-linktitle: サイト変数
 menu:
   docs:
     parent: variables
     weight: 10
 publishdate: "2017-02-01"
-sections_weight: 10
 title: サイト変数
 toc: true
 weight: 10
@@ -33,9 +31,6 @@ weight: 10
 
 .Site.AllPages
 : 翻訳に関係ない、すべてのページの配列です。
-
-.Site.Author
-: サイト設定で定義された、作成者のマップです。
 
 .Site.BaseURL
 : サイト設定で定義された、サイトのベース URL です。
@@ -56,7 +51,7 @@ weight: 10
 : サイト設定で定義定義された、 Google アナリティクスのトラッキング コードを表す文字列です。
 
 .Site.Home
-: ホームページの [ページオブジェクト](https://gohugo.io/variables/page/) への参照です。
+: ホームページの [ページオブジェクト](/variables/page/) への参照です。
 
 .Site.IsMultiLingual
 : このサイトに複数の言語があるかどうか。 詳細については、[「多言語対応」](/content-management/multilingual/) を参照してください。
@@ -92,16 +87,16 @@ weight: 10
 : サイト内のすべてのメニューです。
 
 .Site.Pages
-: 日付順に並べられたすべてのコンテンツの配列で、最新のものを先頭にします。 この配列には、現在の言語のページのみが含まれます。 [`.Site.Pages`]({{< relref "site.md#site-pages" >}}) を参照してください。
+: 日付順に並べられたすべてのコンテンツの配列で、最新のものを先頭にします。 この配列には、現在の言語のページのみが含まれます。 [`.Site.Pages`](#site-pages) を参照してください。
 
 .Site.RegularPages
-: *通常* ページのコレクションへのショートカットです。 `.Site.RegularPages` は、 `where .Site.Pages "Kind" "page"` と同等です。 [`.Site.Pages`]({{< relref "site.md#site-pages" >}}) を参照してください。
+: *通常* ページのコレクションへのショートカットです。 `.Site.RegularPages` は、 `where .Site.Pages "Kind" "page"` と同等です。 [`.Site.Pages`](#site-pages) を参照してください。
 
 .Site.Sections
 : サイトのトップレベルディレクトリです。
 
 .Site.Taxonomies
-: サイト全体の [タクソノミー](/taxonomies/usage/) です。また、[「タクソノミー テンプレートの外で `.Site.Taxonomies` を使用する」](/variables/taxonomy/#use-sitetaxonomies-outside-of-taxonomy-templates) のセクションも参照して下さい。
+: サイト全体の [タクソノミー](/content-management/taxonomies/) です。また、[「任意のテンプレートからタクソノミーデータにアクセスする」](/variables/taxonomy/#use-sitetaxonomies-outside-of-taxonomy-templates) のセクションも参照して下さい。
 
 .Site.Title
 : サイトのタイトルを表す文字列です。
@@ -112,9 +107,9 @@ weight: 10
 
 ### 例: `.Site.Params` {#example-siteparams}
 
-以下の `config.[yaml|toml|json]` は、`description` のサイト全体のパラメータを定義します。
+以下の `hugo.[yaml|toml|json]` は、`description` のサイト全体のパラメータを定義します。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" >}}
 baseURL = "https://yoursite.example.com/"
 
 [params]
@@ -125,7 +120,7 @@ baseURL = "https://yoursite.example.com/"
 [パーシャル](/templates/partials/) の中で `.Site.Params` を使用すると、デフォルトのサイトの説明文を呼び出すことができます。
 
 {{< code file="layouts/partials/head.html" >}}
-<meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
+<meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
 {{< /code >}}
 
 ## `.Site.Pages` 変数 {#site-pages}

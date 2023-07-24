@@ -11,16 +11,15 @@ draft: false
 keywords:
 - blocks
 - base
-linktitle: null
 menu:
   docs:
     parent: templates
     weight: 20
 publishdate: "2017-02-01"
-sections_weight: 20
+sections_weight: 40
 title: ベーステンプレートとブロック
 toc: true
-weight: 20
+weight: 40
 ---
 
 `block` キーワードを使用すると、ページの 1 つまたは複数のマスターテンプレートの外側のシェルを定義し、必要に応じて部分を埋めたり上書きしたりできます。
@@ -37,7 +36,7 @@ weight: 20
 
 以下では、 `_default/baseof.html` でシンプルなベーステンプレート定義しています。デフォルトのテンプレートとして、検索順序の先頭により近い別の `*baseof.html` を指定しない限り、このテンプレートがすべてのページのレンダリング元となるシェルとなります。
 
-{{< code file="layouts/_default/baseof.html" download="baseof.html" >}}
+{{< code file="layouts/_default/baseof.html" >}}
 <!DOCTYPE html>
 <html>
   <head>
@@ -63,7 +62,7 @@ weight: 20
 
 上記のベーステンプレートから、[デフォルトのリストテンプレート][hugolists] を定義できます。デフォルトのリストテンプレートは上で定義されたすべてのコードを継承し、以下から独自の `"main"` ブロックを実装できます。
 
-{{< code file="layouts/_default/list.html" download="list.html" >}}
+{{< code file="layouts/_default/list.html" >}}
 {{ define "main" }}
   <h1>Posts</h1>
   {{ range .Pages }}
@@ -77,7 +76,7 @@ weight: 20
 
 これは、(基本的に空の) "main" ブロックの内容を、リストテンプレートに役立つものに置き換えます。この場合、`"title"` ブロックを定義していないので、ベーステンプレートの内容はリスト内で変更されないままです。
 
-{{< warning >}}
+{{% note %}}
 ブロック定義の外に置くコードは、レイアウトを壊す可能性があります。 これには HTML コメントも含まれます。 たとえば、以下のコードです。
 
 ```go-html-template
@@ -87,13 +86,13 @@ weight: 20
 {{ end }}
 ```
 [Hugo ディスカッション フォーラムのこのスレッド](https://discourse.gohugo.io/t/baseof-html-block-templates-and-list-types-results-in-empty-pages/5612/6) を参照してください。
-{{< /warning >}}
+{{% /note %}}
 
 以下は、[デフォルトのシングルページ テンプレート][singletemplate] に固有のコードを使用して、ベーステンプレートの `"main"` と `"title"` ブロックエリアの両方をオーバーライドする方法を示しています。
 
-{{< code file="layouts/_default/single.html" download="single.html" >}}
+{{< code file="layouts/_default/single.html" >}}
 {{ define "title" }}
-  <!-- これは、baseof.html で設定されたデフォルト値をオーバーライドします。つまり、元の例では "{{.Site.Title}}" となります。 -->
+  <!-- これは、baseof.html で設定されたデフォルト値をオーバーライドします。つまり、元の例では "{{ .Site.Title }}" となります。 -->
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}

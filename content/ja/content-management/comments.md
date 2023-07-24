@@ -3,7 +3,6 @@ aliases:
 - /extras/comments/
 categories:
 - project organization
-- fundamentals
 date: "2017-02-01"
 description: Hugo には Disqus テンプレートが内蔵されていますが、新しい Hugo の Web サイトで使用できるコメントシステムはこれだけではありません。
 draft: false
@@ -34,7 +33,7 @@ Hugo には Disqus をテンプレートに読み込むために必要なすべ�
 
 Disqus のコメントでは、[サイトの設定ファイル][configuration] に以下のような 1 つの値を設定する必要があります。
 
-{{< code-toggle copy="false" >}}
+{{< code-toggle copy=false >}}
 disqusShortname = "yourDisqusShortname"
 {{</ code-toggle >}}
 
@@ -46,7 +45,7 @@ disqusShortname = "yourDisqusShortname"
 
 ### Hugo 内蔵の Disqus パーシャルをレンダリングする {#render-hugos-built-in-disqus-partial-template}
 
-Disqus は独自の [内部テンプレート](https://gohugo.io/templates/internal/#disqus) を用意しており、コメントを表示する場所に以下のコードを追加してレンダリングします。
+Disqus は独自の [内部テンプレート](templates/internal/#disqus) を用意しており、コメントを表示する場所に以下のコードを追加してレンダリングします。
 
 ```go-html-template
 {{ template "_internal/disqus.html" . }}

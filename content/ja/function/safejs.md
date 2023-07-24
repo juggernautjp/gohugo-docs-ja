@@ -1,24 +1,21 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: 指定された文字列を、既知の安全な JavaScript 文字列として宣言します。
 draft: false
-hugoversion: null
 keywords:
 - strings
 lastmod: "2017-02-01"
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - safeJS INPUT
 title: safeJS
-workson: []
 ---
 
 ここでいう *安全* とは、文字列が既知の安全な EcmaScript5 式 (例えば `(x + y * z())`) をカプセル化していることを意味します。

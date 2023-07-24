@@ -14,9 +14,9 @@ demo:
 # -D --port 9001 --bind 0.0.0.0
 
 update:
-	$(HUGO_BIN) mod get -u github.com/juggernautjp/hugo-widebs5-theme@main
-	$(HUGO_BIN) mod get -u github.com/twbs/bootstrap@main
-	$(HUGO_BIN) mod get -u github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@main
+	$(GO_BIN) get -u github.com/juggernautjp/hugo-widebs5-theme@main
+	$(GO_BIN) get -u github.com/twbs/bootstrap@main
+	$(GO_BIN) get -u github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@main
 
 reget:
 	$(GO_BIN) mod tidy

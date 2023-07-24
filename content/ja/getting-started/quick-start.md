@@ -14,12 +14,11 @@ linktitle: クイックスタート
 menu:
   docs:
     parent: getting-started
-    weight: 10
+    weight: 20
 publishdate: "2013-07-01"
-sections_weight: 10
 title: クイックスタート
 toc: true
-weight: 10
+weight: 20
 ---
 
 このチュートリアルでは、以下のことを行います。
@@ -33,7 +32,7 @@ weight: 10
 
 このチュートリアルを開始する前に、以下のことを行う必要があります。
 
-1. [Hugo のインストール][Install Hugo] (拡張版)
+1. [Hugo のインストール][Install Hugo] (拡張版、v0.112.0 以降)
 2. [Git のインストール][Install Git]
 
 また、コマンドラインからの操作に慣れている必要があります。
@@ -42,11 +41,18 @@ weight: 10
 
 ### コマンド {#commands}
 
-{{< note >}}
-Windows ユーザーの場合は、これらのコマンドを [PowerShell] で実行する必要があります。 別のアプリケーションである Windows Powershell やコマンド プロンプトは使用できません。 可能であれば、Linux シェルを使用することもできます。
+{{% note %}}
+**Windows ユーザーの場合:**
+
+- コマンドプロンプトは使用しないでください
+- Windows PowerShell を使用しないでください
+- [PowerShell] または WSL や Git Bash などの Linux ターミナルからこれらのコマンドを実行してください
+
+PowerShell と Windows PowerShell は、 [異なるアプリケーションです][are different applications]。
 
 [PowerShell]: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows
-{{< /note >}}
+[are different applications]: https://learn.microsoft.com/en-us/powershell/scripting/whats-new/differences-from-windows-powershell?view=powershell-7.3
+{{% /note %}}
 
 これらのコマンドを実行して、[Ananke] テーマの Hugo サイトを作成します。 次のセクションでは、各コマンドについて説明します。
 
@@ -54,8 +60,8 @@ Windows ユーザーの場合は、これらのコマンドを [PowerShell] で�
 hugo new site quickstart
 cd quickstart
 git init
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
-echo "theme = 'ananke'" >> config.toml
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+echo "theme = 'ananke'" >> hugo.toml
 hugo server
 ```
 
@@ -84,13 +90,13 @@ git init
 [Ananke] テーマを `themes` ディレクトリにクローンし、[Git サブモジュール][Git submodule] としてプロジェクトに追加します。
 
 ```bash
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 ```
 
 以下のコマンドにより、サイト設定ファイルに現在のテーマを示す行を追加します。
 
 ```bash
-echo "theme = 'ananke'" >> config.toml
+echo "theme = 'ananke'" >> hugo.toml
 ```
 
 Hugo の開発サーバーを起動し、サイトを表示します。
@@ -156,7 +162,7 @@ Hugo のレンダリング エンジンは、Markdown の CommonMark [仕様][sp
 
 ## サイトを設定する {#configure-the-site}
 
-プロジェクトのルートにある [サイト設定][site configuration] ファイル (`config.toml`) をエディターで開いてください。
+プロジェクトのルートにある [サイト設定][site configuration] ファイル (`hugo.toml`) をエディターで開いてください。
 
 ```ini
 baseURL = 'http://example.org/'
@@ -216,7 +222,6 @@ Hugo の [フォーラム][forum] は、質問に答え、知識を共有し、�
 [draft, future, and expired content]: /getting-started/usage/#draft-future-and-expired-content
 [draft, future, or expired content]: /getting-started/usage/#draft-future-and-expired-content
 [external learning resources]:/getting-started/external-learning-resources/
-[forum]: https://discourse.gohugo.io/
 [forum]: https://discourse.gohugo.io/
 [front matter]: /content-management/front-matter
 [Git submodule]: https://git-scm.com/book/en/v2/Git-Tools-Submodules

@@ -5,18 +5,29 @@ categories: [functions]
 menu:
   docs:
     parent: functions
-keywords: [replace regex]
+keywords: [regex]
 signature:
   - "replaceRE PATTERN REPLACEMENT INPUT [LIMIT]"
   - "strings.ReplaceRE PATTERN REPLACEMENT INPUT [LIMIT]"
-relatedfuncs: [replace,findRE]
-aliases: []
+relatedfuncs: [findRE, FindRESubmatch, replace]
 ---
-By default, the `replaceRE` function replaces all matches. You can limit the number of matches with an optional LIMIT parameter.
+By default, `replaceRE` replaces all matches. You can limit the number of matches with an optional LIMIT parameter.
 
 When specifying the regular expression, use a raw [string literal] (backticks) instead of an interpreted string literal (double quotes) to simplify the syntax. With an interpreted string literal you must escape backslashes.
 
-The syntax of the regular expression is the same general syntax used by Perl, Python, and other languages. More precisely, it is the syntax accepted by [RE2] except for `\C`.
+[string literal]: https://go.dev/ref/spec#String_literals
+
+This function uses the [RE2] regular expression library. See the [RE2 syntax documentation] for details. Note that the RE2 `\C` escape sequence is not supported.
+
+[RE2]: https://github.com/google/re2/
+[RE2 syntax documentation]: https://github.com/google/re2/wiki/Syntax/
+
+{{% note %}}
+The RE2 syntax is a subset of that accepted by [PCRE], roughly speaking, and with various [caveats].
+
+[caveats]: https://swtch.com/~rsc/regexp/regexp3.html#caveats
+[PCRE]: https://www.pcre.org/
+{{% /note %}}
 
 This example replaces two or more consecutive hyphens with a single hyphen:
 
@@ -39,9 +50,9 @@ You can use `$1`, `$2`, etc. within the replacement string to insert the groups 
 {{ replaceRE "^https?://([^/]+).*" "$1" $s }} → gohugo.io
 ```
 
-{{< note >}}
+{{% note %}}
 You can write and test your regular expression using [regex101.com](https://regex101.com/). Be sure to select the Go flavor before you begin.
-{{< /note >}}
+{{% /note %}}
 
 [RE2]: https://github.com/google/re2/wiki/Syntax
 [string literal]: https://go.dev/ref/spec#String_literals

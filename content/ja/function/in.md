@@ -1,25 +1,21 @@
 ---
 aliases: []
 categories:
-- functions
+- function
 date: "2017-02-01"
-deprecated: false
 description: ある要素が配列またはスライス、または文字列の部分文字列に含まれるかどうかを調べ、ブール値を返します。
 draft: false
-hugoversion: null
 keywords:
 - strings
 lastmod: "2017-02-01"
-linktitle: null
 menu:
   docs:
-    parent: functions
+    parent: function
 publishdate: "2017-02-01"
 relatedfuncs: []
 signature:
 - in SET ITEM
 title: in
-workson: []
 ---
 
 サポートされている要素は文字列、整数、浮動小数点数ですが、期待どおりに一致するのは float64 のみです。

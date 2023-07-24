@@ -1,6 +1,6 @@
 ---
 categories:
-- functions
+- function
 date: "2021-10-08"
 description: パスのセパレーターをスラッシュ (`/`) に置き換え、不要なセパレーターを削除します。
 draft: false
@@ -9,7 +9,7 @@ keywords:
 - clean
 menu:
   docs:
-    parent: functions
+    parent: function
 relatedfuncs:
 - path.Base
 - path.BaseName
