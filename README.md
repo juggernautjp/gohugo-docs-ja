@@ -6,22 +6,24 @@ Hugo でサイト構築する方法に関連し、Hugo を記述した Go 言語
 ## コンテンツ
 
 - [Hugo ドキュメント](https://gohugo.io/documentation/) の日本語訳
-
+  - [Hugo ドキュメントの GitHub リポジトリ](https://github.com/gohugoio/hugoDocs)
+  - [GoHugo Sites Theme](https://github.com/gohugoio/gohugoioTheme) - Hugo ドキュメント用テーマ
 
 
 ## 利用技術
 
 - [Hugo](https://gohugo.io/)
 - [Go 言語](https://go.dev/) - スクリプト作成 (WIP)
-- [Bootstrap](https://getbootstrap.com/) v5.3.0 (現時点では、正式版ではなく alpha2 版)
+- [Bootstrap](https://getbootstrap.com/) v5.3.0 (正式版)
 - [Flexsearch.js](https://github.com/nextapps-de/flexsearch) + [Kuromoji.js](https://github.com/takuyaa/kuromoji.js/)/[kuromojin](https://github.com/azu/kuromojin)
 - [Couldflare](https://dash.cloudflare.com/) [Pages](https://www.cloudflare.com/ja-jp/products/pages/)
 
 
 ## 参考テーマ
 
-- [Bootstrap v5.3.0 example](https://github.com/twbs/bootstrap/tree/main/site) - Bootstrap v5.3.0-alpha1 のサンプル (ベース)
+- [Bootstrap v5.3.0 example](https://github.com/twbs/bootstrap/tree/main/site) - Bootstrap v5.3.1 のサンプル (ベース)
 - [hugo-theme-zen example](https://github.com/frjo/hugo-theme-zen/tree/main/exampleSite) - Hugo Zen テーマのサンプル (Flexsearch.js)
+- [GoHugo Sites Theme](https://github.com/gohugoio/gohugoioTheme) - Hugo ドキュメント用テーマ
 
 
 ## 参考記事
@@ -38,6 +40,20 @@ Hugo でサイト構築する方法に関連し、Hugo を記述した Go 言語
 
 
 ## 日本語サイト用カスタマイズ
+
+### Hugo テーマの一部機能追加
+
+1. ショートコードの修正
+  - layouts/shortcodes/code-toggle.html
+  - layouts/shortcodes/{note,warning}.html
+2. Bootstrap のフォントの拡大
+  ```scss
+  $font-size-root: 1.05em
+  ```
+
+
+
+### Zen テーマの一部機能追加と Bootstrap テーマの修正
 
 下記の [hugo-theme-zen](https://github.com/frjo/hugo-theme-zen/) のカスタマイズ方法を参考にカスタマイズを行う。
 
@@ -98,4 +114,4 @@ Sidebar menu: `layouts/partials/docs-sidebar.html`, `data/sidebar_ja.yml`
 
 2. 日本語形態素解析ライブラリの利用
 
-[Kuromoji.js](https://github.com/takuyaa/kuromoji.js/) のラッパー [kuromojin](https://github.com/azu/kuromojin) を利用し、日本語の検索精度を上げる。
+[Kuromoji.js](https://github.com/takuyaa/kuromoji.js/) のラッパー [kuromojin](https://github.com/azu/kuromojin) を利用し、日本語の検索精度を上げる予定であったが、当面は実装見送り。
