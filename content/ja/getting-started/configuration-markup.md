@@ -34,7 +34,7 @@ Hugo のデフォルトの Markdown ハンドラーに関連する設定につ�
 
 以下がデフォルト設定です。
 
-{{< code-toggle config="markup.goldmark" />}}
+{{< code-toggle config="markup.goldmark" codeId="c2" />}}
 
 拡張機能の詳細については、Goldmark ドキュメントの [このセクション](https://github.com/yuin/goldmark/#built-in-extensions) を参照してください。
 
@@ -92,7 +92,7 @@ autoHeadingIDType ("github") {{< new-in "0.62.2" >}}
 
 これはデフォルトの `highlight` 設定です。これらの設定のいくつかはコードブロックごとに設定できることに注意してください。詳細は、[「シンタックスハイライト」](/content-management/syntax-highlighting/) を参照してください。
 
-{{< code-toggle config="markup.highlight" />}}
+{{< code-toggle config="markup.highlight" codeId="c3" />}}
 
 `style` については、以下のギャラリーを参照してください。
 
@@ -103,7 +103,7 @@ CSS については、[「シンタックスハイライト CSS の生成」](/c
 
 ### 目次 {#table-of-contents}
 
-{{< code-toggle config="markup.tableOfContents" />}}
+{{< code-toggle config="markup.tableOfContents" codeId="c4" />}}
 
 以下の設定は、Goldmark レンダラーでのみ機能します。
 

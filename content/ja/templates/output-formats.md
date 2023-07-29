@@ -54,7 +54,7 @@ weight: 210
 
 **注意:** これらのメディアタイプは **出力形式** 用に設定されています。Hugo のデフォルトの出力形式 (たとえば `HTML`) の一つを再定義したい場合、メディアタイプも再定義する必要があります。つまり、`HTML` 出力形式のサフィックスを `html` (デフォルト) から `htm` に変更したい場合は、メディアタイプを再定義する必要があります。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h2" >}}
 [mediaTypes]
 [mediaTypes."text/html"]
 suffixes = ["htm"]
@@ -80,7 +80,7 @@ mediaType = "text/html"
 
 出力形式を追加または変更するには、サイトの [設定ファイル](/getting-started/configuration/) の `outputFormats` セクションで、すべてのサイトまたは特定の言語に対して定義します。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" codeId="h3" >}}
 [outputFormats.MyEnrichedFormat]
 mediaType = "text/enriched"
 baseName = "myindex"
@@ -152,7 +152,7 @@ Hugo の `Page` は、ファイルシステム上で複数の _出力形式_ に
 
 サイト設定ファイルの例: 
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h4" >}}
 [outputs]
   home = ["HTML", "AMP", "RSS"]
   page = ["HTML"]

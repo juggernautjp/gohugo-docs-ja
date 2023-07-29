@@ -62,7 +62,7 @@ https://example.org/posts/my-first-post/
 
 以下のフロントマターでは、
 
-{{< code-toggle file="content/posts/post-1.md" copy=false fm=true >}}
+{{< code-toggle file="content/posts/post-1.md" copy=false fm=true codeId="f2" >}}
 title = 'My First Article'
 url = '/articles/my-first-article'
 {{< /code-toggle >}}
@@ -75,7 +75,7 @@ https://example.org/articles/my-first-article/
 
 ファイル拡張子を含める場合は、以下のようにします。
 
-{{< code-toggle file="content/posts/post-1.md" copy=false fm=true >}}
+{{< code-toggle file="content/posts/post-1.md" copy=false fm=true codeId="f3" >}}
 title = 'My First Article'
 url = '/articles/my-first-article.html'
 {{< /code-toggle >}}
@@ -163,7 +163,7 @@ public/
 
 コンテンツルート内の通常ページに日付ベースの階層を作成するには、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h2" >}}
 [permalinks.page]
 "/" = "/:year/:month/:slug/"
 {{< /code-toggle >}}
@@ -171,7 +171,7 @@ public/
 タクソノミー用語についても同じ方法を使います。
 たとえば、URL のタクソノミー セグメントを省略する場合は、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h3" >}}
 [permalinks.term]
 'tags' = '/:slug/'
 {{< /code-toggle >}}
@@ -198,7 +198,7 @@ content/
 
 そして、以下のサイト構成を用いると、
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h4" >}}
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 
@@ -300,7 +300,7 @@ URL パターンを定義する際には、以下のトークンを使用しま�
 
 [time package]: https://pkg.go.dev/time#pkg-constants
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h5" >}}
 permalinks:
   posts: /:06/:1/:2/:title/
 {{< /code-toggle >}}
@@ -317,7 +317,7 @@ URL のアピアランスは、アグリーかプリティーのどちらかで�
 デフォルトでは、Hugo はプリティー URL を生成します。
 アグリー URL を生成するには、サイトの設定を変更してください。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h6" >}}
 uglyURLs = true
 {{< /code-toggle >}}
 
@@ -347,7 +347,7 @@ Hugo は、ページのレンダリング後に URL を変更するための、�
 
 有効にするには、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h7" >}}
 canonifyURLs = true
 {{< /code-toggle >}}
 
@@ -373,7 +373,7 @@ canonifyURLs = true
 
 有効にするには、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h8" >}}
 relativeURLs = true
 {{< /code-toggle >}}
 
@@ -400,13 +400,13 @@ aliases = ['/posts/previous-file-name']
 
 現在のページに複数のエイリアスを作成できます。
 
-{{< code-toggle file="content/posts/new-file-name.md" copy=false >}}
+{{< code-toggle file="content/posts/new-file-name.md" copy=false codeId="n2" >}}
 aliases = ['previous-file-name','original-file-name']
 {{< /code-toggle >}}
 
 多言語サイトでは、ディレクトリ相対エイリアスを使用するか、以下のようにサイト相対エイリアスに言語プレフィックスを含めます。
 
-{{< code-toggle file="content/posts/new-file-name.de.md" copy=false >}}
+{{< code-toggle file="content/posts/new-file-name.de.md" copy=false codeId="n3" >}}
 aliases = ['/de/posts/previous-file-name']
 {{< /code-toggle >}}
 

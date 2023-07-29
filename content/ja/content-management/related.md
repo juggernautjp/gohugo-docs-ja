@@ -125,7 +125,7 @@ Hugo では、関連コンテンツのデフォルトの設定を適切に行う
 
 プロジェクトに `related` 設定がない場合、Hugo の Related Content (関連コンテンツ) メソッドは以下のものを使用します。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h2" >}}
 related:
   threshold: 80
   includeNewer: false

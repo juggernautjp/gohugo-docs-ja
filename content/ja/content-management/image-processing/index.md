@@ -418,7 +418,7 @@ resampleFilter
 
 サイト設定に `imaging.exif` セクションを定義して、EXIF データの利用可能性を制御します。
 
-{{< code-toggle file="hugo" copy=true >}}
+{{< code-toggle file="hugo" copy=true codeId="h2" >}}
 [imaging.exif]
 includeFields = ""
 excludeFields = ""

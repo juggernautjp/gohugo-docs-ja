@@ -157,7 +157,7 @@ weight
 
 以下のフィールドはそれぞれ `.Params.include_toc` と `.Params.show_comments` によってアクセスすることができます。 [変数][variables] セクションでは、Hugo のページレベルおよびサイトレベルの変数をテンプレートで使用するための詳細な情報を提供しています。
 
-{{< code-toggle copy=false >}}
+{{< code-toggle copy=false codeId="c2" >}}
 include_toc: true
 show_comments: false
 {{</ code-toggle >}}
@@ -170,7 +170,7 @@ show_comments: false
 
 `cascade` ブロックは、オプションの `_target` キーワードを持つスライスで、異なるページセットを対象とした複数の `cascade` 値を使用できます。
 
-{{< code-toggle copy=false >}}
+{{< code-toggle copy=false codeId="c3" >}}
 title ="Blog"
 [[cascade]]
 background = "yosemite.jpg"
@@ -204,7 +204,7 @@ environment
 
 `content/blog/_index.md` ファイルには、
 
-{{< code-toggle copy=false >}}
+{{< code-toggle copy=false codeId="c4" >}}
 title: Blog
 cascade:
   banner: images/typewriter.jpg

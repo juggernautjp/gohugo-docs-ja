@@ -2,7 +2,6 @@
 aliases:
 - /extras/highlighting/
 - /extras/highlight/
-- /tools/syntax-highlighting/
 categories:
 - content management
 date: "2017-02-01"

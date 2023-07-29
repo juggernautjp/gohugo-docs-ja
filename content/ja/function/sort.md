@@ -62,7 +62,7 @@ grades = ['b','a','c']
 
 以下の例では、このサイト設定を前提としています。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h2" >}}
 [params.authors.a]
 firstName = "Marius"
 lastName  = "Pontmercy"

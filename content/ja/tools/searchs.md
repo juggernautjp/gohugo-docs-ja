@@ -1,21 +1,19 @@
 ---
-aliases: []
 categories:
 - developer tools
 date: "2017-02-01"
 description: 新しく作成した Hugo の Web サイトで、オープンソースおよび商用の検索オプションの一部を参照してください。
-draft: true
+draft: false
 keywords:
 - search
 - tools
-linktitle: 検索
+linktitle: 検索ツール
 menu:
   docs:
     parent: tools
     weight: 40
 publishdate: "2017-02-01"
 title: Hugo の Web サイトを検索する
-toc: true
 weight: 40
 ---
 

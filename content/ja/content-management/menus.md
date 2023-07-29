@@ -65,7 +65,7 @@ menu = 'main'
 
 「メイン」メニューと「フッター」メニューにページを追加するには、以下のようにします。
 
-{{< code-toggle file="content/contact.md" copy=false fm=true >}}
+{{< code-toggle file="content/contact.md" copy=false fm=true codeId="c2" >}}
 title = 'Contact'
 menu = ['main','footer']
 {{< /code-toggle >}}
@@ -123,7 +123,7 @@ class = 'center'
 
 「メイン」メニューのエントリを定義するには、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h2" >}}
 [[menu.main]]
 name = 'Home'
 pageRef = '/'
@@ -145,7 +145,7 @@ weight = 30
 
 「フッター」メニューのエントリを定義するには、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h3" >}}
 [[menu.footer]]
 name = 'Terms'
 pageRef = '/terms'
@@ -191,7 +191,7 @@ url
 
 このネストされたメニューは、以下のような、利用可能なプロパティのいくつかを示しています。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h4" >}}
 [[menu.main]]
 name = 'Products'
 pageRef = '/products'

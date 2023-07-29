@@ -43,8 +43,8 @@ Hugo には、[Google アナリティクス 4][GA4] (GA4) とユニバーサル 
 googleAnalytics = "G-MEASUREMENT_ID"
 {{</ code-toggle >}}
 
-**Google ユニバーサル アナリティクス (analytics.js)**
-{{< code-toggle file="hugo" >}}
+**Google ユニバーサル アナリティクス (analytics.js)** [^1]
+{{< code-toggle file="hugo" codeId="h2" >}}
 googleAnalytics = "UA-PROPERTY_ID"
 {{</ code-toggle >}}
 
@@ -72,7 +72,7 @@ Hugo には、[Disqus コメント][disqus] の内部テンプレートも同梱
 
 Hugo の Disqus テンプレートを使用するには、まず、以下の設定値を一つ設定する必要があります。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h3" >}}
 disqusShortname = "your-disqus-shortname"
 {{</ code-toggle >}}
 
@@ -135,7 +135,7 @@ Hugo Web サーバーをを `localhost` で実行しているときに (つま�
 
 Hugo の Open Graph テンプレートは、個々のページで設定変数と [フロントマター](/content-management/front-matter/) を組み合わせて設定されています。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h4" >}}
 [params]
   title = "My cool site"
   images = ["site-feature-image.jpg"]
@@ -184,13 +184,13 @@ Open Graph のメタデータを追加するには、テンプレート内の `<
 
 Hugo の Twitter カード テンプレートは、個々のページで設定変数と [フロントマター](/content-management/front-matter/) を組み合わせて設定されています。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h5" >}}
 [params]
   images = ["site-feature-image.jpg"]
   description = "Text about my cool site"
 {{</ code-toggle >}}
 
-{{< code-toggle file="content/blog/my-post" >}}
+{{< code-toggle file="content/blog/my-post" codeId="f2" >}}
 title = "Post title"
 description = "Text about this post"
 images = ["post-cover.png"]
@@ -204,7 +204,7 @@ Hugo は、カードのタイトルと説明のフィールドに、ページの
 
 `.Site.Social.twitter` 変数は、設定から `twitter:site` の値として公開されます。
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" codeId="h6" >}}
 [social]
   twitter = "GoHugoIO"
 {{</ code-toggle >}}
@@ -237,3 +237,9 @@ Twitter カードのメタデータを追加するには、テンプレート内
 
 [disqus]: https://disqus.com
 [disqussignup]: https://disqus.com/profile/signup/
+
+
+
+## 訳注
+
+[^1]: Google、[ユニバーサル アナリティクスは Google アナリティクス 4 に置き換わりました](https://support.google.com/analytics/answer/11583528?hl=ja)、2023 年 7 月 1 日

@@ -554,11 +554,11 @@
     - title: hugo convert
       url: /hugo_convert/
     - title: hugo convert toJSON
-      url: /hugo_convert_toJSON/
+      url: /hugo_convert_tojson/
     - title: hugo convert toTOML
-      url: /hugo_convert_toTOML/
+      url: /hugo_convert_totoml/
     - title: hugo convert toYAML
-      url: /hugo_convert_toYAML/
+      url: /hugo_convert_toyaml/
     - title: hugo deploy
       url: /hugo_deploy/
     - title: hugo env
@@ -645,8 +645,8 @@
       url: /frontends/
     - title: エディター プラグイン
       url: /editors/
-    - title: 検索
-      url: /search/
+    - title: 検索ツール
+      url: /searchs/
     - title: その他のプロジェクト
       url: /other/
 - title: ホスティングとデプロイ

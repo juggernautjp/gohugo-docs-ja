@@ -189,7 +189,7 @@ __順序が重要です__ --- `title`、`name`、`params`-**keys** の **最初�
 
 たとえば、バンドルに `photo_specs.pdf`、`other_specs.pdf`、`guide.pdf`、`checklist.pdf` というリソースがあり、フロントマターに `resources` を指定した場合、以下のようになります。
 
-{{< code-toggle copy=false >}}
+{{< code-toggle copy=false codeId="c2" >}}
 [[resources]]
   src = "*specs.pdf"
   title = "Specification #:counter"

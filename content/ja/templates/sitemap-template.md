@@ -80,7 +80,7 @@ title = 'News'
 
 以下のサイト設定で、サイトマップの生成を無効にすることができます。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h2" >}}
 disableKinds = ['sitemap']
 {{</ code-toggle >}}
 

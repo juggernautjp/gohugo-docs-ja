@@ -135,14 +135,14 @@ color = "blue"
 
 サイト設定の `languages` オブジェクト内の言語を無効にするには、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h2" >}}
 [languages.es]
 disabled = true
 {{< /code-toggle >}}
 
 サイト設定のルートで1つまたは複数の言語を無効にするには、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h3" >}}
 disableLanguages = ["es", "fr"]
 {{< /code-toggle >}}
 
@@ -166,7 +166,7 @@ HUGO_DISABLELANGUAGES="es fr" hugo
 
 例:
 
-{{< code-toggle file="config" >}}
+{{< code-toggle file="hugo" codeId="h4" >}}
 [languages]
 [languages.fr]
 baseURL = "https://example.fr"
@@ -179,7 +179,7 @@ baseURL = "https://example.com"
 languageName = "English"
 weight = 2
 title = "In English"
-{{</ code-toggle >}}
+{{< /code-toggle >}}
 
 上記により、2 つのサイトが独自のルートを持つ `public` に生成されます。
 
@@ -228,7 +228,7 @@ Press Ctrl+C to stop
 
 このシステムでは、各言語ごとに異なるコンテンツディレクトリを使用します。各言語のコンテンツディレクトリは `contentDir` パラメータで設定します。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h5" >}}
 languages:
   en:
     weight: 10
@@ -264,7 +264,7 @@ languages:
 2. `/content/om.nn.md`
 3. `/content/presentation/a-propos.fr.md`
 
-{{< code-toggle >}}
+{{< code-toggle codeId="c1" >}}
 translationKey: "about"
 {{< /code-toggle >}}
 
@@ -385,7 +385,7 @@ Home
 
 この関数は `.` コンテキストを `"wordCount"` id に渡します。
 
-{{< code-toggle file="i18n/en-US" >}}
+{{< code-toggle file="i18n/en-US" codeId="i2" >}}
 [wordCount]
 other = "This article has {{ .WordCount }} words."
 {{< /code-toggle >}}
@@ -406,7 +406,7 @@ This article has 101 words.
 
 この関数は `.ReadingTime` から `.Count` を読み込み、その数が単数 (`one`) か複数 (`other`) かを判断します。その後、`i18n/en-US.toml` ファイルにある `readingTime` の id を渡します。
 
-{{< code-toggle file="i18n/en-US" >}}
+{{< code-toggle file="i18n/en-US" codeId="i3" >}}
 [readingTime]
 one = "One minute to read"
 other = "{{ .Count }} minutes to read"
@@ -434,7 +434,7 @@ One minute to read
 
 以下のローカライズの例では、サイトの主要言語を英語とし、フランス語とドイツ語への翻訳を想定しています。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h6" >}}
 defaultContentLang = 'en'
 
 [languages]
@@ -457,7 +457,7 @@ weight = 3
 
 以下のフロントマター
 
-{{< code-toggle >}}
+{{< code-toggle codeId="c2" >}}
 date = 2021-11-03T12:34:56+01:00
 {{< /code-toggle >}}
 
@@ -557,7 +557,7 @@ Deutsch|512,50 %
 
 たとえば、サイト設定でメニューエントリを定義すると、以下のようになります。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h7" >}}
 [[menu.main]]
   identifier = 'products'
   name = 'Products'
@@ -572,7 +572,7 @@ Deutsch|512,50 %
 
 以下のように、翻訳テーブルに対応するエントリを作成します。
 
-{{< code-toggle file="i18n/de" copy=false >}}
+{{< code-toggle file="i18n/de" copy=false codeId="i4" >}}
 products = 'Produkte'
 services = 'Leistungen'
 {{< / code-toggle >}}
@@ -586,7 +586,7 @@ services = 'Leistungen'
 
 たとえば、以下のようにします。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h8" >}}
 [languages.de]
 languageCode = 'de-DE'
 languageName = 'Deutsch'

@@ -16,11 +16,11 @@ lastmod: "2022-03-26"
 menu:
   docs:
     parent: tools
-    weight: 50
+    weight: 20
 publishdate: "2017-02-01"
 title: Hugo への移行
 toc: true
-weight: 50
+weight: 20
 ---
 
 このセクションでは、独自に開発された Hugo に関するいくつかのプロジェクトを取り上げます。 これらのツールは、静的サイトジェネレーターの機能を拡張したり、開始するのに役立ちます。

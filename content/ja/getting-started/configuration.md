@@ -506,7 +506,7 @@ enableemoji: true
 
 `build` 設定セクションには、ビルドに関連するグローバルな設定オプションが含まれています。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h2" >}}
 [build]
   noJSConfigInAssets = false
   useResourceCacheWhen = 'fallback'
@@ -565,7 +565,7 @@ Tailwind 3.x の JIT コンパイラを使用した開発をサポートする�
 
 <!-- TODO (jmm) writeStats => build.buildStats -->
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h3" >}}
 [build]
   [build.buildStats]
     enable = true
@@ -600,7 +600,7 @@ target
 これは `hugo server` を実行するときにのみ関係し、開発中に HTTP ヘッダーを設定することができるので、コンテンツ セキュリティ ポリシーなどをテストすることができます。設定形式は、[Netlify の](https://docs.netlify.com/routing/headers/#syntax-for-the-netlify-configuration-file) と少し強力な [glob マッチング](https://github.com/gobwas/glob) にマッチしています。
 
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" codeId="h4" >}}
 [server]
 [[server.headers]]
 for = "/**"
@@ -616,7 +616,7 @@ Content-Security-Policy = "script-src localhost:1313"
 これは「開発専用」なので、以下のように `development` 環境の下に置くのが理にかなっているかもしれません。
 
 
-{{< code-toggle file="config/development/server">}}
+{{< code-toggle file="config/development/server" >}}
 [[headers]]
 for = "/**"
 
@@ -632,7 +632,7 @@ Content-Security-Policy = "script-src localhost:1313"
 
 `status` コード 200 は [URL リライト](https://docs.netlify.com/routing/redirects/rewrites-proxies/) をトリガーすることに注意してください。これは、SPA の状況で必要なものです。たとえば、次のようにします。
 
-{{< code-toggle file="config/development/server">}}
+{{< code-toggle file="config/development/server" codeId="s2" >}}
 [[redirects]]
 from = "/myspa/**"
 to = "/myspa/"
@@ -648,7 +648,7 @@ force = false
 
 デフォルトでは、`404.html` テンプレートで `hugo server` を実行すると、Hugo はすべての 404 エラーをレンダリングします。[サーバーの設定](#configure-server) に 1 つ以上のリダイレクトを追加している場合は、404リダイレクトを明示的に追加する必要があることに注意してください。
 
-{{< code-toggle file="config/development/server" copy=false >}}
+{{< code-toggle file="config/development/server" copy=false codeId="s3" >}}
 [[redirects]]
 from   = "/**"
 to     = "/404.html"
@@ -691,7 +691,7 @@ HUGO_NUMWORKERMULTIPLIER
 
 以下は、設定ファイルの典型的な例です。 `params:` の下にネストされた値は、[テンプレート][templates] で使用するために [`.Site.Params`] 変数に格納されます。
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" codeId="h5" >}}
 baseURL: "https://yoursite.example.com/"
 title: "My Hugo Site"
 permalinks:
@@ -738,13 +738,13 @@ Test and document setting params via JSON env var.
 
 `.foo` や `.boo` で終わるファイルを無視するには、以下のようにします。
 
-{{< code-toggle copy=false file="hugo" >}}
+{{< code-toggle copy=false file="hugo" codeId="h6" >}}
 ignoreFiles = ['\.foo$', '\.boo$']
 {{< /code-toggle >}}
 
 絶対ファイルパスを使ってファイルを無視するには、以下のようにします。
 
-{{< code-toggle copy=false file="hugo" >}}
+{{< code-toggle copy=false file="hugo" codeId="h7" >}}
 ignoreFiles = ['^/home/user/project/content/test\.md$']
 {{< /code-toggle >}}
 
@@ -756,7 +756,7 @@ Hugo では日付が重要であり、Hugo がコンテンツページにどの�
 
 デフォルトの設定は以下のとおりです。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h8" >}}
 [frontmatter]
 date = ["date", "publishDate", "lastmod"]
 lastmod = [":git", "lastmod", "date", "publishDate"]
@@ -766,7 +766,7 @@ expiryDate = ["expiryDate"]
 
 たとえば、コンテンツの一部に非標準の日付パラメータがある場合、 `date` の設定をオーバーライドできます。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h9" >}}
 [frontmatter]
 date = ["myDate", ":default"]
 {{< /code-toggle >}}
@@ -783,7 +783,7 @@ date = ["myDate", ":default"]
 
 例:
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h10" >}}
 [frontmatter]
 lastmod = ["lastmod", ":fileModTime", ":default"]
 {{< /code-toggle >}}
@@ -797,7 +797,7 @@ lastmod = ["lastmod", ":fileModTime", ":default"]
 
 例:
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h11" >}}
 [frontmatter]
 date  = [":filename", ":default"]
 {{< /code-toggle >}}
@@ -816,13 +816,13 @@ Hugo v0.20 では、コンテンツを複数の出力形式 (JSON、AMP html、C
 
 デフォルト設定:
 
-{{< code-toggle config="minify" />}}
+{{< code-toggle config="minify" codeId="m2" />}}
 
 ## ファイルキャッシュを設定する {#configure-file-caches}
 
 Hugo 0.52 以降では、`cacheDir` 以外も設定することができます。以下はデフォルトの設定です。
 
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h12" >}}
 [caches]
 [caches.getjson]
 dir = ":cacheDir/:project"

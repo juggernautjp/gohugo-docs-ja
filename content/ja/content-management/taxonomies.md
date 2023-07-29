@@ -104,7 +104,7 @@ Hugo はタクソノミーをネイティブにサポートしています。
 
 Hugo にタクソノミーを作成させたくない場合は、[サイト設定][site configuration] で `disableKinds` を以下のように設定します。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h2" >}}
 disableKinds = ["taxonomy","term"]
 {{</ code-toggle >}}
 
@@ -127,7 +127,7 @@ disableKinds = ["taxonomy","term"]
 カスタムタクソノミーを追加する際に、 _カスタムタクソノミーを残しておきたい場合は_、デフォルト タクソノミーにそれらを入れる必要があります。
 {{% /note %}}
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h3" >}}
 [taxonomies]
   tag = "tags"
   category = "categories"
@@ -138,7 +138,7 @@ disableKinds = ["taxonomy","term"]
 
 デフォルトの `tags` タクソノミーのみを使用し、 サイトの `categories` タクソノミーを削除したい場合は、 [サイト設定][site configuration] の `taxonomies` 値を変更することで実行できます。
 
-{{< code-toggle file="hugo" copy=false >}}
+{{< code-toggle file="hugo" copy=false codeId="h4" >}}
 [taxonomies]
   tag = "tags"
 {{</ code-toggle >}}

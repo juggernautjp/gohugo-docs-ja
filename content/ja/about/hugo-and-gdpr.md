@@ -38,7 +38,7 @@ weight: 60
 
 以下は、すべてのプライバシー設定とそのデフォルト値です。これらの設定は、サイトの設定ファイル (たとえば、`config.toml`) に記述する必要があります。
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" >}}
 [privacy]
 [privacy.disqus]
 disable = false
@@ -68,7 +68,7 @@ privacyEnhanced = false
 
 Hugo の関連サービスをすべて無効にするプライバシー設定の例です。この設定では、他の設定は有効になりません。
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" codeId="h2" >}}
 [privacy]
 [privacy.disqus]
 disable = true
@@ -108,7 +108,7 @@ simple
 
 **注意:** Instagram に _シンプルモード_ を使用し、Bootstrap 4 でスタイル設定されたサイトを使用している場合、Hugo が提供するインライン スタイルを無効にすることができます。
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" codeId="h3" >}}
 [services]
 [services.instagram]
 disableInlineCSS = true
@@ -124,7 +124,7 @@ simple
 
 **注意:** Twitter で _シンプルモード_ を使用する場合、Hugo が提供するインラインスタイルを無効化することができます。
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" codeId="h4" >}}
 [services]
 [services.twitter]
 disableInlineCSS = true

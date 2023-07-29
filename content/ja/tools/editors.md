@@ -12,11 +12,11 @@ linktitle: エディター プラグイン
 menu:
   docs:
     parent: tools
-    weight: 20
+    weight: 40
 publishdate: "2017-02-01"
 title: Hugo 用エディター プラグイン
 toc: false
-weight: 20
+weight: 40
 ---
 
 <!-- Description と全く同じ文章なので、コメントアウトした。by juggernautjp.

@@ -23,8 +23,8 @@ JSON、TOML、YAML の各フォーマットで、シンタックスハイライ�
 @param {bool} skipHeader
   site.Data.docs.config のセクションをレンダリングする際に、トップレベルのキー (複数可) を省略する。
   Default: false
-@param {string} nav_id
-  Navs tab を一意に識別するための ID。
+@param {string} codeId
+  Code Toggle を一意に識別するための ID。同じファイル名 ((または config) が複数の場合は、この変数で一意にしないと、切り替えできない。
   Default: ""
 @returns {template.HTML}
 */ -}}
@@ -41,7 +41,7 @@ JSON、TOML、YAML の各フォーマットで、シンタックスハイライ�
   {{- $config = .Get "config" -}}
   {{- $file = .Get "file" -}}
   {{- if (isset .Params "codeId") -}}
-      {{- $nav_id = (.Params "codeId") -}}
+      {{- $nav_id = (.Get "codeId") -}}
   {{- else -}}
       {{- $nav_id = replace $file "/" "-" -}}
   {{- end -}}

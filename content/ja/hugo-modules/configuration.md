@@ -21,7 +21,7 @@ weight: 20
 
 ## モジュールの設定: トップレベル {#module-config-top-level}
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" >}}
 [module]
 noVendor = ""
 proxy = "direct"
@@ -64,7 +64,7 @@ env HUGO_MODULE_PROXY=https://proxy.example.org hugo
 
 もし、モジュールが動作するために特定のバージョンの Hugo を必要とする場合、 `module` セクションでそのことを指定することができ、古すぎたり新しすぎたりするバージョンを使っている場合は警告されます。
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" codeId="h2" >}}
 [module]
 [module.hugoVersion]
   min = ""
@@ -86,7 +86,7 @@ extended
 
 ## モジュールの設定: imports {#module-config-imports}
 
-{{< code-toggle file="hugo">}}
+{{< code-toggle file="hugo" codeId="h3" >}}
 [module]
 [[module.imports]]
   path = "github.com/gohugoio/hugoTestModules1_linux/modh1_2_1v"
@@ -128,7 +128,7 @@ Hugo 0.56.0 で `mounts` 設定が導入されたとき、既存の `contentDir`
 {{% /note %}}
 
 **デフォルト マウント**
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h4" >}}
 [module]
 [[module.mounts]]
     source="content"
@@ -173,7 +173,7 @@ excludeFiles (string または slice)
 : 除外するファイルに一致する 1 つ以上の glob パターンです。
 
 **例**
-{{< code-toggle file="hugo" >}}
+{{< code-toggle file="hugo" codeId="h5" >}}
 [module]
 [[module.mounts]]
     source="content"

@@ -269,7 +269,7 @@ tags: [two,three,four]
 
 .Params`変数は、特にコンテンツファイルにユーザー定義のフロントマターフィールドを導入するのに便利です。たとえば、書評に関する Hugo の Web サイトでは、以下のようなフロントマターを持つことができます。
 
-{{< code-toggle file="content/example.md" fm=true copy=false >}}
+{{< code-toggle file="content/example.md" fm=true copy=false codeId="f2" >}}
 title: Example
 affiliatelink: "http://www.my-book-link.here"
 recommendedby: "My Mother"
@@ -307,7 +307,7 @@ Hugo では、個々のページでパラメータを宣言したり、Web サ�
 
 フロントマターが以下のようなネストしたフィールドを含む場合。
 
-{{< code-toggle file="content/example.md" fm=true copy=false >}}
+{{< code-toggle file="content/example.md" fm=true copy=false codeId="f3" >}}
 title: Example
 author:
   given_name: John
