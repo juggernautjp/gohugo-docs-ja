@@ -1,0 +1,22 @@
+
+
+// Re-Define code-font-size
+@media (min-width: 1400px) {
+  $code-font-size:           1.05rem !default;
+  $dt-font-size:             1.15rem !default;
+
+  .highlight {
+    pre code {
+      font-size: $code-font-size;
+    }
+  }
+
+  dd, dt, code {
+    font-size: $code-font-size;
+  }
+
+  dt code {
+    font-size: $dt-font-size;
+  }
+}
+

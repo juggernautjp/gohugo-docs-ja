@@ -35,16 +35,5 @@
 }
 */
 
-// Re-Define code-font-size
-@media (min-width: 1400px) {
-  $code-font-size:           1.05rem !default;
-  // $font-size-root:           1.25rem;
-
-  .highlight {
-    pre code {
-      font-size: $code-font-size;
-    }
-  }
-}
 
 
